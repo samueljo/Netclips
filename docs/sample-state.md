@@ -12,37 +12,38 @@
     1: {
       id: 1,
       name: "2016 NBA Finals",
+      description: "Cleveland Cavaliers vs Golden State Warriors 2016 NBA Finals",
+      cast: ["Cleveland Cavaliers", "Golden State Warriors"],
+      year: "2016",
+      rating: 4,
+      current_episode_id: 1,
+      image_url: "...",
       tags(genre): {
         1: {
           id: 1,
           name: "NBA"
-        },
-        2: {
-          id: 2,
-          name: "Cleveland Cavaliers"
-        },
-        3: {
-          id: 3,
-          name: "Golden State Warriors"
         }
-      }
+      },
+      my_listed: false,
+      reviewed: false
     }
   },
-  games: {
+  episodes: {
     1: {
       id: 1,
       title: "Game 7",
-      description: "Cleveland Cavaliers at Golden State Warriers June 19th, 2016",
+      description: "Cleveland Cavaliers at Golden State Warriors June 19th, 2016",
       video_url: "...",
-      series_id: "1"
+      series_id: "1",
+      playing: false
     }
-  }
+  },
   reviews: {
     1: {
       id: 1,
-      
+      series_id: 1,
+      user_id: 1,
     }
-  }
-
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
+  },
+  my-list: [1] (array of series_ids),
 }

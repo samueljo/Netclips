@@ -1,40 +1,77 @@
 Component Heirarchy
 
 AuthFormContainer
-- AuthForm
+- Index Page:
+    - Sign in button
+    - Sign up button
 
-HomeContainer
-- Home
-- Sidebar
+- Sign Up Page:
+    - OAuth or by Email
 
-VideosContainer
-- VideosHeader
-  - VideoIndex
+- Sign In Page:
+    - OAuth or by Email through Facebook
+    - Sign Up button
 
-VideoContainer
-- VideoHeader
-  - VideoIndex
+BrowseContainer
+Header
+- Netflix button to Videos Index
+- Browse dropdown:
+    - Aside
+        - Home
+        - My List
+    - Aside
+        - [Genres]
+    - Search Bar
+        - Search by title, genres
+    - Notification
+        - New additions
+    - Profile ( + Profile Picture)
+        - Profile show page
+        - Sign Out
 
-SearchResultsContainer
-- Search
-  - VideoIndex
+Feature
+- Newest addition image
+- Play
+- Rate
+- Add to list
 
-ReviewContainer
-- ReviewHeader
-  - ReviewIndex
+SeriesIndex
+- Series Index
+    - Series Detail
+        - Main
+            - Play button (w/ image)
+        - Overview
+            - Play current_episode w/ image
+            - Title
+            - Rating
+            - Add to list
+            - current_episode:
+                - id
+                - title
+                - description
+        - Episodes
+            - Episodes Index
+                - List of episodes with:
+                    - Play button w/ image
+                    - id
+                    - title
+                    - description
+        - Details
+            - Cast
+            - Genres
+            - Top reviews
+                - MODAL -> See All Reviews (n)
+                    - Write a review
+                        - Rating
+                        - New Review form
+                    - Reviews index
+                        - Review
+                            - Vote helpful
+WatchContainer
 
-VideoIndex
-- VideoIndexItem
-  - VideoDetail
-  - Tools
-  - NotebookSearch
-  - Tags
-    - Tag
-  - Note
 
 
 
-  
 
 NewNoteContainer
 - NewNote
