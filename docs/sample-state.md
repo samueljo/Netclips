@@ -15,17 +15,18 @@
       description: "Cleveland Cavaliers vs Golden State Warriors 2016 NBA Finals",
       cast: ["Cleveland Cavaliers", "Golden State Warriors"],
       year: "2016",
+      rated: true,
       rating: 4,
       current_episode_id: 1,
       image_url: "...",
-      tags(genre): {
+      genres: {
         1: {
           id: 1,
           name: "NBA"
         }
       },
       my_listed: false,
-      reviewed: false
+      reviewed: true,
     }
   },
   episodes: {
@@ -34,6 +35,7 @@
       title: "Game 7",
       description: "Cleveland Cavaliers at Golden State Warriors June 19th, 2016",
       video_url: "...",
+      image_url: "...",
       series_id: "1",
       playing: false
     }
@@ -46,4 +48,6 @@
     }
   },
   my-list: [1] (array of series_ids),
+  search: [""],
+  genre: [""]
 }
