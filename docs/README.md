@@ -22,16 +22,15 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   MyList
     Create a 'My List' to keep track of series-to-watch
 
-  Feature
-    Browse page will have a 'feature' series to watch based on most recent addition
+  Wrap-around Scroll
+    Series are organized by genre with a 'wrap-around' scroll
 
   Search
     Search for a series by genre, cast, or title
 
 Bonus:
-
-  Wrap-around Scroll
-    Series are organized by genre with a 'wrap-around' scroll
+  Feature
+    Browse page will have a 'feature' series to watch based on most recent addition
 
   OAuth
     Login using OAuth through Facebook
@@ -45,11 +44,11 @@ Bonus:
   Feature: Suggested Series
     Series will be suggested based on user's history of watching a genre
 
-  Feature: Notification
-    Notifications for new clips added to database
-
   Feature: Submitting New Series/Clips
     Submit a new clip - reserved only for admins
+
+  Feature: Notification
+    Notifications for new clips added to database
 
 Design Docs
 
