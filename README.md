@@ -1,100 +1,106 @@
-Netclips
+# Netclips
 
-Heroku
+[Heroku link][heroku] **Note:** Link to Netclips
 
-Minimum Viable Product
+## Minimum Viable Product
 
 Netclips and code! Netclips is a web application inspired by Netflix built using Ruby on Rails & React/Redux. The main features of this website will include:
 
-  New account creation, login, and guest/demo login
-  A production README
-  Hosting on Heroku
-  Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
+- [ ] New account creation, login, and guest/demo login
+- [ ] A production README
+- [ ] Hosting on Heroku
+- [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
 
-  Videos
-    Access various series to pick & play video clips
+- [ ] Videos
+  - Access various series to pick & play video clips
 
-  Reviews
-    Read reviews (top reviews & all) for a series
-    Write only one review per series
-    Rate a series
+- [ ] Reviews
+  - Read reviews (top reviews & all) for a series
+  - Write only one review per series
+  - Rate a series
 
-  MyList
-    Create a 'My List' to keep track of series-to-watch
+- [ ] MyList
+  - Create a 'My List' to keep track of series-to-watch
 
-  Wrap-around Scroll
-    Series are organized by genre with a 'wrap-around' scroll
+- [ ] Wrap-around Scroll
+  - Series are organized by genre with a 'wrap-around' scroll
 
-  Search
-    Search for a series by genre, cast, or title
+- [ ] Search
+  - Search for a series by genre, cast, or title
 
-Bonus:
-  Feature
-    Browse page will have a 'feature' series to watch based on most recent addition
+- Bonus:
+  - [ ] Feature
+    - Browse page will have a 'feature' series to watch based on most recent addition
 
-  OAuth
-    Login using OAuth through Facebook
+  - [ ] OAuth
+    - Login using OAuth through Facebook
 
-  Feature: Infinite Scroll
-    More genres will load if you scroll to the bottom
+  - [ ] Feature: Infinite Scroll
+    - More genres will load if you scroll to the bottom
 
-  Feature: Auto-play
-    Clips will auto-play to the next clip in the series
+  - [ ] Feature: Auto-play
+    - Clips will auto-play to the next clip in the series
 
-  Feature: Suggested Series
-    Series will be suggested based on user's history of watching a genre
+  - [ ] Feature: Suggested Series
+    - Series will be suggested based on user's history of watching a genre
 
-  Feature: Submitting New Series/Clips
-    Submit a new clip - reserved only for admins
+  - [ ] Feature: Submitting New Series/Clips
+    - Submit a new clip - reserved only for admins
 
-  Feature: Notification
-    Notifications for new clips added to database
+  - [ ] Feature: Notification
+    - Notifications for new clips added to database
 
-Design Docs
+## Design Docs
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Redux Structure][redux-structure]
+* [Sample State][sample-state]
 
-  View Wireframes
-  React Components
-  API endpoints
-  DB schema
-  Redux Structure
-  Sample State
+[wireframes]: docs/wireframes
+[components]: docs/component-heirarchy.md
+[redux-structure]: docs/redux-structure.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
-Implementation Timeline
+## Implementation Timeline
 
-  Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-  Objective: Functioning rails project with front-end Authentication
+**Objective:** Functioning rails project with front-end Authentication
 
-   New Rails project
-   User model/migration
-   Back end authentication (session/password)
-   StaticPages controller and root view
-   Webpack & react/redux modules
-   APIUtil to interact with the API
-   Redux cycle for frontend authentication
-   User signup/signin components
-   Blank landing component after signup/signin
-   Style signup/signin components
-   Seed users
-   Review phase 1
+- [ ] New Rails project
+- [ ] User model/migration
+- [ ] Back end authentication (session/password)
+- [ ] StaticPages controller and root view
+- [ ] Webpack & react/redux modules
+- [ ] APIUtil to interact with the API
+- [ ] Redux cycle for frontend authentication
+- [ ] User signup/signin components
+- [ ] Blank landing component after signup/signin
+- [ ] Style signup/signin components
+- [ ] Seed users
+- [ ] Review phase 1
 
-  Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Notes Model, API, and components (2 days)
 
-  Objective: Notes can be created, read, edited and destroyed through the API.
+**Objective:** Notes can be created, read, edited and destroyed through the API.
 
-   Note model
-   Seed database with a small amount of test data
-   CRUD API for notes (NotesController)
-   JBuilder views for notes
-  Note components and respective Redux loops
-   NotesIndex
-   NoteIndexItem
-   NoteForm
-   Autosave notes feature
-   Style notes components
-   Seed notes
+- [ ] Note model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for notes (NotesController)
+- [ ] JBuilder views for notes
+- Note components and respective Redux loops
+  - [ ] NotesIndex
+  - [ ] NoteIndexItem
+  - [ ] NoteForm
+- [ ] Autosave notes feature
+- [ ] Style notes components
+- [ ] Seed notes
 
-  Phase 3: Notebooks (2 day)
+### Phase 3: Notebooks (2 day)
 
   Objective: Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
 

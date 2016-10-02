@@ -1,9 +1,9 @@
-Component Heirarchy
+## Component Hierarchy
 
-AuthFormContainer
+**AuthFormContainer**
   - AuthForm
 
-NavbarContainer
+**NavbarContainer**
   - Navbar
     * Browse Dropdown
       * Browse
@@ -11,28 +11,28 @@ NavbarContainer
       * Genre
     * Search
 
-SeriesContainer
+**SeriesContainer**
   - SeriesIndex
 
-EpisodeContainer
+**EpisodeContainer**
   - WatchEpisode
 
-SearchContainer
+**SearchContainer**
   - SearchResults
     - SeriesIndex
 
-UserContainer
+**UserContainer**
   - User
 
-MyList
+**MyList**
   - MyListItems
     - SeriesIndex
 
-Genre
+**Genre**
   - GenreItems
     - SeriesIndex
 
-SeriesIndex
+**SeriesIndex**
   * SeriesIndexItems
     * Overview
     * Detail
@@ -42,16 +42,15 @@ SeriesIndex
         + Episode
 
 
-Routes
+## Routes
 
-Path	Component
-
-"/" Redirect to "/browse"
-"/sign-up"	"AuthFormContainer"
-"/sign-in"	"AuthFormContainer"
-"/browse" "SeriesContainer"
-"/browse/my-list" "MyList"
-"/browse/genre/:genreId" "Genre"
-"/search" "SearchContainer"
-"/watch/:episodeId" "EpisodeContainer"
-"/YourAccount" "UserContainer"
+| Path	| Component |
+|-------|-----------|
+|"/sign-up"	| "AuthFormContainer" |
+|"/sign-in" |	"AuthFormContainer" |
+|"/browse" | "SeriesContainer" |
+|"/browse/my-list" | "MyList" |
+|"/browse/genre/:genreId" | "Genre" |
+|"/search" | "SearchContainer" |
+|"/watch/:episodeId" | "EpisodeContainer" |
+|"/YourAccount" | "UserContainer" |

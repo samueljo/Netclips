@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -51,3 +52,4 @@
   search: [""],
   genre: [""]
 }
+```
