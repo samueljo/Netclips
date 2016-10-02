@@ -67,7 +67,7 @@ createSeries
 
 updateSeries
   - invoked from SeriesForm onSubmit
-  - POST /api/series is called.
+  - PATCH /api/series/:id is called.
   - receiveSingleSeries is set as the success callback.
 
 destroySeries
@@ -95,29 +95,29 @@ Episode API Request Actions
 
 fetchAllEpisodes
   - invoked from EpisodesIndex didMount/willReceiveProps
-  - GET /api/episodes is called.
+  - GET /api/series/:seriesId/episodes is called.
   - receiveAllEpisodes is set as the success callback.
 
 fetchSingleEpisode
   - invoked from EpisodeDetail didMount/willReceiveProps
-  - GET /api/episodes/:id is called.
+  - GET /api/series/:seriesId/episodes/:id is called.
   - receiveSingleEpisode is set as the success callback.
 
 Bonus:
 
 createEpisode
   - invoked from new episode button onClick
-  - POST /api/episodes is called.
+  - POST /api/series/:seriesId/episodes is called.
   - receiveSingleEpisode is set as the callback.
 
 updateEpisode
   - invoked from EpisodeForm onSubmit
-  - POST /api/episodes is called.
+  - PATCH /api/series/:seriesId/episodes/:id is called.
   - receiveSingleEpisode is set as the success callback.
 
 destroyEpisode
   - invoked from delete episode button onClick
-  - DELETE /api/episodes/:id is called.
+  - DELETE /api/series/:seriesId/episodes/:id is called.
   - removeEpisode is set as the success callback.
 
 Episode API Response Actions
@@ -133,7 +133,6 @@ receiveSingleEpisode
 removeEpisode
   - invoked from an API callback.
   - The Episode reducer removes episodes[id] from the application's state.
-
 
 Review Cycles
 
@@ -149,40 +148,83 @@ fetchSingleReview
   - GET /api/series/:seriesId/reviews/:id is called.
   - receiveSingleEpisode is set as the success callback.
 
-createEpisode
-  - invoked from new episode button onClick
-  - POST /api/episodes is called.
-  - receiveSingleEpisode is set as the callback.
+createReview
+  - invoked from new review button onClick
+  - POST /api/series/:seriesId/reviews is called.
+  - receiveSingleReview is set as the callback.
 
-updateEpisode
-  - invoked from EpisodeForm onSubmit
-  - POST /api/episodes is called.
-  - receiveSingleEpisode is set as the success callback.
+updateReview
+  - invoked from ReviewForm onSubmit
+  - PATCH /api/series/:seriesId/reviews/:id is called.
+  - receiveSingleReview is set as the success callback.
 
-destroyEpisode
-  - invoked from delete episode button onClick
-  - DELETE /api/episodes/:id is called.
-  - removeEpisode is set as the success callback.
+destroyReview
+  - invoked from delete review button onClick
+  - DELETE /api/series/:seriesId/reviews/:id is called.
+  - removeReview is set as the success callback.
 
 Episode API Response Actions
 
-receiveAllEpisodes
+receiveAllReviews
   - invoked from an API callback.
-  - The Episodes reducer updates episodes in the application's state.
+  - The Reviews reducer updates reviews in the application's state.
 
-receiveSingleEpisode
+receiveSingleReview
   - invoked from an API callback.
-  - The Episode reducer updates episode[id] in the application's state.
+  - The Reviews reducer updates review[id] in the application's state.
 
-removeEpisode
+removeReview
   - invoked from an API callback.
-  - The Episode reducer removes episodes[id] from the application's state.
+  - The Review reducer removes review[id] from the application's state.
+
+  Review Cycles
+
+  Review API Request Actions
+
+  fetchAllReviews
+    - invoked from ReviewsIndex didMount/willReceiveProps
+    - GET /api/series/:seriesId/reviews is called.
+    - receiveAllReviews is set as the success callback.
+
+  fetchSingleReview
+    - invoked from ReviewDetail didMount/willReceiveProps
+    - GET /api/series/:seriesId/reviews/:id is called.
+    - receiveSingleEpisode is set as the success callback.
+
+  createReview
+    - invoked from new review button onClick
+    - POST /api/series/:seriesId/reviews is called.
+    - receiveSingleReview is set as the callback.
+
+  updateReview
+    - invoked from ReviewForm onSubmit
+    - PATCH /api/series/:seriesId/reviews/:id is called.
+    - receiveSingleReview is set as the success callback.
+
+  destroyReview
+    - invoked from delete review button onClick
+    - DELETE /api/series/:seriesId/reviews/:id is called.
+    - removeReview is set as the success callback.
+
+  Episode API Response Actions
+
+  receiveAllReviews
+    - invoked from an API callback.
+    - The Reviews reducer updates reviews in the application's state.
+
+  receiveSingleReview
+    - invoked from an API callback.
+    - The Reviews reducer updates review[id] in the application's state.
+
+  removeReview
+    - invoked from an API callback.
+    - The Review reducer removes review[id] from the application's state.
 
 SearchSuggestion Cycles
 
 fetchSearchSuggestions
-  - invoked from NoteSearchBar onChange when there is text
-  - GET /api/notes is called with text param.
+  - invoked from SearchBar onChange when there is text
+  - GET /api/series is called with text param.
   - receiveSearchSuggestions is set as the success callback.
 
 receiveSearchSuggestions
@@ -190,5 +232,5 @@ receiveSearchSuggestions
   - The SearchSuggestion reducer updates suggestions in the application's state.
 
 removeSearchSuggestions
-  - invoked from NoteSearchBar onChange when empty
+  - invoked from SearchBar onChange when empty
   - The SearchSuggestion reducer resets suggestions in the application's state.

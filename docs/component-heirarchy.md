@@ -11,7 +11,7 @@ NavbarContainer
       * Genre
     * Search
 
-BrowseContainer
+SeriesContainer
   - SeriesIndex
 
 EpisodeContainer
@@ -49,7 +49,7 @@ Path	Component
 "/" Redirect to "/browse"
 "/sign-up"	"AuthFormContainer"
 "/sign-in"	"AuthFormContainer"
-"/browse" "BrowseContainer"
+"/browse" "SeriesContainer"
 "/browse/my-list" "MyList"
 "/browse/genre/:genreId" "Genre"
 "/search" "SearchContainer"
