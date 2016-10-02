@@ -34,13 +34,14 @@ POST /api/series
 
 Episodes
 
-GET /api/episodes
+GET /api/series/:seriesId/episodes
   Episodes index
-GET /api/episodes/:id
+GET /api/series/:seriesId/episodes/:id
+  Watch episode
 (Admin user's only:)
-PATCH /api/episodes/:id
-DELETE /api/episodes/:id
-POST /api/episodes
+PATCH /api/series/:seriesId/episodes/:id
+DELETE /api/series/:seriesId/episodes/:id
+POST /api/series/:seriesId/episodes
 
 Reviews
 
