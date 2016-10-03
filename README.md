@@ -126,7 +126,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
       - SeriesEpisodes
   - [ ] Seed series
 
-##3 Phase 3b: Refactor Episodes to be nested in a series (1 day)
+### Phase 3b: Refactor Episodes to be nested in a series (1 day)
 
 - [ ] Move episodes logic & views to be nested in SeriesIndexItem::SeriesEpisodes
 - [ ] Seed episodes within series
