@@ -22,7 +22,6 @@ image_name      | string    |
 image_type      | string    |
 image_size      | integer   |
 avg_rating	    | integer	  | default: 0
-current_episode	| integer	  | default: 1
 
 ## episodes
 column          | data type |	 details
@@ -31,6 +30,8 @@ id	            | integer	  | not null, primary key
 series_id       | integer   | not null, foreign key (references series), indexed
 title	          | string	  | not null, indexed
 summary	        | text   	  | not null
+current_episode | boolean   | default: false
+playing         | boolean   | default: false
 image_name      | string    |
 image_type      | string    |
 image_size      | integer   |
@@ -42,19 +43,20 @@ column          | data type |	 details
 id	            | integer	  | not null, primary key
 name            | string    | not null, indexed
 
+
 ## series_genres
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
-series_id       | integer   | not null, indexed
-genre_id        | integer   | not null, indexed
+series_id       | integer   | not null, foreign key (references series), indexed
+genre_id        | integer   | not null, foreign key (references genres), indexed
 
 ## my_list_series
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
-series_id       | integer   | not null, indexed
-user_id         | integer   | not null, indexed
+series_id       | integer   | not null, foreign key (references series), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
 
 ## reviews
 column          | data type |	 details

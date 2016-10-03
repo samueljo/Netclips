@@ -18,7 +18,6 @@
       year: "2016",
       rated: true,
       rating: 4,
-      current_episode_id: 1,
       image_url: "...",
       genres: {
         1: {
@@ -38,7 +37,8 @@
       video_url: "...",
       image_url: "...",
       series_id: "1",
-      playing: false
+      playing: true,
+      current_episode: true
     }
   },
   reviews: {

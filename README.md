@@ -29,6 +29,9 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   - Search for a series by genre, cast, or title
 
 - Bonus:
+  - [ ] Track Current Episodes for Many Series
+    - Keep track of which episode a user was on for a given series
+
   - [ ] Feature
     - Browse page will have a 'feature' series to watch based on most recent addition
 
@@ -84,61 +87,96 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] Seed users
 - [ ] Review phase 1
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Episode Model, API, and components (3 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through the API.
+**Objective:** Episodes can be created, read, edited and destroyed through the API.
 
-- [ ] Note model
+- [ ] Episode model
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for notes (NotesController)
-- [ ] JBuilder views for notes
-- Note components and respective Redux loops
-  - [ ] NotesIndex
-  - [ ] NoteIndexItem
-  - [ ] NoteForm
-- [ ] Autosave notes feature
-- [ ] Style notes components
-- [ ] Seed notes
+- [ ] CRUD API for episodes (EpisodesController)
+- [ ] JBuilder views for episodes
+- Episodes components and respective Redux loops
+  - [ ] EpisodeIndex
+    - Eventually will be nested in a 'series'
+    - Implement 'wrap-around' scrolling
+  - [ ] EpisodeIndexItem
+  - [ ] EpisodeShow
+    - Be able to watch an episode through YouTube API
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: Series Model, API, and components (2 days)
 
-  Objective: Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Series can be created, read, edited and destroyed through the API.
 
-   Notebook model
-   Seed database with a small amount of test data
-   CRUD API for notes (NotebooksController)
-   JBuilder views for notebooks
-   Adding notes requires a notebook
-   Moving notes between notebooks
-   Viewing notes by notebook
-   Style notebook components
-   Seed notebooks
+- [ ] Series model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for series (SeriesController)
+- [ ] JBuilder views for series
+- Series components and respective Redux loops
+  - [ ] SeriesIndex
+    - Will be primary portion of app
+      * Included in 'browse', 'mylist' and 'search'
+  - [ ] SeriesIndexRow
+    - Each row in the index that implements 'wrap-around' scrolling
+  - [ ] SeriesIndexItem
+    - Ratings
+    - Play current episode
+  - [ ] SeriesDetailPane
+      - SeriesDetail
+      - SeriesOverview
+      - SeriesEpisodes
+  - [ ] Seed series
 
-  Phase 4: Tags (1 days)
+##3 Phase 3b: Refactor Episodes to be nested in a series (1 day)
 
-  Objective: Notes can be tagged with multiple tags, and tags are searchable.
+- [ ] Move episodes logic & views to be nested in SeriesIndexItem::SeriesEpisodes
+- [ ] Seed episodes within series
 
-   Tag model and Taggings join table
-   Fetching tags for notes
-   Adding tags to notes
-   Searching notes by tag
-   Style search & tag components
-   Seed tags with seed data
+### Phase 4: Reviews (2 day)
 
-  Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+**Objective:** Reviews belong to series that can be created, read, edited and destroyed through the API.
 
-  objective: Allow rich text editing of notes.
+- [ ] Review model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for reviews (ReviewsController)
+- [ ] JBuilder views for reviews
+- [ ] Adding reviews requires a series
+- Reviews components and respective Redux loops
+  - [ ] ReviewsIndex
+    - Preview shown in SeriesIndexItem::SeriesDetail
+      - All reviews shown through Modal
+  - [ ] ReviewForm
+    - User can write own review in SeriesIndexItem::SeriesDetail
+- [ ] Seed reviews
 
-   Integrate react-quill (based on Quill.js).
-   Rails helpers to sanitize HTML before rendering.
-   Style Quill components.
-   Add Quill styling to seeded notes
+### Phase 5: My List (1 day)
 
-  Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+**Objective:** Be able to create a list of series-to-watch that can be updated (added to & removed from)
 
-  objective: Add infinite scroll to Notes Index
+- MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
 
-   Paginate Notes Index API to send 20 results at a time
-   Append next set of results when user scrolls and is near bottom
-   Style scroll components and transitions
-   Ensure seed data demonstrates infinite scroll
+- [ ] MyList model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for MyList (MyListsController)
+- [ ] JBuilder views for MyList
+
+
+### Phase 6: Searching
+
+**Objective:** Be able to search for series by genre or title
+
+- Search results will use presentation components of primary app (series & episodes) but will filter which series are sent
+
+- [ ] Search model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for Search (SearchController)
+- [ ] JBuilder views for Search
+
+
+### Phase 7: - Pagination / infinite scroll for Series Index (1 day, W2 F 6pm)
+
+**Objective:** Add infinite scroll to Series Index
+
+- [ ] Paginate Series Index API to send 4 results at a time
+- [ ] Append next set of results when user scrolls and is near bottom
+- [ ] Style scroll components and transitions
+- [ ] Ensure seed data demonstrates infinite scroll
