@@ -160,7 +160,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] JBuilder views for MyList
 
 
-### Phase 6: Searching
+### Phase 6: Searching (2 days)
 
 **Objective:** Be able to search for series by genre or title
 
@@ -172,7 +172,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] JBuilder views for Search
 
 
-### Phase 7: - Pagination / infinite scroll for Series Index (1 day, W2 F 6pm)
+### Phase 7: Pagination / infinite scroll for Series Index (1 day)
 
 **Objective:** Add infinite scroll to Series Index
 
