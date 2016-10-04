@@ -51,6 +51,7 @@ class SessionForm extends React.Component {
     let formHeader;
     let linkTo;
     let usernameField;
+    let signinGuest ;
     if (this.props.formType === '/signin') {
       formHeader = 'Sign In';
       linkTo =
@@ -59,6 +60,10 @@ class SessionForm extends React.Component {
         <p>New to Netclips?
           <Link to='signup'> Sign up now.</Link>
         </p>;
+      signinGuest =
+        <input className='session-button guest'
+          onClick={this.signinGuest}
+          readOnly value='Sign in with guest.' />;
     } else {
       formHeader = 'Sign Up';
       usernameField = <input
@@ -75,12 +80,17 @@ class SessionForm extends React.Component {
     return ({
       formHeader,
       linkTo,
-      usernameField
+      usernameField,
+      signinGuest
     });
   }
 
   render() {
-    const { formHeader, linkTo, usernameField } = this.toggleFormFields();
+    const {
+      formHeader,
+      linkTo,
+      usernameField,
+      signinGuest } = this.toggleFormFields();
 
     return (
       <div className={'session-background'}>
@@ -103,10 +113,7 @@ class SessionForm extends React.Component {
               value={this.state.password}
               placeholder='password'
               onChange={this.handleChange} />
-            <input
-              className='session-button guest'
-              onClick={this.signinGuest}
-              readOnly value='Sign in with guest.' />
+            {signinGuest}
             <button>{formHeader}</button>
           </form>
           {linkTo}
