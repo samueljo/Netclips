@@ -5,10 +5,18 @@ column              | data type |	 details
 --------------------|-----------|---------------------------
 id	                |  integer	| not null, primary key
 email   	          |  string	  | not null, indexed, unique
+username	          |  string	  | not null
 password_digest     |	 string	  | not null
 session_token	      |  string	  | not null, indexed, unique
 admin               |  boolean  | default: false
-current_episode_id  |  integer  | default: 1, foreign key (references episodes table)
+current_episode_id  |  integer  | default: 1, foreign key (references current_episodes join table)
+
+## current_episodes
+column          | data type |	 details
+----------------|-----------|---------------------------
+id	            | integer	  | not null, primary key
+episode_id      | integer   | not null, foreign key (references episodes), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
 
 ## series
 column              | data type |	 details
