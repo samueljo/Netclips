@@ -26,7 +26,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   - Series are organized by genre with a 'wrap-around' scroll
 
 - [ ] Search
-  - Search for a series by genre, cast, or title
+  - Search for a series by genre or title (cast as a bonus)
 
 - Bonus:
   - [ ] Track Current Episodes for Many Series
@@ -87,23 +87,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] Seed users
 - [ ] Review phase 1
 
-### Phase 2: Episode Model, API, and components (3 days)
-
-**Objective:** Episodes can be created, read, edited and destroyed through the API.
-
-- [ ] Episode model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for episodes (EpisodesController)
-- [ ] JBuilder views for episodes
-- Episodes components and respective Redux loops
-  - [ ] EpisodeIndex
-    - Eventually will be nested in a 'series'
-    - Implement 'wrap-around' scrolling
-  - [ ] EpisodeIndexItem
-  - [ ] EpisodeShow
-    - Be able to watch an episode through YouTube API
-
-### Phase 3: Series Model, API, and components (2 days)
+### Phase 2: Series Model, API, and components (2 days)
 
 **Objective:** Series can be created, read, edited and destroyed through the API.
 
@@ -126,10 +110,22 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
       - SeriesEpisodes
   - [ ] Seed series
 
-### Phase 3b: Refactor Episodes to be nested in a series (1 day)
+### Phase 3: Episode Model, API, and components (3 days)
 
-- [ ] Move episodes logic & views to be nested in SeriesIndexItem::SeriesEpisodes
-- [ ] Seed episodes within series
+**Objective:** Episodes can be created, read, edited and destroyed through the API.
+
+- [ ] Episode model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for episodes (EpisodesController)
+- [ ] JBuilder views for episodes
+- Episodes components and respective Redux loops
+  - [ ] EpisodeIndex
+    - Nested in SeriesIndexItem::SeriesEpisodes
+    - Implement 'wrap-around' scrolling
+  - [ ] EpisodeIndexItem
+  - [ ] EpisodeShow
+    - Be able to watch an episode through YouTube API
+  - [ ] Seed episodes within series
 
 ### Phase 4: Reviews (2 day)
 
@@ -148,19 +144,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
     - User can write own review in SeriesIndexItem::SeriesDetail
 - [ ] Seed reviews
 
-### Phase 5: My List (1 day)
-
-**Objective:** Be able to create a list of series-to-watch that can be updated (added to & removed from)
-
-- MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
-
-- [ ] MyList model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for MyList (MyListsController)
-- [ ] JBuilder views for MyList
-
-
-### Phase 6: Searching (2 days)
+### Phase 5: Searching (1 day)
 
 **Objective:** Be able to search for series by genre or title
 
@@ -171,6 +155,16 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] CRUD API for Search (SearchController)
 - [ ] JBuilder views for Search
 
+### Phase 6: My List (1 day)
+
+**Objective:** Be able to create a list of series-to-watch that can be updated (added to & removed from)
+
+- MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
+
+- [ ] MyList model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for MyList (MyListsController)
+- [ ] JBuilder views for MyList
 
 ### Phase 7: Pagination / infinite scroll for Series Index (1 day)
 

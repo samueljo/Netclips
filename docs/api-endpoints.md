@@ -34,22 +34,22 @@
 
 ### Episodes
 
-- GET /api/series/:seriesId/episodes
+- GET /api/series/:series_id/episodes
   - Episodes index
-- GET /api/series/:seriesId/episodes/:id
+- GET /api/episodes/:id
   - Watch episode
 - (Admin user's only:)
-  - PATCH /api/series/:seriesId/episodes/:id
-  - DELETE /api/series/:seriesId/episodes/:id
-  - POST /api/series/:seriesId/episodes
+  - PATCH /api/episodes/:id
+  - DELETE /api/episodes/:id
+  - POST /api/series/:series_id/episodes
 
 ### Reviews
 
-- GET /api/series/:seriesId/reviews
+- GET /api/series/:series_id/reviews
   - Reviews index for a series
-- POST /api/series/:seriesId/reviews
+- POST /api/series/:series_id/reviews
   - Write a review for a series
-- PATCH /api/series/:seriesId/reviews/:reviewId
+- PATCH /api/reviews/:review_id
   - Edit an existing review (only if one was written)
-- DELETE /api/series/:seriesId/reviews/:reviewId
+- DELETE /api/reviews/:review_id
   - Delete a review (only if one was written)
