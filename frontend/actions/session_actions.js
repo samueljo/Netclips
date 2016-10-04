@@ -23,6 +23,14 @@ export const signup = (user, callback) => ({
   callback
 });
 
+// export const deleteAccount = (user) => ({
+//
+// });
+//
+// export const updateAccount = (user, callback) => ({
+//
+// });
+
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
