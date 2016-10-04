@@ -13,7 +13,7 @@ const Greeting = ({ currentUser, logout }) => {
     return (
       <div>
         <ul>
-          <li><Link to="signup">Sign Up</Link></li>
+          <li><Link to="signup">Join Free</Link></li>
           <li><Link to="signin">Sign In</Link></li>
         </ul>
       </div>

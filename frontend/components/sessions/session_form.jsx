@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
     let usernameField;
     if (this.props.formType === '/signin') {
       formHeader = 'Sign In';
-      linkTo = <Link to='signup'>Sign Up</Link>;
+      linkTo = <Link to='signup'>Sign up now.</Link>;
       usernameField = '';
     } else {
       formHeader = 'Sign Up';

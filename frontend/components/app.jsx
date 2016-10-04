@@ -1,12 +1,17 @@
 import React from 'react';
-import GreetingContainer from './greetings/greeting_container';
+import { withRouter } from 'react-router';
 
-const App = ({ children }) => (
-  <div>
-    <h1>NetClips</h1>
-    <GreetingContainer />
-    {children}
-  </div>
-);
+const App = ({ children, router }) => {
+  const _redirectToMain = () => {
+    router.push('/');
+  };
 
-export default App;
+  return (
+    <div>
+      <img className='main-logo' onClick={_redirectToMain} />
+      {children}
+    </div>
+  );
+};
+
+export default withRouter(App);
