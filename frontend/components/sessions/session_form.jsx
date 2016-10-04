@@ -37,48 +37,71 @@ class SessionForm extends React.Component {
     }
   }
 
-  render() {
+  toggleFormFields() {
     let formHeader;
     let linkTo;
     let usernameField;
     if (this.props.formType === '/signin') {
       formHeader = 'Sign In';
-      linkTo = <Link to='signup'>Sign up now.</Link>;
+      linkTo =
       usernameField = '';
+      linkTo =
+        <p>New to Netclips?
+          <Link to='signup'> Sign up now.</Link>
+        </p>;
     } else {
       formHeader = 'Sign Up';
-      linkTo = <Link to='signin'>Sign In</Link>;
       usernameField = <input
         className='username'
         type='text'
         value={this.state.username}
         placeholder='username'
         onChange={this.handleChange} />;
+      linkTo =
+        <p>Already have an account?
+          <Link to='signin'> Sign In</Link>
+        </p>;
     }
+    return ({
+      formHeader,
+      linkTo,
+      usernameField
+    });
+  }
+
+  guestLoginLink() {
+
+  }
+
+  render() {
+    const { formHeader, linkTo, usernameField } = this.toggleFormFields();
 
     return (
-      <div>
+      <div className={'session-background'}>
         <ul>
           {this.errors()}
         </ul>
-        <h1>{formHeader}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className='email'
-            type='text'
-            value={this.state.email}
-            placeholder='email'
-            onChange={this.handleChange} />
-          {usernameField}
-          <input
-            className='password'
-            type='password'
-            value={this.state.password}
-            placeholder='password'
-            onChange={this.handleChange} />
-          <button>{formHeader}</button>
-        </form>
-        {linkTo}
+        <div className='session-form group'>
+          <h1 className='session-header'>{formHeader}</h1>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              className='email'
+              type='text'
+              value={this.state.email}
+              placeholder='email'
+              onChange={this.handleChange} />
+            {usernameField}
+            <input
+              className='password'
+              type='password'
+              value={this.state.password}
+              placeholder='password'
+              onChange={this.handleChange} />
+            
+            <button>{formHeader}</button>
+          </form>
+          {linkTo}
+        </div>
       </div>
     );
   }

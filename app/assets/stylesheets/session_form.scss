@@ -1,0 +1,23 @@
+.session-background {
+  width: auto;
+  height: 740px;
+  display: block;
+  background-image: image-url('session.jpeg');
+  background-size: cover;
+}
+
+.session-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 380px;
+  padding: 40px;
+  background: #f3f3f3;
+}
+
+.session-header {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
