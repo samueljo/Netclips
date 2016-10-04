@@ -6,7 +6,7 @@ import configureStore from './store/store';
 import {
   receiveCurrentUser,
   receiveErrors,
-  login,
+  signin,
   signup,
   logout } from './actions/session_actions';
 

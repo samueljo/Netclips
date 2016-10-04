@@ -1,12 +1,12 @@
 import {
-  LOGIN,
+  SIGNIN,
   LOGOUT,
   SIGNUP,
   receiveCurrentUser,
   receiveErrors } from '../actions/session_actions';
 
 import {
-  login,
+  signin,
   logout,
   signup } from '../util/session_api_util';
 
@@ -20,8 +20,8 @@ export default ({ getState, dispatch }) => next => action => {
   };
 
   switch(action.type) {
-    case LOGIN:
-      login(action.user, successCallback, errorCallback);
+    case SIGNIN:
+      signin(action.user, successCallback, errorCallback);
       return next(action);
     case LOGOUT:
       logout(() => next(action));

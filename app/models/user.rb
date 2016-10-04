@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many: current_episode_ids
+  # has_many: :current_episode_ids
 
   attr_reader :password
 
