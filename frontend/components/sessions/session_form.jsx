@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import { signin } from '../../util/session_api_util';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.signinGuest = this.signinGuest.bind(this);
   }
 
   handleSubmit(e) {
@@ -21,6 +23,14 @@ class SessionForm extends React.Component {
       this.props.router.push('/');
     });
     this.setState({ password: "" });
+  }
+
+  signinGuest() {
+    this.props.processForm(
+      { user: { email: 'guest@guest.com', password: 'password' } }, () => {
+        this.props.router.push('/');
+      }
+    );
   }
 
   handleChange(e) {
@@ -69,10 +79,6 @@ class SessionForm extends React.Component {
     });
   }
 
-  guestLoginLink() {
-
-  }
-
   render() {
     const { formHeader, linkTo, usernameField } = this.toggleFormFields();
 
@@ -97,7 +103,10 @@ class SessionForm extends React.Component {
               value={this.state.password}
               placeholder='password'
               onChange={this.handleChange} />
-            
+            <input
+              className='session-button guest'
+              onClick={this.signinGuest}
+              readOnly value='Sign in with guest.' />
             <button>{formHeader}</button>
           </form>
           {linkTo}
