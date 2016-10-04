@@ -15,8 +15,9 @@ current_episode_id  |  integer  | default: 1, foreign key (references current_ep
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
-episode_id      | integer   | not null, foreign key (references episodes), indexed
+episode_id      | integer   | not null, foreign key (references episodes)
 user_id         | integer   | not null, foreign key (references users), indexed
+series_id       | integer   | not null, foreign key (references series), indexed
 
 ## series
 column              | data type |	 details

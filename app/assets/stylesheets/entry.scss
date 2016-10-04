@@ -1,0 +1,57 @@
+.entry-background {
+  width: auto;
+  height: 900px;
+  display: block;
+  background-image: image-url('entry.jpeg');
+  background-size: cover;
+}
+
+.jumbo-button {
+  background: #E50914;
+  color: #fff;
+  line-height: normal;
+  font-weight: 200;
+
+  &.sign-in {
+    margin: 18px 3% 0;
+    padding: 7px 17px;
+    font-size: 16px;
+    float: right;
+    border-radius: 3px;
+  }
+
+  &.sign-up {
+    padding: 12px 2em;
+    margin: .5em .5em .5em 0;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+    font-size: 16px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+}
+
+.join-motto {
+  margin: 130px 40px;
+  display: block;
+}
+
+.motto {
+  display: block;
+  color: #fff;
+  direction: ltr;
+  &.motto-header {
+    font-size: 2.5em;
+    line-height: 1.1em;
+    font-weight: 700;
+    text-shadow: 1px 1px 10px #000;
+    margin-bottom: 10px;
+  }
+  &.motto-body {
+    font-size: 1em;
+    letter-spacing: .2px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin: 0 0 20px 5px;
+  }
+}

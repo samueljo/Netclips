@@ -8,7 +8,7 @@ const App = ({ children, router }) => {
 
   return (
     <div>
-      <img className='main-logo' onClick={_redirectToMain} />
+      <img className='logo main-logo' onClick={_redirectToMain} />
       {children}
     </div>
   );
