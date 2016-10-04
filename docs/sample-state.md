@@ -2,7 +2,7 @@
 {
   currentUser: {
     id: 1,
-    username: "app-academy"
+    email: "app-academy@appacademy.com"
   },
   forms: {
     signUp: {errors: []},
