@@ -33,6 +33,12 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentDidMount() {
+    window.addEventListener('hashchange', () => {
+      this.props.clearErrors();
+    });
+  }
+
   handleChange(e) {
     this.setState({ [e.currentTarget.className]: e.currentTarget.value });
   }
@@ -68,12 +74,17 @@ class SessionForm extends React.Component {
 
   errors() {
     const signup = <Link to='signup'
-      className='session-link error'>create a new account.</Link>;
-
+    className='session-link error'>create a new account.</Link>;
     if (typeof this.props.errors[0] !== 'undefined') {
-      return (
-        <div className='error'>Sorry, we can't find an account with this
-          email address. Please try again or {signup}</div>);
+      if (this.props.formType === '/signin') {
+        return (
+          <div className='error'>Sorry, we can't find an account with this
+            email address. Please try again or {signup}</div>);
+      } else {
+        return (
+          <div className='error'>Please provide valid credentials.</div>
+        );
+      }
     }
   }
 
