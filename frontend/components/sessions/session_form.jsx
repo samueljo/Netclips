@@ -103,9 +103,9 @@ class SessionForm extends React.Component {
               type='password'
               value={this.state.password}
               onChange={this.handleChange} /></label>
-            {signinGuest}
             <button className='session-button'>{formHeader}</button>
           </form>
+          {signinGuest}
           {linkTo}
         </div>
       </div>
