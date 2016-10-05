@@ -1,0 +1,30 @@
+.nav {
+  background: #141414;
+  position: relative;
+  &.user {
+    position: absolute;
+    color: #fff;
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 700;
+    float: right;
+    margin-right: 60px;
+    display: block;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &.signout {
+    position: absolute;
+    cursor: pointer;
+    background: red;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 3px;
+    display: block;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+  }
+}

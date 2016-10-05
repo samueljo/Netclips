@@ -9,10 +9,11 @@ const Navbar = ({ currentUser, logout, router }) => {
 
   if (currentUser) {
     return (
-      <div className='browse-header main-page'>
-        <h1>{currentUser.username}</h1>
-        <img className='logo main-logo' onClick={_redirectToMain} />
-        <button onClick={logout}>Sign out of NetClips</button>
+      <div className='nav group'>
+        <h1 className='nav user'>{currentUser.username}</h1>
+        <img className='logo nav-logo' onClick={_redirectToMain} />
+        <button className='nav signout'
+          onClick={logout}>Sign out of NetClips</button>
       </div>
     );
   } else {
