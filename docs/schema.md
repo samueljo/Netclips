@@ -22,6 +22,9 @@ series_id       | integer   | not null, foreign key (references series), indexed
 column              | data type |	 details
 --------------------|-----------|---------------------------
 id	                | integer	  | not null, primary key
+title	              | string	  | not null, indexed
+description         | text      | not null
+year	              | integer	  | not null
 image_name          | string    |
 image_type          | string    |
 image_size          | integer   |

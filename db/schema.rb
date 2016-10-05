@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005135245) do
+ActiveRecord::Schema.define(version: 20161005143620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "episodes", force: :cascade do |t|
+    t.integer  "serie_id",   null: false
+    t.string   "title",      null: false
+    t.text     "summary",    null: false
+    t.string   "video_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "episodes", ["serie_id"], name: "index_episodes_on_serie_id", using: :btree
+  add_index "episodes", ["title"], name: "index_episodes_on_title", using: :btree
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "genres", ["name"], name: "index_genres_on_name", using: :btree
+
+  create_table "serie_genres", force: :cascade do |t|
+    t.integer  "serie_id",   null: false
+    t.integer  "genre_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "serie_genres", ["genre_id"], name: "index_serie_genres_on_genre_id", using: :btree
+  add_index "serie_genres", ["serie_id"], name: "index_serie_genres_on_serie_id", using: :btree
 
   create_table "series", force: :cascade do |t|
     t.string   "title",                          null: false
