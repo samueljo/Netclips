@@ -10,23 +10,22 @@
 
 ### Users
 
-- POST /api/users
-- GET /api/users/:id
-- PATCH /api/users/:id
-- DELETE /api/users/:id
+- [X] POST /api/users
+- [X] GET /api/users/:id
+- [ ] PATCH /api/users/:id
+- [ ] DELETE /api/users/:id
 
 ### Session
 
-- POST /api/session
-- DELETE /api/session
-- GET /api/session
+- [X] POST /api/session
+- [X] DELETE /api/session
 
 ### Series
 
-- GET /api/series
+- [X] GET /api/series
   - Series index/search
   - Accepts query param to list series by title, genre, or "listed"
-- GET /api/series/:id
+- [X] GET /api/series/:id
 - (Admin user's only:)
   - PATCH /api/series/:id
   - DELETE /api/series/:id

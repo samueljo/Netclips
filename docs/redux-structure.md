@@ -4,33 +4,33 @@
 
 ### Session API Request Actions
 
-* signUp
+- [X] signUp
   0. invoked from SignupForm onSubmit
   0. POST /api/users is called.
   0. receiveCurrentUser is set as the success callback.
 
-* signIn
+- [X] signIn
   0. invoked from SigninForm onSubmit
   0. POST /api/session is called.
   0. receiveCurrentUser is set as the callback.
 
-* logOut
+- [X] logOut
   0. invoked from Navbar onClick
   0. DELETE /api/session is called.
   0. removeCurrentUser is set as the success callback.
 
-* fetchCurrentUser
+- [X] fetchCurrentUser
   0. invoked from App in didMount
   0. GET /api/session is called.
   0. receiveCurrentUser is set as the success callback.
 
 ### Session API Response Actions
 
-* receiveCurrentUser
+- [X] receiveCurrentUser
   0. invoked from an API callback
   0. the SessionReducer stores currentUser in the application's state.
 
-* removeCurrentUser
+- [X] removeCurrentUser
   0. invoked from an API callback
   0. the SessionReducer removes currentUser from the application's state.
 
@@ -38,11 +38,11 @@
 
 ### Error API Response Actions
 
-* setErrors
+- [X] setErrors
   0. invoked from API callbacks on error for actions that generate POST requests
   0. the ErrorReducer stores the form in the application's state; errors are mapped to their respective forms
 
-* removeErrors
+- [X] removeErrors
   0. invoked from API callbacks on success for actions that generate POST requests
   0. the ErrorReducer removes errors for a given form in the application's state.
 
@@ -50,12 +50,12 @@
 
 ### Series API Request Actions
 
-* fetchAllSeries
+- [X] fetchAllSeries
   0. invoked from SeriesIndex didMount/willReceiveProps
   0. GET /api/series is called.
-  0. receiveAllNotes is set as the success callback.
+  0. receiveAllSeries is set as the success callback.
 
-* fetchSingleSeries
+- [X] fetchSingleSeries
   0. invoked from SeriesDetail didMount/willReceiveProps
   0. GET /api/series/:id is called.
   0. receiveSingleSeries is set as the success callback.
@@ -78,11 +78,11 @@
 
 ### Series API Response Actions
 
-* receiveAllSeries
+- [X] receiveAllSeries
   0. invoked from an API callback
   0. the SeriesReducer updates series in the application's state.
 
-* receiveSingleSeries
+- [X] receiveSingleSeries
   0. invoked from an API callback
   0. the SeriesReducer updates series[id] in the application's state.
 
