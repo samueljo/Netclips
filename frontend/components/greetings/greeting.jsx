@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Navbar from './nav_bar';
 
 const Greeting = ({ currentUser, logout, router }) => {
 
@@ -9,10 +10,7 @@ const Greeting = ({ currentUser, logout, router }) => {
 
   if (currentUser) {
     return (
-      <div>
-        <h1>{currentUser.username}</h1>
-        <button onClick={logout}>Sign out of NetClips</button>
-      </div>
+      <Navbar currentUser={currentUser} logout={logout} router={router} />
     );
   } else {
     return (
@@ -23,7 +21,7 @@ const Greeting = ({ currentUser, logout, router }) => {
             <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
           </div>
         </div>
-        
+
         <div className='join-motto'>
           <p className='motto motto-header'>See what's next.</p>
           <p className='motto motto-body'>Watch anywhere. Cancel anytime.</p>
