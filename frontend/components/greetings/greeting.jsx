@@ -17,11 +17,13 @@ const Greeting = ({ currentUser, logout, router }) => {
   } else {
     return (
       <div className='entry-background'>
-        <img className='logo main-logo' onClick={_redirectToMain} />
-        <div className='group'>
-          <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
+        <div className='header'>
+          <img className='logo main-logo' onClick={_redirectToMain} />
+          <div className='group'>
+            <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
+          </div>
         </div>
-
+        
         <div className='join-motto'>
           <p className='motto motto-header'>See what's next.</p>
           <p className='motto motto-body'>Watch anywhere. Cancel anytime.</p>
