@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import GreetingContainer from './greetings/greeting_container';
-import NavbarContainer from './navbar/navbar_container';
+import MainContainer from './series/main_container';
 
 const App = ({ children, router }) => {
   return (
     <div>
-      <NavbarContainer />
+      <MainContainer />
       <GreetingContainer />
       {children}
     </div>

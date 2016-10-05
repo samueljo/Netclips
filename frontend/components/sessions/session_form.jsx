@@ -102,8 +102,8 @@ class SessionForm extends React.Component {
 
     return (
       <div className={'session-background'}>
-        <div className='header'>
-          <img className='logo main-logo' onClick={_redirectToMain} />
+        <div className='header group'>
+          <img className='logo entry-logo' onClick={_redirectToMain} />
         </div>
         <div className='session-form group'>
           <h1 className='session-header'>{formHeader}</h1>
