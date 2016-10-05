@@ -6,9 +6,9 @@
 
 Netclips and code! Netclips is a web application inspired by Netflix built using Ruby on Rails & React/Redux. The main features of this website will include:
 
-- [ ] New account creation, login, and guest/demo login
+- [X] New account creation, login, and guest/demo login
 - [ ] A production README
-- [ ] Hosting on Heroku
+- [X] Hosting on Heroku
 - [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
 
 - [ ] Videos
