@@ -8,6 +8,7 @@ const App = ({ children, router }) => {
     <div>
       <NavbarContainer />
       <GreetingContainer />
+      {children}
     </div>
   );
 };
