@@ -6,30 +6,27 @@ import {
   REQUEST_SERIE } from '../actions/serie_actions';
 
 import {
-  signin,
-  logout,
-  signup } from '../util/session_api_util';
+  fetchSeries,
+  fetchSerie } from '../util/series_api_util';
+
+// import { UPDATE_FILTER } from '../actions/filter_actions';
 
 export default ({ getState, dispatch }) => next => action => {
-  const successCallback = user => {
-    action.callback();
-    return dispatch(receiveCurrentUser(user));
-  };
-  const errorCallback = xhr => {
-    return dispatch(receiveErrors(xhr.responseJSON));
-  };
+  const seriesSuccess = data => dispatch(receiveSeries(data));
+  const serieSuccess = data => dispatch(receiveSerie(data));
 
   switch(action.type) {
-    case SIGNIN:
-      signin(action.user, successCallback, errorCallback);
-      return next(action);
-    case LOGOUT:
-      logout(() => next(action));
+    case REQUEST_SERIES:
+      fetchSeries(seriesSuccess);
       break;
-    case SIGNUP:
-      signup(action.user, successCallback, errorCallback);
-      return next(action);
+    case REQUEST_SERIE:
+      fetchSerie(action.id, serieSuccess);
+      break;
+    // case UPDATE_FILTER:
+    //   dispatch(requestSeries());
+    //   break;
     default:
-      return next(action);
+      break;
   }
+  return next(action);
 };

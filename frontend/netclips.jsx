@@ -11,8 +11,8 @@ import {
   fetchSeries,
   fetchSerie } from './util/series_api_util';
 
-window.fetchSeries = fetchSeries;
-window.fetchSerie = fetchSerie;
+window.requestSeries = requestSeries;
+window.requestSerie = requestSerie;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
