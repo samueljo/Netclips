@@ -14,7 +14,7 @@ class SeriesIndex extends React.Component {
   render() {
     return (
       <div>
-        <h1>All Series: </h1>
+        <h1 className='series-index-item'>All Series: </h1>
         {
           this.props.series.map((serie) => {
             return (
