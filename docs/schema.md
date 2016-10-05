@@ -9,7 +9,6 @@ username	          |  string	  | not null
 password_digest     |	 string	  | not null
 session_token	      |  string	  | not null, indexed, unique
 admin               |  boolean  | default: false
-current_episode_id  |  integer  | default: 1, foreign key (references current_episodes join table)
 
 ## current_episodes
 column          | data type |	 details

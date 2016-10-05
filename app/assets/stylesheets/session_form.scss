@@ -61,6 +61,13 @@ p {
     float: right;
     margin-bottom: 15px;
   }
+  &.error {
+    color: #fff;
+    text-decoration: underline;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .session-button {
@@ -79,4 +86,17 @@ p {
   font-weight: 100;
   letter-spacing: 1px;
   text-align: center;
+}
+
+.error {
+  display: block;
+  padding: 20px 10px;
+  margin-bottom: 10px;
+  font-weight: 100;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: #fff;
+  vertical-align: middle;
+  background: #aaa;
 }

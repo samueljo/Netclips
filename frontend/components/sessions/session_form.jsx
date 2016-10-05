@@ -37,24 +37,10 @@ class SessionForm extends React.Component {
     this.setState({ [e.currentTarget.className]: e.currentTarget.value });
   }
 
-  errors() {
-    if (typeof this.props.errors[0] !== 'undefined') {
-      return (
-        this.props.errors.map((error, idx) => {
-            return (<li className='error' key={idx}>{error}</li>);
-        })
-      );
-    }
-  }
-
   toggleFormFields() {
-    let formHeader;
-    let linkTo;
-    let usernameField;
-    let signinGuest ;
+    let formHeader, linkTo, usernameField, signinGuest ;
     if (this.props.formType === '/signin') {
       formHeader = 'Sign In';
-      linkTo =
       usernameField = '';
       linkTo =
         <p>New to Netclips?
@@ -77,12 +63,18 @@ class SessionForm extends React.Component {
           <Link to='signin' className='session-link sign'> Sign In</Link>
         </p>;
     }
-    return ({
-      formHeader,
-      linkTo,
-      usernameField,
-      signinGuest
-    });
+    return ({ formHeader, linkTo, usernameField, signinGuest });
+  }
+
+  errors() {
+    const signup = <Link to='signup'
+      className='session-link error'>create a new account.</Link>;
+
+    if (typeof this.props.errors[0] !== 'undefined') {
+      return (
+        <div className='error'>Sorry, we can't find an account with this
+          email address. Please try again or {signup}</div>);
+    }
   }
 
   render() {
@@ -94,11 +86,9 @@ class SessionForm extends React.Component {
 
     return (
       <div className={'session-background'}>
-        <ul>
-          {this.errors()}
-        </ul>
         <div className='session-form group'>
           <h1 className='session-header'>{formHeader}</h1>
+          {this.errors()}
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='form-email' className='form-label'>Email<input
               id='form-email'
