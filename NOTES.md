@@ -7,7 +7,6 @@
 **Footer**
 
 **CSS Design**
-- [ ] Hover on links (underline) for sessions pages & entry page
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
 

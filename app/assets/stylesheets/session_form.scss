@@ -70,9 +70,13 @@ p {
   }
 }
 
+.session-link:hover {
+  text-decoration: underline;
+}
+
 .session-button {
   display: block;
-  background: #E50914;
+  background: #DB0510;
   width: 100%;
   box-sizing: border-box;
   font-size: 18px;
@@ -87,6 +91,10 @@ p {
   letter-spacing: 1px;
   text-align: center;
   box-shadow: 0 1px 0 rgba(0, 0, 0, .55);
+}
+
+.session-button:hover {
+  background: #E50914;
 }
 
 .error {

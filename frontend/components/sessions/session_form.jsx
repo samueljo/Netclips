@@ -49,8 +49,8 @@ class SessionForm extends React.Component {
       formHeader = 'Sign In';
       usernameField = '';
       linkTo =
-        <p>New to Netclips?
-          <Link to='signup' className='session-link sign'> Sign up now.</Link>
+        <p>New to Netclips? <Link to='signup'
+          className='session-link sign'>Sign up now.</Link>
         </p>;
       signinGuest =
         <button className='session-link guest'
@@ -65,8 +65,8 @@ class SessionForm extends React.Component {
           value={this.state.username}
           onChange={this.handleChange} /></label>;
       linkTo =
-        <p>Already have an account?
-          <Link to='signin' className='session-link sign'> Sign In</Link>
+        <p>Already have an account? <Link to='signin'
+          className='session-link sign'>Sign In</Link>
         </p>;
     }
     return ({ formHeader, linkTo, usernameField, signinGuest });
