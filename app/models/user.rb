@@ -2,15 +2,14 @@
 #
 # Table name: users
 #
-#  id                 :integer          not null, primary key
-#  email              :string           not null
-#  password_digest    :string           not null
-#  session_token      :string           not null
-#  admin              :boolean          default(FALSE)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  username           :string           not null
-#  current_episode_id :integer          default(1)
+#  id              :integer          not null, primary key
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  admin           :boolean          default(FALSE)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  username        :string           not null
 #
 
 class User < ActiveRecord::Base
@@ -19,8 +18,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
-
-  # has_many: :current_episode_ids
 
   attr_reader :password
 
