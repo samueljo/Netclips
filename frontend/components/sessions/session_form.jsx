@@ -58,23 +58,23 @@ class SessionForm extends React.Component {
       usernameField = '';
       linkTo =
         <p>New to Netclips?
-          <Link to='signup'> Sign up now.</Link>
+          <Link to='signup' className='session-link sign'> Sign up now.</Link>
         </p>;
       signinGuest =
-        <input className='session-button guest'
-          onClick={this.signinGuest}
-          readOnly value='Sign in with guest.' />;
+        <button className='session-link guest'
+          onClick={this.signinGuest}>Sign in with guest.</button>;
     } else {
       formHeader = 'Sign Up';
-      usernameField = <input
-        className='username'
-        type='text'
-        value={this.state.username}
-        placeholder='username'
-        onChange={this.handleChange} />;
+      usernameField =
+        <label htmlFor='form-username' className='form-label'>Username<input
+          id='form-username'
+          className='username'
+          type='text'
+          value={this.state.username}
+          onChange={this.handleChange} /></label>;
       linkTo =
         <p>Already have an account?
-          <Link to='signin'> Sign In</Link>
+          <Link to='signin' className='session-link sign'> Sign In</Link>
         </p>;
     }
     return ({
@@ -100,21 +100,21 @@ class SessionForm extends React.Component {
         <div className='session-form group'>
           <h1 className='session-header'>{formHeader}</h1>
           <form onSubmit={this.handleSubmit}>
-            <input
+            <label htmlFor='form-email' className='form-label'>Email<input
+              id='form-email'
               className='email'
               type='text'
               value={this.state.email}
-              placeholder='email'
-              onChange={this.handleChange} />
+              onChange={this.handleChange} /></label>
             {usernameField}
-            <input
+            <label htmlFor='form-password' className='form-label'>Password<input
+              id='form-password'
               className='password'
               type='password'
               value={this.state.password}
-              placeholder='password'
-              onChange={this.handleChange} />
+              onChange={this.handleChange} /></label>
             {signinGuest}
-            <button>{formHeader}</button>
+            <button className='session-button'>{formHeader}</button>
           </form>
           {linkTo}
         </div>

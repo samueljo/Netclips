@@ -4,13 +4,14 @@
   display: block;
   background-image: image-url('session.jpeg');
   background-size: cover;
+  border-bottom: 1px solid #000;
 }
 
 .session-form {
   position: absolute;
-  top: 50%;
+  margin-top: 90px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: block;
   width: 380px;
   padding: 40px;
@@ -20,8 +21,62 @@
 .session-header {
   margin-bottom: 20px;
   font-size: 2em;
+  font-weight: 200;
 }
 
 .session-button {
   cursor: pointer;
+}
+
+.form-label {
+  display: block;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.email, .password, .username {
+  display: block;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  line-height: 18px;
+  padding: 10px 11px;
+  height: 44px;
+  margin-bottom: 25px;
+}
+
+p {
+  font-weight: 200;
+}
+
+.session-link {
+  color: #0080FF;
+  cursor: pointer;
+  font-weight: 200;
+  letter-spacing: .5px;
+  &.guest {
+    float: right;
+    margin-bottom: 15px;
+  }
+}
+
+.session-button {
+  display: block;
+  background: #E50914;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  line-height: 18px;
+  padding: 10px 11px;
+  min-height: 50px;
+  margin: 15px 0;
+  color: #fff;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: center;
 }
