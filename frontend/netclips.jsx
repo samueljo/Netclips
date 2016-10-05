@@ -4,15 +4,19 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 import {
-  receiveCurrentUser,
-  receiveErrors,
-  signin,
-  signup,
-  logout } from './actions/session_actions';
+  requestSeries,
+  requestSerie } from './actions/serie_actions';
 
+import {
+  fetchSeries,
+  fetchSerie } from './util/series_api_util';
+
+window.fetchSeries = fetchSeries;
+window.fetchSerie = fetchSerie;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  window.store = store;
   if (window.currentUser) {
     const initialState = {
       session: {

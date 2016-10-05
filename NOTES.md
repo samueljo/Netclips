@@ -4,6 +4,9 @@
 - [ ] Display input specific errors.
 - [ ] Password confirmation
 
+**Series**
+- [ ] Add filters to api_util
+
 **Footer**
 
 **CSS Design**

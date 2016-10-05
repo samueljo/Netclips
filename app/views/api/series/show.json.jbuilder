@@ -1,1 +1,1 @@
-json.partial! '/api/series/serie', serie: serie
+json.partial! '/api/series/serie', serie: @serie
