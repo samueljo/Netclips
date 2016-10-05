@@ -7,7 +7,7 @@
 }
 
 .jumbo-button {
-  background: #E50914;
+  background: #DB0510;
   color: #fff;
   line-height: normal;
   font-weight: 100;
@@ -35,6 +35,10 @@
 .join-motto {
   margin: 240px 40px;
   display: block;
+}
+
+.jumbo-button:hover {
+  background: #E50914;
 }
 
 .motto {
