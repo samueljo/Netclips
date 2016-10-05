@@ -96,8 +96,13 @@ class SessionForm extends React.Component {
       usernameField,
       signinGuest } = this.toggleFormFields();
 
+    const _redirectToMain = () => {
+      this.props.router.push('/');
+    };
+
     return (
       <div className={'session-background'}>
+        <img className='logo main-logo' onClick={_redirectToMain} />
         <div className='session-form group'>
           <h1 className='session-header'>{formHeader}</h1>
           {this.errors()}

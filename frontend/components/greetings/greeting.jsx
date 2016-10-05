@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-const Greeting = ({ currentUser, logout }) => {
+const Greeting = ({ currentUser, logout, router }) => {
 
+  const _redirectToMain = () => {
+    router.push('/');
+  };
 
   if (currentUser) {
     return (
@@ -14,6 +17,7 @@ const Greeting = ({ currentUser, logout }) => {
   } else {
     return (
       <div className='entry-background'>
+        <img className='logo main-logo' onClick={_redirectToMain} />
         <div className='group'>
           <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
         </div>
@@ -31,4 +35,4 @@ const Greeting = ({ currentUser, logout }) => {
   }
 };
 
-export default Greeting;
+export default withRouter(Greeting);
