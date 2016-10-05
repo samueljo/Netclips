@@ -7,6 +7,7 @@
 **Footer**
 
 **CSS Design**
+- [ ] Guest form fill in
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
 

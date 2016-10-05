@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
   }
 
   signinGuest() {
+    this.setState({ email: 'guest@guest.com', password: 'password' });
     this.props.processForm(
       { user: { email: 'guest@guest.com', password: 'password' } }, () => {
         this.props.router.push('/');
