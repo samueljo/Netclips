@@ -21,4 +21,7 @@ class Serie < ActiveRecord::Base
 
   validates :title, :description, :year, presence: true
 
+  has_many :series_genres
+  has_many :genres, through: :series_genres, source: :genre
+  has_many :episodes
 end

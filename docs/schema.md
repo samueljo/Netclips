@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## users (X)
 column              | data type |	 details
 --------------------|-----------|---------------------------
 id	                |  integer	| not null, primary key
@@ -10,15 +10,7 @@ password_digest     |	 string	  | not null
 session_token	      |  string	  | not null, indexed, unique
 admin               |  boolean  | default: false
 
-## current_episodes
-column          | data type |	 details
-----------------|-----------|---------------------------
-id	            | integer	  | not null, primary key
-episode_id      | integer   | not null, foreign key (references episodes)
-user_id         | integer   | not null, foreign key (references users), indexed
-series_id       | integer   | not null, foreign key (references series), indexed
-
-## series
+## series (X)
 column              | data type |	 details
 --------------------|-----------|---------------------------
 id	                | integer	  | not null, primary key
@@ -31,7 +23,7 @@ image_size          | integer   |
 avg_rating	        | integer	  | default: 0
 bonus: castings_id  | integer   | foreign_key (references castings join table)
 
-## episodes
+## episodes (X)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
@@ -43,18 +35,26 @@ image_type      | string    |
 image_size      | integer   |
 video_url       | string    | not null
 
-## genres
+## genres (X)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
 name            | string    | not null, indexed
 
-## series_genres
+## series_genres (X)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
 series_id       | integer   | not null, foreign key (references series), indexed
 genre_id        | integer   | not null, foreign key (references genres), indexed
+
+## current_episodes
+column          | data type |	 details
+----------------|-----------|---------------------------
+id	            | integer	  | not null, primary key
+episode_id      | integer   | not null, foreign key (references episodes)
+user_id         | integer   | not null, foreign key (references users), indexed
+series_id       | integer   | not null, foreign key (references series), indexed
 
 ## my_list_series
 column          | data type |	 details
@@ -71,13 +71,6 @@ series_id       | integer   | not null, indexed
 user_id         | integer   | not null, indexed
 rating          | integer   | not null, default: 0, indexed
 body            | text      | not null
-
-## watchings
-column          | data type |	 details
-----------------|-----------|---------------------------
-id	            | integer   |	not null, primary key
-series_id       | integer   | not null, indexed
-user_id         | integer   | not null, indexed
 
 ## castings (bonus)
 column          | data type |	 details
