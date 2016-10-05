@@ -11,6 +11,6 @@
 class Genre < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
-  has_many :series_genres
-  has_many :series, through: :series_genres, source: :serie
+  has_many :serie_genres
+  has_many :series, through: :serie_genres, source: :serie
 end
