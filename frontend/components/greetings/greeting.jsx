@@ -1,22 +1,17 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import Navbar from './nav_bar';
 
-const Greeting = ({ currentUser, logout, router }) => {
+const Greeting = ({ currentUser, router }) => {
 
   const _redirectToMain = () => {
     router.push('/');
   };
 
-  if (currentUser) {
-    return (
-      <Navbar currentUser={currentUser} logout={logout} router={router} />
-    );
-  } else {
+  if (!currentUser) {
     return (
       <div className='entry-background'>
         <div className='header'>
-          <img className='logo main-logo' onClick={_redirectToMain} />
+          <img className='logo entry-logo' onClick={_redirectToMain} />
           <div className='group'>
             <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
           </div>
@@ -32,6 +27,8 @@ const Greeting = ({ currentUser, logout, router }) => {
         </div>
       </div>
     );
+  } else {
+    return <div></div>;
   }
 };
 
