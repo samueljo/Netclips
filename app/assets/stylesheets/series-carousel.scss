@@ -1,6 +1,6 @@
 $duration: 450ms;
-$tileWidth: 350px;
-$tileHeight: 200px;
+$tileWidth: 21.5vw;
+$tileHeight: 14.33333vw;
 $iconSize: 50px;
 $growSize: 1.5;
 
@@ -108,4 +108,15 @@ $moveRight: ($tileWidth / 2 );
   bottom: 0;
   padding: 10px;
   color: #fff;
+  width: 80%;
+}
+
+.tile-add-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  width: 20%;
 }

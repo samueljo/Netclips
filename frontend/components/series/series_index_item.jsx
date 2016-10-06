@@ -8,6 +8,10 @@ class SeriesIndexItem extends React.Component {
     // this.handleHover?
   }
 
+  handleDetailsClick() {
+
+  }
+
   render() {
     const serie = this.props.serie;
     return (
@@ -19,6 +23,7 @@ class SeriesIndexItem extends React.Component {
           <div className='tile-title'>
             {serie.title}
           </div>
+          <div className='tile-add-list'>Add</div>
         </div>
       </div>
     );
@@ -26,3 +31,13 @@ class SeriesIndexItem extends React.Component {
 }
 
 export default SeriesIndexItem;
+
+// Define on hover for tile-details to fetchCurrentEpisode
+    // Will display serie.current_episode.image_url instead of serie.image_url
+
+// Define on click for tile-details to play episode?
+
+// Define on click for tile-title to fetchSerie
+  // expand series overview
+
+// Define on click for tile-add-list to add series to list
