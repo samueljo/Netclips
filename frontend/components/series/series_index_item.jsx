@@ -16,6 +16,7 @@ class SeriesIndexItem extends React.Component {
   handleTitleClick(e) {
     e.stopPropagation();
     this.props.requestSerie(this.props.serie.id);
+    this.props.toggleSeriesShow(this.props.serie.id);
   }
 
   render() {

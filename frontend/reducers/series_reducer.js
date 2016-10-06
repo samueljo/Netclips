@@ -13,7 +13,7 @@ const SeriesReducer = (state = _defaultState, action) => {
     case RECEIVE_SERIES:
       return merge({}, state, {seriesIndex: action.series});
     case RECEIVE_SERIE:
-      return merge({}, state, {details: action.serie});
+      return merge({}, state, {serieDisplay: action.serie});
     default:
       return state;
   }
