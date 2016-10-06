@@ -10,13 +10,14 @@ $moveRight: ($tileWidth / 2 );
 .index-row {
   overflow: scroll;
   width: 100%;
+  margin: 0 4% .5em;
 }
 
 .index-row-inner {
   transition: $duration transform;
   font-size: 0;
   white-space: nowrap;
-  margin: ($tileHeight / 30) 10px;
+  margin: ($tileHeight / 30) 0;
   padding-bottom: 50px;
 }
 
@@ -57,7 +58,7 @@ $moveRight: ($tileWidth / 2 );
   left: 0;
   right: 0;
   top: 0;
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0;
   background: linear-gradient(to top,
     rgba(0,0,0,0.9) 0%,
