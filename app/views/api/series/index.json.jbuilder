@@ -1,5 +1,7 @@
-@series.each do |serie|
-  json.set! serie.id do
-    json.partial! '/api/series/serie', serie: serie
+@genres.each do |genre|
+  json.set! genre.name do
+    json.series genre.series do |serie|
+      json.partial! '/api/series/serie', serie: serie
+    end
   end
 end

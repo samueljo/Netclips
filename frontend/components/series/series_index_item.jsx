@@ -6,6 +6,7 @@ class SeriesIndexItem extends React.Component {
     super(props);
     // this.handleClick = this.handleClick.bind(this);
     // this.handleHover?
+    debugger
   }
 
   render() {

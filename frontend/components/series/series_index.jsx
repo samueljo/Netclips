@@ -1,6 +1,5 @@
 import React from 'react';
-// import SeriesIndexRow from './series_index_row';
-import SeriesIndexItem from './series_index_item';
+import SeriesIndexRow from './series_index_row';
 
 class SeriesIndex extends React.Component {
   constructor(props) {
@@ -12,16 +11,16 @@ class SeriesIndex extends React.Component {
   }
 
   render() {
+    const series = this.props.series;
+    const seriesByGenre = Object.keys(series).map((genre, idx) => {
+      return (
+        <SeriesIndexRow key={idx} genre={genre} series={series[genre]} />
+      );
+    });
+
     return (
       <div className='series-index'>
-        <h1 className='series-index-item'>All Series: </h1>
-        {
-          this.props.series.map((serie) => {
-            return (
-              <SeriesIndexItem serie={serie} key={serie.id} />
-            );
-          })
-        }
+        {seriesByGenre}
       </div>
     );
   }
