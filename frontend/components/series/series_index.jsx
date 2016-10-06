@@ -13,7 +13,7 @@ class SeriesIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='series-index'>
         <h1 className='series-index-item'>All Series: </h1>
         {
           this.props.series.map((serie) => {

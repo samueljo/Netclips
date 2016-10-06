@@ -40,5 +40,159 @@ all_series = [
     year: 2016,
     image: File.open('app/assets/images/series/Morgan.jpg'),
     genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
+  }),
+  Serie.create!({
+    title: 'IBM Watson Trailer: Morgan',
+    description: "A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.",
+    year: 2016,
+    image: File.open('app/assets/images/series/Morgan.jpg'),
+    genre_ids: [all_genres[0].id]
   })
 ]

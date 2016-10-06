@@ -13,5 +13,6 @@
 - [ ] Guest form fill in
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
+- [ ] Dropdown menu for logout
 
 **404 Page**
