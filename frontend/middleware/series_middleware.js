@@ -22,9 +22,6 @@ export default ({ getState, dispatch }) => next => action => {
     case REQUEST_SERIE:
       fetchSerie(action.id, serieSuccess);
       break;
-    // case UPDATE_FILTER:
-    //   dispatch(requestSeries());
-    //   break;
     default:
       break;
   }

@@ -4,12 +4,16 @@ import {
 
 import merge from 'lodash/merge';
 
-const SeriesReducer = (state = {}, action) => {
+const _defaultState = {
+  seriesIndex: {},
+};
+
+const SeriesReducer = (state = _defaultState, action) => {
   switch(action.type) {
     case RECEIVE_SERIES:
-      return action.series;
+      return merge({}, state, {seriesIndex: action.series});
     case RECEIVE_SERIE:
-      return merge({}, state, {[action.serie.id]: action.serie});
+      return merge({}, state, {details: action.serie});
     default:
       return state;
   }

@@ -9,7 +9,7 @@ export const fetchSeries = (success) => {
 export const fetchSerie = (id, success) => {
   $.ajax({
     method: 'GET',
-    url: 'api/series/${id}',
+    url: `api/series/${id}`,
     success
   });
 };

@@ -1,3 +1,6 @@
+- [ ] Refactor main container and main into its own folder
+  - Main, search, and mylist will all use series container
+
 **Complete front-end auth:**
 - [ ] Delete user account
 - [ ] Update user account

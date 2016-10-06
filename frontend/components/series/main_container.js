@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
-import { requestSeries } from '../../actions/serie_actions';
-// import { parseSeries } from '../../reducers/selectors';
+import { requestSeries, requestSerie } from '../../actions/serie_actions';
 import Main from './main';
-
 
 const mapStateToProps = state => {
   return ({
-    series: state.series,
+    seriesIndex: state.series.seriesIndex,
     currentUser: state.session.currentUser
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestSeries: () => dispatch(requestSeries())
+  requestSeries: () => dispatch(requestSeries()),
+  requestSerie: (id) => dispatch(requestSerie(id))
 });
 
 export default connect(
