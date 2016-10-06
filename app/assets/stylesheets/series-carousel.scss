@@ -16,12 +16,8 @@ $moveRight: ($tileWidth / 2 );
   transition: $duration transform;
   font-size: 0;
   white-space: nowrap;
-  margin: ($tileHeight / 30) 0;
+  margin: ($tileHeight / 30) 10px;
   padding-bottom: 50px;
-}
-
-.index-row-inner:hover {
-  transform: translate3d($moveLeft, 0, 0);
 }
 
 .index-row-inner:hover .index-tile {
@@ -45,7 +41,8 @@ $moveRight: ($tileWidth / 2 );
 }
 
 .index-tile:hover ~ .index-tile {
-  transform: translate3d($moveRight, 0, 0)
+  transform: translate3d($moveLeft, 0, 0);
+  transform: translate3d($moveRight, 0, 0);
 }
 
 .tile-img {
