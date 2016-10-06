@@ -16,7 +16,7 @@
 #
 
 class Serie < ActiveRecord::Base
-  has_attached_file :image, styles: { large: "1250x520>", medium: "350x200>", thumb: "85x50>" }, default_url: "/images/temp_logo.png"
+  has_attached_file :image, styles: { large: "1250x520>", medium: "350x200>", thumb: "85x50>" }, default_url: "temp_logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :title, :description, :year, presence: true
