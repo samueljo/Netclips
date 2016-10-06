@@ -7,7 +7,7 @@ const SeriesIndexRow = ({ series, genre }) => {
     <div className='series-index-row'>
       <h1 className='index-row-header'>{genre}</h1>
       {
-        asArray(series).map((serie, idx) => {
+        series.series.map((serie, idx) => {
           return (
             <SeriesIndexItem serie={serie} key={idx} />
           );
