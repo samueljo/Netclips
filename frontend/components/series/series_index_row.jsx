@@ -4,15 +4,17 @@ import { asArray } from '../../reducers/selectors';
 
 const SeriesIndexRow = ({ series, genre }) => {
   return (
-    <div className='series-index-row'>
+    <div className='index-row'>
       <h1 className='index-row-header'>{genre}</h1>
-      {
-        series.series.map((serie, idx) => {
-          return (
-            <SeriesIndexItem serie={serie} key={idx} />
-          );
-        })
-      }
+      <div className='index-row-inner'>
+        {
+          series.series.map((serie, idx) => {
+            return (
+              <SeriesIndexItem serie={serie} key={idx} />
+            );
+          })
+        }
+      </div>
     </div>
   );
 };

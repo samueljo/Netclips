@@ -11,8 +11,15 @@ class SeriesIndexItem extends React.Component {
   render() {
     const serie = this.props.serie;
     return (
-      <div className='series-index-item'>
-        <img className='series-index-thumb' src={serie.image_url} />
+      <div className='index-tile'>
+        <div className='tile-media'>
+          <img className='tile-img' src={serie.image_url} />
+        </div>
+        <div className='tile-details'>
+          <div className='tile-title'>
+            {serie.title}
+          </div>
+        </div>
       </div>
     );
   }
