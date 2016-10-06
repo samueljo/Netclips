@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import GreetingContainer from './greetings/greeting_container';
-import MainContainer from './series/main_container';
+import MainContainer from './main/main_container';
 
 const App = ({ children, router }) => {
   return (

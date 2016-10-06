@@ -1,7 +1,6 @@
 import React from 'react';
-import SeriesIndexItem from './series_index_item';
+import SeriesIndexItem from '../series/series_index_item';
 import { asArray } from '../../reducers/selectors';
-import SeriesDetailContainer from '../series_detail/series_detail_container';
 
 const SeriesIndexRow = ({ series, genre, requestSerie }) => {
   return (

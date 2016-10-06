@@ -1,5 +1,5 @@
 import React from 'react';
-import SeriesIndex from './series_index';
+import SeriesIndex from '../series/series_index';
 import NavbarContainer from '../navbar/navbar_container';
 
 const Main = ({ currentUser, seriesIndex, requestSeries, requestSerie }) => {
