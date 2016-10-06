@@ -17,7 +17,7 @@ class SeriesIndex extends React.Component {
         <SeriesIndexRow
           key={idx}
           genre={genre}
-          series={seriesIndex[genre]}
+          seriesIndex={seriesIndex[genre]}
           requestSerie={this.props.requestSerie} />
       );
     });
