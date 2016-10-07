@@ -11,7 +11,6 @@ $moveRight: ($tileWidth / 2 );
   overflow: hidden;
   width: 100%;
   margin: 0 4% .5em;
-  padding-bottom: $tileHeight / 7;
 }
 
 .index-row-inner {
@@ -23,6 +22,7 @@ $moveRight: ($tileWidth / 2 );
 
 .index-row-inner:hover .index-tile {
   opacity: .3;
+  margin-bottom: $tileHeight / 4;
   &:hover {
     transform: scale($growSize);
     opacity: 1;
