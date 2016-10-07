@@ -25,3 +25,7 @@
 
 
 - Reference bench favorites for mylist
+
+
+Go over Redux logic for:
+- Displaying only one series show page at a time

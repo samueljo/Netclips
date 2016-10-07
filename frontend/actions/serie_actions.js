@@ -8,9 +8,10 @@ export const requestSeries = () => ({
   type: REQUEST_SERIES
 });
 
-export const requestSerie = (id) => ({
+export const requestSerie = (id, genreId) => ({
   type: REQUEST_SERIE,
-  id
+  id,
+  genreId
 });
 
 export const receiveSeries = (series) => ({
@@ -18,9 +19,10 @@ export const receiveSeries = (series) => ({
   series
 });
 
-export const receiveSerie = (serie) => ({
+export const receiveSerie = (serie, genreId) => ({
   type: RECEIVE_SERIE,
-  serie
+  serie,
+  genreId
 });
 
 export const removeSerie = () => ({

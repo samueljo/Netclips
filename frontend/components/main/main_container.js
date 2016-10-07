@@ -8,13 +8,14 @@ import {
 const mapStateToProps = state => {
   return ({
     seriesIndex: state.series.seriesIndex,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    focusedGenreId: state.series.focusedGenreId
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   requestSeries: () => dispatch(requestSeries()),
-  requestSerie: (id) => dispatch(requestSerie(id)),
+  requestSerie: (id, genreId) => dispatch(requestSerie(id, genreId)),
   removeSerie: () => dispatch(removeSerie())
 });
 

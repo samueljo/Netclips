@@ -9,6 +9,7 @@ const Main = (props) => {
         <NavbarContainer />
         <SeriesIndex
           seriesIndex={props.seriesIndex}
+          focusedGenreId={props.focusedGenreId}
           requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie} />

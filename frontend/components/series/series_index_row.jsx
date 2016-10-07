@@ -7,29 +7,30 @@ class SeriesIndexRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { serieDisplayId: null };
-    this.toggleSeriesShow = this.toggleSeriesShow.bind(this);
+    this.openSeriesShow = this.openSeriesShow.bind(this);
+    this.closeSeriesShow = this.closeSeriesShow.bind(this);
   }
 
-  toggleSeriesShow(serieId) {
-    if (this.state.serieDisplayId) {
-      console.log('toggle off');
-      this.props.removeSerie();
-      this.setState({ serieDisplayId: null });
-    } else {
-      console.log('toggle on');
-      this.props.requestSerie(serieId);
-      this.setState({ serieDisplayId: serieId });
-    }
+  closeSeriesShow() {
+    console.log('toggle off');
+    this.props.removeSerie();
+    this.setState({ serieDisplayId: null });
+  }
+
+  openSeriesShow(serieId) {
+    console.log('toggle on');
+    this.props.requestSerie(serieId, this.props.seriesIndex.genreId);
+    this.setState({ serieDisplayId: serieId });
   }
 
   renderSeriesShow() {
-    if (this.state.serieDisplayId) {
+    if (this.props.showDetail) {
       return (
         <div className='series-show'>
           <SeriesShowContainer />
           <button
             className='close-series-show'
-            onClick={this.toggleSeriesShow}>{String.fromCharCode(215)}</button>
+            onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
         </div>
       );
     } else {
@@ -49,7 +50,7 @@ class SeriesIndexRow extends React.Component {
                 <SeriesIndexItem
                   serie={serie}
                   key={serie.id}
-                  toggleSeriesShow={this.toggleSeriesShow} />
+                  openSeriesShow={this.openSeriesShow} />
               );
             })
           }

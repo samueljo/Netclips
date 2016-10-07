@@ -13,7 +13,7 @@ import {
 
 export default ({ getState, dispatch }) => next => action => {
   const seriesSuccess = data => dispatch(receiveSeries(data));
-  const serieSuccess = data => dispatch(receiveSerie(data));
+  const serieSuccess = data => dispatch(receiveSerie(data, action.genreId));
 
   switch(action.type) {
     case REQUEST_SERIES:

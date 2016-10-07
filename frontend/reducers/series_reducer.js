@@ -7,7 +7,8 @@ import merge from 'lodash/merge';
 
 const _defaultState = {
   seriesIndex: {},
-  serieDisplay: null
+  serieDisplay: null,
+  focusedGenreId: null
 };
 
 const SeriesReducer = (state = _defaultState, action) => {
@@ -15,9 +16,13 @@ const SeriesReducer = (state = _defaultState, action) => {
     case RECEIVE_SERIES:
       return merge({}, state, {seriesIndex: action.series});
     case RECEIVE_SERIE:
-      return merge({}, state, {serieDisplay: action.serie});
+      return merge(
+        {},
+        state,
+        {serieDisplay: action.serie, focusedGenreId: action.genreId}
+      );  
     case REMOVE_SERIE:
-      return merge({}, state, {serieDisplay: null});
+      return merge({}, state, {serieDisplay: null, focusedGenreId: null});
     default:
       return state;
   }
