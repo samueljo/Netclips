@@ -17,7 +17,6 @@ class SeriesIndexRow extends React.Component {
       this.setState({ serieDisplayId: null });
     } else {
       console.log('toggle on');
-      this.props.removeSerie();
       this.props.requestSerie(serieId);
       this.setState({ serieDisplayId: serieId });
     }
