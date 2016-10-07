@@ -34,6 +34,7 @@ all_genres = [
 Serie.destroy_all
 # Series
 all_series = [
+  # 1
   Serie.create!({
     title: 'TalkShow',
     description: 'TalkShow',
@@ -41,6 +42,7 @@ all_series = [
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
     genre_ids: [all_genres[1].id]
   }),
+  # 2
   Serie.create!({
     title: 'TalkShow',
     description: 'TalkShow',
@@ -48,6 +50,7 @@ all_series = [
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
     genre_ids: [all_genres[1].id]
   }),
+  # 3
   Serie.create!({
     title: 'TalkShow',
     description: 'TalkShow',
@@ -55,6 +58,7 @@ all_series = [
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
     genre_ids: [all_genres[1].id]
   }),
+  # 4
   Serie.create!({
     title: 'TalkShow',
     description: 'TalkShow',
@@ -62,6 +66,7 @@ all_series = [
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
     genre_ids: [all_genres[1].id]
   }),
+  # 5
   Serie.create!({
     title: 'TalkShow',
     description: 'TalkShow',
@@ -69,7 +74,7 @@ all_series = [
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
     genre_ids: [all_genres[1].id]
   }),
-
+  # 6
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -77,6 +82,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
+  # 7
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -84,6 +90,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
+  # 8
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -91,6 +98,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
+  # 9
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -98,6 +106,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
+  # 10
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -105,7 +114,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-
+  # 11
   Serie.create!({
     title: 'NBA',
     description: 'NBA',
@@ -113,6 +122,7 @@ all_series = [
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
     genre_ids: [all_genres[2].id]
   }),
+  # 12
   Serie.create!({
     title: 'NBA',
     description: 'NBA',
@@ -120,6 +130,7 @@ all_series = [
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
     genre_ids: [all_genres[2].id]
   }),
+  # 13
   Serie.create!({
     title: 'NBA',
     description: 'NBA',
@@ -127,6 +138,7 @@ all_series = [
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
     genre_ids: [all_genres[2].id]
   }),
+  # 14
   Serie.create!({
     title: 'NBA',
     description: 'NBA',
@@ -134,6 +146,7 @@ all_series = [
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
     genre_ids: [all_genres[2].id]
   }),
+  # 15
   Serie.create!({
     title: 'NBA',
     description: 'NBA',

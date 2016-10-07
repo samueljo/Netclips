@@ -12,10 +12,10 @@ class SeriesIndex extends React.Component {
 
   render() {
     const seriesIndex = this.props.seriesIndex;
-    const seriesByGenre = Object.keys(seriesIndex).map((genre, idx) => {
+    const seriesByGenre = Object.keys(seriesIndex).map((genre) => {
       return (
         <SeriesIndexRow
-          key={genre.id}
+          key={seriesIndex[genre].genreId}
           genre={genre}
           showDetail={seriesIndex[genre].genreId === this.props.focusedGenreId}
           seriesIndex={seriesIndex[genre]}
