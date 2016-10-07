@@ -14,7 +14,9 @@ const SerieOverview = ({ serieDisplay }) => {
         <div className='avg-rating'>Rating</div>
         <div className='serie-year'>{serieDisplay.year}</div>
         <div className='serie-description'>{serieDisplay.description}</div>
-        <img className='serie-img' src={serieDisplay.image_url} />
+        <div className='serie-img-container'>
+          <img className='serie-img' src={serieDisplay.image_url} />
+        </div>
       </div>
     );
   } else {

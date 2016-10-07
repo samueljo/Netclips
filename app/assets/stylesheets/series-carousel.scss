@@ -34,6 +34,8 @@ $moveRight: ($tileWidth / 2 );
   display: inline-block;
   width: $tileWidth;
   height: $tileHeight;
+  max-width: 330px;
+  max-height: 180px;
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;
@@ -49,6 +51,8 @@ $moveRight: ($tileWidth / 2 );
 .tile-img {
   width: $tileWidth;
   height: $tileHeight;
+  max-width: 330px;
+  max-height: 180px;
   background-size: cover;
 }
 
