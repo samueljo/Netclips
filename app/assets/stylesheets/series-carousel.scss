@@ -9,7 +9,6 @@ $moveRight: ($tileWidth / 2 );
 
 .index-row {
   overflow: hidden;
-  width: 100%;
   margin: 0 4% .5em;
 }
 
@@ -96,7 +95,7 @@ $moveRight: ($tileWidth / 2 );
     width: 100%;
     font-size: 40px;
     margin-left: 7px;
-    margin-top: -18px;
+    margin-top: -20px;
     text-align: center;
     z-index: 2;
     color: #DB0510;
