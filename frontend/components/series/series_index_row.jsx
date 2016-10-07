@@ -5,9 +5,10 @@ import SeriesShowContainer from '../series_show/series_show_container';
 class SeriesIndexRow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { serieDisplayId: null };
+    this.state = { serieDisplayId: null, activePage: 0, previousPage: null };
     this.openSeriesShow = this.openSeriesShow.bind(this);
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
+    this.slideTo = this.slideTo.bind(this);
   }
 
   closeSeriesShow() {
@@ -57,14 +58,40 @@ class SeriesIndexRow extends React.Component {
 
     let seriesDup = seriesIndexItems.slice();
     const indexRow = [];
+    let i = 0;
 
     while (seriesDup.length > 0) {
-      indexRow.push(
-        <li key={indexRow.length + 1}>{seriesDup.splice(0, seriesPerPage)}</li>
-      );
+      if (i === this.state.activePage) {
+        indexRow.push(
+          <li key={indexRow.length + 1} className='series-page active'>
+            {seriesDup.splice(0, seriesPerPage)}
+          </li>
+        );
+      } else if (i === this.state.previousPage) {
+        indexRow.push(
+          <li key={indexRow.length + 1} className='series-page previous'>
+            {seriesDup.splice(0, seriesPerPage)}
+          </li>
+        );
+      } else {
+        indexRow.push(
+          <li key={indexRow.length + 1} className='series-page'>
+            {seriesDup.splice(0, seriesPerPage)}
+          </li>
+        );
+      }
+      i++;
     }
 
     return indexRow;
+  }
+
+  slideTo(dir) {
+    console.log('sliding');
+    this.setState({
+      activePage: this.state.activePage + dir.target.value,
+      previousPage: this.state.activePage
+    });
   }
 
   render() {
@@ -75,36 +102,22 @@ class SeriesIndexRow extends React.Component {
       <div className='index-row'>
         <h1 className='index-row-header'>{this.props.genre}</h1>
         <div className='index-row-inner'>
+          <div
+            className='car-button'
+            onClick={this.slideTo}
+            value='-1'>Left</div>
           <ul>
             {indexRow}
           </ul>
+          <div
+            className='car-button'
+            onClick={this.slideTo}
+            value='1'>Right</div>
         </div>
         {serieDisplay}
       </div>
     );
   }
-
-  //   return (
-  //     <div className='index-row'>
-  //       <h1 className='index-row-header'>{this.props.genre}</h1>
-  //       <div className='index-row-right'></div>
-  //       <div className='index-row-left'></div>
-  //       <div className='index-row-inner'>
-  //         {
-  //           this.props.seriesIndex.series.map((serie, idx) => {
-  //             return (
-  //               <SeriesIndexItem
-  //                 serie={serie}
-  //                 key={serie.id}
-  //                 openSeriesShow={this.openSeriesShow} />
-  //             );
-  //           })
-  //         }
-  //       </div>
-  //       {serieDisplay}
-  //     </div>
-  //   );
-  // }
 }
 
 export default SeriesIndexRow;

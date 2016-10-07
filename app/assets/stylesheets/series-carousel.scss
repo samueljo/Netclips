@@ -7,6 +7,11 @@ $growSize: 1.5;
 $moveLeft: -( $tileWidth / $growSize );
 $moveRight: ($tileWidth / 2 );
 
+.car-button {
+  font-size: 20px;
+  color: #fff;
+}
+
 .index-row {
   overflow: hidden;
   margin: 0 4% .5em;
