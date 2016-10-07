@@ -6,6 +6,7 @@ $iconSize: 50px;
   background: #000;
   height: $tileHeight * 2.2;
   position: relative;
+  transition-duration: .5s;
 }
 
 .close-series-show {

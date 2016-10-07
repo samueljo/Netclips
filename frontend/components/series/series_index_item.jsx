@@ -28,9 +28,7 @@ class SeriesIndexItem extends React.Component {
         <div className='tile-details' onClick={this.handleDetailsClick}>
           <div
             className='tile-title'
-            onClick={this.handleTitleClick}>
-            {serie.title}
-          </div>
+            onClick={this.handleTitleClick}>{serie.title}</div>
           <div className='tile-add-list'>Add</div>
         </div>
       </div>
