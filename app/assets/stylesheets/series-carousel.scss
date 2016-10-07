@@ -7,13 +7,28 @@ $growSize: 1.5;
 $moveLeft: -( $tileWidth / $growSize );
 $moveRight: ($tileWidth / 2 );
 
-.car-button {
+.car-button-left {
+  position: absolute;
+  left: 0;
   cursor: pointer;
   font-size: 20px;
   color: #fff;
   &:hover {
     color: red;
   }
+  z-index: 5;
+}
+
+.car-button-right {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  &:hover {
+    color: red;
+  }
+  z-index: 5;
 }
 
 .series-page:nth-child(1) {
@@ -41,7 +56,7 @@ $moveRight: ($tileWidth / 2 );
     left: -100%
   }
   &.active {
-    left: 0;
+    left: 4%;
     z-index: 3;
   }
   &.active ~ .series-page {

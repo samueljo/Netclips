@@ -9,6 +9,7 @@ class SeriesIndexRow extends React.Component {
     this.openSeriesShow = this.openSeriesShow.bind(this);
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
     this.slideTo = this.slideTo.bind(this);
+    this.handleResize = this.handleResize.bind(this);
   }
 
   closeSeriesShow() {
@@ -104,6 +105,14 @@ class SeriesIndexRow extends React.Component {
     });
   }
 
+  handleResize(e) {
+    this.setState({windowWidth: window.innerWidth});
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
   render() {
     const serieDisplay = this.renderSeriesShow();
     const indexRow = this.renderIndexRow();
@@ -115,7 +124,7 @@ class SeriesIndexRow extends React.Component {
         <h1 className='index-row-header'>{this.props.genre}</h1>
         <div className='index-row-inner'>
           <div
-            className='car-button'
+            className='car-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
             Left
           </div>
@@ -123,7 +132,7 @@ class SeriesIndexRow extends React.Component {
             {indexRow}
           </ul>
           <div
-            className='car-button'
+            className='car-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
             Right
           </div>
