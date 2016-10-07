@@ -12,15 +12,14 @@ const _defaultState = {
 };
 
 const SeriesReducer = (state = _defaultState, action) => {
+  Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SERIES:
       return merge({}, state, {seriesIndex: action.series});
     case RECEIVE_SERIE:
-      return merge(
-        {},
-        state,
-        {serieDisplay: action.serie, focusedGenreId: action.genreId}
-      );  
+      const newState = merge({}, state, {focusedGenreId: action.genreId});
+      newState.serieDisplay = action.serie;
+      return newState;
     case REMOVE_SERIE:
       return merge({}, state, {serieDisplay: null, focusedGenreId: null});
     default:
