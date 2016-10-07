@@ -1,5 +1,8 @@
+$tileHeight: 11.5vw;
+
 .series-show {
   background: #000;
+  height: $tileHeight * 3;
 }
 
 .close-series-show {
