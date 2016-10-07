@@ -8,9 +8,47 @@ $moveLeft: -( $tileWidth / $growSize );
 $moveRight: ($tileWidth / 2 );
 
 .car-button {
+  cursor: pointer;
   font-size: 20px;
   color: #fff;
+  &:hover {
+    color: red;
+  }
 }
+
+.series-page:nth-child(1) {
+  left: -50px;
+}
+
+.series-page:nth-child(2) {
+  right: -50px;
+}
+
+.carousel-row {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.series-page {
+  position: absolute;
+
+  left: -100%;
+  width: 100%;
+  transition: left 300ms linear;
+  z-index: 1;
+  &.previous {
+    z-index: 2;
+    left: -100%
+  }
+  &.active {
+    left: 0;
+    z-index: 3;
+  }
+  &.active ~ .series-page {
+    left: 100%;
+  }
+}
+
 
 .index-row {
   overflow: hidden;
@@ -21,7 +59,8 @@ $moveRight: ($tileWidth / 2 );
   transition: $duration transform;
   font-size: 0;
   white-space: nowrap;
-  margin: ($tileHeight / 30) 0;
+  height: $tileHeight;
+  margin: ($tileHeight / 5) 0;
 }
 
 .index-row-inner:hover .index-tile {

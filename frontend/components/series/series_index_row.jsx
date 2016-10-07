@@ -86,10 +86,20 @@ class SeriesIndexRow extends React.Component {
     return indexRow;
   }
 
-  slideTo(dir) {
+  slideTo(dir, numPages) {
     console.log('sliding');
+
+    let newActivePage;
+    if (this.state.activePage + dir === -1) {
+      newActivePage = numPages - 1;
+    } else if (this.state.activePage + dir > numPages - 1) {
+      newActivePage = 0;
+    } else {
+      newActivePage = this.state.activePage + dir;
+    }
+
     this.setState({
-      activePage: this.state.activePage + dir.target.value,
+      activePage: newActivePage,
       previousPage: this.state.activePage
     });
   }
@@ -98,21 +108,25 @@ class SeriesIndexRow extends React.Component {
     const serieDisplay = this.renderSeriesShow();
     const indexRow = this.renderIndexRow();
 
+    console.log(this.state);
+
     return (
       <div className='index-row'>
         <h1 className='index-row-header'>{this.props.genre}</h1>
         <div className='index-row-inner'>
           <div
             className='car-button'
-            onClick={this.slideTo}
-            value='-1'>Left</div>
-          <ul>
+            onClick={ () => this.slideTo(-1, indexRow.length) }>
+            Left
+          </div>
+          <ul className='carousel-row'>
             {indexRow}
           </ul>
           <div
             className='car-button'
-            onClick={this.slideTo}
-            value='1'>Right</div>
+            onClick={ () => this.slideTo(1, indexRow.length) }>
+            Right
+          </div>
         </div>
         {serieDisplay}
       </div>
