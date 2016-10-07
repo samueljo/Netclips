@@ -1,5 +1,6 @@
 import React from 'react';
 import SerieOverview from './serie_overview';
+import EpisodesIndex from '../episodes/episodes_index';
 
 class SeriesShow extends React.Component {
   constructor(props) {
@@ -53,13 +54,14 @@ class SeriesShow extends React.Component {
       navButtons = <div></div>;
     }
 
-
     if (this.state.showPanel === 'Overview') {
       showPanel = <SerieOverview serieDisplay={this.props.serieDisplay}/>;
+    } else if (this.state.showPanel === 'Episodes') {
+      showPanel = <EpisodesIndex episodes={this.props.serieDisplay.episodes}/>;
     } else {
       showPanel = <div></div>;
     }
-    // else if (this.state.showPanel)
+
     return (
       <div>
         {showPanel}

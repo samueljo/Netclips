@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :series do
       resources :episodes, only: [:index, :create]
     end
+    resources :episodes, only: [:show]
   end
 end

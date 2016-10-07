@@ -155,3 +155,57 @@ all_series = [
     genre_ids: [all_genres[2].id]
   })
 ]
+
+Episode.destroy_all
+# Series
+all_episodes = [
+  # 1
+  Episode.create!({
+    title: 'Game 1',
+    summary: 'NBA Finals Game 1 Cleveland Cavaliers at Golden State Warriors',
+    serie_id: all_series[11].id,
+    video_url: 'test'
+  }),
+  # 2
+  Episode.create!({
+    title: 'Game 2',
+    summary: 'NBA Finals Game 2 Cleveland Cavaliers at Golden State Warriors',
+    serie_id: all_series[11].id,
+    video_url: 'test1'
+  })
+  # # 3
+  # Episode.create!({
+  #   title: 'Game 3',
+  #   summary: 'NBA Finals Game 3 Golden State Warriors at Cleveland Cavaliers',
+  #   serie_id: all_series[11].id,
+  #   video_url: 'test'
+  # }),
+  # # 4
+  # Episode.create!({
+  #   title: 'Game 4',
+  #   summary: 'NBA Finals Game 4 Golden State Warriors at Cleveland Cavaliers',
+  #   serie_id: all_series[11].id,
+  #   video_url: 'test'
+  # }),
+  # # 5
+  # Episode.create!({
+  #   title: 'Game 5',
+  #   summary: 'NBA Finals Game 5 Cleveland Cavaliers at Golden State Warriors',
+  #   serie_id: all_series[11].id,
+  #   video_url: 'test'
+  # }),
+  # # 6
+  # Episode.create!({
+  #   title: 'Game 6',
+  #   summary: 'NBA Finals Game 6 Golden State Warriors at Cleveland Cavaliers',
+  #   serie_id: all_series[11].id,
+  #   video_url: 'test'
+  # }),
+  # # 7
+  # Episode.create!({
+  #   title: 'Game 7',
+  #   summary: 'NBA Finals Game 7 Cleveland Cavaliers at Golden State Warriors',
+  #   serie_id: all_series[11].id,
+  #   video_url: 'test'
+  # })
+]
