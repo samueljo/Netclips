@@ -18,6 +18,7 @@ class SeriesIndex extends React.Component {
           key={idx}
           genre={genre}
           seriesIndex={seriesIndex[genre]}
+          removeSerie={this.props.removeSerie}
           requestSerie={this.props.requestSerie} />
       );
     });

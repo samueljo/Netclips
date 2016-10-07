@@ -1,6 +1,6 @@
 import React from 'react';
 import SeriesIndexItem from '../series/series_index_item';
-import SeriesShowContainer from '../series_show/series_show';
+import SeriesShowContainer from '../series_show/series_show_container';
 import { asArray } from '../../reducers/selectors';
 
 class SeriesIndexRow extends React.Component {
@@ -13,9 +13,11 @@ class SeriesIndexRow extends React.Component {
   toggleSeriesShow(serieId) {
     if (this.state.serieDisplayId) {
       console.log('toggle off');
+      this.props.removeSerie();
       this.setState({ serieDisplayId: null });
     } else {
       console.log('toggle on');
+      this.props.requestSerie(serieId);
       this.setState({ serieDisplayId: serieId });
     }
   }
@@ -36,7 +38,7 @@ class SeriesIndexRow extends React.Component {
   }
 
   render() {
-    const serieDisplayId = this.renderSeriesShow();
+    const serieDisplay = this.renderSeriesShow();
     return (
       <div className='index-row'>
         <h1 className='index-row-header'>{this.props.genre}</h1>
@@ -47,13 +49,12 @@ class SeriesIndexRow extends React.Component {
                 <SeriesIndexItem
                   serie={serie}
                   key={serie.id}
-                  toggleSeriesShow={this.toggleSeriesShow}
-                  requestSerie={this.props.requestSerie} />
+                  toggleSeriesShow={this.toggleSeriesShow} />
               );
             })
           }
         </div>
-        {serieDisplayId}
+        {serieDisplay}
       </div>
     );
   }

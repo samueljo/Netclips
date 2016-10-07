@@ -1,4 +1,4 @@
-- [ ] Refactor main container and main into its own folder
+- [X] Refactor main container and main into its own folder
   - Main, search, and mylist will all use series container
 
 **Complete front-end auth:**
@@ -9,13 +9,19 @@
 
 **Series**
 - [ ] Add filters to api_util
+- [ ] filter series in controller
+  - [ ] create method in model to parse filters
+
 
 **Footer**
 
 **CSS Design**
-- [ ] Guest form fill in
+- [ ] Guest form fill in by character
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
 - [ ] Dropdown menu for logout
 
 **404 Page**
+
+
+- Reference bench favorites for mylist

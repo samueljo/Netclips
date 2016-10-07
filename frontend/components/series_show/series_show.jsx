@@ -4,25 +4,17 @@ import SerieOverview from './serie_overview';
 class SeriesShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { showPanel: 'overview' };
+    this.state = { showPanel: null };
   }
 
-  renderOverview() {
-    
-  }
-
-  renderDetail() {
-
-  }
-
-  renderEpisodes() {
-
+  componentDidMount() {
+    this.setState({ showPanel: 'overview' });
   }
 
   render() {
     let showPanel;
     if (this.state.showPanel === 'overview') {
-      showPanel = <div>SerieOverview</div>;
+      showPanel = <SerieOverview serieDisplay={this.props.serieDisplay}/>;
     } else {
       showPanel = <div></div>;
     }

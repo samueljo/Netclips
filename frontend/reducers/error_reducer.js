@@ -2,8 +2,6 @@ import {
   CLEAR_ERRORS,
   RECEIVE_ERRORS } from '../actions/session_actions';
 
-import merge from 'lodash/merge';
-
 const ErrorReducer = (state = [], action) => {
   switch(action.type) {
     case CLEAR_ERRORS:
