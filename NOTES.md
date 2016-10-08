@@ -29,3 +29,7 @@
 
 Go over Redux logic for:
 - Displaying only one series show page at a time
+
+- Make episode summaries have set height and cut off words with ellipsis after.
+
+- Fix carousel with 3 pages.

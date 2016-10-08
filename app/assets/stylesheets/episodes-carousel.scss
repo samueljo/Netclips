@@ -1,6 +1,6 @@
 $duration: 450ms;
-$tileWidth: 22vw;
-$tileHeight: 11.5vw;
+$tileWidth: 26.8vw;
+$tileHeight: 14vw;
 $iconSize: 50px;
 $growSize: 1.5;
 
@@ -9,25 +9,28 @@ $moveRight: ($tileWidth / 2 );
 
 
 .episodes-page:nth-child(1) {
-  left: -50px;
+  left: -200px;
 }
 
 .episodes-page:nth-child(2) {
-  right: -50px;
+  right: -200px;
 }
 
 .episodes-page {
   position: absolute;
   left: -100%;
+  display: none;
   transition: left 300ms linear;
   z-index: 1;
   &.previous {
     z-index: 2;
-    left: -100%
+    left: -100%;
+    display: block;
   }
   &.active {
     left: 4%;
     z-index: 3;
+    display: block;
   }
   &.active ~ .series-page {
     left: 100%;
@@ -42,9 +45,8 @@ $moveRight: ($tileWidth / 2 );
 .episode-button-right {
   position: absolute;
   height: $tileHeight;
-  width: $tileWidth / 5.5;
+  width: $tileWidth / 6;
   max-height: 180px;
-  vertical-align: center;
   right: 0;
   cursor: pointer;
   font-size: 7vw;
@@ -61,9 +63,8 @@ $moveRight: ($tileWidth / 2 );
 .episode-button-left {
   position: absolute;
   height: $tileHeight;
-  width: $tileWidth / 5.5;
+  width: $tileWidth / 6;
   max-height: 180px;
-  vertical-align: center;
   left: 0;
   text-align: center;
   cursor: pointer;
@@ -82,8 +83,8 @@ $moveRight: ($tileWidth / 2 );
   display: inline-block;
   width: $tileWidth;
   height: $tileHeight;
-  max-width: 330px;
-  max-height: 180px;
+  max-width: 363px;
+  max-height: 190px;
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;

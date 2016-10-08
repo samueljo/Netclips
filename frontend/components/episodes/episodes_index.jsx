@@ -12,10 +12,10 @@ class EpisodesIndex extends React.Component {
   calculateEpisodesPerPage() {
     let episodesPerPage;
 
-    if ($(window).width() > 1850) {
-      episodesPerPage = 5;
-    } else {
+    if ($(window).width() > 1750) {
       episodesPerPage = 4;
+    } else {
+      episodesPerPage = 3;
     }
 
     return episodesPerPage;
@@ -98,16 +98,16 @@ class EpisodesIndex extends React.Component {
     return (
       <div className='episode-index-row'>
         <div className='index-row-inner'>
-          <div
+          <p
             className='episode-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
             {String.fromCharCode(8249)}
-          </div>
-          <div
+          </p>
+          <p
             className='episode-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
             {String.fromCharCode(8250)}
-          </div>
+          </p>
           <ul className='carousel-row'>
             {indexRow}
           </ul>
