@@ -39,7 +39,7 @@ class SeriesIndexRow extends React.Component {
     }
   }
 
-  renderIndexRow() {
+  calculateSeriesPerPage() {
     let seriesPerPage;
 
     if ($(window).width() > 1850) {
@@ -47,6 +47,12 @@ class SeriesIndexRow extends React.Component {
     } else {
       seriesPerPage = 4;
     }
+
+    return seriesPerPage;
+  }
+
+  renderIndexRow() {
+    const seriesPerPage = this.calculateSeriesPerPage();
 
     const seriesIndexItems = this.props.seriesIndex.series.map((serie) => {
       return (
@@ -106,7 +112,11 @@ class SeriesIndexRow extends React.Component {
   }
 
   handleResize(e) {
-    this.setState({windowWidth: window.innerWidth});
+    const seriesPerPage = this.calculateSeriesPerPage();
+
+    if (seriesPerPage !== this.state.seriesPerPage) {
+      this.setState({seriesPerPage: seriesPerPage});
+    }
   }
 
   componentDidMount() {
