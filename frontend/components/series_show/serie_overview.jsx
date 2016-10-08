@@ -10,7 +10,6 @@ const SerieOverview = ({ serieDisplay }) => {
   if (serieDisplay) {
     return (
       <div className='serie-overview'>
-        <div className='serie-title'>{serieDisplay.title}</div>
         <div className='avg-rating'>Rating</div>
         <div className='serie-year'>{serieDisplay.year}</div>
         <div className='serie-description'>{serieDisplay.description}</div>

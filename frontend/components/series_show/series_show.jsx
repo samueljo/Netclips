@@ -65,6 +65,7 @@ class SeriesShow extends React.Component {
     return (
       <div>
         {showPanel}
+        <div className='serie-title'>{this.props.serieDisplay.title}</div>
         <ul className='series-show-nav'>
           {navButtons}
         </ul>

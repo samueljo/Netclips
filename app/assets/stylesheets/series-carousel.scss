@@ -54,6 +54,7 @@ $moveRight: ($tileWidth / 2 );
       cursor: pointer;
       font-size: 7vw;
       font-weight: 100;
+      text-align: center;
       color: #fff;
       &:hover {
         color: red;
@@ -70,6 +71,7 @@ $moveRight: ($tileWidth / 2 );
       max-height: 180px;
       vertical-align: center;
       left: 0;
+      text-align: center;
       cursor: pointer;
       font-size: 7vw;
       font-weight: 100;
