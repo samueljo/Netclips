@@ -12,8 +12,8 @@
 #
 
 class Episode < ActiveRecord::Base
-  # has_attached_file :image, styles: { large: "", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/temp_logo.png"
-  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  has_attached_file :image, styles: { large: "", medium: "300x300>", thumb: "100x100>" }, default_url: "temp_logo.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :serie_id, :title, :summary, :video_url, presence: true
   validates :video_url, uniqueness: true
