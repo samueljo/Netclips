@@ -7,11 +7,13 @@ const Navbar = ({ currentUser, logout, router }) => {
     router.push('/');
   };
 
+  const currentUsername = (currentUser) ? currentUser.username : '';
+
   return (
     <div className='nav-header group'>
       <div className='nav'>
         <img className='logo nav-logo' onClick={_redirectToMain} />
-        <div className='nav-user'>{currentUser.username}
+        <div className='nav-user'>{currentUsername}
           <ul className='nav-dropdown'>
             <li className='nav-dropdown-item'>
               <h1>My Account</h1>

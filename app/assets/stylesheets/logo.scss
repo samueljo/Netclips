@@ -1,6 +1,7 @@
 .logo {
+	border: 0;
 	float: left;
-  background: image-url('temp_logo.png');
+  background: image-url('logo.png');
   background-size: cover;
   cursor: pointer;
   &.nav-logo {

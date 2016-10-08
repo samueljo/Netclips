@@ -16,6 +16,10 @@ $iconSize: 50px;
   position: absolute;
   top: 10px;
   right: 20px;
+  cursor: pointer;
+  &:hover {
+    font-weight: 200;
+  }
 }
 
 .series-show-nav {
