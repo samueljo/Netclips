@@ -6,22 +6,21 @@ class EpisodesIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleDetailsClick(e) {
-    console.log('details click');
-  }
-
   handleClick(e) {
-    e.preventDefault();
+    console.log('Play episode');
   }
 
   render() {
     const episode = this.props.episode;
     return (
       <div className='episode-tile'>
-        <div className='episode-title'>{episode.title}</div>
-        <div className='episode-summary'>{episode.summary}</div>
-        <div className='tile-media'>
-          // <img className='tile-img' src={episode.image_url} />
+        <div className='episode-tile-media'>
+        </div>
+        <div className='episode-details'>
+          <h1 className='episode-title'>{episode.title}</h1>
+          <p className='episode-summary'>{episode.summary}</p>
+        </div>
+        <div className='episode-tile-play' onClick={this.handleClick}>
         </div>
       </div>
     );
@@ -29,3 +28,5 @@ class EpisodesIndexItem extends React.Component {
 }
 
 export default EpisodesIndexItem;
+
+// <img className='episode-tile-img' src={episode.image_url} />

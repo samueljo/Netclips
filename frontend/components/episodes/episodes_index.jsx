@@ -9,7 +9,7 @@ class EpisodesIndex extends React.Component {
     this.handleResize = this.handleResize.bind(this);
   }
 
-  renderIndexRow() {
+  calculateEpisodesPerPage() {
     let episodesPerPage;
 
     if ($(window).width() > 1850) {
@@ -17,6 +17,12 @@ class EpisodesIndex extends React.Component {
     } else {
       episodesPerPage = 4;
     }
+
+    return episodesPerPage;
+  }
+
+  renderIndexRow() {
+    const episodesPerPage = this.calculateEpisodesPerPage();
 
     const episodesIndexItems = this.props.episodes.map((episode) => {
       return (
@@ -75,7 +81,11 @@ class EpisodesIndex extends React.Component {
   }
 
   handleResize(e) {
-    this.setState({windowWidth: window.innerWidth});
+    const episodesPerPage = this.calculateEpisodesPerPage();
+
+    if (episodesPerPage !== this.state.episodesPerPage) {
+      this.setState({episodesPerPage: episodesPerPage});
+    }
   }
 
   componentDidMount() {
@@ -85,19 +95,16 @@ class EpisodesIndex extends React.Component {
   render() {
     const indexRow = this.renderIndexRow();
 
-    console.log(this.state);
-
     return (
-      <div className='index-row'>
-        <h1 className='index-row-header'>{this.props.genre}</h1>
+      <div className='episode-index-row'>
         <div className='index-row-inner'>
           <div
-            className='car-button-left'
+            className='episode-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
             {String.fromCharCode(8249)}
           </div>
           <div
-            className='car-button-right'
+            className='episode-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
             {String.fromCharCode(8250)}
           </div>
@@ -105,25 +112,9 @@ class EpisodesIndex extends React.Component {
             {indexRow}
           </ul>
         </div>
-        // {serieDisplay}
       </div>
     );
   }
 }
-// const EpisodesIndex= ({ episodes }) => {
-//   const episodesRow = episodes.map((episode) => {
-//     return (
-//       <EpisodesIndexItem key={episode.id} episode={episode} />
-//     );
-//   });
-//
-//
-//
-//   return (
-//     <div className='episodes-index'>{episodesRow}</div>
-//   );
-// };
-//
-// export default EpisodesIndex;
 
 export default EpisodesIndex;
