@@ -7,7 +7,7 @@ const mapStateToProps = state => {
     serieDisplay: state.series.serieDisplay,
   });
 };
-
+// 
 // const mapDispatchToProps = dispatch => ({
 //
 // });

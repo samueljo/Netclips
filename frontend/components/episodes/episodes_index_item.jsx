@@ -15,6 +15,7 @@ class EpisodesIndexItem extends React.Component {
     return (
       <div className='episode-tile'>
         <div className='episode-tile-media'>
+          <img className='episode-tile-img' src={episode.image_url} />
         </div>
         <div className='episode-details'>
           <h1 className='episode-title'>{episode.title}</h1>
@@ -28,5 +29,3 @@ class EpisodesIndexItem extends React.Component {
 }
 
 export default EpisodesIndexItem;
-
-// <img className='episode-tile-img' src={episode.image_url} />

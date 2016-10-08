@@ -9,6 +9,10 @@ class EpisodesIndex extends React.Component {
     this.handleResize = this.handleResize.bind(this);
   }
 
+  componentDidMount() {
+    
+  }
+
   calculateEpisodesPerPage() {
     let episodesPerPage;
 

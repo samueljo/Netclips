@@ -164,6 +164,7 @@ all_episodes = [
     title: 'Game 1',
     summary: 'NBA Finals Game 1 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_1.jpg'),
     video_url: 'test'
   }),
   # 2
@@ -171,6 +172,7 @@ all_episodes = [
     title: 'Game 2',
     summary: 'NBA Finals Game 2 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_2.jpg'),
     video_url: 'test1'
   }),
   # 3
@@ -178,6 +180,7 @@ all_episodes = [
     title: 'Game 3',
     summary: 'NBA Finals Game 3 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_3.jpg'),
     video_url: 'test2'
   }),
   # 4
@@ -185,6 +188,7 @@ all_episodes = [
     title: 'Game 4',
     summary: 'NBA Finals Game 4 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_4.jpg'),
     video_url: 'test3'
   }),
   # 5
@@ -192,6 +196,7 @@ all_episodes = [
     title: 'Game 5',
     summary: 'NBA Finals Game 5 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_5.jpg'),
     video_url: 'test4'
   }),
   # 6
@@ -199,6 +204,7 @@ all_episodes = [
     title: 'Game 6',
     summary: 'NBA Finals Game 6 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_6.jpg'),
     video_url: 'test5'
   }),
   # 7
@@ -206,6 +212,7 @@ all_episodes = [
     title: 'Game 7',
     summary: 'NBA Finals Game 7 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
+    image: File.open('app/assets/images/episodes/nba/nbafinals16_7.jpg'),
     video_url: 'test6'
   })
 ]

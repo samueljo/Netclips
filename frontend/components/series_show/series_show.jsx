@@ -24,7 +24,6 @@ class SeriesShow extends React.Component {
       navButtonLabels.push('Episodes');
     }
     navButtonLabels.push('Details');
-
     const navButtons = navButtonLabels.map((label) => {
       if (this.state.showPanel === label) {
         return (
