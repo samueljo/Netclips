@@ -33,6 +33,10 @@
    background: transparent;
  }
 
+ body {
+   overflow-x: hidden;
+ }
+
  /* CLEARFIX */
 
  .group:after {

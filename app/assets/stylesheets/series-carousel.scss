@@ -7,43 +7,6 @@ $growSize: 1.5;
 $moveLeft: -( $tileWidth / $growSize );
 $moveRight: ($tileWidth / 2 );
 
-.car-button-left {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: $tileHeight;
-  width: $tileWidth / 5.5;
-  max-height: 180px;
-  vertical-align: center;
-  left: 0;
-  cursor: pointer;
-  font-size: 7vw;
-  font-weight: 100;
-  color: #fff;
-  &:hover {
-    color: red;
-    font-weight: 100;
-  }
-  z-index: 5;
-}
-
-.car-button-right {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: $tileHeight;
-  width: $tileWidth / 5.7;
-  max-height: 180px;
-  vertical-align: center;
-  right: 0;
-  cursor: pointer;
-  font-size: 7vw;
-  font-weight: 100;
-  color: #fff;
-  &:hover {
-    color: red;
-    font-weight: 100;
-  }
-  z-index: 5;
-}
 
 .series-page:nth-child(1) {
   left: -50px;
@@ -78,10 +41,50 @@ $moveRight: ($tileWidth / 2 );
 
 .index-row {
   overflow: hidden;
-  margin: 0 4% .5em;
+  padding: 0 4% .5em;
+  &:hover {
+    .car-button-right {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: $tileHeight;
+      width: $tileWidth / 5.7;
+      max-height: 180px;
+      vertical-align: center;
+      right: 0;
+      cursor: pointer;
+      font-size: 7vw;
+      font-weight: 100;
+      color: #fff;
+      &:hover {
+        color: red;
+        font-weight: 100;
+      }
+      z-index: 5;
+    }
+
+    .car-button-left {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: $tileHeight;
+      width: $tileWidth / 5.5;
+      max-height: 180px;
+      vertical-align: center;
+      left: 0;
+      cursor: pointer;
+      font-size: 7vw;
+      font-weight: 100;
+      color: #fff;
+      &:hover {
+        color: red;
+        font-weight: 100;
+      }
+      z-index: 5;
+    }
+  }
 }
 
 .index-row-inner {
+  width: 100%;
   transition: $duration transform;
   font-size: 0;
   white-space: nowrap;
