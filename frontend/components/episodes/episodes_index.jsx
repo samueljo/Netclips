@@ -96,16 +96,16 @@ class EpisodesIndex extends React.Component {
             onClick={ () => this.slideTo(-1, indexRow.length) }>
             {String.fromCharCode(8249)}
           </div>
-          <ul className='carousel-row'>
-            {indexRow}
-          </ul>
           <div
             className='car-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
             {String.fromCharCode(8250)}
           </div>
+          <ul className='carousel-row'>
+            {indexRow}
+          </ul>
         </div>
-        {serieDisplay}
+        // {serieDisplay}
       </div>
     );
   }
