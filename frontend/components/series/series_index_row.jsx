@@ -126,7 +126,7 @@ class SeriesIndexRow extends React.Component {
           <div
             className='car-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
-            Left
+            {String.fromCharCode(8249)}
           </div>
           <ul className='carousel-row'>
             {indexRow}
@@ -134,7 +134,7 @@ class SeriesIndexRow extends React.Component {
           <div
             className='car-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
-            Right
+            {String.fromCharCode(8250)}
           </div>
         </div>
         {serieDisplay}
