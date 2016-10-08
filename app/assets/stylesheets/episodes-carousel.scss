@@ -7,13 +7,12 @@ $growSize: 1.5;
 $moveLeft: -( $tileWidth / $growSize );
 $moveRight: ($tileWidth / 2 );
 
-
-.episodes-page:nth-child(1) {
-  left: -200px;
+.series-page:nth-child(1) {
+  left: -50px;
 }
 
-.episodes-page:nth-child(2) {
-  right: -200px;
+.series-page:nth-child(2) {
+  right: -50px;
 }
 
 .episodes-page {

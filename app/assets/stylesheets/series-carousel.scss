@@ -16,23 +16,21 @@ $moveRight: ($tileWidth / 2 );
   right: -50px;
 }
 
-.carousel-row {
-  display: inline-block;
-  overflow: hidden;
-}
-
 .series-page {
   position: absolute;
   left: -100%;
+  display: none;
   transition: left 300ms linear;
   z-index: 1;
   &.previous {
     z-index: 2;
-    left: -100%
+    left: -100%;
+    display: block;
   }
   &.active {
     left: 4%;
     z-index: 3;
+    display: block;
   }
   &.active ~ .series-page {
     left: 100%;
