@@ -28,7 +28,8 @@ class EpisodesIndex extends React.Component {
       return (
         <EpisodesIndexItem
           episode={episode}
-          key={episode.id} />
+          key={episode.id}
+          requestEpisode={this.props.requestEpisode} />
       );
     });
 

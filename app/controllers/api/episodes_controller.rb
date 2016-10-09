@@ -4,5 +4,7 @@ class Api::EpisodesController < ApplicationController
   end
 
   def show
+    @episode = Episode.find(params[:id])
   end
+
 end

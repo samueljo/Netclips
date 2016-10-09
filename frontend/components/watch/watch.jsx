@@ -3,7 +3,6 @@ import React from 'react';
 class Watch extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
     };
   }

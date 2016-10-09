@@ -1,16 +1,25 @@
 import {
-  RECEIVE_EPISODES } from '../actions/episode_actions';
+  RECEIVE_EPISODES,
+  RECEIVE_EPISODE } from '../actions/episode_actions';
 
-// RECEIVE_EPISODE,
 // REMOVE_SERIE
 
 import merge from 'lodash/merge';
 
-const EpisodesReducer = (state = [], action) => {
+const _defaultState = { episodes: [], playingEpisode: null };
+
+const EpisodesReducer = (state = _defaultState, action) => {
   Object.freeze(state);
+  let newState;
   switch(action.type) {
     case RECEIVE_EPISODES:
-      return action.episodes;
+      newState = merge({}, state);
+      newState.episodes = action.episodes;
+      return newState;
+    case RECEIVE_EPISODE:
+      newState = merge({}, state);
+      newState.playingEpisode = action.episode;
+      return newState;
     default:
       return state;
   }

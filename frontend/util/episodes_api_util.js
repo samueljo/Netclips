@@ -5,3 +5,11 @@ export const fetchEpisodes = (serieId, success) => {
     success
   });
 };
+
+export const fetchEpisode = (id, success) => {
+  $.ajax({
+    method: 'GET',
+    url: `api/episodes/${id}`,
+    success
+  });
+};

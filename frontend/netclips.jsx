@@ -12,10 +12,12 @@ import {
   fetchSerie } from './util/series_api_util';
 
 import {
-  requestEpisodes } from './actions/episode_actions';
+  requestEpisodes,
+  requestEpisode } from './actions/episode_actions';
 
 window.requestSeries = requestSeries;
 window.requestEpisodes = requestEpisodes;
+window.requestEpisode = requestEpisode;
 window.requestSerie = requestSerie;
 
 document.addEventListener('DOMContentLoaded', () => {
