@@ -4,8 +4,7 @@ import EpisodesIndex from './episodes_index';
 
 const mapStateToProps = state => {
   return ({
-    episodes: state.episodes.episodes,
-    playingEpisode: state.episodes.playingEpisode
+    displayEpisodes: state.episodes.displayEpisodes
   });
 };
 

@@ -23,8 +23,8 @@ class EpisodesIndex extends React.Component {
 
   renderIndexRow() {
     const episodesPerPage = this.calculateEpisodesPerPage();
-
-    const episodesIndexItems = this.props.episodes.map((episode, idx) => {
+    const displayEpisodes = this.props.displayEpisodes;
+    const episodesIndexItems = displayEpisodes.map((episode, idx) => {
       return (
         <EpisodesIndexItem
           episode={episode}

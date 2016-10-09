@@ -3,7 +3,7 @@ import Watch from './watch';
 
 const mapStateToProps = state => {
   return ({
-    playingEpisode: state.episodes.playingEpisode
+    episodes: state.episodes.displayEpisodes
   });
 };
 

@@ -6,7 +6,7 @@ import {
 
 import merge from 'lodash/merge';
 
-const _defaultState = { episodes: [], playingEpisode: null };
+const _defaultState = { displayEpisodes: [] };
 
 const EpisodesReducer = (state = _defaultState, action) => {
   Object.freeze(state);
@@ -14,12 +14,12 @@ const EpisodesReducer = (state = _defaultState, action) => {
   switch(action.type) {
     case RECEIVE_EPISODES:
       newState = merge({}, state);
-      newState.episodes = action.episodes;
+      newState.displayEpisodes = action.episodes;
       return newState;
-    case RECEIVE_EPISODE:
-      newState = merge({}, state);
-      newState.playingEpisode = action.episode;
-      return newState;
+    // case RECEIVE_EPISODE:
+    //   newState = merge({}, state);
+    //   newState.playingEpisode = action.episode;
+    //   return newState;
     default:
       return state;
   }

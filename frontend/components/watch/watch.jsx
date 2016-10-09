@@ -7,6 +7,8 @@ class Watch extends React.Component {
     this.state = {
       playing: false
     };
+
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   renderPlayer() {
@@ -26,7 +28,10 @@ class Watch extends React.Component {
     };
 
     return (
-      <YouTube videoId={url} opts={opts} onReady={this._onReady} />
+      <YouTube
+        videoId={url}
+        opts={opts}
+        onReady={this._onReady} />
     );
   }
 
@@ -40,35 +45,36 @@ class Watch extends React.Component {
 
   _onReady(e) {
     console.log('play video');
+    this.togglePlayer(e);
   }
 
-  // onPlayerStateChange(e) {
-  //   if (e.data === -1) {
-  //     // unstarted
-  //   } else if (e.data === 0) {
-  //     // ended
-  //     // Return to index page if last episode
-  //   } else if (e.data === 1) {
-  //     // playing
-  //     this.setState({ playing: true });
-  //   } else if (e.data === 2) {
-  //     // paused
-  //     this.setState({ playing: false });
-  //   } else if (e.data === 3) {
-  //     // buffering
-  //   } else if (e.data === 5) {
-  //     // video cued
-  //   }
-  // // }
-  //
-  // stopVideo() {
-  //
-  // }
+  _onStateChange(e) {
+    if (e.data === -1) {
+      // unstarted
+    } else if (e.data === 0) {
+      // ended
+      // Return to index page if last episode
+    } else if (e.data === 1) {
+      // playing
+      this.setState({ playing: true });
+    } else if (e.data === 2) {
+      // paused
+      this.setState({ playing: false });
+    } else if (e.data === 3) {
+      // buffering
+    } else if (e.data === 5) {
+      // video cued
+    }
+  }
+
+  stopVideo() {
+
+  }
 
   render() {
     return (
-      <div className='video-player'>
-        <div id='player'>
+      <div className='player-container'>
+        <div className='player' id='player'>
           {this.renderPlayer()}
         </div>
       </div>
