@@ -165,7 +165,7 @@ all_episodes = [
     summary: 'NBA Finals Game 1 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_1.jpg'),
-    video_url: 'test'
+    video_url: '3aiQEbjfv8Y'
   }),
   # 2
   Episode.create!({
@@ -173,7 +173,7 @@ all_episodes = [
     summary: 'NBA Finals Game 2 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_2.jpg'),
-    video_url: 'test1'
+    video_url: 'Ae72b10dYdU'
   }),
   # 3
   Episode.create!({
@@ -181,7 +181,7 @@ all_episodes = [
     summary: 'NBA Finals Game 3 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_3.jpg'),
-    video_url: 'test2'
+    video_url: 'G-GI54oH_oo'
   }),
   # 4
   Episode.create!({
@@ -189,7 +189,7 @@ all_episodes = [
     summary: 'NBA Finals Game 4 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_4.jpg'),
-    video_url: 'test3'
+    video_url: 'cs4FZWcQawQ'
   }),
   # 5
   Episode.create!({
@@ -197,7 +197,7 @@ all_episodes = [
     summary: 'NBA Finals Game 5 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_5.jpg'),
-    video_url: 'test4'
+    video_url: '494lFLd4OXI'
   }),
   # 6
   Episode.create!({
@@ -205,7 +205,7 @@ all_episodes = [
     summary: 'NBA Finals Game 6 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_6.jpg'),
-    video_url: 'test5'
+    video_url: 'bzY9xOxltSs'
   }),
   # 7
   Episode.create!({
@@ -213,6 +213,6 @@ all_episodes = [
     summary: 'NBA Finals Game 7 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_7.jpg'),
-    video_url: 'test6'
+    video_url: '3hp7NfhmGfAb'
   })
 ]

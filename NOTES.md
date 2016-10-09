@@ -25,16 +25,16 @@
 
 - Fix switching to different series in same genre - need to show 'Overview' panel
 
-- Work on watch container
-
 - Make episode summaries have set height and cut off words with ellipsis after.
 
 - Reference bench favorites for mylist
 
-- [x] Fix carousel with 3 pages.
-
-
-
 - Styling series show page
 
+Questions:
+- Unmounted component warnings when resizing screen
+
 - [ ] Go over Redux logic for displaying only one series show page at a time
+
+
+- [x] Fix carousel with 3 pages.

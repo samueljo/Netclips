@@ -9,16 +9,23 @@ class EpisodesIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-
-    this.props.requestEpisode(this.props.episode.id, () => {
-      this.props.router.push({
-        pathname: '/watch',
-        query: {
-          title: this.props.episode.title,
-          video: this.props.episode.video_url
-        }
-      });
+    this.props.router.push({
+      pathname: '/watch',
+      query: {
+        id: this.props.episode.id,
+        video: this.props.episode.video_url
+      }
     });
+
+    // this.props.requestEpisode(this.props.episode.id, () => {
+    //   this.props.router.push({
+    //     pathname: '/watch',
+    //     query: {
+    //       id: this.props.episode.id,
+    //       video: this.props.episode.video_url
+    //     }
+    //   });
+    // });
   }
 
   render() {
