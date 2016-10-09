@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestEpisode: (id) => dispatch(requestEpisode(id))
+  requestEpisode: (id, callback) => dispatch(requestEpisode(id, callback))
 });
 
 export default connect(

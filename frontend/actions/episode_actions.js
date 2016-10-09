@@ -14,9 +14,10 @@ export const receiveEpisodes = (episodes) => ({
   episodes
 });
 
-export const requestEpisode = (id) => ({
+export const requestEpisode = (id, callback) => ({
   type: REQUEST_EPISODE,
-  id
+  id,
+  callback
 });
 
 export const receiveEpisode = (episode) => ({

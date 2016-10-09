@@ -12,7 +12,11 @@ import {
 
 export default ({ getState, dispatch }) => next => action => {
   const episodesSuccess = data => dispatch(receiveEpisodes(data));
-  const episodeSuccess = data => dispatch(receiveEpisode(data));
+
+  const episodeSuccess = data => {
+    action.callback();
+    return dispatch(receiveEpisode(data));
+  };
 
   switch(action.type) {
     case REQUEST_EPISODES:

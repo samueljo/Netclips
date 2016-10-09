@@ -33,3 +33,7 @@ Go over Redux logic for:
 - Make episode summaries have set height and cut off words with ellipsis after.
 
 - Fix carousel with 3 pages.
+
+- Work on watch container
+
+- Fix switching to different series in same genre

@@ -21,7 +21,8 @@ class SeriesShow extends React.Component {
 
   renderNavButtons() {
     const navButtonLabels = ['Overview'];
-    if (this.props.episodes.length > 1) {
+
+    if (this.props.serieDisplay.episodes.length > 1) {
       navButtonLabels.push('Episodes');
     }
     navButtonLabels.push('Details');
