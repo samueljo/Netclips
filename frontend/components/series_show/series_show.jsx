@@ -5,14 +5,23 @@ import EpisodesContainer from '../episodes/episodes_container';
 class SeriesShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { showPanel: null };
+    this.state = {
+      showPanel: 'Overview',
+      previousSerie: this.props.serieDisplay.id
+    };
     this.handleClick = this.handleClick.bind(this);
     this.renderNavButtons = this.renderNavButtons.bind(this);
   }
 
   componentDidMount() {
     this.props.requestEpisodes(this.props.serieDisplay.id);
-    this.setState({ showPanel: 'Overview' });
+  }
+
+  componentWillReceiveProps() {
+    // debugger
+    if (this.props.serieDisplay.id !== this.state.previousSerie) {
+      this.setState({ showPanel: 'Overview' });
+    }
   }
 
   handleClick(e) {
@@ -44,8 +53,9 @@ class SeriesShow extends React.Component {
   render() {
     let showPanel;
     let navButtons;
+    const serieDisplay = this.props.serieDisplay;
 
-    if (this.props.serieDisplay) {
+    if (serieDisplay) {
       navButtons = this.renderNavButtons().map((button, idx) => {
         return (
           <li key={idx} className='nav-item'>{button}</li>
@@ -56,7 +66,7 @@ class SeriesShow extends React.Component {
     }
 
     if (this.state.showPanel === 'Overview') {
-      showPanel = <SerieOverview serieDisplay={this.props.serieDisplay}/>;
+      showPanel = <SerieOverview serieDisplay={serieDisplay}/>;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
     } else {
@@ -66,7 +76,7 @@ class SeriesShow extends React.Component {
     return (
       <div>
         {showPanel}
-        <div className='serie-title'>{this.props.serieDisplay.title}</div>
+        <div className='serie-title'>{serieDisplay.title}</div>
         <ul className='series-show-nav'>
           {navButtons}
         </ul>

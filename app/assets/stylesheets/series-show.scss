@@ -6,8 +6,9 @@ $iconSize: 50px;
   background: #000;
   height: $tileHeight * 2.2;
   position: relative;
-  transition-duration: .5s;
-  padding-bottom: 8vw;
+  transition-duration: 1s;
+  padding-bottom: 9vw;
+  margin-bottom: 2vw;
 }
 
 .close-series-show {
@@ -64,6 +65,11 @@ $iconSize: 50px;
   font-weight: 500;
   color: #fff;
   cursor: pointer;
+  margin-left: 3.8vw;
+}
+
+.serie-overview {
+  margin-left: 3.8vw;
 }
 
 .avg-rating {
@@ -93,11 +99,12 @@ $iconSize: 50px;
   line-height: 1.3;
   width: 40%;
   margin-top: $tileHeight / 6;
+  margin-left: 3.8vw;
 }
 
 .serie-img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .serie-img-container {
@@ -106,4 +113,5 @@ $iconSize: 50px;
   right: 0;
   top: 0;
   width: 60%;
+  height: 100%;
 }

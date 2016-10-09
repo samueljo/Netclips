@@ -23,17 +23,18 @@
 
 **404 Page**
 
-
-- Reference bench favorites for mylist
-
-
-Go over Redux logic for:
-- Displaying only one series show page at a time
-
-- Make episode summaries have set height and cut off words with ellipsis after.
-
-- Fix carousel with 3 pages.
+- Fix switching to different series in same genre - need to show 'Overview' panel
 
 - Work on watch container
 
-- Fix switching to different series in same genre
+- Make episode summaries have set height and cut off words with ellipsis after.
+
+- Reference bench favorites for mylist
+
+- [x] Fix carousel with 3 pages.
+
+
+
+- Styling series show page
+
+- [ ] Go over Redux logic for displaying only one series show page at a time

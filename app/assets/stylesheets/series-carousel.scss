@@ -43,7 +43,6 @@ $moveRight: ($tileWidth / 2 );
   height: $tileHeight;
   width: $tileWidth / 5.7;
   max-height: 180px;
-  vertical-align: center;
   cursor: pointer;
   font-size: 3vw;
   font-weight: 100;
@@ -55,7 +54,6 @@ $moveRight: ($tileWidth / 2 );
 
 .index-row {
   overflow: hidden;
-  padding: 0 4% .5em;
   &:hover {
     .cb-right {
       display: block;
@@ -77,13 +75,28 @@ $moveRight: ($tileWidth / 2 );
   }
 }
 
+.index-row-header {
+  color: #999;
+  padding: 0 4%;
+  font-size: 1.4vw;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.3;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
 .index-row-inner {
   width: 100%;
   transition: $duration transform;
   font-size: 0;
   white-space: nowrap;
   height: $tileHeight;
-  margin: ($tileHeight / 5) 0;
+  margin: 1vw 0 4vw;
 }
 
 .index-row-inner:hover .index-tile {
