@@ -1,5 +1,4 @@
 import {
-  requestSeries,
   receiveSeries,
   receiveSerie,
   REQUEST_SERIES,

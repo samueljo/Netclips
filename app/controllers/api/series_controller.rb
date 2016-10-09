@@ -5,9 +5,8 @@ class Api::SeriesController < ApplicationController
   end
 
   def show
-    @serie = Serie.includes(:genres, :episodes).find(params[:id])
+    @serie = Serie.includes(:genres).find(params[:id])
     # also need to includes: reviews
-    # remove episodes?
   end
 
   def create

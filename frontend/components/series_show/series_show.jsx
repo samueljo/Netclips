@@ -11,6 +11,7 @@ class SeriesShow extends React.Component {
   }
 
   componentDidMount() {
+    this.props.requestEpisodes(this.props.serieDisplay.id);
     this.setState({ showPanel: 'Overview' });
   }
 
@@ -20,7 +21,7 @@ class SeriesShow extends React.Component {
 
   renderNavButtons() {
     const navButtonLabels = ['Overview'];
-    if (this.props.serieDisplay.episodes.length > 1) {
+    if (this.props.episodes.length > 1) {
       navButtonLabels.push('Episodes');
     }
     navButtonLabels.push('Details');
@@ -56,7 +57,8 @@ class SeriesShow extends React.Component {
     if (this.state.showPanel === 'Overview') {
       showPanel = <SerieOverview serieDisplay={this.props.serieDisplay}/>;
     } else if (this.state.showPanel === 'Episodes') {
-      showPanel = <EpisodesIndex episodes={this.props.serieDisplay.episodes}/>;
+      showPanel = <EpisodesIndex
+        episodes={this.props.episodes} />;
     } else {
       showPanel = <div></div>;
     }

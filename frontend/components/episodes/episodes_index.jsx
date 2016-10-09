@@ -9,10 +9,6 @@ class EpisodesIndex extends React.Component {
     this.handleResize = this.handleResize.bind(this);
   }
 
-  componentDidMount() {
-    
-  }
-
   calculateEpisodesPerPage() {
     let episodesPerPage;
 
@@ -28,7 +24,7 @@ class EpisodesIndex extends React.Component {
   renderIndexRow() {
     const episodesPerPage = this.calculateEpisodesPerPage();
 
-    const episodesIndexItems = this.props.episodes.map((episode) => {
+    const episodesIndexItems = this.props.episodes.map((episode, idx) => {
       return (
         <EpisodesIndexItem
           episode={episode}
@@ -102,16 +98,16 @@ class EpisodesIndex extends React.Component {
     return (
       <div className='episode-index-row'>
         <div className='index-row-inner'>
-          <p
+          <button
             className='episode-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
             {String.fromCharCode(8249)}
-          </p>
-          <p
+          </button>
+          <button
             className='episode-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
             {String.fromCharCode(8250)}
-          </p>
+          </button>
           <ul className='carousel-row'>
             {indexRow}
           </ul>
