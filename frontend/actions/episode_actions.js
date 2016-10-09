@@ -1,7 +1,7 @@
 export const RECEIVE_EPISODES = "RECEIVE_EPISODES";
 export const REQUEST_EPISODES = "REQUEST_EPISODES";
-// export const RECEIVE_EPISODE = "RECEIVE_EPISODE";
-// export const REQUEST_EPISODE = "REQUEST_EPISODE";
+export const RECEIVE_EPISODE = "RECEIVE_EPISODE";
+export const REQUEST_EPISODE = "REQUEST_EPISODE";
 // export const REMOVE_SERIE = "REMOVE_SERIE";
 
 export const requestEpisodes = (serieId) => ({
@@ -14,17 +14,15 @@ export const receiveEpisodes = (episodes) => ({
   episodes
 });
 
-// export const requestSerie = (id, genreId) => ({
-//   type: REQUEST_SERIE,
-//   id,
-//   genreId
-// });
-//
-// export const receiveSerie = (serie, genreId) => ({
-//   type: RECEIVE_SERIE,
-//   serie,
-//   genreId
-// });
+export const requestEpisode = (id) => ({
+  type: REQUEST_EPISODE,
+  id
+});
+
+export const receiveEpisode = (episode) => ({
+  type: RECEIVE_EPISODE,
+  episode
+});
 //
 // export const removeSerie = () => ({
 //   type: REMOVE_SERIE
