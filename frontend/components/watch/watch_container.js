@@ -2,9 +2,8 @@ import { connect } from 'react-redux';
 import Watch from './watch';
 
 const mapStateToProps = state => {
-  debugger
   return ({
-
+    playingEpisode: state.episodes.playingEpisode
   });
 };
 

@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
-import { requestEpisodes } from '../../actions/episode_actions';
-import SeriesShow from './series_show';
+import { requestEpisode } from '../../actions/episode_actions';
+import EpisodesIndex from './episodes_index';
 
 const mapStateToProps = state => {
   return ({
-    serieDisplay: state.series.serieDisplay,
-    episodes: state.episodes.episodes
+    episodes: state.episodes.episodes,
+    playingEpisode: state.episodes.playingEpisode
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestEpisodes: (serieId) => dispatch(requestEpisodes(serieId))
+  requestEpisode: (id) => dispatch(requestEpisode(id))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SeriesShow);
+)(EpisodesIndex);

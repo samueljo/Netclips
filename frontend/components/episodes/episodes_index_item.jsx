@@ -9,6 +9,7 @@ class EpisodesIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
+    this.props.requestEpisode(this.props.episode.id);
     this.props.router.push({
       pathname: '/watch',
       query: {
