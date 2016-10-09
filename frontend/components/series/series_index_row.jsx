@@ -134,14 +134,14 @@ class SeriesIndexRow extends React.Component {
         <h1 className='index-row-header'>{this.props.genre}</h1>
         <div className='index-row-inner'>
           <div
-            className='car-button-left'
+            className='car-button cb-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
-            {String.fromCharCode(8249)}
+            {String.fromCharCode(9001)}
           </div>
           <div
-            className='car-button-right'
+            className='car-button cb-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
-            {String.fromCharCode(8250)}
+            {String.fromCharCode(9002)}
           </div>
           <ul className='carousel-row'>
             {indexRow}

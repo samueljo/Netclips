@@ -37,48 +37,42 @@ $moveRight: ($tileWidth / 2 );
   }
 }
 
+.car-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: $tileHeight;
+  width: $tileWidth / 5.7;
+  max-height: 180px;
+  vertical-align: center;
+  cursor: pointer;
+  font-size: 3vw;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+  display: none;
+}
+
 .index-row {
   overflow: hidden;
   padding: 0 4% .5em;
   &:hover {
-    .car-button-right {
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.7);
-      height: $tileHeight;
-      width: $tileWidth / 5.7;
-      max-height: 180px;
-      vertical-align: center;
+    .cb-right {
+      display: block;
       right: 0;
-      cursor: pointer;
-      font-size: 7vw;
-      font-weight: 100;
-      text-align: center;
-      color: #fff;
       &:hover {
         font-weight: 200;
         transform: scale(1.2);
       }
-      z-index: 5;
     }
 
-    .car-button-left {
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.7);
-      height: $tileHeight;
-      width: $tileWidth / 5.7;
-      max-height: 180px;
-      vertical-align: center;
+    .cb-left {
       left: 0;
-      text-align: center;
-      cursor: pointer;
-      font-size: 7vw;
-      font-weight: 100;
-      color: #fff;
+      display: block;
       &:hover {
         font-weight: 200;
         transform: scale(1.2);
       }
-      z-index: 5;
     }
   }
 }

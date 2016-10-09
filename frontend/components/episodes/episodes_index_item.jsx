@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class EpisodesIndexItem extends React.Component {
   constructor(props) {
@@ -7,7 +8,14 @@ class EpisodesIndexItem extends React.Component {
   }
 
   handleClick(e) {
-    console.log('Play episode');
+    e.preventDefault();
+    this.props.router.push({
+      pathname: '/watch',
+      query: {
+        title: this.props.episode.title,
+        video: this.props.episode.video_url
+      }
+    });
   }
 
   render() {
@@ -28,4 +36,4 @@ class EpisodesIndexItem extends React.Component {
   }
 }
 
-export default EpisodesIndexItem;
+export default withRouter(EpisodesIndexItem);

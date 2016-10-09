@@ -17,6 +17,7 @@ $moveRight: ($tileWidth / 2 );
 
 .episodes-page {
   position: absolute;
+  margin-left: 5px;
   left: -100%;
   display: none;
   transition: left 300ms linear;
@@ -48,7 +49,7 @@ $moveRight: ($tileWidth / 2 );
   max-height: 180px;
   right: 0;
   cursor: pointer;
-  font-size: 7vw;
+  font-size: 3vw;
   font-weight: 100;
   text-align: center;
   color: #fff;
@@ -67,7 +68,7 @@ $moveRight: ($tileWidth / 2 );
   left: 0;
   text-align: center;
   cursor: pointer;
-  font-size: 7vw;
+  font-size: 3vw;
   font-weight: 100;
   color: #fff;
   &:hover {
@@ -165,6 +166,7 @@ $moveRight: ($tileWidth / 2 );
 
 .episode-summary {
   position: absolute;
+  width: $tileWidth;
   padding: 0.3vw 0;
   color: #fff;
   font-size: 1.1vw;

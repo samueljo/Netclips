@@ -101,12 +101,12 @@ class EpisodesIndex extends React.Component {
           <button
             className='episode-button-left'
             onClick={ () => this.slideTo(-1, indexRow.length) }>
-            {String.fromCharCode(8249)}
+            {String.fromCharCode(9001)}
           </button>
           <button
             className='episode-button-right'
             onClick={ () => this.slideTo(1, indexRow.length) }>
-            {String.fromCharCode(8250)}
+            {String.fromCharCode(9002)}
           </button>
           <ul className='carousel-row'>
             {indexRow}

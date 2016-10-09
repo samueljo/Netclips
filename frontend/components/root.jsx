@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
 import SessionFormContainer from './sessions/session_form_container';
+import WatchContainer from './watch/watch_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -28,6 +29,9 @@ const Root = ({ store }) => {
         <Route path="/signup"
           component={SessionFormContainer}
           onEnter={_redirectIfLoggedIn} />
+        <Route path="/watch"
+          component={WatchContainer}
+          onEnter={_redirectUnlessLoggedIn} />
       </Router>
     </Provider>
   );
