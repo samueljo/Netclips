@@ -1,8 +1,5 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-// import {
-//   loadIframeApi,
-//   onYoutubeIframeAPIReady } from '../../util/iframe_api_util';
 
 class Watch extends React.Component {
   constructor(props) {
@@ -43,7 +40,6 @@ class Watch extends React.Component {
 
   _onReady(e) {
     console.log('play video');
-    this.togglePlay(e);
   }
 
   // onPlayerStateChange(e) {
