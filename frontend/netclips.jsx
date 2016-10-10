@@ -5,7 +5,8 @@ import configureStore from './store/store';
 
 import {
   requestSeries,
-  requestSerie } from './actions/serie_actions';
+  requestSerie,
+  createReview } from './actions/serie_actions';
 
 import {
   fetchSeries,
@@ -19,6 +20,7 @@ window.requestSeries = requestSeries;
 window.requestEpisodes = requestEpisodes;
 window.requestEpisode = requestEpisode;
 window.requestSerie = requestSerie;
+window.createReview = createReview;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

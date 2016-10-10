@@ -13,3 +13,12 @@ export const fetchSerie = (id, success) => {
     success
   });
 };
+
+export const fetchReview = (review, success) => {
+  $.ajax({
+    method: 'POST',
+    url: `api/series/${review.serie_id}/reviews`,
+    data: review,
+    success
+  });
+};

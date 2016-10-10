@@ -4,6 +4,8 @@ export const RECEIVE_SERIE = "RECEIVE_SERIE";
 export const REQUEST_SERIE = "REQUEST_SERIE";
 export const REMOVE_SERIE = "REMOVE_SERIE";
 
+export const CREATE_REVIEW = "CREATE_REVIEW";
+
 export const requestSeries = () => ({
   type: REQUEST_SERIES
 });
@@ -27,4 +29,9 @@ export const receiveSerie = (serie, genreId) => ({
 
 export const removeSerie = () => ({
   type: REMOVE_SERIE
+});
+
+export const createReview = (review) => ({
+  type: CREATE_REVIEW,
+  review
 });
