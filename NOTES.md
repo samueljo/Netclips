@@ -1,3 +1,9 @@
+- [ ] Stay on details page after submitting review
+- [ ] Clear review form only on successful submit
+- [ ] Ratings
+- [ ] Show user’s review at the top (with delete review button)
+- [ ] Render new form or edit form depending on whether user has already reviewed
+
 - [X] Refactor main container and main into its own folder
   - Main, search, and mylist will all use series container
 
@@ -23,6 +29,7 @@
 - [X] Dropdown menu for logout
 - [X] Resize and center play buttons
 - [ ] Outline selected series white
+- [ ] Implement own stars component for on hover transition
 
 - [ ] Slow zoom in on entry page background
 - [ ] Guest form fill in by character

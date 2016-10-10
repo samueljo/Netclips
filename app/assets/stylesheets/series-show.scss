@@ -82,6 +82,13 @@ $iconSize: 50px;
   font-weight: 400;
 }
 
+.star {
+  font-size: 2vw;
+  &:hover {
+    color: gold;
+  }
+}
+
 .serie-year {
   margin-top: $tileHeight / 2.3;
   display: inline-block;

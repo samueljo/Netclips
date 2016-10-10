@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import StarRatingComponent from 'react-star-rating-component';
 
 class SerieOverview extends React.Component {
   constructor(props) {
@@ -20,13 +21,31 @@ class SerieOverview extends React.Component {
     });
   }
 
+
+  onStarClick(nextValue, prevValue, name) {
+    const serieId = this.props.serieDisplay.id;
+    const review = Object.assign(
+      {},
+      { rating: nextValue },
+      { serie_id: serieId }
+    );
+    this.props.createReview({review});
+  }
+
   render() {
     const serieDisplay = this.props.serieDisplay;
 
     if (serieDisplay) {
       return (
         <div className='serie-overview'>
-          <div className='avg-rating'>Rating</div>
+          <div className='avg-rating'>
+            <StarRatingComponent
+              name='rating'
+              className='star'
+              starCount={5}
+              value={serieDisplay.avg_rating}
+              onStarClick={this.onStarClick.bind(this)} />
+          </div>
           <div className='serie-year'>{serieDisplay.year}</div>
           <div className='serie-description'>{serieDisplay.description}</div>
           <div className='serie-img-container'>

@@ -6,3 +6,9 @@
 .series-index {
   padding-top: 140px;
 }
+
+i {
+  &:hover {
+    color: gold;
+  }
+}

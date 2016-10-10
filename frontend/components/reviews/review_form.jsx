@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRatingComponent from 'react-star-rating-component';
 import { hashHistory } from 'react-router';
 
 class ReviewForm extends React.Component {
@@ -11,6 +12,10 @@ class ReviewForm extends React.Component {
 
   handleClick() {
     this.setState({ rating: 0, body: '' });
+  }
+
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({ rating: nextValue });
   }
 
   handleSubmit(e) {
@@ -37,10 +42,12 @@ class ReviewForm extends React.Component {
       <div className='review-form'>
         <form onSubmit={this.handleSubmit}>
           <h1 className='details-header'>Rate this series:</h1>
-          <input type="number"
-            className='review-rating'
+          <StarRatingComponent
+            name='rating'
+            className='rating'
+            starCount={5}
             value={this.state.rating}
-            onChange={this.update.bind(this, 'rating')} />
+            onStarClick={this.onStarClick.bind(this)} />
           <textarea
             className='review-body'
             value={this.state.body}

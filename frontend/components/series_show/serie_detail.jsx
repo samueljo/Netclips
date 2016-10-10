@@ -22,9 +22,13 @@ class SerieDetail extends React.Component {
 
   reviewList(reviews=[]) {
     return reviews.map((review) => {
-      return(
-        <Review rating={review.rating} body={review.body} key={review.id} />
-      );
+      if (review.body) {
+        return(
+          <Review rating={review.rating} body={review.body} key={review.id} />
+        );
+      } else {
+        return <div></div>;
+      }
     });
   }
 

@@ -67,7 +67,9 @@ class SeriesShow extends React.Component {
     }
 
     if (this.state.showPanel === 'Overview') {
-      showPanel = <SerieOverview serieDisplay={serieDisplay} />;
+      showPanel = <SerieOverview
+        serieDisplay={serieDisplay}
+        createReview={this.props.createReview} />;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
     } else if (this.state.showPanel === 'Details') {
