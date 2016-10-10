@@ -9,7 +9,6 @@ class Watch extends React.Component {
       playing: false
     };
 
-    this.togglePlay = this.togglePlay.bind(this);
     this.returnToIndex = this.returnToIndex.bind(this);
   }
 
@@ -23,6 +22,7 @@ class Watch extends React.Component {
       left: 0,
       playerVars: {
         autohide: 1,
+        showinfo: 0,
         autoplay: 1,
         controls: 2,
         modestBranding: 1
