@@ -20,7 +20,9 @@
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
 - [X] Dropdown menu for logout
-- [ ] On click of serie's title, should rescale 
+- [ ] On click of serie's title, should rescale the tile to normal size
+- [ ] Resize play buttons
+
 
 **404 Page**
 

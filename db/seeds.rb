@@ -55,7 +55,7 @@ all_series = [
     genre_ids: [all_genres[2].id]
   }),
 
-# Movie Trailers
+  # Movie Trailers
   # 1
   Serie.create!({
     title: 'IBM Watson Trailer: Morgan',
@@ -193,8 +193,7 @@ all_series = [
     genre_ids: [all_genres[0].id]
   }),
 
-# Talk Shows
-
+  # Talk Shows
   # 18 Conan
   Serie.create!({
     title: 'Conan',
@@ -244,8 +243,7 @@ all_series = [
     genre_ids: [all_genres[1].id]
   }),
 
-# NBA
-
+  # NBA
   # 24 NBA HOF 2016 Speech
   Serie.create!({
     title: 'NBA Hall of Fame 2016 Induction',
