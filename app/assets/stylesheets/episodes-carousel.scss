@@ -24,7 +24,7 @@ $moveRight: ($tileWidth / 2 );
   z-index: 1;
   &.previous {
     z-index: 2;
-    left: -100%;
+    left: -200%;
     display: block;
   }
   &.active {
@@ -83,8 +83,8 @@ $moveRight: ($tileWidth / 2 );
   display: inline-block;
   width: $tileWidth;
   height: $tileHeight;
-  max-width: 363px;
-  max-height: 190px;
+  // max-width: 363px;
+  // max-height: 190px;
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;
@@ -95,8 +95,8 @@ $moveRight: ($tileWidth / 2 );
 .episode-tile-img {
   width: $tileWidth;
   height: $tileHeight;
-  max-width: 330px;
-  max-height: 180px;
+  // max-width: 330px;
+  // max-height: 180px;
   object-fit: cover;
 }
 
