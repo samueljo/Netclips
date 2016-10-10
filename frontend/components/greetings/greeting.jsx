@@ -11,7 +11,7 @@ const Greeting = ({ currentUser, router }) => {
     return (
       <div className='entry-background'>
         <div className='header'>
-          <img className='logo entry-logo' onClick={_redirectToMain} />
+          <h1 className='logo entry-logo' onClick={_redirectToMain} />
           <div className='group'>
             <Link to="signin" className='jumbo-button sign-in'>Sign In</Link>
           </div>

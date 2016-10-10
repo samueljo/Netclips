@@ -28,8 +28,12 @@ class SeriesIndexItem extends React.Component {
         <div className='tile-details'>
           <div
             className='tile-title'
-            onClick={this.handleTitleClick}>{serie.title}</div>
+            onClick={this.handleTitleClick}>
+            {serie.title}
+          </div>
           <div className='tile-add-list'>Add</div>
+          <div className='spacer-left' />
+          <div className='spacer-right' />
           <button
             className='play-button'
             onClick={this.handleDetailsClick}>

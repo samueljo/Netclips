@@ -12,7 +12,7 @@ const Navbar = ({ currentUser, logout, router }) => {
   return (
     <div className='nav-header group'>
       <div className='nav'>
-        <img className='logo nav-logo' onClick={_redirectToMain} />
+        <h1 className='logo nav-logo' onClick={_redirectToMain} />
         <div className='nav-user'>{currentUsername}
           <ul className='nav-dropdown'>
             <li className='nav-dropdown-item'>

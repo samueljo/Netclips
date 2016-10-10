@@ -40,7 +40,7 @@ $moveRight: ($tileWidth / 2 );
 .car-button {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
-  height: $tileHeight;
+  height: $tileHeight / 2;
   width: $tileWidth / 5.7;
   max-height: 180px;
   cursor: pointer;
@@ -50,9 +50,11 @@ $moveRight: ($tileWidth / 2 );
   color: #fff;
   z-index: 5;
   display: none;
+  padding: $tileHeight / 4 0;
 }
 
 .index-row {
+  position: relative;
   overflow: hidden;
   &:hover {
     .cb-right {
@@ -131,7 +133,7 @@ $moveRight: ($tileWidth / 2 );
   height: $tileHeight;
   max-width: 330px;
   max-height: 180px;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .tile-details {
@@ -154,14 +156,15 @@ $moveRight: ($tileWidth / 2 );
 .play-button {
   z-index: 5;
   height: 4vw;
-  position: absolute;
-  padding: 0 0.7vw 0 1vw;
+  display: inline-block;
+  padding: 0.2vw 0.7vw 0 1.2vw;
   border-radius: 100%;
   border: 0.3vw solid #999;
-  top: 0;
-  left: 0;
-  margin-left: $tileWidth / 2.6;
-  margin-top: $tileWidth / 7;
+  vertical-align: middle;
+  // top: 0;
+  // left: 0;
+  // margin-left: $tileWidth / 2.6;
+  // margin-top: $tileWidth / 7;
   font-size: 2.7vw;
   color: #999;
   cursor: pointer;
@@ -184,7 +187,6 @@ $moveRight: ($tileWidth / 2 );
   &:hover {
     color: #fff;
   }
-
 }
 
 .tile-add-list {
@@ -201,3 +203,55 @@ $moveRight: ($tileWidth / 2 );
     color: #fff;
   }
 }
+
+
+// .tile-details {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   font-size: 12px;
+//   opacity: 0;
+//   background: linear-gradient(to top,
+//     rgba(0,0,0,0.9) 0%,
+//     rgba(0,0,0,0), 100%);
+//   transition: $duration opacity;
+//
+//   &:after, &:before {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     display: block;
+//   }
+//
+//   &:after {
+//     margin-top: (-($iconSize / 2));
+//     margin-left: (-($iconSize / 2));
+//     width: $iconSize;
+//     height: $iconSize;
+//     border: 3px solid #ECF0F1;
+//     line-height: $iconSize;
+//     text-align: center;
+//     border-radius: 100%;
+//     background: rgba(0,0,0,0.5);
+//     z-index: 1;
+//   }
+//
+//   &:before {
+//     content: '▶';
+//     left: 0;
+//     width: 100%;
+//     font-size: 40px;
+//     margin-left: 7px;
+//     margin-top: -20px;
+//     text-align: center;
+//     z-index: 2;
+//     color: #DB0510;
+//   }
+//
+//   .index-tile:hover & {
+//     opacity: 1;
+//   }
+// }

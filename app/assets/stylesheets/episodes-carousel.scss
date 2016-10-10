@@ -97,7 +97,7 @@ $moveRight: ($tileWidth / 2 );
   height: $tileHeight;
   max-width: 330px;
   max-height: 180px;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .episode-tile-play {

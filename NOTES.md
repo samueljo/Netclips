@@ -23,7 +23,7 @@
 - [ ] Slow zoom in on entry page background
 - [X] Dropdown menu for logout
 - [ ] On click of serie's title, should rescale the tile to normal size
-- [ ] Resize and center play buttons
+- [X] Resize and center play buttons
 - [ ] Outline selected series white
 - [ ] Last tile in series index row should stay in screen
 
