@@ -19,7 +19,8 @@
 - [ ] Guest form fill in by character
 - [ ] Errors outline input fields red
 - [ ] Slow zoom in on entry page background
-- [ ] Dropdown menu for logout
+- [X] Dropdown menu for logout
+- [ ] On click of serie's title, should rescale 
 
 **404 Page**
 
