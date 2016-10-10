@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import YouTube from 'react-youtube';
 
 class Watch extends React.Component {
@@ -9,6 +10,7 @@ class Watch extends React.Component {
     };
 
     this.togglePlay = this.togglePlay.bind(this);
+    this.returnToIndex = this.returnToIndex.bind(this);
   }
 
   renderPlayer() {
@@ -35,17 +37,8 @@ class Watch extends React.Component {
     );
   }
 
-  togglePlay(e) {
-    if (this.state.playing) {
-      e.target.pauseVideo();
-    } else {
-      e.target.playVideo();
-    }
-  }
-
   _onReady(e) {
     console.log('play video');
-    this.togglePlayer(e);
   }
 
   _onStateChange(e) {
@@ -67,6 +60,10 @@ class Watch extends React.Component {
     }
   }
 
+  returnToIndex() {
+    this.props.router.push('/');
+  }
+
   stopVideo() {
 
   }
@@ -74,6 +71,11 @@ class Watch extends React.Component {
   render() {
     return (
       <div className='player-container'>
+        <div
+          className='return'
+          onClick={this.returnToIndex}>
+          {String.fromCharCode(11013)}
+        </div>
         <div className='player' id='player'>
           {this.renderPlayer()}
         </div>
@@ -82,4 +84,4 @@ class Watch extends React.Component {
   }
 }
 
-export default Watch;
+export default withRouter(Watch);
