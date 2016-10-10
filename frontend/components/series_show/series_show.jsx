@@ -18,10 +18,13 @@ class SeriesShow extends React.Component {
   }
 
   componentWillReceiveProps() {
-    // debugger
     if (this.props.serieDisplay.id !== this.state.previousSerie) {
       this.setState({ showPanel: 'Overview' });
     }
+  }
+
+  componentWillUpdate() {
+    this.props.requestEpisodes(this.props.serieDisplay.id);
   }
 
   handleClick(e) {
