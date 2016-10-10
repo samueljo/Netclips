@@ -1,5 +1,6 @@
 import React from 'react';
 import SerieOverview from './serie_overview';
+import SerieDetail from './serie_detail';
 import EpisodesContainer from '../episodes/episodes_container';
 
 class SeriesShow extends React.Component {
@@ -66,11 +67,11 @@ class SeriesShow extends React.Component {
     }
 
     if (this.state.showPanel === 'Overview') {
-      showPanel = <SerieOverview serieDisplay={serieDisplay}/>;
+      showPanel = <SerieOverview serieDisplay={serieDisplay} />;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
-    } else {
-      showPanel = <div></div>;
+    } else if (this.state.showPanel === 'Details') {
+      showPanel = <SerieDetail serieDisplay={serieDisplay} />;
     }
 
     return (

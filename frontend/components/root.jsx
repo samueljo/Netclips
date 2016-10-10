@@ -38,3 +38,7 @@ const Root = ({ store }) => {
 };
 
 export default Root;
+
+
+// <Route path="/browse/:id"
+//   component={App} />

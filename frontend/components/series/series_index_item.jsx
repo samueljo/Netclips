@@ -17,6 +17,12 @@ class SeriesIndexItem extends React.Component {
   handleTitleClick(e) {
     e.stopPropagation();
     this.props.openSeriesShow(this.props.serie.id);
+    // this.props.router.push({
+    //   pathname: '/browse',
+    //   query: {
+    //     id: this.props.serie.id,
+    //   }
+    // });
   }
 
   componentWillUnmount() {
