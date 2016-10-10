@@ -1,28 +1,41 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
-const Review = ({ reviews }) => {
+const Review = ({ currentUserReview, otherUserReviews }) => {
 
   const reviewList = () => {
-    return reviews.map((review) => {
+    const allReviews = otherUserReviews.map((review) => {
       if (review.body) {
         return(
-          <ul key={review.id} className='details-desc'>
-            <li>
-              <StarRatingComponent
-                name='rating'
-                className='rating'
-                starCount={5}
-                editing={false}
-                value={review.rating} />
-            </li>
-            <li>{review.body}</li>
-          </ul>
+          <div key={review.id} className='details-desc'>
+            <StarRatingComponent
+              name='rating'
+              className='rating'
+              starCount={5}
+              editing={false}
+              value={review.rating} />
+            <p>{review.body}</p>
+          </div>
         );
       } else {
         return <div></div>;
       }
     });
+
+    if (currentUserReview[0]) {
+      allReviews.unshift(
+        <div key={currentUserReview[0].id} className='details-desc'>
+          <StarRatingComponent
+            name='rating'
+            className='rating'
+            starCount={5}
+            editing={false}
+            value={currentUserReview[0].rating} />
+          <p>{currentUserReview[0].body}</p>
+        </div>
+      );
+    }
+    return allReviews;
   };
 
   return(

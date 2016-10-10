@@ -11,8 +11,13 @@ class ReviewIndex extends React.Component {
   render() {
     return (
       <div className='review-container'>
-        <Review reviews={this.props.reviews} />
-        <ReviewForm serieDisplay={this.props.serieDisplay} />
+        <Review
+          otherUserReviews={this.props.otherUserReviews}
+          currentUserReview={this.props.currentUserReview} />
+        <ReviewForm
+          serieDisplay={this.props.serieDisplay}
+          currentUserReview={this.props.currentUserReview}
+          createReview={this.props.createReview} />
       </div>
     );
   }

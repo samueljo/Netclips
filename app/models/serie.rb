@@ -25,12 +25,4 @@ class Serie < ActiveRecord::Base
   has_many :genres, through: :serie_genres, source: :genre
   has_many :episodes
   has_many :reviews
-
-  def current_user_reviews(serie, current_user)
-    Review.all.where(user_id: current_user.id).where(serie_id: serie.id)
-  end
-
-  def other_user_reviews(serie, current_user)
-    Review.all.where(serie_id: serie_id).where.not(user_id: current_user.id)
-  end
 end

@@ -6,9 +6,8 @@ class Api::SeriesController < ApplicationController
 
   def show
     @serie = Serie.includes(:genres, :episodes, :reviews).find(params[:id])
-    @current_user_review = @serie.current_user_reviews(@serie, current_user)
-    @other_user_reviews = @serie.other_user_reviews(@serie, current_user)
-    # also need to includes: reviews
+    @current_user_review = @serie.reviews.where(user_id: current_user.id)
+    @other_user_reviews = @serie.reviews.where.not(user_id: current_user.id)
   end
 
   def create
