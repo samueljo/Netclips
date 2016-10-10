@@ -112,33 +112,29 @@ $moveRight: ($tileWidth / 2 );
     rgba(0,0,0,0.9) 0%,
     rgba(0,0,0,0), 100%);
   transition: $duration opacity;
-
-  &:after, &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-  }
-
-  &:before {
-    border: 0.2vw solid #ECF0F1;
-    border-radius: 100%;
-    background: rgba(0,0,0,0.5);
-    padding: 0.1vw 0.4vw 0 0.9vw;
-    content: '▶';
-    left: 0;
-    font-size: 2.7vw;
-    margin-left: $tileWidth / 2;
-    margin-top: -$tileWidth / 6;
-    text-align: center;
-    z-index: 2;
-    color: #DB0510;
-  }
-
-
   .episode-tile:hover & {
     opacity: 1;
+  }
+}
+
+.episode-play-button {
+  z-index: 5;
+  height: 4vw;
+  position: absolute;
+  padding: 0 0.7vw 0 1vw;
+  border-radius: 100%;
+  border: 0.3vw solid #999;
+  top: 0;
+  left: 0;
+  margin-left: $tileWidth / 2.4;
+  margin-top: $tileWidth / 6;
+  font-size: 2.7vw;
+  color: #999;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    color: #DB0510;
+    border: 0.3vw solid #ECF0F1;
   }
 }
 
