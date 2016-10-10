@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewFormContainer from '../reviews/review_form_container';
+import Review from '../reviews/review';
 import { withRouter } from 'react-router';
 
 class SerieDetail extends React.Component {
@@ -10,24 +11,36 @@ class SerieDetail extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    const episode = this.props.serieDisplay.episodes[0];
+    const serieDisplay = this.props.serieDisplay;
     this.props.router.push({
-      pathname: '/watch',
+      pathname: '/browse',
       query: {
-        id: episode.id,
-        video: episode.video_url
+        id: serieDisplay.id
       }
+    });
+  }
+
+  reviewList(reviews=[]) {
+    return reviews.map((review) => {
+      return(
+        <Review rating={review.rating} body={review.body} key={review.id} />
+      );
     });
   }
 
   render() {
     const serieDisplay = this.props.serieDisplay;
-
+    const reviews = this.reviewList(serieDisplay.reviews);
     if (serieDisplay) {
       return (
         <div className='serie-detail'>
           <div className='details'>Details</div>
-          <div className='reviews'>Reviews</div>
+          <div className='reviews'>
+            <h1 className='reviews-header'>Member Reviews</h1>
+            <ul className='member-reviews'>
+              {reviews}
+            </ul>
+          </div>
           <div className='review-form'>Form</div>
         </div>
       );
