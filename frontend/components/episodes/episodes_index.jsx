@@ -24,7 +24,14 @@ class EpisodesIndex extends React.Component {
   renderIndexRow() {
     const episodesPerPage = this.calculateEpisodesPerPage();
     const displayEpisodes = this.props.displayEpisodes;
-    const episodesIndexItems = displayEpisodes.map((episode, idx) => {
+    const episodes = displayEpisodes.sort(function(a, b) {
+      if (a.id < b.id) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    const episodesIndexItems = episodes.map((episode, idx) => {
       return (
         <EpisodesIndexItem
           episode={episode}
