@@ -22,7 +22,7 @@
 - [ ] Down arrow for expanding series
 - [X] Dropdown menu for logout
 - [X] Resize and center play buttons
-- [X] Outline selected series white
+- [ ] Outline selected series white
 
 - [ ] Slow zoom in on entry page background
 - [ ] Guest form fill in by character

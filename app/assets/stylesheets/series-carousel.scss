@@ -101,7 +101,7 @@ $moveRight: ($tileWidth / 2 );
   margin: 1vw 0 4vw;
 }
 
-.index-row-inner:hover .index-tile {
+.index-row-inner:hover .tile {
   opacity: .3;
   margin-bottom: $tileHeight / 4;
   &:hover {
@@ -110,7 +110,7 @@ $moveRight: ($tileWidth / 2 );
   }
 }
 
-.index-tile {
+.tile {
   position: relative;
   display: inline-block;
   width: $tileWidth;
@@ -126,7 +126,7 @@ $moveRight: ($tileWidth / 2 );
   }
 }
 
-.index-tile:hover ~ .index-tile {
+.tile:hover ~ .tile {
   transform: translate3d($moveLeft, 0, 0);
   transform: translate3d($moveRight, 0, 0);
 }

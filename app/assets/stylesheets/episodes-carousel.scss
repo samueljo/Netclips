@@ -90,6 +90,11 @@ $moveRight: ($tileWidth / 2 );
   cursor: pointer;
   transition: $duration all;
   transform-origin: center left;
+  &:hover {
+    .episode-details {
+      color: #fff;
+    }
+  }
 }
 
 .episode-tile-img {
@@ -140,21 +145,22 @@ $moveRight: ($tileWidth / 2 );
 
 .episode-details {
   width: $tileWidth;
+  color: #999;
   position: absolute;
   bottom: -2.2vw;
 }
 
 .episode-title {
-  color: #fff;
   font-size: 1.2vw;
   font-weight: 600;
   line-height: 1.3;
+  white-space: normal;
 }
 
 .episode-summary {
   position: absolute;
   width: $tileWidth;
   padding: 0.3vw 0;
-  color: #fff;
   font-size: 1.1vw;
+  white-space: normal;
 }

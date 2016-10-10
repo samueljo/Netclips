@@ -4,6 +4,7 @@ import { withRouter, hashHistory } from 'react-router';
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { selected: this.props.selected };
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleTitleClick = this.handleTitleClick.bind(this);
   }
@@ -18,12 +19,14 @@ class SeriesIndexItem extends React.Component {
     this.props.openSeriesShow(this.props.serie.id);
   }
 
+  componentWillUnmount() {
+    this.setState({ selected: false });
+  }
+
   render() {
     const serie = this.props.serie;
-    let selected = 'index-tile';
-    if (this.props.selected) {
-      selected = 'index-tile selected';
-    }
+    const selected = (this.state.selected) ? 'tile selected' : 'tile';
+
     return (
       <div className={selected}>
         <div className='tile-media'>
