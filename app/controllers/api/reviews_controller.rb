@@ -16,7 +16,7 @@ class Api::ReviewsController < ApplicationController
 
   def update
     review = Review.find(params[:id])
-    if review.save
+    if review.update(review_params)
       @serie = review.serie
       render '/api/series/show'
     else
