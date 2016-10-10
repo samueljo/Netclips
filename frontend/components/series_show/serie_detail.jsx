@@ -1,6 +1,5 @@
 import React from 'react';
-import ReviewFormContainer from '../reviews/review_form_container';
-import Review from '../reviews/review';
+import ReviewContainer from '../reviews/review_container';
 import { withRouter } from 'react-router';
 
 class SerieDetail extends React.Component {
@@ -20,24 +19,12 @@ class SerieDetail extends React.Component {
     });
   }
 
-  reviewList(reviews=[]) {
-    return reviews.map((review) => {
-      if (review.body) {
-        return(
-          <Review rating={review.rating} body={review.body} key={review.id} />
-        );
-      } else {
-        return <div></div>;
-      }
-    });
-  }
-
   render() {
     const serieDisplay = this.props.serieDisplay;
     const genres = serieDisplay.genres.map((genre) => {
       return <li className='details-desc' key={genre.id}>{genre.name}</li>;
     });
-    const reviews = this.reviewList(serieDisplay.reviews);
+
     if (serieDisplay) {
       return (
         <div className='serie-detail group'>
@@ -51,13 +38,7 @@ class SerieDetail extends React.Component {
               {genres}
             </ul>
           </div>
-          <div className='reviews'>
-            <h1 className='details-header'>Member Reviews</h1>
-            <ul className='details-desc'>
-              {reviews}
-            </ul>
-          </div>
-          <ReviewFormContainer />
+          <ReviewContainer />
         </div>
       );
     } else {

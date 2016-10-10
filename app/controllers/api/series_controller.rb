@@ -6,6 +6,8 @@ class Api::SeriesController < ApplicationController
 
   def show
     @serie = Serie.includes(:genres, :episodes, :reviews).find(params[:id])
+    @current_user_review = @serie.current_user_reviews(@serie, current_user)
+    @other_user_reviews = @serie.other_user_reviews(@serie, current_user)
     # also need to includes: reviews
   end
 
@@ -19,7 +21,6 @@ class Api::SeriesController < ApplicationController
   end
 
   private
-
   def serie_params
     params.require(:serie).permit(
       :title,
