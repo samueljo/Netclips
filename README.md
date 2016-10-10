@@ -74,58 +74,58 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] New Rails project
-- [ ] User model/migration
-- [ ] Back end authentication (session/password)
-- [ ] StaticPages controller and root view
-- [ ] Webpack & react/redux modules
-- [ ] APIUtil to interact with the API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/signin components
-- [ ] Blank landing component after signup/signin
-- [ ] Style signup/signin components
-- [ ] Seed users
+- [X] New Rails project
+- [X] User model/migration
+- [X] Back end authentication (session/password)
+- [X] StaticPages controller and root view
+- [X] Webpack & react/redux modules
+- [X] APIUtil to interact with the API
+- [X] Redux cycle for frontend authentication
+- [X] User signup/signin components
+- [X] Blank landing component after signup/signin
+- [X] Style signup/signin components
+- [X] Seed users
 - [ ] Review phase 1
 
 ### Phase 2: Series Model, API, and components (2 days)
 
 **Objective:** Series can be created, read, edited and destroyed through the API.
 
-- [ ] Series model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for series (SeriesController)
-- [ ] JBuilder views for series
+- [X] Series model
+- [X] Seed database with a small amount of test data
+- [X] CRUD API for series (SeriesController)
+- [X] JBuilder views for series
 - Series components and respective Redux loops
-  - [ ] SeriesIndex
+  - [X] SeriesIndex
     - Will be primary portion of app
       * Included in 'browse', 'mylist' and 'search'
-  - [ ] SeriesIndexRow
+  - [X] SeriesIndexRow
     - Each row in the index that implements 'wrap-around' scrolling
-  - [ ] SeriesIndexItem
+  - [X] SeriesIndexItem
     - Ratings
     - Play current episode
-  - [ ] SeriesDetailPane
+  - [X] SeriesDetailPane
       - SeriesDetail
       - SeriesOverview
       - SeriesEpisodes
-  - [ ] Seed series
+  - [X] Seed series
 
 ### Phase 3: Episode Model, API, and components (3 days)
 
 **Objective:** Episodes can be created, read, edited and destroyed through the API.
 
-- [ ] Episode model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for episodes (EpisodesController)
-- [ ] JBuilder views for episodes
+- [X] Episode model
+- [X] Seed database with a small amount of test data
+- [X] CRUD API for episodes (EpisodesController)
+- [X] JBuilder views for episodes
 - Episodes components and respective Redux loops
-  - [ ] EpisodeIndex
+  - [X] EpisodeIndex
     - Nested in SeriesIndexItem::SeriesEpisodes
     - Implement 'wrap-around' scrolling
-  - [ ] EpisodeIndexItem
+  - [X] EpisodeIndexItem
   - [ ] EpisodeShow
     - Be able to watch an episode through YouTube API
-  - [ ] Seed episodes within series
+  - [X] Seed episodes within series
 
 ### Phase 4: Reviews (2 day)
 

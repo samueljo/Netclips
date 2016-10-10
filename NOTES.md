@@ -22,7 +22,7 @@
 - [X] Dropdown menu for logout
 - [ ] On click of serie's title, should rescale the tile to normal size
 - [ ] Resize play buttons
-
+- [ ] Outline selected series white
 
 **404 Page**
 
@@ -41,3 +41,5 @@ Questions:
 
 
 - [x] Fix carousel with 3 pages.
+
+- [ ] Implement LRU cache
