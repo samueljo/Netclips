@@ -7,7 +7,6 @@ class SeriesShow extends React.Component {
     super(props);
     this.state = {
       showPanel: 'Overview',
-      previousSerie: this.props.serieDisplay.id
     };
     this.handleClick = this.handleClick.bind(this);
     this.renderNavButtons = this.renderNavButtons.bind(this);
@@ -18,9 +17,7 @@ class SeriesShow extends React.Component {
   }
 
   componentWillReceiveProps() {
-    if (this.props.serieDisplay.id !== this.state.previousSerie) {
-      this.setState({ showPanel: 'Overview' });
-    }
+    this.setState({ showPanel: 'Overview' });
   }
 
   componentWillUpdate() {

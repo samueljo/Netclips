@@ -25,11 +25,16 @@ class SeriesIndexItem extends React.Component {
         <div className='tile-media'>
           <img className='tile-img' src={serie.image_url} />
         </div>
-        <div className='tile-details' onClick={this.handleDetailsClick}>
+        <div className='tile-details'>
           <div
             className='tile-title'
             onClick={this.handleTitleClick}>{serie.title}</div>
           <div className='tile-add-list'>Add</div>
+          <button
+            className='play-button'
+            onClick={this.handleDetailsClick}>
+            ▶
+          </button>
         </div>
       </div>
     );

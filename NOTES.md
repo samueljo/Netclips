@@ -1,6 +1,8 @@
 - [X] Refactor main container and main into its own folder
   - Main, search, and mylist will all use series container
 
+- [ ] Watch single episode series
+
 **Complete front-end auth:**
 - [ ] Delete user account
 - [ ] Update user account
@@ -21,12 +23,14 @@
 - [ ] Slow zoom in on entry page background
 - [X] Dropdown menu for logout
 - [ ] On click of serie's title, should rescale the tile to normal size
-- [X] Resize play buttons
+- [ ] Resize and center play buttons
 - [ ] Outline selected series white
+- [ ] Last tile in series index row should stay in screen
+
 
 **404 Page**
 
-- Fix switching to different series in same genre - need to show 'Overview' panel
+- [X] Fix switching to different series in same genre - need to show 'Overview' panel
 
 - Make episode summaries have set height and cut off words with ellipsis after.
 

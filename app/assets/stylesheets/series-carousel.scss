@@ -117,7 +117,6 @@ $moveRight: ($tileWidth / 2 );
   max-height: 180px;
   margin-right: 10px;
   font-size: 20px;
-  cursor: pointer;
   transition: $duration all;
   transform-origin: center left;
 }
@@ -147,37 +146,35 @@ $moveRight: ($tileWidth / 2 );
     rgba(0,0,0,0.9) 0%,
     rgba(0,0,0,0), 100%);
   transition: $duration opacity;
-
-  &:after, &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-  }
-
-  &:before {
-    border: 0.2vw solid #ECF0F1;
-    border-radius: 100%;
-    background: rgba(0,0,0,0.5);
-    padding: 0.1vw 0.4vw 0 0.9vw;
-    content: '▶';
-    left: 0;
-    font-size: 2.7vw;
-    margin-left: 9vw;
-    margin-top: -1.5vw;
-    text-align: center;
-    z-index: 2;
-    color: #DB0510;
-  }
-
-  .index-tile:hover & {
+  &:hover {
     opacity: 1;
+  }
+}
+
+.play-button {
+  z-index: 5;
+  height: 4vw;
+  position: absolute;
+  padding: 0 0.7vw 0 1vw;
+  border-radius: 100%;
+  border: 0.3vw solid #999;
+  top: 0;
+  left: 0;
+  margin-left: $tileWidth / 2.6;
+  margin-top: $tileWidth / 7;
+  font-size: 2.7vw;
+  color: #999;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    color: #DB0510;
+    border: 0.3vw solid #ECF0F1;
   }
 }
 
 .tile-title {
   position: absolute;
+  cursor: pointer;
   bottom: 0;
   padding: 1.3vw;
   color: #fff;
@@ -187,6 +184,7 @@ $moveRight: ($tileWidth / 2 );
 }
 
 .tile-add-list {
+  cursor: pointer;
   position: absolute;
   bottom: 0;
   right: 0;

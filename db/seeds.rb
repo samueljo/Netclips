@@ -48,8 +48,8 @@ Serie.destroy_all
 all_series = [
   # 0 NBA Finals 2016
   Serie.create!({
-    title: 'NBA',
-    description: 'NBA',
+    title: 'NBA Finals 2016',
+    description: 'NBA Finals 2016: Cleveland Cavaliers vs. Golden State Warriors',
     year: 2016,
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
     genre_ids: [all_genres[2].id]

@@ -115,12 +115,16 @@ class SeriesIndexRow extends React.Component {
     const seriesPerPage = this.calculateSeriesPerPage();
 
     if (seriesPerPage !== this.state.seriesPerPage) {
-      this.setState({seriesPerPage: seriesPerPage});
+      this.setState({ seriesPerPage: seriesPerPage });
     }
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   render() {
