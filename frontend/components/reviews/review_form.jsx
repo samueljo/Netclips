@@ -5,9 +5,18 @@ import { hashHistory } from 'react-router';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: 0, body: '' };
+    const currentUserReview = this.props.currentUserReview[0];
+    if (currentUserReview) {
+      this.state = {
+        rating: currentUserReview.rating,
+        body: currentUserReview.body
+      };
+    } else {
+      this.state = { rating: 0, body: '' };
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.renderFormButton = this.renderFormButton.bind(this);
   }
 
   handleClick() {
@@ -26,7 +35,12 @@ class ReviewForm extends React.Component {
       this.state,
       { serie_id: serieId }
     );
-    this.props.createReview({review});
+
+    if (this.props.currentUserReview[0]) {
+      this.props.updateReview({review});
+    } else {
+      this.props.createReview({review});
+    }
   }
 
   update(property) {
@@ -35,6 +49,10 @@ class ReviewForm extends React.Component {
         [property]: e.currentTarget.value
       });
     };
+  }
+
+  renderFormButton() {
+    return (this.props.currentUserReview[0]) ? 'Edit' : 'Submit';
   }
 
   render() {
@@ -53,7 +71,10 @@ class ReviewForm extends React.Component {
             value={this.state.body}
             placeholder='Write your review here.'
             onChange={this.update('body')}></textarea>
-          <input className='review-button submit' type='submit'/>
+          <input
+            className='review-button submit'
+            type='submit'
+            value={this.renderFormButton()} />
         </form>
         <button
           className='review-button cancel'
