@@ -25,6 +25,7 @@
 - [ ] On click of serie's title, should rescale the tile to normal size
 - [X] Resize and center play buttons
 - [ ] Outline selected series white
+- [ ] Down arrow for expanding series
 - [ ] Last tile in series index row should stay in screen
 
 

@@ -9,13 +9,13 @@ class SerieOverview extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    debugger
-    // Define current episode here
+    // To do: Find current episode
+    const episode = this.props.serieDisplay.episodes[0];
     this.props.router.push({
       pathname: '/watch',
       query: {
-        id: this.props.episode.id,
-        video: this.props.episode.video_url
+        id: episode.id,
+        video: episode.video_url
       }
     });
   }

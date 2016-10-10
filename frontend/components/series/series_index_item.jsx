@@ -1,16 +1,16 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { withRouter, hashHistory } from 'react-router';
 
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDetailsClick = this.handleDetailsClick.bind(this);
+    this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleTitleClick = this.handleTitleClick.bind(this);
-    // this.handleHover?
   }
 
-  handleDetailsClick(e) {
-    console.log('details click');
+  handlePlayClick(e) {
+    // To do: Need to request current episode or 1st episode
+    console.log('play');
   }
 
   handleTitleClick(e) {
@@ -32,11 +32,9 @@ class SeriesIndexItem extends React.Component {
             {serie.title}
           </div>
           <div className='tile-add-list'>Add</div>
-          <div className='spacer-left' />
-          <div className='spacer-right' />
           <button
             className='play-button'
-            onClick={this.handleDetailsClick}>
+            onClick={this.handlePlayClick}>
             ▶
           </button>
         </div>
@@ -45,7 +43,7 @@ class SeriesIndexItem extends React.Component {
   }
 }
 
-export default SeriesIndexItem;
+export default withRouter(SeriesIndexItem);
 
 
 // Define on click for tile-title to fetchSerie
