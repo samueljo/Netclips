@@ -18,16 +18,16 @@
 **Footer**
 
 **CSS Design**
+- [ ] Last tile in series index row should stay in screen
+- [ ] Down arrow for expanding series
+- [X] Dropdown menu for logout
+- [X] Resize and center play buttons
+- [X] Outline selected series white
+
+- [ ] Slow zoom in on entry page background
 - [ ] Guest form fill in by character
 - [ ] Errors outline input fields red
-- [ ] Slow zoom in on entry page background
-- [X] Dropdown menu for logout
 - [ ] On click of serie's title, should rescale the tile to normal size
-- [X] Resize and center play buttons
-- [ ] Outline selected series white
-- [ ] Down arrow for expanding series
-- [ ] Last tile in series index row should stay in screen
-
 
 **404 Page**
 
