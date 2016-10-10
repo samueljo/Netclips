@@ -121,6 +121,9 @@ $moveRight: ($tileWidth / 2 );
   font-size: 20px;
   transition: $duration all;
   transform-origin: center left;
+  &.selected {
+    border: 4px solid #fff;
+  }
 }
 
 .index-tile:hover ~ .index-tile {

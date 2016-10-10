@@ -20,8 +20,12 @@ class SeriesIndexItem extends React.Component {
 
   render() {
     const serie = this.props.serie;
+    let selected = 'index-tile';
+    if (this.props.selected) {
+      selected = 'index-tile selected';
+    }
     return (
-      <div className='index-tile'>
+      <div className={selected}>
         <div className='tile-media'>
           <img className='tile-img' src={serie.image_url} />
         </div>

@@ -55,8 +55,13 @@ class SeriesIndexRow extends React.Component {
     const seriesPerPage = this.calculateSeriesPerPage();
 
     const seriesIndexItems = this.props.seriesIndex.series.map((serie) => {
+      let selected = false;
+      if (this.state.serieDisplayId === serie.id) {
+        selected = true;
+      }
       return (
         <SeriesIndexItem
+          selected={selected}
           serie={serie}
           key={serie.id}
           openSeriesShow={this.openSeriesShow} />
