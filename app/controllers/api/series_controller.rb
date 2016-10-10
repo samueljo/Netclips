@@ -1,6 +1,6 @@
 class Api::SeriesController < ApplicationController
   def index
-    @genres = Genre.all.includes(:series)
+    @genres = Genre.all.includes(:series, :reviews)
     # also need to grab current episodes? & mylist
   end
 

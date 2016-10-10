@@ -24,4 +24,5 @@ class Serie < ActiveRecord::Base
   has_many :serie_genres
   has_many :genres, through: :serie_genres, source: :genre
   has_many :episodes
+  has_many :reviews
 end
