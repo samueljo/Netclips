@@ -11,7 +11,14 @@ class SeriesIndexItem extends React.Component {
 
   handlePlayClick(e) {
     // To do: Need to request current episode or 1st episode
-    console.log('play');
+    const episode = this.props.serieDisplay.episodes[0];
+    // this.props.router.push({
+    //   pathname: '/watch',
+    //   query: {
+    //     id: episode.id,
+    //     video: episode.video_url
+    //   }
+    // });
   }
 
   handleTitleClick(e) {

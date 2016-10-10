@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { createReview } from '../../actions/serie_actions';
 
 const mapStateToProps = (state) => ({
-  serieDisplay: state.series.serieDisplay
+  serieDisplay: state.series.serieDisplay,
+  reviews: state.series.serieDisplay.reviews
 });
 
 const mapDispatchToProps = (dispatch) => ({
