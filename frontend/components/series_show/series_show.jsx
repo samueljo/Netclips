@@ -21,9 +21,9 @@ class SeriesShow extends React.Component {
     this.setState({ showPanel: 'Overview' });
   }
 
-  componentWillUpdate() {
-    this.props.requestEpisodes(this.props.serieDisplay.id);
-  }
+  // componentWillUpdate() {
+  //   this.props.requestEpisodes(this.props.serieDisplay.id);
+  // }
 
   handleClick(e) {
     this.setState({ showPanel: `${e.target.value}`});

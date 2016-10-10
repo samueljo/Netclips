@@ -5,6 +5,8 @@ export const REQUEST_SERIE = "REQUEST_SERIE";
 export const REMOVE_SERIE = "REMOVE_SERIE";
 
 export const CREATE_REVIEW = "CREATE_REVIEW";
+export const UPDATE_REVIEW = "UPDATE_REVIEW";
+export const DESTROY_REVIEW = "DESTROY_REVIEW";
 
 export const requestSeries = () => ({
   type: REQUEST_SERIES
@@ -31,7 +33,20 @@ export const removeSerie = () => ({
   type: REMOVE_SERIE
 });
 
-export const createReview = (review) => ({
+export const createReview = (review, genreId) => ({
   type: CREATE_REVIEW,
-  review
+  review,
+  genreId
+});
+
+export const updateReview = (review, genreId) => ({
+  type: UPDATE_REVIEW,
+  review,
+  genreId
+});
+
+export const destroyReview = (review, genreId) => ({
+  type: DESTROY_REVIEW,
+  review,
+  genreId
 });

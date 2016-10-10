@@ -8,6 +8,8 @@ class Api::ReviewsController < ApplicationController
     review.user_id = current_user.id
     if review.save
       @serie = review.serie
+      @current_user_review = @serie.reviews.where(user_id: current_user.id)
+      @other_user_reviews = @serie.reviews.where.not(user_id: current_user.id)
       render '/api/series/show'
     else
       render json: review, status: :unprocessable_entity

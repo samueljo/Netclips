@@ -7,10 +7,7 @@ class ReviewForm extends React.Component {
     super(props);
     const currentUserReview = this.props.currentUserReview[0];
     if (currentUserReview) {
-      this.state = {
-        rating: currentUserReview.rating,
-        body: currentUserReview.body
-      };
+      this.state = currentUserReview;
     } else {
       this.state = { rating: 0, body: '' };
     }
@@ -37,9 +34,10 @@ class ReviewForm extends React.Component {
     );
 
     if (this.props.currentUserReview[0]) {
-      this.props.updateReview({review});
+      debugger
+      this.props.updateReview({review}, this.props.focusedGenreId);
     } else {
-      this.props.createReview({review});
+      this.props.createReview({review}, this.props.focusedGenreId);
     }
   }
 

@@ -1,14 +1,19 @@
 import {
+  requestSerie,
   receiveSeries,
   receiveSerie,
   REQUEST_SERIES,
   REQUEST_SERIE,
-  CREATE_REVIEW } from '../actions/serie_actions';
+  CREATE_REVIEW,
+  UPDATE_REVIEW,
+  DESTROY_REVIEW } from '../actions/serie_actions';
 
 import {
   fetchSeries,
   fetchSerie,
-  fetchReview } from '../util/series_api_util';
+  createReview,
+  updateReview,
+  destroyReview } from '../util/series_api_util';
 
 // import { UPDATE_FILTER } from '../actions/filter_actions';
 
@@ -23,7 +28,13 @@ export default ({ getState, dispatch }) => next => action => {
       fetchSerie(action.id, serieSuccess);
       break;
     case CREATE_REVIEW:
-      fetchReview(action.review, serieSuccess);
+      createReview(action.review, serieSuccess);
+      break;
+    case UPDATE_REVIEW:
+      updateReview(action.review, serieSuccess);
+      break;
+    case DESTROY_REVIEW:
+      destroyReview(action.review, serieSuccess);
       break;
     default:
       break;
