@@ -156,26 +156,16 @@ $moveRight: ($tileWidth / 2 );
     display: block;
   }
 
-  &:after {
-    margin-top: (-($iconSize / 2));
-    margin-left: (-($iconSize / 2));
-    width: $iconSize;
-    height: $iconSize;
-    border: 3px solid #ECF0F1;
-    line-height: $iconSize;
-    text-align: center;
+  &:before {
+    border: 0.2vw solid #ECF0F1;
     border-radius: 100%;
     background: rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
-  &:before {
+    padding: 0.1vw 0.4vw 0 0.9vw;
     content: '▶';
     left: 0;
-    width: 100%;
-    font-size: 40px;
-    margin-left: 7px;
-    margin-top: -20px;
+    font-size: 2.7vw;
+    margin-left: 9vw;
+    margin-top: -1.5vw;
     text-align: center;
     z-index: 2;
     color: #DB0510;

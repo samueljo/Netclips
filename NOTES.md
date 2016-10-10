@@ -21,7 +21,7 @@
 - [ ] Slow zoom in on entry page background
 - [X] Dropdown menu for logout
 - [ ] On click of serie's title, should rescale the tile to normal size
-- [ ] Resize play buttons
+- [X] Resize play buttons
 - [ ] Outline selected series white
 
 **404 Page**
