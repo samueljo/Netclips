@@ -177,10 +177,14 @@ $moveRight: ($tileWidth / 2 );
   cursor: pointer;
   bottom: 0;
   padding: 1.3vw;
-  color: #fff;
+  color: #ccc;
   width: 80%;
   font-size: 0.9vw;
   line-height: 1.3;
+  &:hover {
+    color: #fff;
+  }
+
 }
 
 .tile-add-list {
@@ -191,6 +195,9 @@ $moveRight: ($tileWidth / 2 );
   text-align: right;
   font-size: 0.7vw;
   padding: 1.3vw;
-  color: #fff;
+  color: #ccc;
   width: 20%;
+  &:hover {
+    color: #fff;
+  }
 }

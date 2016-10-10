@@ -32,7 +32,7 @@ class EpisodesIndexItem extends React.Component {
         <div className='episode-tile-play' onClick={this.handleClick}>
           <button
             className='episode-play-button'
-            onClick={this.handleDetailsClick}>
+            onClick={this.handleClick}>
             ▶
           </button>
         </div>
