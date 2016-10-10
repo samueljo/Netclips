@@ -53,9 +53,7 @@ class SerieDetail extends React.Component {
               {reviews}
             </ul>
           </div>
-          <div className='review-form'>
-            <ReviewFormContainer />
-          </div>
+          <ReviewFormContainer />
         </div>
       );
     } else {

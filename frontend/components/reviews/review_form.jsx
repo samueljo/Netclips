@@ -6,17 +6,16 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = { rating: 0, body: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.returnToSerieShow = this.returnToSerieShow.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  returnToSerieShow() {
-    const serieUrl = '/benches/' + this.props.params.serieId;
-    hashHistory.push(serieUrl);
+  handleClick() {
+    this.setState({ rating: 0, body: '' });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const serieId = parseInt(this.props.params.serieId);
+    const serieId = this.props.serieDisplay.id;
     const review = Object.assign(
       {},
       this.state,
@@ -37,23 +36,21 @@ class ReviewForm extends React.Component {
     return (
       <div className='review-form'>
         <form onSubmit={this.handleSubmit}>
-          <label>Rating</label>
-          <br/>
+          <h1 className='details-header'>Rate this series:</h1>
           <input type="number"
+            className='review-rating'
             value={this.state.rating}
             onChange={this.update.bind(this, 'rating')} />
-          <br/>
-          <label>Body</label>
-          <br/>
           <textarea
-            cols='30'
-            rows='10'
+            className='review-body'
             value={this.state.body}
+            placeholder='Write your review here.'
             onChange={this.update('body')}></textarea>
-          <br/>
-          <input type='submit'/>
+          <input className='review-button submit' type='submit'/>
         </form>
-        <button onClick={this.returnToSerieShow}>Cancel</button>
+        <button
+          className='review-button cancel'
+          onClick={this.handleClick}>Cancel</button>
       </div>
     );
   }

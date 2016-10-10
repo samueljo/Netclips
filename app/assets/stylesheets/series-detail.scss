@@ -38,6 +38,41 @@
   float: left;
   height: 80%;
   width: 29%;
-  background: purple;
-  border: 1px solid #ccc;
+}
+
+.review-body {
+  padding: .5vw;
+  border: 2px solid #333;
+  resize: none;
+  width: 100%;
+  height: 8vw;
+  margin: 0.1vw 0 3vw 0;
+  color: #fff;
+  font-size: 1.4vw;
+  font-weight: 100;
+  line-height: 1.3;
+  letter-spacing: .1vw;
+}
+
+.review-button {
+  float: left;
+  background: #DB0510;
+  color: #fff;
+  line-height: normal;
+  font-size: 1.4vw;
+  font-weight: 100;
+  padding: .8vw 1vw;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 0 3vw;
+  &.submit {
+    float: left;
+  }
+  &.cancel {
+    float: right;
+  }
+  &:hover {
+    background: #E50914;
+  }
 }
