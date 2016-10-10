@@ -30,18 +30,32 @@ class SerieDetail extends React.Component {
 
   render() {
     const serieDisplay = this.props.serieDisplay;
+    const genres = serieDisplay.genres.map((genre) => {
+      return <li className='details-desc' key={genre.id}>{genre.name}</li>;
+    });
     const reviews = this.reviewList(serieDisplay.reviews);
     if (serieDisplay) {
       return (
-        <div className='serie-detail'>
-          <div className='details'>Details</div>
+        <div className='serie-detail group'>
+          <div className='details'>
+            <div className='description-container'>
+              <h1 className='details-header'>Description</h1>
+              <p className='details-desc'>{serieDisplay.description}</p>
+            </div>
+            <br/>
+            <ul className='details-header'>Genres:
+              {genres}
+            </ul>
+          </div>
           <div className='reviews'>
-            <h1 className='reviews-header'>Member Reviews</h1>
-            <ul className='member-reviews'>
+            <h1 className='details-header'>Member Reviews</h1>
+            <ul className='details-desc'>
               {reviews}
             </ul>
           </div>
-          <div className='review-form'>Form</div>
+          <div className='review-form'>
+            <ReviewFormContainer />
+          </div>
         </div>
       );
     } else {
