@@ -42,10 +42,10 @@ class SeriesIndexRow extends React.Component {
   calculateSeriesPerPage() {
     let seriesPerPage;
 
-    if ($(window).width() > 1850) {
-      seriesPerPage = 5;
+    if ($(window).width() > 2000) {
+      seriesPerPage = 6;
     } else {
-      seriesPerPage = 4;
+      seriesPerPage = 5;
     }
 
     return seriesPerPage;

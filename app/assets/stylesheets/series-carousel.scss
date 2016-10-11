@@ -1,6 +1,6 @@
 $duration: 450ms;
-$tileWidth: 22vw;
-$tileHeight: 11.5vw;
+$tileWidth: 16vw;
+$tileHeight: 9vw;
 $iconSize: 50px;
 $growSize: 1.5;
 
@@ -41,7 +41,7 @@ $moveRight: ($tileWidth / 2 );
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
   height: $tileHeight / 2;
-  width: $tileWidth / 5.7;
+  width: $tileWidth / 4.4;
   max-height: 180px;
   cursor: pointer;
   font-size: 3vw;
@@ -117,7 +117,7 @@ $moveRight: ($tileWidth / 2 );
   height: $tileHeight;
   // max-width: 330px;
   // max-height: 180px;
-  margin-right: 10px;
+  margin-right: $tileWidth / 7;
   font-size: 20px;
   transition: $duration all;
   transform-origin: center left;
@@ -158,9 +158,9 @@ $moveRight: ($tileWidth / 2 );
 
 .play-button {
   z-index: 5;
-  height: 4vw;
+  height: 3vw;
   display: inline-block;
-  padding: 0.2vw 0.7vw 0 1.2vw;
+  padding: 0.1vw 0.4vw 0 0.7vw;
   border-radius: 100%;
   border: 0.3vw solid #999;
   vertical-align: middle;
@@ -168,7 +168,7 @@ $moveRight: ($tileWidth / 2 );
   left: 0;
   margin-left: $tileWidth / 2.6;
   margin-top: $tileWidth / 7;
-  font-size: 2.7vw;
+  font-size: 2.3vw;
   color: #999;
   cursor: pointer;
   &:hover {
@@ -185,7 +185,8 @@ $moveRight: ($tileWidth / 2 );
   padding: 1.3vw;
   color: #ccc;
   width: 80%;
-  font-size: 0.9vw;
+  font-size: 0.6vw;
+  white-space: normal;
   line-height: 1.3;
   &:hover {
     color: #fff;

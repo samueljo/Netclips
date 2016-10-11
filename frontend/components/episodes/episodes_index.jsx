@@ -12,10 +12,10 @@ class EpisodesIndex extends React.Component {
   calculateEpisodesPerPage() {
     let episodesPerPage;
 
-    if ($(window).width() > 1750) {
-      episodesPerPage = 4;
+    if ($(window).width() > 2000) {
+      episodesPerPage = 5;
     } else {
-      episodesPerPage = 3;
+      episodesPerPage = 4;
     }
 
     return episodesPerPage;
