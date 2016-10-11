@@ -26,7 +26,7 @@ class SerieOverview extends React.Component {
     if (currentUserReview) {
       this.setState(currentUserReview);
     } else {
-      this.setState({ rating: 0 });
+      this.setState({ rating: 0, body: '' });
     }
   }
 

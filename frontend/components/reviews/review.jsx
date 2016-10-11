@@ -18,7 +18,7 @@ const Review = ({
               starCount={5}
               editing={false}
               value={review.rating} />
-            <p>{review.body}</p>
+            <p className='review'>{review.body}</p>
           </div>
         );
       } else {
@@ -35,7 +35,7 @@ const Review = ({
             starCount={5}
             editing={false}
             value={currentUserReview[0].rating} />
-          <p>{currentUserReview[0].body}</p>
+          <p className='review'>{currentUserReview[0].body}</p>
           <button
             className='delete-review'
             onClick={handleClick}>Delete</button>
@@ -53,7 +53,7 @@ const Review = ({
 
   const renderMoreReviewsButton = () => {
     const reviewsCount = otherUserReviews.length + currentUserReview.length;
-    if (reviewsCount > 4) {
+    if (reviewsCount > 3) {
       const buttonText = `See all reviews (${reviewsCount})`;
       return(
         <button className='all-reviews'>{buttonText}</button>

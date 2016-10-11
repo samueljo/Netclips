@@ -1,3 +1,4 @@
+import { LOGOUT } from '../actions/session_actions';
 import {
   RECEIVE_EPISODES,
   RECEIVE_EPISODE } from '../actions/episode_actions';
@@ -20,6 +21,8 @@ const EpisodesReducer = (state = _defaultState, action) => {
     //   newState = merge({}, state);
     //   newState.playingEpisode = action.episode;
     //   return newState;
+    case LOGOUT:
+      return _defaultState;
     default:
       return state;
   }

@@ -1,3 +1,4 @@
+import { LOGOUT } from '../actions/session_actions';
 import {
   RECEIVE_SERIES,
   RECEIVE_SERIE,
@@ -22,6 +23,8 @@ const SeriesReducer = (state = _defaultState, action) => {
       return newState;
     case REMOVE_SERIE:
       return merge({}, state, {serieDisplay: null, focusedGenreId: null});
+    case LOGOUT:
+      return _defaultState;
     default:
       return state;
   }

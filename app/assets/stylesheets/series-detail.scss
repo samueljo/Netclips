@@ -25,6 +25,12 @@
   letter-spacing: .1vw;
 }
 
+.review {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .reviews {
   padding: 1vw;
   margin: 6vw 0;
@@ -85,6 +91,22 @@
   color: #fff;
   border-radius: 3px;
   padding: .1vw .7vw;
+  letter-spacing: 1px;
+  &:hover {
+    background: #E50914;
+  }
+}
+
+.all-reviews {
+  margin-top: .5vw;
+  cursor: pointer;
+  background: #DB0510;
+  color: #fff;
+  border-radius: 3px;
+  padding: .3vw 1vw;
+  font-size: 1.1vw;
+  font-weight: 100;
+  letter-spacing: 1px;
   &:hover {
     background: #E50914;
   }

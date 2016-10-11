@@ -32,7 +32,7 @@ class ReviewForm extends React.Component {
       this.state,
       { serie_id: serieId }
     );
-    
+
     if (this.props.currentUserReview[0]) {
       this.props.updateReview({review}, this.props.focusedGenreId);
     } else {
