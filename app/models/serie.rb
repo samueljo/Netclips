@@ -25,4 +25,11 @@ class Serie < ActiveRecord::Base
   has_many :genres, through: :serie_genres, source: :genre
   has_many :episodes
   has_many :reviews
+
+  def self.search(params)
+    Serie.all.joins(:genres).where(
+    "lower(series.title) LIKE ? OR lower(genres.name) LIKE ?",
+    "%#{params[:query].downcase}%",
+    "%#{params[:query].downcase}%")    
+  end
 end

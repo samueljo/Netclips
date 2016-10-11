@@ -21,17 +21,18 @@ class SeriesShow extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.serieDisplay.id !== nextProps.serieDisplay.id) {
       this.setState({ showPanel: 'Overview' });
-    }
-  }
-
-  componentWillUpdate() {
-    if (this.state.previousSerie !== this.props.serieDisplay.id) {
-      this.setState({
-        previousSerie: this.props.serieDisplay.id
-      });
       this.props.requestEpisodes(this.props.serieDisplay.id);
     }
   }
+
+  // componentWillUpdate() {
+  //   if (this.state.previousSerie !== this.props.serieDisplay.id) {
+  //     this.setState({
+  //       previousSerie: this.props.serieDisplay.id
+  //     });
+  //     this.props.requestEpisodes(this.props.serieDisplay.id);
+  //   }
+  // }
 
   handleClick(e) {
     this.setState({ showPanel: `${e.target.value}`});
