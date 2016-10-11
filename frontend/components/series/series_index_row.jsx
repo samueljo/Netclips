@@ -136,8 +136,6 @@ class SeriesIndexRow extends React.Component {
     const serieDisplay = this.renderSeriesShow();
     const indexRow = this.renderIndexRow();
 
-    console.log(this.state);
-
     return (
       <div className='index-row'>
         <h1 className='index-row-header'>{this.props.genre}</h1>

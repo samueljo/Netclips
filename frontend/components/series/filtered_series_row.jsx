@@ -11,34 +11,6 @@ class FilteredSeriesRow extends React.Component {
     this.handleResize = this.handleResize.bind(this);
   }
 
-  calculateSeriesPerPage() {
-    let seriesPerPage;
-
-    if ($(window).width() > 2000) {
-      seriesPerPage = 6;
-    } else {
-      seriesPerPage = 5;
-    }
-
-    return seriesPerPage;
-  }
-
-  handleResize(e) {
-    const seriesPerPage = this.calculateSeriesPerPage();
-
-    if (seriesPerPage !== this.state.seriesPerPage) {
-      this.setState({ seriesPerPage: seriesPerPage });
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
   closeSeriesShow() {
     console.log('toggle off');
     this.props.removeSerie();
@@ -52,31 +24,37 @@ class FilteredSeriesRow extends React.Component {
   }
 
   renderSeriesShow() {
-    if (this.state.serieDisplayId) {
-      return (
-        <div className='series-show'>
-          <SeriesShowContainer />
-          <button
-            className='close-series-show'
-            onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
-        </div>
-      );
+    return (
+      <div className='series-show'>
+        <SeriesShowContainer />
+        <button
+          className='close-series-show'
+          onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
+      </div>
+    );
+  }
+
+  calculateSeriesPerRow() {
+    let seriesPerRow;
+
+    if ($(window).width() > 2000) {
+      seriesPerRow = 6;
     } else {
-      return <div></div>;
+      seriesPerRow = 5;
     }
+
+    return seriesPerRow;
   }
 
   renderIndexRows() {
-    const seriesPerPage = this.calculateSeriesPerPage();
-    debugger
-    const seriesIndexItems = this.props.seriesIndex.map((serie) => {
+    const seriesPerRow = this.calculateSeriesPerRow();
+
+     const seriesIndexItems = this.props.seriesIndex.map((serie) => {
       return (
-        <h1 key={serie.id}>serie.title</h1>
-        // <SeriesIndexItem
-        //   selected={selected}
-        //   serie={serie}
-        //   key={serie.id}
-        //   openSeriesShow={this.openSeriesShow} />
+        <SeriesIndexItem
+          serie={serie}
+          key={serie.id}
+          openSeriesShow={this.openSeriesShow} />
       );
     });
 
@@ -86,8 +64,8 @@ class FilteredSeriesRow extends React.Component {
 
     while (seriesDup.length > 0) {
       indexRows.push(
-        <li key={indexRows.length + 1} className='series-page'>
-          {seriesDup.splice(0, seriesPerPage)}
+        <li className='filtered-row-inner' key={indexRows.length + 1}>
+          {seriesDup.splice(0, seriesPerRow)}
         </li>
       );
     }
@@ -95,21 +73,31 @@ class FilteredSeriesRow extends React.Component {
     return indexRows;
   }
 
+  handleResize(e) {
+    const seriesPerRow = this.calculateSeriesPerRow();
+
+    if (seriesPerRow !== this.state.seriesPerRow) {
+      this.setState({ seriesPerRow: seriesPerRow });
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
 
   render() {
     const serieDisplay = this.renderSeriesShow();
     const indexRows = this.renderIndexRows();
-
-    console.log(this.state);
-
     return (
-      <div>
-        <div>
-          <ul>
-            {indexRows}
-          </ul>
-        </div>
-        {serieDisplay}
+      <div className='filtered-row'>
+        <h1 className='search-results-header'>Search results:</h1>
+        <ul>
+          {indexRows}
+        </ul>
       </div>
     );
   }

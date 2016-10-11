@@ -11,10 +11,12 @@ class SearchResults extends React.Component {
     return (
       <div className='main-page'>
         <NavbarContainer />
-        <FilteredSeriesRow
-          seriesIndex={this.props.seriesIndex}
-          requestSerie={this.props.requestSerie}
-          removeSerie={this.props.removeSerie} />
+        <div className='series-index'>
+          <FilteredSeriesRow
+            seriesIndex={this.props.seriesIndex}
+            requestSerie={this.props.requestSerie}
+            removeSerie={this.props.removeSerie} />
+        </div>
       </div>
     );
   }
