@@ -11,21 +11,21 @@
 }
 
 .nav-user {
+  padding-top: 20px;
+  padding-bottom: 27px;
   float: right;
-  padding: 33px 0;
-  margin-right: 40px;
   width: 80px;
   color: #fff;
   line-height: 1.2;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   &:hover {
     .nav-dropdown {
       display: block;
       position: absolute;
-      top: 80px;
-      right: 50px;
+      top: 60px;
+      right: 20px;
     }
   }
 }
@@ -40,9 +40,35 @@
 .nav-dropdown-item {
   cursor: pointer;
   padding: 1.5em 2em;
-  font-size: 12px;
+  font-size: 1.4vw;
   color: #fff;
+  border-top: .1vw solid #ccc;
   &:hover {
     text-decoration: underline;
   }
+}
+
+.search-bar {
+  float: right;
+  margin-right: 5px;
+  margin-top: 15px;
+  line-height: 1.2;
+  font-size: 16px;
+  font-weight: 200;
+  color: #fff;
+  &:empty {
+    border: 1px solid #ccc;
+  }
+}
+
+.mag {
+  float: left;
+  padding: 5px 2px;
+  background: green;
+}
+
+.search-form {
+  float: right;
+  background: purple;
+  padding: 5px 10px;
 }

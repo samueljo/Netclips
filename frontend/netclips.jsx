@@ -17,11 +17,14 @@ import {
   requestEpisodes,
   requestEpisode } from './actions/episode_actions';
 
+import { requestSearchResults } from './actions/search_actions';
+
 window.requestSeries = requestSeries;
 window.requestEpisodes = requestEpisodes;
 window.requestEpisode = requestEpisode;
 window.requestSerie = requestSerie;
 window.createReview = createReview;
+window.requestSearchResults = requestSearchResults;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

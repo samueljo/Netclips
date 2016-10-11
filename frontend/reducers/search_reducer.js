@@ -1,28 +1,21 @@
 import { LOGOUT } from '../actions/session_actions';
 import {
-  RECEIVE_SERIES,
-  RECEIVE_SERIE,
-  REMOVE_SERIE } from '../actions/serie_actions';
+  RECEIVE_SEARCH_RESULTS,
+  CLEAR_SEARCH_RESULTS } from '../actions/search_actions';
 
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  seriesIndex: {},
-  serieDisplay: null,
-  focusedRowId: null
+  series: []
 };
 
-const SearchReducer = (state = {} , action) => {
+const SearchReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_SERIES:
-      return merge({}, state, {seriesIndex: action.series});
-    case RECEIVE_SERIE:
-      const newState = merge({}, state, {focusedRowId: action.rowId});
-      newState.serieDisplay = action.serie;
-      return newState;
-    case REMOVE_SERIE:
-      return merge({}, state, {serieDisplay: null, focusedRowId: null});
+    case RECEIVE_SEARCH_RESULTS:
+      return merge({}, state, { series: action.results.series });
+    case CLEAR_SEARCH_RESULTS:
+      return _defaultState;
     case LOGOUT:
       return _defaultState;
     default:

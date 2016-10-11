@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchContainer from '../search/search_container';
 import { Link, withRouter } from 'react-router';
 
 const Navbar = ({ currentUser, logout, router }) => {
@@ -18,12 +19,13 @@ const Navbar = ({ currentUser, logout, router }) => {
             <li className='nav-dropdown-item'>
               <h1>My Account</h1>
             </li>
-
-            <li>
-              <button className='nav-dropdown-item'
-              onClick={logout}>Sign out of NetClips</button>
+            <li className='nav-dropdown-item'>
+              <button onClick={logout}>Sign out of NetClips</button>
             </li>
           </ul>
+        </div>
+        <div className='search-bar-container'>
+          <SearchContainer />
         </div>
       </div>
     </div>

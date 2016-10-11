@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
+import Search from './search';
+import {
+  requestSearchResults } from '../../actions/search_actions';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = ({ search }) => ({
+  series: search.series
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  requestSearchResults: (query) => dispatch(requestSearchResults(query))
 });
 
-const SearchContainer = {};
-export default SearchContainer;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search);
