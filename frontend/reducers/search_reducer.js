@@ -13,7 +13,7 @@ const SearchReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SEARCH_RESULTS:
-      return merge({}, state, { series: action.results.series });
+      return { series: action.results.series };
     case CLEAR_SEARCH_RESULTS:
       return _defaultState;
     case LOGOUT:
