@@ -6,7 +6,7 @@ class SeriesIndexItem extends React.Component {
     super(props);
     this.state = { selected: this.props.selected };
     this.handlePlayClick = this.handlePlayClick.bind(this);
-    this.handleTitleClick = this.handleTitleClick.bind(this);
+    this.expandSeries = this.expandSeries.bind(this);
   }
 
   handlePlayClick(e) {
@@ -21,7 +21,7 @@ class SeriesIndexItem extends React.Component {
     // });
   }
 
-  handleTitleClick(e) {
+  expandSeries(e) {
     e.stopPropagation();
     this.props.openSeriesShow(this.props.serie.id);
     // this.props.router.push({
@@ -48,7 +48,7 @@ class SeriesIndexItem extends React.Component {
         <div className='tile-details'>
           <div
             className='tile-title'
-            onClick={this.handleTitleClick}>
+            onClick={this.expandSeries}>
             {serie.title}
           </div>
           <div className='tile-add-list'>Add</div>
@@ -57,8 +57,8 @@ class SeriesIndexItem extends React.Component {
             onClick={this.handlePlayClick}>
             ▶
           </button>
-        </div>
       </div>
+    </div>
     );
   }
 }

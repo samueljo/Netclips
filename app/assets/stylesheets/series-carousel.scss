@@ -182,10 +182,10 @@ $moveRight: ($tileWidth / 2 );
   position: absolute;
   cursor: pointer;
   bottom: 0;
-  padding: 1.3vw;
+  padding: 1.3vw 0 1.3vw 0.6vw;
   color: #ccc;
   width: 80%;
-  font-size: 0.6vw;
+  font-size: 0.7vw;
   white-space: normal;
   line-height: 1.3;
   &:hover {
@@ -200,7 +200,7 @@ $moveRight: ($tileWidth / 2 );
   right: 0;
   text-align: right;
   font-size: 0.7vw;
-  padding: 1.3vw;
+  padding: 1.3vw 0.6vw 1.3vw 0;
   color: #ccc;
   width: 20%;
   &:hover {

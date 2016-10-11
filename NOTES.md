@@ -6,7 +6,7 @@
 - [X] Refactor main container and main into its own folder
   - Main, search, and mylist will all use series container
 
-- [ ] Watch single episode series
+- [X] Watch single episode series
 
 **Complete front-end auth:**
 - [ ] Delete user account
@@ -39,11 +39,11 @@
 
 - [X] Fix switching to different series in same genre - need to show 'Overview' panel
 
-- Make episode summaries have set height and cut off words with ellipsis after.
+- [X] Make episode summaries have set height and cut off words with ellipsis after.
 
-- Reference bench favorites for mylist
+- [ ] Reference bench favorites for mylist
 
-- Styling series show page
+- [X] Styling series show page
 
 
 - [x] Fix carousel with 3 pages.

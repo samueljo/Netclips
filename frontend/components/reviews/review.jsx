@@ -26,7 +26,7 @@ const Review = ({
       }
     });
 
-    if (currentUserReview[0]) {
+    if (currentUserReview[0] && currentUserReview[0].body) {
       allReviews.unshift(
         <div key={currentUserReview[0].id} className='details-desc'>
           <StarRatingComponent
