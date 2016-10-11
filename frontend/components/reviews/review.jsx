@@ -1,14 +1,20 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
+import Modal from 'react-modal';
 
-const Review = ({
-  focusedGenreId,
-  currentUserReview,
-  otherUserReviews,
-  destroyReview }) => {
+class Review extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  const reviewList = () => {
-    const allReviews = otherUserReviews.map((review) => {
+  // renderAllReviews = () => {
+  //   // Return a modal with all reviews
+  //   // On click for all-reviews button
+  // };
+
+  reviewList() {
+    const allReviews = this.props.otherUserReviews.map((review) => {
       if (review.body) {
         return(
           <div key={review.id} className='details-desc'>
@@ -26,32 +32,32 @@ const Review = ({
       }
     });
 
-    if (currentUserReview[0] && currentUserReview[0].body) {
+    const currentUserReview = this.props.currentUserReview[0];
+
+    if (currentUserReview && currentUserReview.body) {
       allReviews.unshift(
-        <div key={currentUserReview[0].id} className='details-desc'>
+        <div key={currentUserReview.id} className='details-desc'>
           <StarRatingComponent
             name='rating'
             className='rating'
             starCount={5}
             editing={false}
-            value={currentUserReview[0].rating} />
-          <p className='review'>{currentUserReview[0].body}</p>
+            value={currentUserReview.rating} />
+          <p className='review'>{currentUserReview.body}</p>
           <button
             className='delete-review'
-            onClick={handleClick}>Delete</button>
+            onClick={this.handleClick}>Delete</button>
         </div>
       );
     }
 
     return allReviews.slice(0, 3);
-  };
+  }
 
-  // renderAllReviews = () => {
-  //   // Return a modal with all reviews
-  //   // On click for all-reviews button
-  // };
+  renderMoreReviewsButton() {
+    const otherUserReviews = this.props.otherUserReviews;
+    const currentUserReview = this.props.currentUserReview;
 
-  const renderMoreReviewsButton = () => {
     const reviewsCount = otherUserReviews.length + currentUserReview.length;
     if (reviewsCount > 3) {
       const buttonText = `See all reviews (${reviewsCount})`;
@@ -61,19 +67,23 @@ const Review = ({
     } else {
       return <div></div>;
     }
-  };
+  }
 
-  const handleClick = () => {
-    destroyReview(currentUserReview[0], focusedGenreId);
-  };
+  handleClick() {
+    const currentUserReview = this.props.currentUserReview[0];
+    const focusedGenreId = this.props.focusedGenreId;
+    this.props.destroyReview(currentUserReview, focusedGenreId);
+  }
 
-  return(
-    <div className='reviews'>
-      <h1 className='details-header'>Member Reviews</h1>
-      {reviewList()}
-      {renderMoreReviewsButton()}
-    </div>
-  );
-};
+  render() {
+    return(
+      <div className='reviews'>
+        <h1 className='details-header'>Member Reviews</h1>
+        {this.reviewList()}
+        {this.renderMoreReviewsButton()}
+      </div>
+    );
+  }
+}
 
 export default Review;

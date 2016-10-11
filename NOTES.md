@@ -1,4 +1,4 @@
-- [ ] Clear store on signout?
+- [X] Clear store on signout
 - [ ] Stay on details page after submitting review
 - [X] Ratings
 - [X] Show user’s review at the top (with delete review button)
