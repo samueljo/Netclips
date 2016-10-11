@@ -19,19 +19,23 @@ class FilteredSeriesRow extends React.Component {
 
   openSeriesShow(serieId) {
     console.log('toggle on');
-    this.props.requestSerie(serieId);
+    this.props.requestSerie(serieId, 0);
     this.setState({ serieDisplayId: serieId });
   }
 
   renderSeriesShow() {
-    return (
-      <div className='series-show'>
-        <SeriesShowContainer />
-        <button
-          className='close-series-show'
-          onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
-      </div>
-    );
+    if (this.props.showDetail) {
+      return (
+        <div className='series-show'>
+          <SeriesShowContainer />
+          <button
+            className='close-series-show'
+            onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
   }
 
   calculateSeriesPerRow() {

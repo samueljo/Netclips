@@ -13,15 +13,18 @@ class SeriesIndex extends React.Component {
 
   renderSeriesByGenre(seriesIndex) {
     const seriesByGenre = Object.keys(seriesIndex).map((genre) => {
-      return (
-        <SeriesIndexRow
-          key={seriesIndex[genre].genreId}
-          genre={genre}
-          showDetail={seriesIndex[genre].genreId === this.props.focusedGenreId}
-          seriesIndex={seriesIndex[genre]}
-          removeSerie={this.props.removeSerie}
-          requestSerie={this.props.requestSerie} />
-      );
+      if (seriesIndex[genre].series.length) {
+        let seriesGenre = seriesIndex[genre];
+        return (
+          <SeriesIndexRow
+            key={seriesGenre.genreId}
+            genre={genre}
+            showDetail={seriesGenre.genreId === this.props.focusedGenreId}
+            seriesIndex={seriesGenre}
+            removeSerie={this.props.removeSerie}
+            requestSerie={this.props.requestSerie} />
+        );
+      }
     });
     return (
       <div className='series-index'>
