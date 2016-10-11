@@ -11,10 +11,10 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [X] Hosting on Heroku
 - [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
 
-- [ ] Videos
+- [X] Videos
   - Access various series to pick & play video clips
 
-- [ ] Reviews
+- [X] Reviews
   - Read reviews (top reviews & all) for a series
   - Write only one review per series
   - Rate a series
@@ -123,7 +123,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
     - Nested in SeriesIndexItem::SeriesEpisodes
     - Implement 'wrap-around' scrolling
   - [X] EpisodeIndexItem
-  - [ ] EpisodeShow
+  - [X] EpisodeShow
     - Be able to watch an episode through YouTube API
   - [X] Seed episodes within series
 
@@ -131,16 +131,18 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 
 **Objective:** Reviews belong to series that can be created, read, edited and destroyed through the API.
 
-- [ ] Review model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for reviews (ReviewsController)
-- [ ] JBuilder views for reviews
-- [ ] Adding reviews requires a series
+- [X] Review model
+- [X] Seed database with a small amount of test data
+- [X] CRUD API for reviews (ReviewsController)
+- [X] JBuilder views for reviews
+- [X] Adding reviews requires a series
 - Reviews components and respective Redux loops
   - [ ] ReviewsIndex
     - Preview shown in SeriesIndexItem::SeriesDetail
+
       - All reviews shown through Modal
-  - [ ] ReviewForm
+
+  - [X] ReviewForm
     - User can write own review in SeriesIndexItem::SeriesDetail
 - [ ] Seed reviews
 
