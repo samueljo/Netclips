@@ -49,7 +49,8 @@ class ReviewForm extends React.Component {
   }
 
   renderFormButton() {
-    return (this.props.currentUserReview[0]) ? 'Edit' : 'Submit';
+    const currentUserReview = this.props.currentUserReview[0];
+    return (currentUserReview && currentUserReview.body) ? 'Edit' : 'Submit';
   }
 
   render() {

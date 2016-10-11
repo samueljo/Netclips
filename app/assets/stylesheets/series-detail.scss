@@ -23,12 +23,31 @@
   font-weight: 100;
   line-height: 1.3;
   letter-spacing: .1vw;
+  &.modal {
+    margin: 1vw 0 3vw;
+  }
+}
+
+.rating {
+  &.modal {
+    font-size: 2vw;
+  }
 }
 
 .review {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: #ccc;
+  font-size: 1.125vw;
+  font-weight: 100;
+  line-height: 1.3;
+  letter-spacing: .1vw;
+  &.modal {
+    overflow: auto;
+    white-space: normal;
+    font-size: 1.5vw;
+  }
 }
 
 .reviews {
@@ -92,6 +111,10 @@
   border-radius: 3px;
   padding: .1vw .7vw;
   letter-spacing: 1px;
+  &.modal {
+    font-size: 1.3vw;
+    padding: .4vw 1.3vw;
+  }
   &:hover {
     background: #E50914;
   }
