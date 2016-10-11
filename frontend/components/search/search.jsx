@@ -1,5 +1,5 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { withRouter } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
@@ -12,7 +12,9 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.requestSearchResults(this.state);
+    this.props.requestSearchResults(this.state, () => {
+      this.props.router.push(`/search?query=${this.state.query}`);
+    });
   }
 
   handleChange(e) {
@@ -37,4 +39,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

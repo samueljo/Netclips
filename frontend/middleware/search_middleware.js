@@ -6,7 +6,10 @@ import {
   fetchSearchResults } from '../util/search_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
-  const searchSuccess = data => dispatch(receiveSearchResults(data));
+  const searchSuccess = data => {
+    dispatch(receiveSearchResults(data));
+    return action.cb();
+  };
 
   switch(action.type) {
     case REQUEST_SEARCH_RESULTS:

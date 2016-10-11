@@ -8,7 +8,7 @@ const mapStateToProps = ({ search }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestSearchResults: (query) => dispatch(requestSearchResults(query))
+  requestSearchResults: (query, cb) => dispatch(requestSearchResults(query, cb))
 });
 
 export default connect(
