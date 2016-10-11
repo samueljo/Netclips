@@ -6,7 +6,7 @@ class EpisodesIndex extends React.Component {
     super(props);
     this.state = { activePage: 0, previousPage: null };
     this.slideTo = this.slideTo.bind(this);
-    this.handleResize = this.handleResize.bind(this);
+    // this.handleResize = this.handleResize.bind(this);
   }
 
   calculateEpisodesPerPage() {
@@ -88,13 +88,13 @@ class EpisodesIndex extends React.Component {
     });
   }
 
-  handleResize(e) {
-    const episodesPerPage = this.calculateEpisodesPerPage();
-
-    if (episodesPerPage !== this.state.episodesPerPage) {
-      this.setState({episodesPerPage: episodesPerPage});
-    }
-  }
+  // handleResize(e) {
+  //   const episodesPerPage = this.calculateEpisodesPerPage();
+  //
+  //   if (episodesPerPage !== this.state.episodesPerPage) {
+  //     this.setState({episodesPerPage: episodesPerPage});
+  //   }
+  // }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);

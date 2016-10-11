@@ -1,5 +1,4 @@
 - [ ] Stay on details page after submitting review
-- [ ] Clear review form only on successful submit
 - [X] Ratings
 - [X] Show user’s review at the top (with delete review button)
 - [X] Render new form or edit form depending on whether user has already reviewed

@@ -26,14 +26,13 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('submit');
     const serieId = this.props.serieDisplay.id;
     const review = Object.assign(
       {},
       this.state,
       { serie_id: serieId }
     );
-
+    
     if (this.props.currentUserReview[0]) {
       this.props.updateReview({review}, this.props.focusedGenreId);
     } else {

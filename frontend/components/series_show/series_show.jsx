@@ -15,15 +15,19 @@ class SeriesShow extends React.Component {
 
   componentDidMount() {
     this.props.requestEpisodes(this.props.serieDisplay.id);
+    this.setState({ previousSerie: this.props.serieDisplay.id });
   }
 
   componentWillReceiveProps() {
     this.setState({ showPanel: 'Overview' });
   }
 
-  // componentWillUpdate() {
-  //   this.props.requestEpisodes(this.props.serieDisplay.id);
-  // }
+  componentWillUpdate() {
+    if (this.state.previousSerie !== this.props.serieDisplay.id) {
+      this.setState({ previousSerie: this.props.serieDisplay.id });
+      this.props.requestEpisodes(this.props.serieDisplay.id);
+    }
+  }
 
   handleClick(e) {
     this.setState({ showPanel: `${e.target.value}`});
@@ -69,7 +73,10 @@ class SeriesShow extends React.Component {
     if (this.state.showPanel === 'Overview') {
       showPanel = <SerieOverview
         serieDisplay={serieDisplay}
-        createReview={this.props.createReview} />;
+        focusedGenreId={this.props.focusedGenreId}
+        createReview={this.props.createReview}
+        updateReview={this.props.updateReview}
+         />;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
     } else if (this.state.showPanel === 'Details') {

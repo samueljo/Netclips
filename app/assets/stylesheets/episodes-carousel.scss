@@ -147,7 +147,7 @@ $moveRight: ($tileWidth / 2 );
   width: $tileWidth;
   color: #999;
   position: absolute;
-  bottom: -2.2vw;
+  top: 12vw;
 }
 
 .episode-title {
@@ -163,4 +163,5 @@ $moveRight: ($tileWidth / 2 );
   padding: 0.3vw 0;
   font-size: 1.1vw;
   white-space: normal;
+  text-overflow: ellipsis;
 }

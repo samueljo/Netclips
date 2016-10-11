@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import StarRatingComponent from 'react-star-rating-component';
 
 class SerieOverview extends React.Component {
-  constructor(props) {
+  constructor({props}) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -21,21 +21,54 @@ class SerieOverview extends React.Component {
     });
   }
 
+  componentDidMount() {
+    const currentUserReview = this.props.serieDisplay.current_user_review[0];
+    if (currentUserReview) {
+      this.setState(currentUserReview);
+    } else {
+      this.setState({ rating: 0 });
+    }
+  }
+
 
   onStarClick(nextValue, prevValue, name) {
     const serieId = this.props.serieDisplay.id;
     const review = Object.assign(
       {},
+      this.state,
       { rating: nextValue },
       { serie_id: serieId }
     );
-    this.props.createReview({review});
+
+    if (this.props.serieDisplay.current_user_review[0]) {
+      this.props.updateReview({review}, this.props.focusedGenreId);
+    } else {
+      this.props.createReview({review}, this.props.focusedGenreId);
+    }
+  }
+
+  calculateAvgRating() {
+    const currentUserReview = this.props.serieDisplay.current_user_review[0];
+    let rating;
+    if (currentUserReview) {
+      rating = currentUserReview.rating;
+    } else {
+      let sum = 0;
+      const otherUserReviews = this.props.serieDisplay.other_user_reviews;
+      for (let i = 0; i < otherUserReviews.length; i++) {
+        sum += otherUserReviews[i].rating;
+      }
+      rating = Math.round(sum / otherUserReviews.length);
+    }
+    return rating;
   }
 
   render() {
     const serieDisplay = this.props.serieDisplay;
 
     if (serieDisplay) {
+      const rating = this.calculateAvgRating();
+
       return (
         <div className='serie-overview'>
           <div className='avg-rating'>
@@ -43,7 +76,7 @@ class SerieOverview extends React.Component {
               name='rating'
               className='star'
               starCount={5}
-              value={serieDisplay.avg_rating}
+              value={rating}
               onStarClick={this.onStarClick.bind(this)} />
           </div>
           <div className='serie-year'>{serieDisplay.year}</div>
