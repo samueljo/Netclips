@@ -18,6 +18,7 @@ const Navbar = ({ currentUser, logout, router }) => {
             <li className='nav-dropdown-item'>
               <h1>My Account</h1>
             </li>
+
             <li>
               <button className='nav-dropdown-item'
               onClick={logout}>Sign out of NetClips</button>

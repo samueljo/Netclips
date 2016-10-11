@@ -42,3 +42,5 @@ export default Root;
 
 // <Route path="/browse/:id"
 //   component={App} />
+
+// <Route path="/search/:"

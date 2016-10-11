@@ -137,7 +137,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [X] JBuilder views for reviews
 - [X] Adding reviews requires a series
 - Reviews components and respective Redux loops
-  - [ ] ReviewsIndex
+  - [X] ReviewsIndex
     - Preview shown in SeriesIndexItem::SeriesDetail
 
       - All reviews shown through Modal

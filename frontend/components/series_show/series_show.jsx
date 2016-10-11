@@ -18,13 +18,17 @@ class SeriesShow extends React.Component {
     this.setState({ previousSerie: this.props.serieDisplay.id });
   }
 
-  componentWillReceiveProps() {
-    this.setState({ showPanel: 'Overview' });
+  componentWillReceiveProps(nextProps) {
+    if (this.props.serieDisplay.id !== nextProps.serieDisplay.id) {
+      this.setState({ showPanel: 'Overview' });
+    }
   }
 
   componentWillUpdate() {
     if (this.state.previousSerie !== this.props.serieDisplay.id) {
-      this.setState({ previousSerie: this.props.serieDisplay.id });
+      this.setState({
+        previousSerie: this.props.serieDisplay.id
+      });
       this.props.requestEpisodes(this.props.serieDisplay.id);
     }
   }
