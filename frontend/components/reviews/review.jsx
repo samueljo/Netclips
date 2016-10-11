@@ -42,7 +42,25 @@ const Review = ({
         </div>
       );
     }
-    return allReviews;
+
+    return allReviews.slice(0, 3);
+  };
+
+  // renderAllReviews = () => {
+  //   // Return a modal with all reviews
+  //   // On click for all-reviews button
+  // };
+
+  const renderMoreReviewsButton = () => {
+    const reviewsCount = otherUserReviews.length + currentUserReview.length;
+    if (reviewsCount > 4) {
+      const buttonText = `See all reviews (${reviewsCount})`;
+      return(
+        <button className='all-reviews'>{buttonText}</button>
+      );
+    } else {
+      return <div></div>;
+    }
   };
 
   const handleClick = () => {
@@ -53,6 +71,7 @@ const Review = ({
     <div className='reviews'>
       <h1 className='details-header'>Member Reviews</h1>
       {reviewList()}
+      {renderMoreReviewsButton()}
     </div>
   );
 };

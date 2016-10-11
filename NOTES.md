@@ -1,8 +1,8 @@
 - [ ] Stay on details page after submitting review
 - [ ] Clear review form only on successful submit
-- [ ] Ratings
-- [ ] Show user’s review at the top (with delete review button)
-- [ ] Render new form or edit form depending on whether user has already reviewed
+- [X] Ratings
+- [X] Show user’s review at the top (with delete review button)
+- [X] Render new form or edit form depending on whether user has already reviewed
 
 - [X] Refactor main container and main into its own folder
   - Main, search, and mylist will all use series container
@@ -46,12 +46,11 @@
 
 - Styling series show page
 
-Questions:
-- Unmounted component warnings when resizing screen
-
-- [ ] Go over Redux logic for displaying only one series show page at a time
-
 
 - [x] Fix carousel with 3 pages.
 
+- [ ] Go over Redux logic for displaying only one series show page at a time
+
 - [ ] Implement LRU cache
+
+- [ ] Refactor review create to render ‘/api/reviews/show’ and send up only new review

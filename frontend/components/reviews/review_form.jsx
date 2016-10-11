@@ -26,6 +26,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('submit');
     const serieId = this.props.serieDisplay.id;
     const review = Object.assign(
       {},
@@ -71,6 +72,7 @@ class ReviewForm extends React.Component {
           <input
             className='review-button submit'
             type='submit'
+            disabled={!this.state.body}
             value={this.renderFormButton()} />
         </form>
         <button

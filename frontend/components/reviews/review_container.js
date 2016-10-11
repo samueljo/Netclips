@@ -18,8 +18,6 @@ const mapDispatchToProps = (dispatch) => ({
   destroyReview: (review, genreId) => dispatch(destroyReview(review, genreId))
 });
 
-// update and delete review
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps
