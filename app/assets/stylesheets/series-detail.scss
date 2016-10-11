@@ -77,3 +77,15 @@
     background: #E50914;
   }
 }
+
+.delete-review {
+  margin-top: .5vw;
+  cursor: pointer;
+  background: #DB0510;
+  color: #fff;
+  border-radius: 3px;
+  padding: .1vw .7vw;
+  &:hover {
+    background: #E50914;
+  }
+}

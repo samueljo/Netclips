@@ -1,7 +1,11 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
-const Review = ({ currentUserReview, otherUserReviews }) => {
+const Review = ({
+  focusedGenreId,
+  currentUserReview,
+  otherUserReviews,
+  destroyReview }) => {
 
   const reviewList = () => {
     const allReviews = otherUserReviews.map((review) => {
@@ -32,10 +36,17 @@ const Review = ({ currentUserReview, otherUserReviews }) => {
             editing={false}
             value={currentUserReview[0].rating} />
           <p>{currentUserReview[0].body}</p>
+          <button
+            className='delete-review'
+            onClick={handleClick}>Delete</button>
         </div>
       );
     }
     return allReviews;
+  };
+
+  const handleClick = () => {
+    destroyReview(currentUserReview[0], focusedGenreId);
   };
 
   return(

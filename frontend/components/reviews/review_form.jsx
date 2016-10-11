@@ -34,7 +34,7 @@ class ReviewForm extends React.Component {
     );
 
     if (this.props.currentUserReview[0]) {
-      debugger
+
       this.props.updateReview({review}, this.props.focusedGenreId);
     } else {
       this.props.createReview({review}, this.props.focusedGenreId);

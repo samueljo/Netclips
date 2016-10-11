@@ -13,7 +13,9 @@ class ReviewIndex extends React.Component {
       <div className='review-container'>
         <Review
           otherUserReviews={this.props.otherUserReviews}
-          currentUserReview={this.props.currentUserReview} />
+          currentUserReview={this.props.currentUserReview}
+          destroyReview={this.props.destroyReview}
+          focusedGenreId={this.props.focusedGenreId} />
         <ReviewForm
           focusedGenreId={this.props.focusedGenreId}
           serieDisplay={this.props.serieDisplay}
