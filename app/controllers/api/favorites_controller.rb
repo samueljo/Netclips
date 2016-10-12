@@ -1,8 +1,4 @@
 class Api::FavoritesController < ApplicationController
-  def index
-    @favorite_series = current_user.favorite_series.order(:created_at)
-  end
-
   def create
     @favorite_serie = Favorite.new(favorite_params)
     @favorite_serie.user_id = current_user.id
