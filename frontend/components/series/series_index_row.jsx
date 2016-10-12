@@ -56,8 +56,9 @@ class SeriesIndexRow extends React.Component {
 
   createSeriesIndexItems() {
     return this.props.seriesIndex.series.map((serie, idx) => {
+      const seriesPerPage = this.calculateSeriesPerPage();
       let hoverCb;
-      if (idx === this.calculateSeriesPerPage() - 1) {
+      if ((idx + 1) % seriesPerPage === 0) {
         hoverCb = this.toggleShiftLeft;
       } else {
         hoverCb = () => {};
