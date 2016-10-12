@@ -27,9 +27,7 @@ const Root = ({ store }) => {
     } else {
       let { query } = nextState.location.query;
       query = decodeURI(query);
-      store.dispatch(requestSearchResults({query: query}, () => {
-        console.log('redirect search');
-      }));
+      store.dispatch(requestSearchResults({query: query}, () => {}));
     }
   };
 

@@ -23,23 +23,25 @@ class Search extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.props.removeSerie();
+    this.setState({ query: e.target.value });
+    // this.props.removeSerie();
     // if (this.state.query === '') {
     //   this.props.router.push('/');
     // } else {
-      this.setState({ query: e.target.value });
-      this.props.requestSearchResults(this.state, () => {
-        this.props.router.push({
-          pathname: 'search',
-          query: this.state
-        })
-      });
+      // this.setState({ query: e.target.value });
+      // this.props.requestSearchResults(this.state, () => {
+      //   this.props.router.push({
+      //     pathname: 'search',
+      //     query: this.state
+      //   })
+      // });
     // }
   }
 
   render() {
     return (
       <div className='search-bar'>
+        <form onSubmit={this.handleSubmit}>
           <div className='mag'>🔍</div>
           <input
             className='search-form'
@@ -48,6 +50,7 @@ class Search extends React.Component {
             value={this.state.query}
             placeholder='Search'>
           </input>
+        </form>
       </div>
     );
   }

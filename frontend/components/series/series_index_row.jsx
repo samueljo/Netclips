@@ -10,7 +10,8 @@ class SeriesIndexRow extends React.Component {
       serieDisplayId: null,
       activePage: 0,
       previousPage: null,
-      seriesPerPage: this.calculateSeriesPerPage() };
+      seriesPerPage: this.calculateSeriesPerPage()
+    };
     this.openSeriesShow = this.openSeriesShow.bind(this);
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
     this.slideTo = this.slideTo.bind(this);
@@ -19,13 +20,11 @@ class SeriesIndexRow extends React.Component {
   }
 
   closeSeriesShow() {
-    console.log('toggle off');
     this.props.removeSerie();
     this.setState({ serieDisplayId: null });
   }
 
   openSeriesShow(serieId) {
-    console.log('toggle on');
     this.props.requestSerie(serieId, this.props.seriesIndex.genreId);
     this.setState({ serieDisplayId: serieId });
   }
@@ -46,58 +45,41 @@ class SeriesIndexRow extends React.Component {
   }
 
   calculateSeriesPerPage() {
-    let seriesPerPage;
+    return ($(window).width() > 2000) ? 6 : 5;
+  }
 
-    if ($(window).width() > 2000) {
-      seriesPerPage = 6;
-    } else {
-      seriesPerPage = 5;
-    }
-
-    return seriesPerPage;
+  createSeriesIndexItems() {
+    return this.props.seriesIndex.series.map((serie) => {
+      return (
+        <SeriesIndexItem
+          key={serie.id}
+          serie={serie}
+          openSeriesShow={this.openSeriesShow} />
+      );
+    });
   }
 
   renderIndexRow() {
     const seriesPerPage = this.calculateSeriesPerPage();
 
-    const seriesIndexItems = this.props.seriesIndex.series.map((serie) => {
-      let selected = false;
-      if (this.state.serieDisplayId === serie.id) {
-        selected = true;
-      }
-      return (
-        <SeriesIndexItem
-          selected={selected}
-          serie={serie}
-          key={serie.id}
-          openSeriesShow={this.openSeriesShow} />
-      );
-    });
-
-    let seriesDup = seriesIndexItems.slice();
+    let seriesDup = this.createSeriesIndexItems();
     const indexRow = [];
     let i = 0;
 
     while (seriesDup.length > 0) {
+      let className;
       if (i === this.state.activePage) {
-        indexRow.push(
-          <li key={indexRow.length + 1} className='series-page active'>
-            {seriesDup.splice(0, seriesPerPage)}
-          </li>
-        );
+        className = 'series-page active';
       } else if (i === this.state.previousPage) {
-        indexRow.push(
-          <li key={indexRow.length + 1} className='series-page previous'>
-            {seriesDup.splice(0, seriesPerPage)}
-          </li>
-        );
+        className = 'series-page previous';
       } else {
-        indexRow.push(
-          <li key={indexRow.length + 1} className='series-page'>
-            {seriesDup.splice(0, seriesPerPage)}
-          </li>
-        );
+        className = 'series-page';
       }
+      indexRow.push(
+        <li key={indexRow.length + 1} className={className}>
+          {seriesDup.splice(0, seriesPerPage)}
+        </li>
+      );
       i++;
     }
 

@@ -67,6 +67,12 @@ class Review extends React.Component {
     return allReviews;
   }
 
+  handleClick() {
+    const currentUserReview = this.props.currentUserReview[0];
+    const focusedGenreId = this.props.focusedGenreId;
+    this.props.destroyReview(currentUserReview, focusedGenreId);
+  }
+
   renderMoreReviewsButton() {
     const otherUserReviews = this.props.otherUserReviews;
     const currentUserReview = this.props.currentUserReview;
@@ -82,12 +88,6 @@ class Review extends React.Component {
     } else {
       return <div></div>;
     }
-  }
-
-  handleClick() {
-    const currentUserReview = this.props.currentUserReview[0];
-    const focusedGenreId = this.props.focusedGenreId;
-    this.props.destroyReview(currentUserReview, focusedGenreId);
   }
 
   render() {
