@@ -38,11 +38,11 @@ class FilteredSeriesRow extends React.Component {
   }
 
   renderIndexRow() {
-   return this.props.seriesIndex.map((serie) => {
+   return this.props.seriesIndex.map((serie, idx) => {
       return (
         <SeriesIndexItem
           serie={serie}
-          key={serie.id}
+          key={idx}
           openSeriesShow={this.openSeriesShow} />
       );
     });

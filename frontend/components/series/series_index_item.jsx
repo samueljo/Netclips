@@ -14,7 +14,6 @@ import { withRouter, hashHistory } from 'react-router';
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selected: this.props.selected };
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
   }
@@ -42,16 +41,14 @@ class SeriesIndexItem extends React.Component {
     // });
   }
 
-  componentWillUnmount() {
-    this.setState({ selected: false });
-  }
-
   render() {
     const serie = this.props.serie;
-    const selected = (this.state.selected) ? 'tile selected' : 'tile';
 
     return (
-      <div className={selected}>
+      <div
+        className='tile'
+        onMouseLeave={this.props.hoverCb}
+        onMouseEnter={this.props.hoverCb}>
         <div className='tile-media'>
           <img className='tile-img' src={serie.image_url} />
         </div>

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: favorites
+#
+#  id         :integer          not null, primary key
+#  serie_id   :integer          not null
+#  user_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Favorite < ActiveRecord::Base
   validates :serie_id, :user_id, presence: true
   validates_uniqueness_of :user_id, scope: :serie_id

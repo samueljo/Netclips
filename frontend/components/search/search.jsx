@@ -17,25 +17,27 @@ class Search extends React.Component {
       this.props.router.push({
         pathname: 'search',
         query: this.state
-      })
+      });
     });
   }
 
   handleChange(e) {
     e.preventDefault();
     this.setState({ query: e.target.value });
-    // this.props.removeSerie();
-    // if (this.state.query === '') {
-    //   this.props.router.push('/');
-    // } else {
-      // this.setState({ query: e.target.value });
-      // this.props.requestSearchResults(this.state, () => {
-      //   this.props.router.push({
-      //     pathname: 'search',
-      //     query: this.state
-      //   })
-      // });
-    // }
+    this.props.removeSerie();
+    if (this.state.query && e.target.value === '') {
+      console.log('props.router');
+      this.props.router.push('/');
+    } else {
+      const tempState = { query: e.target.value };
+      console.log(tempState);
+      this.props.requestSearchResults(tempState, () => {        
+        this.props.router.push({
+          pathname: 'search',
+          query: tempState
+        });
+      });
+    }
   }
 
   render() {

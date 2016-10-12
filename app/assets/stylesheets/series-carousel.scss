@@ -30,6 +30,10 @@ $moveRight: ($tileWidth / 2 );
     left: 4%;
     z-index: 3;
     display: block;
+    transition: 200ms linear;
+    &.leftShift {
+      left: -1.2vw;
+    }
   }
   &.active ~ .series-page {
     left: 100%;

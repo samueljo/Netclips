@@ -7,6 +7,7 @@ class SeriesIndexRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      shiftLeft: false,
       serieDisplayId: null,
       activePage: 0,
       previousPage: null,
@@ -17,6 +18,7 @@ class SeriesIndexRow extends React.Component {
     this.slideTo = this.slideTo.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleTitleClick = this.handleTitleClick.bind(this);
+    this.toggleShiftLeft = this.toggleShiftLeft.bind(this);
   }
 
   closeSeriesShow() {
@@ -48,11 +50,22 @@ class SeriesIndexRow extends React.Component {
     return ($(window).width() > 2000) ? 6 : 5;
   }
 
+  toggleShiftLeft() {
+    this.setState({ shiftLeft: !this.state.shiftLeft });
+  }
+
   createSeriesIndexItems() {
-    return this.props.seriesIndex.series.map((serie) => {
+    return this.props.seriesIndex.series.map((serie, idx) => {
+      let hoverCb;
+      if (idx === this.calculateSeriesPerPage() - 1) {
+        hoverCb = this.toggleShiftLeft;
+      } else {
+        hoverCb = () => {};
+      }
       return (
         <SeriesIndexItem
           key={serie.id}
+          hoverCb={hoverCb}
           serie={serie}
           openSeriesShow={this.openSeriesShow} />
       );
@@ -68,8 +81,9 @@ class SeriesIndexRow extends React.Component {
 
     while (seriesDup.length > 0) {
       let className;
+      const toggleLeftClass = (this.state.shiftLeft) ? 'leftShift' : '';
       if (i === this.state.activePage) {
-        className = 'series-page active';
+        className = `series-page active ${toggleLeftClass}`;
       } else if (i === this.state.previousPage) {
         className = 'series-page previous';
       } else {
