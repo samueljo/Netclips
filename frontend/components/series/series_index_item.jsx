@@ -9,12 +9,11 @@ import { withRouter, hashHistory } from 'react-router';
 
 // Define on click for tile-details to play episode
 
-// Define on click for tile-add-list to add series to list
-
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handlePlayClick = this.handlePlayClick.bind(this);
+    this.handleMyListClick = this.handleMyListClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
   }
 
@@ -41,9 +40,36 @@ class SeriesIndexItem extends React.Component {
     // });
   }
 
+  handleMyListClick() {
+    const serie = this.props.serie;
+    if (this.isSeriesListed()) {
+      this.props.removeFavoriteSerie(serie);
+    } else {
+      this.props.addFavoriteSerie(serie);
+    }
+  }
+
+  renderMyListButton() {
+    let myListButtonText;
+    if (this.isSeriesListed()) {
+      myListButtonText = String.fromCharCode(10003);
+    } else {
+      myListButtonText = String.fromCharCode(43);
+    }
+    return (
+      <button
+        className='tile-add-list'
+        onClick={this.handleMyListClick}>{myListButtonText}</button>
+    );
+  }
+
+  isSeriesListed() {
+    return (this.props.myList.indexOf(this.props.serie) !== -1);
+  }
+
   render() {
     const serie = this.props.serie;
-
+    const myListButton = this.renderMyListButton();
     return (
       <div
         className='tile'
@@ -58,7 +84,7 @@ class SeriesIndexItem extends React.Component {
             onClick={this.expandSeries}>
             {serie.title}
           </div>
-          <div className='tile-add-list'>Add</div>
+          {myListButton}
           <button
             className='play-button'
             onClick={this.handlePlayClick}>

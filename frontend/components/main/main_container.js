@@ -4,7 +4,12 @@ import {
   requestSeries,
   requestSerie,
   removeSerie } from '../../actions/serie_actions';
+
 import { requestSearchResults } from '../../actions/search_actions';
+
+import {
+  addFavoriteSerie,
+  removeFavoriteSerie } from '../../actions/favorite_actions';
 
 const mapStateToProps = state => {
   return ({
@@ -18,7 +23,9 @@ const mapDispatchToProps = dispatch => ({
   requestSeries: () => dispatch(requestSeries()),
   requestSerie: (id, genreId) => dispatch(requestSerie(id, genreId)),
   removeSerie: () => dispatch(removeSerie()),
-  requestSearchResults: (query, cb) => dispatch(requestSearchResults(query, cb))
+  requestSearchResults: (query, cb) => dispatch(requestSearchResults(query, cb)),
+  addFavoriteSerie: (serie) => dispatch(addFavoriteSerie(serie)),
+  removeFavoriteSerie: (serie) => dispatch(removeFavoriteSerie(serie))
 });
 
 export default connect(

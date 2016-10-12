@@ -18,10 +18,13 @@ class SeriesIndex extends React.Component {
         return (
           <SeriesIndexRow
             key={seriesGenre.genreId}
-            requestSearchResults={this.props.requestSearchResults}
+            myList={seriesIndex['My List']}
+            seriesIndex={seriesGenre}
             genre={genre}
             showDetail={seriesGenre.genreId === this.props.focusedGenreId}
-            seriesIndex={seriesGenre}
+            requestSearchResults={this.props.requestSearchResults}
+            addFavoriteSerie={this.props.addFavoriteSerie}
+            removeFavoriteSerie={this.props.removeFavoriteSerie}
             removeSerie={this.props.removeSerie}
             requestSerie={this.props.requestSerie} />
         );

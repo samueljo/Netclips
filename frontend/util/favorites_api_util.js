@@ -2,7 +2,7 @@ export const createFavorite = (serie, success) => {
   $.ajax({
     method: 'POST',
     url: `api/favorites`,
-    data: serie,
+    data: { favorite: { serie_id: serie.id } },
     success
   });
 };

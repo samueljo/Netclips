@@ -10,6 +10,8 @@ const Main = (props) => {
         <SeriesIndex
           seriesIndex={props.seriesIndex}
           focusedGenreId={props.focusedGenreId}
+          addFavoriteSerie={props.addFavoriteSerie}
+          removeFavoriteSerie={props.removeFavoriteSerie}
           requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie}

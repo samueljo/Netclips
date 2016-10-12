@@ -66,8 +66,11 @@ class SeriesIndexRow extends React.Component {
       return (
         <SeriesIndexItem
           key={serie.id}
-          hoverCb={hoverCb}
           serie={serie}
+          hoverCb={hoverCb}
+          myList={this.props.myList.series}
+          addFavoriteSerie={this.props.addFavoriteSerie}
+          removeFavoriteSerie={this.props.removeFavoriteSerie}
           openSeriesShow={this.openSeriesShow} />
       );
     });

@@ -24,6 +24,7 @@ import {
   destroyReview } from '../util/reviews_api_util';
 
 import {
+  fetchFavorites,
   createFavorite,
   destroyFavorite } from '../util/favorites_api_util';
 
@@ -50,7 +51,7 @@ export default ({ getState, dispatch }) => next => action => {
       createFavorite(action.serie, seriesSuccess);
       break;
     case REMOVE_FAVORITE_SERIE:
-      destroyFavorite(action.favorite, seriesSuccess);
+      destroyFavorite(action.serie, seriesSuccess);
       break;
     default:
       break;
