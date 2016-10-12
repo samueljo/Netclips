@@ -1,5 +1,9 @@
 class Api::SearchController < ApplicationController
   def index
-    @series = Serie.search(params)
+    if params[:query] == 'My List'
+      @series = Favorite.get_my_list(current_user)
+    else
+      @series = Serie.search(params)
+    end
   end
 end

@@ -1,8 +1,8 @@
 class Api::SeriesController < ApplicationController
   def index
-    @favorite_series = ['My List', current_user.favorite_series.order(:created_at)]
+    @favorite_series = ['My List', Favorite.get_my_list(current_user)]
     @genres = Genre.all.includes(:series)
-    # also need to grab current episodes? & mylist
+    # also need to grab current episodes?
   end
 
   def show

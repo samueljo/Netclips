@@ -15,4 +15,8 @@ class Favorite < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :serie
+
+  def self.get_my_list(current_user)
+    return current_user.favorite_series.order(:created_at)
+  end
 end
