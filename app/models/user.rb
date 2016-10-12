@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :reviews
-  has_many :favorites
+  has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_series, through: :favorites, source: :serie
 
   attr_reader :password
 

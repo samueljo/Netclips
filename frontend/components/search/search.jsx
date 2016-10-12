@@ -31,7 +31,7 @@ class Search extends React.Component {
     } else {
       const tempState = { query: e.target.value };
       console.log(tempState);
-      this.props.requestSearchResults(tempState, () => {        
+      this.props.requestSearchResults(tempState, () => {
         this.props.router.push({
           pathname: 'search',
           query: tempState

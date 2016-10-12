@@ -21,11 +21,11 @@ class Serie < ActiveRecord::Base
 
   validates :title, :description, :year, presence: true
 
-  has_many :serie_genres
+  has_many :serie_genres, dependent: :destroy
   has_many :genres, through: :serie_genres, source: :genre
-  has_many :episodes
-  has_many :reviews
-  has_many :favorites
+  has_many :episodes, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def self.search(params)
     Serie.all.joins(:genres).where(

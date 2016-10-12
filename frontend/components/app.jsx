@@ -4,8 +4,6 @@ import GreetingContainer from './greetings/greeting_container';
 import MainContainer from './main/main_container';
 
 const App = ({ children, router }) => {
-  
-
   return (
     <div>
       <MainContainer />
