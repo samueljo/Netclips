@@ -54,7 +54,7 @@ class SeriesIndexItem extends React.Component {
     if (this.isSeriesListed()) {
       myListButtonText = String.fromCharCode(10003);
     } else {
-      myListButtonText = String.fromCharCode(43);
+      myListButtonText = String.fromCharCode(65291);
     }
     return (
       <button
