@@ -1,12 +1,19 @@
 import SeriesShow from './series_show';
 import { connect } from 'react-redux';
+
 import { requestEpisodes } from '../../actions/episode_actions';
+
 import {
   createReview,
   updateReview } from '../../actions/review_actions';
 
+import {
+  addFavoriteSerie,
+  removeFavoriteSerie } from '../../actions/favorite_actions';
+
 const mapStateToProps = state => {
   return ({
+    myList: state.series.seriesIndex['My List'].series,
     serieDisplay: state.series.serieDisplay,
     episodes: state.episodes.episodes,
     focusedGenreId: state.series.focusedGenreId
@@ -16,7 +23,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   requestEpisodes: (serieId) => dispatch(requestEpisodes(serieId)),
   createReview: (review, genreId) => dispatch(createReview(review, genreId)),
-  updateReview: (review, genreId) => dispatch(updateReview(review, genreId))
+  updateReview: (review, genreId) => dispatch(updateReview(review, genreId)),
+  addFavoriteSerie: (serie) => dispatch(addFavoriteSerie(serie)),
+  removeFavoriteSerie: (serie) => dispatch(removeFavoriteSerie(serie))
 });
 
 export default connect(

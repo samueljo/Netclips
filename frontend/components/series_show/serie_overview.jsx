@@ -6,6 +6,8 @@ class SerieOverview extends React.Component {
   constructor({props}) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleMyListClick = this.handleMyListClick.bind(this);
+    this.renderListButton = this.renderListButton.bind(this);
   }
 
   handleClick(e) {
@@ -63,6 +65,29 @@ class SerieOverview extends React.Component {
     return rating;
   }
 
+  handleMyListClick() {
+    const serie = this.props.serieDisplay;
+    if (this.props.listed) {
+      this.props.removeFavoriteSerie(serie);
+    } else {
+      this.props.addFavoriteSerie(serie);
+    }
+  }
+
+  renderListButton() {
+    let buttonText;
+    if (this.props.listed) {
+      buttonText = `${String.fromCharCode(10003)} MY LIST`;
+    } else {
+      buttonText = `${String.fromCharCode(65291)} MY LIST`;
+    }
+    return (
+      <button
+        className='show-list-button'
+        onClick={this.handleMyListClick}>{buttonText}</button>
+    );
+  }
+
   render() {
     const serieDisplay = this.props.serieDisplay;
 
@@ -79,6 +104,9 @@ class SerieOverview extends React.Component {
               value={rating}
               onStarClick={this.onStarClick.bind(this)} />
           </div>
+          <span className='list-button-container'>
+            {this.renderListButton()}
+          </span>
           <div className='serie-year'>{serieDisplay.year}</div>
           <div className='serie-description'>{serieDisplay.description}</div>
           <div className='serie-img-container'>

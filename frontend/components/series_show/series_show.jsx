@@ -13,6 +13,15 @@ class SeriesShow extends React.Component {
     this.renderNavButtons = this.renderNavButtons.bind(this);
   }
 
+  isSeriesListed() {
+    for (let i = 0; i < this.props.myList.length; i++) {
+      if (this.props.myList[i].id === this.props.serieDisplay.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   componentDidMount() {
     this.previousSerie = this.props.serieDisplay.id;
     this.props.requestEpisodes(this.props.serieDisplay.id);
@@ -72,13 +81,17 @@ class SeriesShow extends React.Component {
       navButtons = <div></div>;
     }
 
+    const isSeriesListed = this.isSeriesListed();
+
     if (this.state.showPanel === 'Overview') {
       showPanel = <SerieOverview
+        listed={isSeriesListed}
         serieDisplay={serieDisplay}
+        addFavoriteSerie={this.props.addFavoriteSerie}
+        removeFavoriteSerie={this.props.removeFavoriteSerie}
         focusedGenreId={this.props.focusedGenreId}
         createReview={this.props.createReview}
-        updateReview={this.props.updateReview}
-         />;
+        updateReview={this.props.updateReview} />;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
     } else if (this.state.showPanel === 'Details') {
