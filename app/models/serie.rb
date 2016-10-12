@@ -25,6 +25,7 @@ class Serie < ActiveRecord::Base
   has_many :genres, through: :serie_genres, source: :genre
   has_many :episodes
   has_many :reviews
+  has_many :favorites
 
   def self.search(params)
     Serie.all.joins(:genres).where(
