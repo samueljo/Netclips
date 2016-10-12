@@ -13,7 +13,10 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.requestSearchResults(this.state, () => {
-      this.props.router.push(`/search?query=${this.state.query}`);
+      this.props.router.push({
+        pathname: 'search',
+        query: {query: `${this.state.query}`}
+      })
     });
   }
 

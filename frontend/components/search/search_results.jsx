@@ -15,7 +15,8 @@ class SearchResults extends React.Component {
           <FilteredSeriesRow
             seriesIndex={this.props.seriesIndex}
             requestSerie={this.props.requestSerie}
-            removeSerie={this.props.removeSerie} />
+            removeSerie={this.props.removeSerie}
+            serieDisplay={this.props.serieDisplay} />
         </div>
       </div>
     );

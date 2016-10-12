@@ -24,7 +24,7 @@ class FilteredSeriesRow extends React.Component {
   }
 
   renderSeriesShow() {
-    if (this.props.showDetail) {
+    if (this.props.serieDisplay) {
       return (
         <div className='series-show'>
           <SeriesShowContainer />
@@ -95,6 +95,7 @@ class FilteredSeriesRow extends React.Component {
 
   render() {
     const serieDisplay = this.renderSeriesShow();
+
     const indexRows = this.renderIndexRows();
     return (
       <div className='filtered-row'>
@@ -102,6 +103,7 @@ class FilteredSeriesRow extends React.Component {
         <ul>
           {indexRows}
         </ul>
+        {serieDisplay}
       </div>
     );
   }

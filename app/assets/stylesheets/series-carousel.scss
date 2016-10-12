@@ -140,6 +140,9 @@ $moveRight: ($tileWidth / 2 );
 }
 
 .tile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -159,15 +162,9 @@ $moveRight: ($tileWidth / 2 );
 .play-button {
   z-index: 5;
   height: 3vw;
-  display: inline-block;
   padding: 0.2vw 0.4vw 0 0.9vw;
   border-radius: 100%;
   border: 0.3vw solid #999;
-  vertical-align: middle;
-  top: 0;
-  left: 0;
-  margin-left: $tileWidth / 2.6;
-  margin-top: $tileWidth / 7;
   font-size: 2.3vw;
   color: #999;
   cursor: pointer;

@@ -28,8 +28,9 @@ class Serie < ActiveRecord::Base
 
   def self.search(params)
     Serie.all.joins(:genres).where(
-    "lower(series.title) LIKE ? OR lower(genres.name) LIKE ?",
-    "%#{params[:query].downcase}%",
-    "%#{params[:query].downcase}%")    
+      "lower(series.title) LIKE ? OR lower(genres.name) LIKE ?",
+      "%#{params[:query].downcase}%",
+      "%#{params[:query].downcase}%"
+    )
   end
 end
