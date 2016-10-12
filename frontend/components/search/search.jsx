@@ -12,6 +12,7 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.removeSerie();
     this.props.requestSearchResults(this.state, () => {
       this.props.router.push({
         pathname: 'search',
