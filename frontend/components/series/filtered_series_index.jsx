@@ -4,6 +4,10 @@ import FilteredSeriesRow from '../series/filtered_series_row';
 class FilteredSeriesIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleResize = this.handleResize.bind(this);
+    this.state = {
+      seriesPerRow: this.calculateSeriesPerRow()
+    };
   }
 
   calculateSeriesPerRow() {
@@ -16,6 +20,22 @@ class FilteredSeriesIndex extends React.Component {
     }
 
     return seriesPerRow;
+  }
+
+  handleResize(e) {
+    const seriesPerRow = this.calculateSeriesPerRow();
+
+    if (seriesPerRow !== this.state.seriesPerRow) {
+      this.setState({ seriesPerRow: seriesPerRow });
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   renderIndexRows() {

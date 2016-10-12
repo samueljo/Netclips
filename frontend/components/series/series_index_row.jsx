@@ -5,7 +5,11 @@ import SeriesShowContainer from '../series_show/series_show_container';
 class SeriesIndexRow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { serieDisplayId: null, activePage: 0, previousPage: null };
+    this.state = {
+      serieDisplayId: null,
+      activePage: 0,
+      previousPage: null,
+      seriesPerPage: this.calculateSeriesPerPage() };
     this.openSeriesShow = this.openSeriesShow.bind(this);
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
     this.slideTo = this.slideTo.bind(this);
