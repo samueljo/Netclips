@@ -7,10 +7,10 @@ export const createFavorite = (serie, success) => {
   });
 };
 
-export const destroyFavorite = (favorite, success) => {
+export const destroyFavorite = (serie, success) => {
   $.ajax ({
     method: 'DELETE',
-    url: `api/favorites/${favorite.id}`,
+    url: `api/favorites/${serie.id}`,
     success
   });
 };

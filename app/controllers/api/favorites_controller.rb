@@ -10,8 +10,12 @@ class Api::FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite_serie = Favorite.find(params[:id])
-    @favorite_serie.destroy
+    @favorite = Favorite.find_by(
+      'serie_id = ? AND user_id = ?',
+      params[:id],
+      current_user.id
+    )
+    @favorite.destroy
     render json: {}
   end
 

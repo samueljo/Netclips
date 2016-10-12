@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals -->
+<html class="client-js ve-not-available" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ruby Programming/Syntax/Literals - Wikibooks, open books for an open world</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Ruby_Programming/Syntax/Literals","wgTitle":"Ruby Programming/Syntax/Literals","wgCurRevisionId":2955977,"wgRevisionId":2955977,"wgArticleId":17281,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Ruby Programming"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Ruby_Programming/Syntax/Literals","wgRelevantArticleId":17281,"wgRequestId":"V-4@fApAMF0AADdTUwoAAABJ","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":false,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgULSCurrentAutonym":"English","wgNoticeProject":"wikibooks","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgFlaggedRevsParams":{"tags":{"value":{"levels":3,"quality":2,"pristine":3}}},"wgStableRevisionId":2955977,"wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.flaggedRevs.basic":"ready","ext.tmh.thumbnail.styles":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","ext.visualEditor.desktopArticleTarget.init","ext.uls.interface","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/load.php">
+<script async="" src="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/load(1).php"></script>
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:.5em 1em;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline;zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #9aa0a7;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-constructive,.mw-ui-button.mw-ui-primary{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-constructive:hover,.mw-ui-button.mw-ui-primary:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-constructive:focus,.mw-ui-button.mw-ui-primary:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-primary:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-primary.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-constructive:disabled,.mw-ui-button.mw-ui-primary:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-primary:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-primary:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-primary:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-constructive.mw-ui-quiet,.mw-ui-button.mw-ui-primary.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-primary.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-primary.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-primary.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-primary.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#cc3333;color:#fff;border:1px solid #cc3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#e53939;border-color:#e53939}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #cc3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#873636;border-color:#873636;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#e53939}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#873636}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#cc3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}a.mw-ui-button{text-decoration:none;line-height:normal}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714)!ie;background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+#container{position:relative;min-height:100%}#container,video{width:100%;height:100%}#playerContainer{overflow:hidden;position:relative;height:100%;background:#000}#videoHolder{position:relative;overflow:hidden}.fullscreen #playerContainer{position:absolute !important;width:100% !important;height:100%! important;z-index:9999;min-height:100%;top:0;left:0;margin:0}.mwEmbedPlayer{width:100%;height:100%;overflow:hidden;position:absolute;top:0;left:0}.modal_editor{ left:10px;top:10px;right:10px;bottom:10px;position:fixed;z-index:100}.displayHTML a:visited{color:white}.loadingSpinner{width:32px;height:32px;display:block;padding:0px;background-image:url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/loading_ani.gif?a51c5)}.mw-imported-resource{border:thin solid black}.kaltura-icon{background-image:url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/kaltura_logo_sm_transparent.png?fa5c4) !important;background-repeat:no-repeat;display:block;height:12px;width:12px;margin-top:2px !important;margin-left:3px !important}.mw-fullscreen-overlay{background:rgb(0,0,0) none repeat scroll 0% 0%;position:fixed;top:0pt;left:0pt;width:100%;height:100%;-moz-background-clip:border;-moz-background-origin:padding;-moz-background-inline-policy:continuous} .play-btn-large{width:70px;height:53px;background :url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button.png?69699);position :absolute;cursor :pointer;border :none !important; }.play-btn-large:hover{background :url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button_hover.png?97c2a)}.carouselContainer{position :absolute;width :100%;z-index :2}.carouselVideoTitle{position :absolute;top :0px;left :0px;width :100%;background :rgba(0,0,0,0.8);color :white;font-size :small;font-weight :bold;z-index :2}.carouselVideoTitleText{display :block;padding :10px 10px 10px 20px}.carouselTitleDuration{position :absolute;top :0px;right :0px;padding :2px;background-color :#5A5A5A;color :#D9D9D9;font-size :smaller;z-index :2}.carouselImgTitle{position :absolute;width :100%;text-align :center;color :white;font-size :small;background :rgba(0,0,0,0.4)}.carouselImgDuration{position :absolute;top :2px;left :2px;background :rgba( 0,0,0,0.7 );color :white;padding :1px 6px;font-size :small}.carouselPrevButton,.carouselNextButton{display :block;position :absolute;bottom:23px}.carouselPrevButton{left :5px}.carouselNextButton{right:6px}.alert-container{border-radius:3px;background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.04,rgb(215,215,215)),color-stop(0.55,rgb(230,230,230)),color-stop(1,rgb(255,255,255)));background-image:-o-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-ms-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-moz-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-webkit-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);margin:auto;position:absolute;top:0;left:0;right:0;bottom:0;max-width:80%;max-height:30%}.alert-title{background-color :#E6E6E6;padding :5px;border-bottom :1px solid #D1D1D1;font-weight :normal !important;font-size:14px !important;border-top-left-radius:3px;border-top-right-radius:3px }.alert-message{padding :5px;font-weight :normal !important;text-align:center;font-size:14px !important}.alert-buttons-container{text-align:center;padding-bottom:5px}.alert-button{background-color:#474747;color:white;border-radius:.5em;padding:2px 10px;background-image:-webkit-gradient( linear,left bottom,left top,color-stop(0.04,rgb(25,25,25)),color-stop(0.55,rgb(47,47,47)),color-stop(0.68,rgb(71,71,71)) );background-image:-o-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-moz-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-ms-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-webkit-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%)}.alert-text{color :black !important}
+.PopUpMediaTransform a .play-btn-large{top:50%;left :50%;width:70px;height:53px;margin-left:-35px;margin-top:-25px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA1CAYAAAD8mJ3rAAADNklEQVR4AWJAAhxA7AHEeUDcP8JwHtTvHAxoQAuI5wDxZkD75qBkSRKG0bZt21h7t23btm2bO7ZthNq2rq3mo0zWeKaty6yI8wB1Et+fEnDuIC4+SdEGvIBSPvP6oxOhYihjG8WImHtQxDaAk52GEeQFT4uBYqAYKAaKUVNTG9bX1x+FYj4iLi4+UFVVRXjz5s0Wwo0bN1geHh7zAi8mKSkJ9fLly63vOX/+POO3336bElgx////P/3Fixdbu9HS0kKxsLAYFzgxZ8+eZTx9+nRzP8rKygh6enqjAiOmt7eX/ujRo82DcP/+/fWsrCyskpLSEN+L6e7upoMf3jgMt27dWouKilqRkZEZ5FsxHR0dtDt37qwfhUuXLrG8vb0XxMTEBvhODJhcaSCi149DZ2cn3cHBYZavxDQ2NlKvXLmydhLU19dTfvjhhym+EFNXV0e5ePHi6klSVFREMDIyGuNpMdXV1WQQ2azTIDU1FaOpqTnCk2IqKirIPT09zNOiq6uLARIMpaCgMMhTYkpLS0kgmZinDZjk6SDBFiUlJQd4QkxhYSGxra2Nzi7AgpVibm4+zvVi8vLyiE1NTXR2gshBeg5Xi8nOziaAZKKxG7AwneBqMZmZmQSQTFR2o6OjM8LVYkCk4svLyynsJCYmBs31c0xycjKupKSEwg5A4Ud2c3NbkJCQGOB6MfHx8diCggLyaePr67ukqKg4xDN1DOjWWJBMpNMiODgYtb365QExoCrFgs0n4kkTHh6OBqcOYzy7VoqIiMCkp6cTT4ro6GgsKOAmeH51HRYWhgbJRDgusbGxODs7uylhYeF+vth2CAkJQYNkIhwVRMgvv/wyg5xP8dVGVVBQECoxMRF/WECa4f7666+57aU9n4gJCAhAIT95GBwcHObl5OQG+fqUwN/fH4UMh4Pg7u6+pKqqOsx+AVwqxsfHZ0VLS2tUoE4ikV6wm5DAwECUsbHxuECeXevq6o59LwREOMbKympyW/QKkhgEZJi4uLgsIr0H1CLT+0QvvFEFxUAxUAwUA8Xs+pYAviUohSK2UfrpvdJrKOMzbz86ef/9AIfU5yH0AyJklzeR8E3kO5B6nR5s2Y8qAAAAAElFTkSuQmCC);background-image:url(/w/extensions/TimedMediaHandler/resources/player_big_play_button.png?f49a4)!ie}.PopUpMediaTransform a .play-btn-large :hover{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA1CAYAAAD8mJ3rAAADSklEQVR4AeybA4wlWRRA1/u1tjG2g3YHY0/U4djTtm3btm3bTtu27du2WVXvJif8PIV3Ue+jBUECrgPsgAbBYAeuTzlYEicBU8CH4JhOuZiJ3wBHJGUOlyknEJxIxlLACYQ5ErEMcLLSZYRwRGKQGCQGicG0mP/++y/4/Pnz4UjMDCQSyQ+ianR0dGyS6urqbnZ29nTCi9HR0SkYHBwcW0peXl7Ho0ePEggrJisrq62/v390NWJjYxsZGRmjCCcmJyeno7u7e2Q9PDw8qs6ePRtOGDEZGRntEMMbobm5edDCwqLsjz/+CMK9mNTU1Db4w0Oboaampk9BQSH/22+/DcCtmMTExNb6+vrBrVBYWNjNzc2d+eWXX/rhTkx0dHRLZWXlwHZISkpqe/LkSSquxISHhzeXlJT07QShoaFNN2/ejMeFmODg4KaCgoLencTZ2bn68uXLEZgW4+/v3wBLdvduYGBgUHL06NFQTIrx9vauT09P79otUlJSOhQVFQt++eWXQEyJcXNzq4OVqXO3iYqKaoMVLJtGo/ljQoyjo2MtpP3tewUUrE0MDAzRB16MjY1NDaxMbXuJr69vE5VK9T/QYiDFrw4KCmrda6AwjTnQYkxMTKrg9G7ea06ePBl2oMXAklrp6enZtJcoKSkVY6FRVeHi4tK4F8CNvuHNmzdZFArF/8CLUVdXL7O3t6/fbXh4eHJ//fXXIMzkMcrKyqXW1tZ1u4WoqGjBkSNHQjGX+crLy5eamZnV7jTS0tLF586di8RsrSQjI1NiZGRUs1NA+l9KT08fg/nqWlJSslhfX796u6ioqJRfu3Yt/pNPPvHFRdtBTEysSFtbu2qrgJCKe/fuJZPJZH9cNapEREQKNTU1KzeLmppaBRsbW9qyohAvYgQFBQsm/+RmgDZmxo8//hiI6ykBPz9/weTlsBHevn2b+88//4TMvZ/oYri5ufOPHz8eTqhJ5Lt373JWEyIsLFx45cqVaELOrk+fPh0J2W/5QiGwhJewsrLGzS29RBQzyeRl8vLly+zJswdykUQSieSPHhxaHSQGiUFikBgkBu0lWH0vATcSsQzu2f1KLkjGHG4TA4cJFOjBs9RoFtIDBQiOPZGjeyIBuiuBC06Nbn0AAAAASUVORK5CYII=);background-image:url(/w/extensions/TimedMediaHandler/resources/player_big_play_button_hover.png?8a926)!ie} .mw-tmh-playtext{display:block;height:0;overflow:hidden}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0} .mw-interlanguage-selector,.mw-interlanguage-selector:active{cursor:pointer;padding:4px 6px 4px 25px;font-size:13px;font-weight:normal;background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/compact-links-trigger.png?b0c8e);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%2019l.8-3h5.3l.9%203h2.2l-4.2-13h-3l-4.2%2013h2.2zm3.5-11l2%206h-4l2-6z%22%20fill%3D%22%23707070%22%2F%3E%3Cpath%20d%3D%22M5%204l.938%201.906h-4.938v2.094h1.594c.6%201.8%201.406%203.206%202.406%204.406-1.1.7-4.313%201.781-4.313%201.781l1.313%201.813s3.487-1.387%204.688-2.188c1%20.7%202.319%201.188%203.719%201.688l.594-2c-1-.3-1.988-.688-2.688-1.188%201.1-1.1%201.9-2.506%202.5-4.406h2.188l.5-2h-5.563l-.938-1.906h-2zm-.188%204h3.781c-.4%201.3-.906%202-1.906%203-1.1-1-1.475-1.7-1.875-3z%22%20fill%3D%22%23707070%22%2F%3E%3C%2Fsvg%3E%0A);background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/compact-links-trigger.svg?45ff2)!ie;background-image:-o-linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/compact-links-trigger.png?b0c8e);background-size:18px;background-repeat:no-repeat;background-position:left 4px center;margin:4px 0;text-align:left}.mw-interlanguage-selector:active,.mw-interlanguage-selector.selector-open{color:#555;background-color:#ccc}.interlanguage-uls-menu:before{background:none repeat scroll 0 0 #fcfcfc;border-left:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);box-shadow:-2px -2px 2px rgba(0,0,0,0.1);content:'';height:16px;width:16px;left:-9px;position:absolute; top:240px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg);background-clip:padding-box}body.rtl .interlanguage-uls-menu:before{transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg)}
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.28.0-wmf.21">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit">
+<link rel="edit" title="Edit" href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit">
+<link rel="shortcut icon" href="https://en.wikibooks.org/static/favicon/wikibooks.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikibooks.org/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikibooks.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="https://en.wikibooks.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="canonical" href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/load(3).php"></script><link rel="stylesheet" href="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/index.php"><link rel="stylesheet" href="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/index(1).php"></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Ruby_Programming_Syntax_Literals rootpage-Ruby_Programming skin-vector action-view feature-footer-v2">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Ruby Programming/Syntax/Literals</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikibooks, open books for an open world</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="https://en.wikibooks.org/wiki/Ruby_Programming" title="Ruby Programming">Ruby Programming</a>‎&nbsp;| <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax" title="Ruby Programming/Syntax">Syntax</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#mw-head">navigation</a>, 					<a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Numerics"><span class="tocnumber">1</span> <span class="toctext">Numerics</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Strings"><span class="tocnumber">2</span> <span class="toctext">Strings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Backslash_Notation"><span class="tocnumber">2.1</span> <span class="toctext">Backslash Notation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Interpolation"><span class="tocnumber">2.2</span> <span class="toctext">Interpolation</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation"><span class="tocnumber">2.3</span> <span class="toctext">The&nbsp;% Notation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#.22Here_document.22_notation"><span class="tocnumber">2.4</span> <span class="toctext">"Here document" notation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Arrays"><span class="tocnumber">3</span> <span class="toctext">Arrays</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Hashes"><span class="tocnumber">4</span> <span class="toctext">Hashes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Hash_ordering"><span class="tocnumber">4.1</span> <span class="toctext">Hash ordering</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#Ranges"><span class="tocnumber">5</span> <span class="toctext">Ranges</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Numerics">Numerics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=1" title="Edit section: Numerics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<pre>123                       # Fixnum
+-123                      # Fixnum (signed)
+1_123                     # Fixnum (underscore is ignored)
+-543                      # Negative Fixnum
+123_456_789_123_456_789   # Bignum
+123.45                    # Float
+1.2e-3                    # Float
+0xaabb                    # (Hexadecimal) Fixnum
+0377                      # (Octal) Fixnum
+-0b1010                   # (Binary [negated]) Fixnum
+0b001_001                 # (Binary) Fixnum
+?a                        # ASCII character code for 'a' (97)
+?\C-a                     # Control-a (1)
+?\M-a                     # Meta-a (225)
+?\M-\C-a                  # Meta-Control-a (129)
+</pre>
+<p>Note: the meaning of "?x" notation has been changed. In ruby 1.9 this means not an ASCII numeric code but a string i.e.&nbsp;?a == "a"</p>
+<h2><span class="mw-headline" id="Strings">Strings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=2" title="Edit section: Strings">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Examples:</p>
+<pre>"this is a string"
+=&gt; "this is a string"
+
+"three plus three is #{3+3}"
+=&gt; "three plus three is 6" 
+
+foobar = "blah"
+"the value of foobar is #{foobar}"
+=&gt; "the value of foobar is blah" 
+
+'the value of foobar is #{foobar}'
+=&gt; "the value of foobar is \#{foobar}"
+</pre>
+<p>A string expression begins and ends with a double or single-quote mark. Double-quoted string expressions are subject to backslash notation and interpolation. A single-quoted string expression isn't; except for \' and \\.</p>
+<h3><span class="mw-headline" id="Backslash_Notation">Backslash Notation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=3" title="Edit section: Backslash Notation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Also called <i>escape characters</i> or <i>escape sequences</i>, they are used to insert special characters in a string.</p>
+<p>Example:</p>
+<pre>"this is a\ntwo line string"
+"this string has \"quotes\" in it"
+</pre>
+<table class="wikitable">
+<tbody><tr>
+<td><b>Escape Sequence</b></td>
+<td><b>Meaning</b></td>
+</tr>
+<tr>
+<td>\n</td>
+<td>newline (0x0a)</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>space (0x20)</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>carriage return (0x0d)</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>tab (0x09)</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>vertical tab (0x0b)</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>formfeed (0x0c)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>backspace (0x08)</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>bell/alert (0x07)</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>escape (0x1b)</td>
+</tr>
+<tr>
+<td>\<font color="#FF0000">nnn</font></td>
+<td>character with octal value <font color="#FF0000">nnn</font></td>
+</tr>
+<tr>
+<td>\x<font color="#FF0000">nn</font></td>
+<td>character with hexadecimal value <font color="#FF0000">nn</font></td>
+</tr>
+<tr>
+<td>\u<font color="#FF0000">nnnn</font></td>
+<td>Unicode code point U+nnnn (Ruby 1.9 and later)</td>
+</tr>
+<tr>
+<td>\c<font color="#FF0000">x</font></td>
+<td>control-<font color="#FF0000">x</font></td>
+</tr>
+<tr>
+<td>\C-<font color="#FF0000">x</font></td>
+<td>control-<font color="#FF0000">x</font></td>
+</tr>
+<tr>
+<td>\M-<font color="#FF0000">x</font></td>
+<td>meta-<font color="#FF0000">x</font></td>
+</tr>
+<tr>
+<td>\M-\C-<font color="#FF0000">x</font></td>
+<td>meta-control-<font color="#FF0000">x</font></td>
+</tr>
+<tr>
+<td>\<font color="#FF0000">x</font></td>
+<td>character <font color="#FF0000">x</font> itself (\" a single quote, for example)</td>
+</tr>
+</tbody></table>
+<p>For characters with decimal values, you can do this:</p>
+<p><code>"" &lt;&lt; 197 # add decimal value 304 to a string</code></p>
+<p>or embed them thus:</p>
+<p><code>"#{197.chr}"</code></p>
+<h3><span class="mw-headline" id="Interpolation">Interpolation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=4" title="Edit section: Interpolation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Interpolation allows Ruby code to appear within a string. The result of evaluating that code is inserted into the string:</p>
+<pre> "1 + 2 = #{1 + 2}"    <font color="#007700">#=&gt; "1 + 2 = 3"</font>
+</pre>
+<pre> #{<i><font color="#FF0000">expression</font></i>}
+</pre>
+<p>The expression can be just about any Ruby code. Ruby is pretty smart about handling string delimiters that appear in the code and it generally does what you want it to do. The code will have the same side effects as it would outside the string, including any errors:</p>
+<pre>"the meaning of life is #{1/0}"
+=&gt; divided by 0 (ZeroDivisionError)
+</pre>
+<h3><span class="mw-headline" id="The_.25_Notation">The&nbsp;% Notation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=5" title="Edit section: The % Notation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There is also a Perl-inspired way to quote strings: by using&nbsp;% (percent character) and specifying a delimiting character, for example:</p>
+<pre>%{78% of statistics are "made up" on the spot}
+=&gt; "78% of statistics are \"made up\" on the spot"
+</pre>
+<p>Any single non-alpha-numeric character can be used as the delimiter, <tt>%[including these],&nbsp;%?or these?,&nbsp;%~or even these things~</tt>. By using this notation, the usual string delimiters " and ' can appear in the string unescaped, but of course the new delimiter you've chosen does need to be escaped. However, if you use <tt>%(parentheses),&nbsp;%[square brackets],&nbsp;%{curly brackets}</tt> or <tt>%&lt;pointy brackets&gt;</tt> as delimiters then those same delimiters can appear <i>unescaped</i> in the string as long as they are in <i>balanced</i> pairs:</p>
+<pre>%(string (syntax) is pretty flexible)
+=&gt; "string (syntax) is pretty flexible"
+</pre>
+<p>A modifier character can appear after the&nbsp;%, as in&nbsp;%q[],&nbsp;%Q[],&nbsp;%x[] - these determine how the string is interpolated and what type of object is produced:</p>
+<table class="wikitable">
+<tbody><tr>
+<td><b>Modifier</b></td>
+<td><b>Meaning</b></td>
+</tr>
+<tr>
+<td>%q[ ]</td>
+<td>Non-interpolated String (except for \\ \[ and \])</td>
+</tr>
+<tr>
+<td>%Q[ ]</td>
+<td>Interpolated String (default)</td>
+</tr>
+<tr>
+<td>%r[ ]</td>
+<td>Interpolated Regexp (flags can appear after the closing delimiter)</td>
+</tr>
+<tr>
+<td>%i[ ]</td>
+<td>Non-interpolated Array of symbols, separated by whitespace (after Ruby 2.0)</td>
+</tr>
+<tr>
+<td>%I[ ]</td>
+<td>Interpolated Array of symbols, separated by whitespace (after Ruby 2.0)</td>
+</tr>
+<tr>
+<td>%w[ ]</td>
+<td>Non-interpolated Array of words, separated by whitespace</td>
+</tr>
+<tr>
+<td>%W[ ]</td>
+<td>Interpolated Array of words, separated by whitespace</td>
+</tr>
+<tr>
+<td>%x[ ]</td>
+<td>Interpolated shell command</td>
+</tr>
+<tr>
+<td>%s[ ]</td>
+<td>Non-interpolated symbol</td>
+</tr>
+</tbody></table>
+<p>Here are some more examples:</p>
+<pre>%Q{one\ntwo\n#{ 1 + 2 }}
+=&gt; "one\ntwo\n3"
+
+%q{one\ntwo\n#{ 1 + 2 }}
+=&gt; "one\\ntwo\\n#{ 1 + 2 }"
+
+%r/#{name}/i
+=&gt; /nemo/i
+
+%w{one two three}
+=&gt; ["one", "two", "three"]
+
+%i{one two three} # after Ruby 2.0
+=&gt; [:one, :two, :three]
+
+%x{ruby --copyright}
+=&gt; "ruby - Copyright (C) 1993-2009 Yukihiro Matsumoto\n"
+</pre>
+<h3><span class="mw-headline" id=".22Here_document.22_notation">"Here document" notation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=6" title="Edit section: &quot;Here document&quot; notation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There is yet another way to make a string, known as a 'here document', where the delimiter itself can be any string:</p>
+<pre>string = &lt;&lt;END
+on the one ton temple bell
+a moon-moth, folded into sleep,
+sits still.
+END
+</pre>
+<p>The syntax begins with &lt;&lt; and is followed immediately by the delimiter. To end the string, the delimiter appears alone on a line.</p>
+<p>There is a slightly nicer way to write a here document which allows the ending delimiter to be indented by whitespace:</p>
+<pre>string = &lt;&lt;-FIN
+           on the one-ton temple bell
+           a moon-moth, folded into sleep
+           sits still.
+
+           --Taniguchi Buson, 18th century; translated by X. J. Kennedy
+         FIN
+</pre>
+<p>To use non-alpha-numeric characters in the delimiter, it can be quoted:</p>
+<pre>string = &lt;&lt;-"."
+           Orchid - breathing
+           incense into
+           butterfly's wings.
+
+           --Matsuo Basho; translated by Lucien Stryk
+         .
+</pre>
+<p>Here documents are interpolated, <i>unless you use single quotes around the delimiter</i>.</p>
+<p>The rest of the line after the opening delimiter is not interpreted as part of the string, which means you can do this:</p>
+<pre>strings = [&lt;&lt;END, "short", "strings"]
+a long string
+END
+
+=&gt; ["a long string\n", "short", "strings"]
+</pre>
+<p>You can even "stack" multiple here documents:</p>
+<pre>string = [&lt;&lt;ONE, &lt;&lt;TWO, &lt;&lt;THREE]
+  the first thing
+ONE
+  the second thing
+TWO
+  and the third thing
+THREE
+
+=&gt; ["the first thing\n", "the second thing\n", "and the third thing\n"]
+</pre>
+<h2><span class="mw-headline" id="Arrays">Arrays</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=7" title="Edit section: Arrays">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>An array is a collection of objects indexed by a non-negative integer. You can create an array object by writing <code>Array.new</code>, by writing an optional comma-separated list of values inside square brackets, or if the array will only contain string objects, a space-delimited string preceded by <code>%w</code>.</p>
+<pre>array_one   = Array.new
+array_two   = []              <font color="#007700"># shorthand for Array.new</font>
+array_three = ["a", "b", "c"] <font color="#007700"># array_three contains "a", "b" and "c"</font>
+array_four  = %w[a b c]       <font color="#007700"># array_four also contains "a", "b" and "c"</font>
+</pre>
+<pre>array_three[0]                <font color="#007700"># =&gt; "a"</font>
+array_three[2]                <font color="#007700"># =&gt; "c"</font>
+array_four[0]                 <font color="#007700"># =&gt; "a"</font>
+<font color="#007700">#negative indices are counted back from the end</font>
+array_four[-2]                <font color="#007700"># =&gt; "b"</font>
+<font color="#007700">#[start, count] indexing returns an array of count objects beginning at index start</font>
+array_four[1,2]               <font color="#007700"># =&gt; ["b", "c"]</font>
+<font color="#007700">#using ranges. The end position is included with two periods but not with three</font>
+array_four[0..1]              <font color="#007700"># =&gt; ["a", "b"]</font>
+array_four[0...1]             <font color="#007700"># =&gt; ["a"]</font>
+</pre>
+<p>The last method, using <code>%w</code>, is in essence shorthand for the <code>String</code> method <code>split</code> when the substrings are separated by whitespace only. In the following example, the first two ways of creating an array of strings are functionally identical while the last two create very different (though both valid) arrays.</p>
+<pre> array_one   = %w'apple orange pear'            <font color="#007700"># =&gt; ["apple", "orange", "pear"]</font>
+ array_two   = 'apple orange pear'.split        <font color="#007700"># =&gt; ["apple", "orange", "pear"]</font>
+ array_one   == array_two                       <font color="#007700"># =&gt; true</font>
+ 
+ array_three = %w'dog:cat:bird'                 <font color="#007700"># =&gt; ["dog:cat:bird"]</font>
+ array_four  = 'dog:cat:bird'.split(':')        <font color="#007700"># =&gt; ["dog", "cat", "bird"]</font>
+ array_three == array_four                      <font color="#007700"># =&gt; false</font>
+</pre>
+<h2><span class="mw-headline" id="Hashes">Hashes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=8" title="Edit section: Hashes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Hashes are basically the same as arrays, except that a hash not only contains values, but also keys pointing to those values. Each key can occur only once in a hash. A hash object is created by writing <code>Hash.new</code> or by writing an optional list of comma-separated <code>key =&gt; value</code> pairs inside curly braces.</p>
+<pre>hash_one   = Hash.new
+hash_two   = {}                             <font color="#007700"># shorthand for Hash.new</font>
+hash_three = {"a" =&gt; 1, "b" =&gt; 2, "c" =&gt; 3} <font color="#007700">#=&gt; {"a"=&gt;1, "b"=&gt;2, "c"=&gt;3}</font>
+</pre>
+<p>Usually <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Reference/Objects/Symbol" title="Ruby Programming/Reference/Objects/Symbol">Symbols</a> are used for Hash keys (allows for quicker access), so you will see hashes declared like this:</p>
+<pre>hash_sym   = { :a =&gt; 1, :b =&gt; 2, :c =&gt; 3}   <font color="#007700">#=&gt; {:b=&gt;2, :c=&gt;3, :a=&gt;1}</font>
+hash_sym   = { a: 1, b: 2, c: 3}            <font color="#007700">#=&gt; {:b=&gt;2, :c=&gt;3, :a=&gt;1}</font>
+</pre>
+<p>The latter form was introduced in Ruby 1.9.</p>
+<h3><span class="mw-headline" id="Hash_ordering">Hash ordering</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=9" title="Edit section: Hash ordering">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Note that with 1.8, iterating over hashes will iterate over the key value pairs in a "random" order. Beginning with 1.9, it will iterate over them in the order they were inserted. Note however, that if you reinsert a key without first deleting it, or change an existing key's value, the key's order in iteration does not change.</p>
+<pre>&gt;&gt; a = {:a =&gt; 1, :b =&gt; 2, :c =&gt; 3}
+=&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3}
+&gt;&gt; a.keys # iterate over, show me the keys
+=&gt; [:a, :b, :c]
+&gt;&gt; a[:b] = 2
+&gt; a.keys
+=&gt; [:a, :b, :c] # same order
+&gt;&gt; a.delete(:b)
+&gt;&gt; a[:b] = 4 # re insert now
+=&gt; 4
+&gt;&gt; a.keys
+=&gt; [:a, :c, :b] # different order
+</pre>
+<h2><span class="mw-headline" id="Ranges">Ranges</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit&amp;section=10" title="Edit section: Ranges">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A <b>range</b> represents a subset of all possible values of a type, to be more precise, all possible values between a start value and an end value.</p>
+<p>This may be:</p>
+<ul>
+<li>All integers between 0 and 5.</li>
+<li>All numbers (including non-integers) between 0 and 1, excluding 1.</li>
+<li>All characters between 't' and 'y'.</li>
+</ul>
+<p>In Ruby, these ranges are expressed by:</p>
+<pre>0..5
+0.0...1.0
+'t'..'y'
+</pre>
+<p>Therefore, ranges consist of a start value, an end value, and whether the end value is included or not (in this short syntax, using two . for including and three . for excluding).</p>
+<p>A range represents a set of values, not a sequence. Therefore,</p>
+<pre>5..0
+</pre>
+<p>though syntactically correct, produces a range of length zero.</p>
+<p>Ranges can only be formed from instances of the same class or subclasses of a common parent, which must be Comparable (implementing &lt;=&gt;).</p>
+<p>Ranges are instances of the Range class, and have certain methods, for example, to determine whether a value is inside a range:</p>
+<pre>r = 0..5
+puts r === 4  # =&gt; true
+puts r === 7  # =&gt; false
+</pre>
+<p>For detailed information of all Range methods, consult the <a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Reference/Objects/Range&amp;action=edit&amp;redlink=1" class="new" title="Ruby Programming/Reference/Objects/Range (does not exist)">Range class reference</a>.</p>
+<p><a rel="nofollow" class="external text" href="http://www.engineyard.com/blog/2010/iteration-shouldnt-spin-your-wheels/">Here</a> is a tutorial on their use.</p>
+
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:17281-0!*!0!!en!*!* and timestamp 20160916122407 and revision id 2955977
+ -->
+<noscript>&lt;img src="//en.wikibooks.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;oldid=2955977">https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;oldid=2955977</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikibooks.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://en.wikibooks.org/wiki/Category:Ruby_Programming" title="Category:Ruby Programming">Ruby Programming</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikibooks.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Discussion for this IP address</a></li><li id="pt-anoncontribs"><a href="https://en.wikibooks.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikibooks.org/w/index.php?title=Special:CreateAccount&amp;returnto=Ruby+Programming%2FSyntax%2FLiterals" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=Ruby+Programming%2FSyntax%2FLiterals" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals" title="View the content page [c]" accesskey="c">Book</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikibooks.org/wiki/Talk:Ruby_Programming/Syntax/Literals" title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikibooks.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikibooks [f]" accesskey="f" id="searchInput"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikibooks.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
+			<h3 id="p-Navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage"><a href="https://en.wikibooks.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-help"><a href="https://en.wikibooks.org/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li><li id="n-Browse"><a href="https://en.wikibooks.org/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse wiki</a></li><li id="n-Cookbook"><a href="https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li><li id="n-Wikijunior"><a href="https://en.wikibooks.org/wiki/Wikijunior" title="Books for children">Wikijunior</a></li><li id="n-Featured-books"><a href="https://en.wikibooks.org/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li><li id="n-recentchanges"><a href="https://en.wikibooks.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikibooks.org&amp;uselang=en" title="Support Wikibooks">Donations</a></li><li id="n-randomrootpage"><a href="https://en.wikibooks.org/wiki/Special:RandomRootpage">Random book</a></li><li id="n-Using-Wikibooks"><a href="https://en.wikibooks.org/wiki/Using_Wikibooks">Using Wikibooks</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-Community" aria-labelledby="p-Community-label">
+			<h3 id="p-Community-label">Community</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Reading-room"><a href="https://en.wikibooks.org/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li><li id="n-portal"><a href="https://en.wikibooks.org/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li><li id="n-currentevents"><a href="https://en.wikibooks.org/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li><li id="n-maintenance"><a href="https://en.wikibooks.org/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li><li id="n-Policies-and-guidelines"><a href="https://en.wikibooks.org/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li><li id="n-contact"><a href="https://en.wikibooks.org/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikibooks.org/wiki/Special:WhatLinksHere/Ruby_Programming/Syntax/Literals" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikibooks.org/wiki/Special:RecentChangesLinked/Ruby_Programming/Syntax/Literals" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://commons.wikimedia.org/wiki/Special:UploadWizard?uselang=en" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikibooks.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;oldid=2955977" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="https://en.wikibooks.org/w/index.php?title=Special:CiteThisPage&amp;page=Ruby_Programming%2FSyntax%2FLiterals&amp;id=2955977" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label">
+			<h3 id="p-lang-label">In other languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="uls-p-lang-dummy"><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#"></a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Ruby+Programming%2FSyntax%2FLiterals" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>			</div>
+		</div>
+			<div class="portal" role="navigation" id="p-Sister_projects" aria-labelledby="p-Sister_projects-label">
+			<h3 id="p-Sister_projects-label">Sister projects</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Wikipedia"><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li><li id="n-Wikiversity"><a href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li><li id="n-Wiktionary"><a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li><li id="n-Wikiquote"><a href="https://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li><li id="n-Wikisource"><a href="https://en.wikisource.org/wiki/Main_Page">Wikisource</a></li><li id="n-Wikinews"><a href="https://en.wikinews.org/wiki/Main_Page">Wikinews</a></li><li id="n-Wikivoyage"><a href="https://en.wikivoyage.org/wiki/Main_Page">Wikivoyage</a></li><li id="n-Commons"><a href="https://commons.wikimedia.org/wiki/Main_Page">Commons</a></li><li id="n-Wikidata"><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Ruby+Programming%2FSyntax%2FLiterals">Create a collection</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Ruby+Programming%2FSyntax%2FLiterals&amp;returnto=Ruby+Programming%2FSyntax%2FLiterals&amp;oldid=2955977&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 8 May 2015, at 15:00.</li>
+											<li id="footer-info-copyright">Text is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License.</a>; additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a></li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikibooks.org/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikibooks.org/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikibooks.org/w/index.php?title=Ruby_Programming/Syntax/Literals&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./Ruby Programming_Syntax_Literals - Wikibooks, open books for an open world_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.extlinks","ext.gadget.commons-file","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.compactlinks","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.flaggedRevs.advanced"]);});</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set( {
+    "wgPageParseReport": {
+        "limitreport": {
+            "cputime": "0.022",
+            "walltime": "0.026",
+            "ppvisitednodes": {
+                "value": 76,
+                "limit": 1000000
+            },
+            "ppgeneratednodes": {
+                "value": 0,
+                "limit": 1500000
+            },
+            "postexpandincludesize": {
+                "value": 8,
+                "limit": 2097152
+            },
+            "templateargumentsize": {
+                "value": 0,
+                "limit": 2097152
+            },
+            "expansiondepth": {
+                "value": 2,
+                "limit": 40
+            },
+            "expensivefunctioncount": {
+                "value": 0,
+                "limit": 500
+            },
+            "entityaccesscount": {
+                "value": 0,
+                "limit": 400
+            },
+            "timingprofile": [
+                "100.00%    0.000      1 -total"
+            ]
+        },
+        "cachereport": {
+            "origin": "mw1250",
+            "timestamp": "20160916122407",
+            "ttl": 2592000,
+            "transientcontent": false
+        }
+    }
+} );});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":66,"wgHostname":"mw1258"});});</script>
+	
+
+</body></html>

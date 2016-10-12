@@ -50,7 +50,7 @@ export default ({ getState, dispatch }) => next => action => {
       createFavorite(action.serie, seriesSuccess);
       break;
     case REMOVE_FAVORITE_SERIE:
-      destroyFavorite(action.serie, seriesSuccess);
+      destroyFavorite(action.favorite, seriesSuccess);
       break;
     default:
       break;
