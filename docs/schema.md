@@ -48,6 +48,13 @@ id	            | integer	  | not null, primary key
 series_id       | integer   | not null, foreign key (references series), indexed
 genre_id        | integer   | not null, foreign key (references genres), indexed
 
+## favorites
+column          | data type |	 details
+----------------|-----------|---------------------------
+id	            | integer	  | not null, primary key
+series_id       | integer   | not null, foreign key (references series), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
+
 ## current_episodes
 column          | data type |	 details
 ----------------|-----------|---------------------------
@@ -56,14 +63,7 @@ episode_id      | integer   | not null, foreign key (references episodes)
 user_id         | integer   | not null, foreign key (references users), indexed
 series_id       | integer   | not null, foreign key (references series), indexed
 
-## my_list_series
-column          | data type |	 details
-----------------|-----------|---------------------------
-id	            | integer	  | not null, primary key
-series_id       | integer   | not null, foreign key (references series), indexed
-user_id         | integer   | not null, foreign key (references users), indexed
-
-## reviews
+## reviews (X)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer   |	not null, primary key
