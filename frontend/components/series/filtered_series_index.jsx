@@ -55,7 +55,7 @@ class FilteredSeriesIndex extends React.Component {
     const indexRows = this.renderIndexRows().map((row, idx) => {
       return (
         <FilteredSeriesRow
-          key={idx}
+          key={row[0].id}
           rowIdx={idx}
           showDetail={idx === this.props.focusedGenreId}
           seriesIndex={row}

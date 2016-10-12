@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { requestSearchResults } from '../actions/search_actions';
 
 import App from './app';
 import SessionFormContainer from './sessions/session_form_container';
@@ -20,6 +21,18 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectSearch = (nextState, replace) => {
+    if (!store.getState().session.currentUser) {
+      replace('/signin');
+    } else {
+      let { query } = nextState.location.query;
+      query = decodeURI(query);
+      store.dispatch(requestSearchResults({query: query}, () => {
+        console.log('redirect search');
+      }));
+    }
+  };
+
   return(
     <Provider store = {store}>
       <Router history={hashHistory}>
@@ -35,7 +48,7 @@ const Root = ({ store }) => {
           onEnter={_redirectUnlessLoggedIn} />
         <Route path="/search"
           component={SearchResultsContainer}
-          onEnter={_redirectUnlessLoggedIn} />
+          onEnter={_redirectSearch} />
       </Router>
     </Provider>
   );
