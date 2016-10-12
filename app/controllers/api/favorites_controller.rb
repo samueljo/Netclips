@@ -1,9 +1,4 @@
 class Api::FavoritesController < ApplicationController
-  def index
-    @series = Favorite.get_my_list(current_user)
-    render 'api/search/index'
-  end
-
   def create
     @favorite_serie = Favorite.new(favorite_params)
     @favorite_serie.user_id = current_user.id
