@@ -32,7 +32,7 @@ $moveRight: ($tileWidth / 2 );
     display: block;
     transition: 200ms linear;
     &.leftShift {
-      left: -2.7vw;
+      left: -2vw;
     }
   }
   &.active ~ .series-page {
@@ -161,11 +161,10 @@ $moveRight: ($tileWidth / 2 );
 
 .play-button {
   z-index: 5;
-  height: 3vw;
-  padding: 0.2vw 0.4vw 0 0.9vw;
+  padding: 0vw 0.2vw 0 0.5vw;
   border-radius: 100%;
-  border: 0.3vw solid #999;
-  font-size: 2.3vw;
+  border: 0.1vw solid #999;
+  font-size: 1.6vw;
   color: #999;
   cursor: pointer;
   &:hover {
@@ -200,7 +199,12 @@ $moveRight: ($tileWidth / 2 );
   right: 0;
   text-align: right;
   font-size: 0.7vw;
-  padding: 1.3vw 0.6vw 1.3vw 0;
+  padding-right: .6vw;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  margin: 1vw 0;
+  text-shadow: 1px 1px 2px black;
+  border-left: .1vw solid #999;
   color: #ccc;
   width: 20%;
   &:hover {

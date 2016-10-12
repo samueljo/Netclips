@@ -11,11 +11,21 @@ import {
   DESTROY_REVIEW } from '../actions/review_actions';
 
 import {
+  ADD_FAVORITE_SERIE,
+  REMOVE_FAVORITE_SERIE } from '../actions/favorite_actions';
+
+import {
   fetchSeries,
-  fetchSerie,
+  fetchSerie } from '../util/series_api_util';
+
+import {
   createReview,
   updateReview,
-  destroyReview } from '../util/series_api_util';
+  destroyReview } from '../util/reviews_api_util';
+
+import {
+  createFavorite,
+  destroyFavorite } from '../util/favorites_api_util';
 
 // import { UPDATE_FILTER } from '../actions/filter_actions';
 
@@ -37,6 +47,12 @@ export default ({ getState, dispatch }) => next => action => {
       break;
     case DESTROY_REVIEW:
       destroyReview(action.review, serieSuccess);
+      break;
+    case ADD_FAVORITE_SERIE:
+      createFavorite(action.serie, seriesSuccess);
+      break;
+    case REMOVE_FAVORITE_SERIE:
+      destroyFavorite(action.serie, seriesSuccess);
       break;
     default:
       break;
