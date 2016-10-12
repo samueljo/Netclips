@@ -54,7 +54,6 @@ class FilteredSeriesRow extends React.Component {
 
     return (
       <div className='filtered-row'>
-        <h1 className='search-results-header'>Search results:</h1>
         <ul className='filtered-row-inner'>
           {indexRow}
         </ul>

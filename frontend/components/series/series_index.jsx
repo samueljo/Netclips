@@ -18,6 +18,7 @@ class SeriesIndex extends React.Component {
         return (
           <SeriesIndexRow
             key={seriesGenre.genreId}
+            requestSearchResults={this.props.requestSearchResults}
             genre={genre}
             showDetail={seriesGenre.genreId === this.props.focusedGenreId}
             seriesIndex={seriesGenre}

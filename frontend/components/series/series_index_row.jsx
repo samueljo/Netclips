@@ -1,6 +1,7 @@
 import React from 'react';
 import SeriesIndexItem from '../series/series_index_item';
 import SeriesShowContainer from '../series_show/series_show_container';
+import { withRouter } from 'react-router';
 
 class SeriesIndexRow extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class SeriesIndexRow extends React.Component {
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
     this.slideTo = this.slideTo.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.handleTitleClick = this.handleTitleClick.bind(this);
   }
 
   closeSeriesShow() {
@@ -136,13 +138,29 @@ class SeriesIndexRow extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
 
+  handleTitleClick(e) {
+    const query = { query: `${e.target.value}` };
+
+    this.props.requestSearchResults(query, () => {
+      this.props.router.push({
+        pathname: 'search',
+        query: query
+      });
+    });
+  }
+
   render() {
     const serieDisplay = this.renderSeriesShow();
     const indexRow = this.renderIndexRow();
 
     return (
       <div className='index-row'>
-        <h1 className='index-row-header'>{this.props.genre}</h1>
+        <button
+          className='index-row-header'
+          onClick={this.handleTitleClick}
+          value={this.props.genre}>
+          {this.props.genre}
+        </button>
         <div className='index-row-inner'>
           <div
             className='car-button cb-left'
@@ -165,4 +183,4 @@ class SeriesIndexRow extends React.Component {
   }
 }
 
-export default SeriesIndexRow;
+export default withRouter(SeriesIndexRow);

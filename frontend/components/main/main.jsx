@@ -12,7 +12,8 @@ const Main = (props) => {
           focusedGenreId={props.focusedGenreId}
           requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
-          removeSerie={props.removeSerie} />
+          removeSerie={props.removeSerie}
+          requestSearchResults={props.requestSearchResults} />
       </div>
     );
   } else {
