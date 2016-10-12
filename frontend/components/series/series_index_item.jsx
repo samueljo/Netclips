@@ -64,7 +64,12 @@ class SeriesIndexItem extends React.Component {
   }
 
   isSeriesListed() {
-    return (this.props.myList.indexOf(this.props.serie) !== -1);
+    for (let i = 0; i < this.props.myList.length; i++) {
+      if (this.props.myList[i].id === this.props.serie.id) {
+        return true;
+      }
+    }
+    return false;
   }
 
   render() {
