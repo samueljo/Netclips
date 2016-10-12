@@ -9,6 +9,9 @@ const SearchResults = (props) => {
         <NavbarContainer />
         <FilteredSeriesIndex
           seriesIndex={props.seriesIndex}
+          myList={props.myList}
+          addFavoriteSerie={props.addFavoriteSerie}
+          removeFavoriteSerie={props.removeFavoriteSerie}
           focusedGenreId={props.focusedGenreId}
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie} />
@@ -17,6 +20,6 @@ const SearchResults = (props) => {
   } else {
     return <div></div>;
   }
-}
+};
 
 export default SearchResults;

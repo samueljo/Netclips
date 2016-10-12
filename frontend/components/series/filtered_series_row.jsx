@@ -43,6 +43,9 @@ class FilteredSeriesRow extends React.Component {
         <SeriesIndexItem
           serie={serie}
           key={idx}
+          myList={this.props.myList.series}
+          addFavoriteSerie={this.props.addFavoriteSerie}
+          removeFavoriteSerie={this.props.removeFavoriteSerie}
           openSeriesShow={this.openSeriesShow} />
       );
     });

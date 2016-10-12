@@ -163,14 +163,14 @@ $moveRight: ($tileWidth / 2 );
   z-index: 5;
   padding: 0vw 0.2vw 0 0.5vw;
   border-radius: 100%;
-  border: 0.1vw solid #999;
+  border: 0.2vw solid #999;
   font-size: 1.6vw;
   color: #999;
   cursor: pointer;
   &:hover {
     cursor: pointer;
     color: #DB0510;
-    border: 0.3vw solid #ECF0F1;
+    border: 0.2vw solid #ECF0F1;
   }
 }
 

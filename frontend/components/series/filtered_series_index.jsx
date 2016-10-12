@@ -56,9 +56,12 @@ class FilteredSeriesIndex extends React.Component {
       return (
         <FilteredSeriesRow
           key={idx}
+          myList={this.props.myList}
           rowIdx={idx}
           showDetail={idx === this.props.focusedGenreId}
           seriesIndex={row}
+          addFavoriteSerie={this.props.addFavoriteSerie}
+          removeFavoriteSerie={this.props.removeFavoriteSerie}
           removeSerie={this.props.removeSerie}
           requestSerie={this.props.requestSerie} />
       );
