@@ -3,10 +3,12 @@ import {
   receiveSeries,
   receiveSerie,
   REQUEST_SERIES,
-  REQUEST_SERIE,
+  REQUEST_SERIE } from '../actions/serie_actions';
+
+import {
   CREATE_REVIEW,
   UPDATE_REVIEW,
-  DESTROY_REVIEW } from '../actions/serie_actions';
+  DESTROY_REVIEW } from '../actions/review_actions';
 
 import {
   fetchSeries,

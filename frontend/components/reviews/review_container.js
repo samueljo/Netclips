@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   createReview,
   updateReview,
-  destroyReview } from '../../actions/serie_actions';
+  destroyReview } from '../../actions/review_actions';
 
 const mapStateToProps = ({ series }) => ({
   focusedGenreId: series.focusedGenreId,

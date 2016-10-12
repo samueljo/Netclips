@@ -6,8 +6,9 @@ import Modal from 'react-modal';
 
 import {
   requestSeries,
-  requestSerie,
-  createReview } from './actions/serie_actions';
+  requestSerie } from './actions/serie_actions';
+import {
+  createReview } from './actions/review_actions';
 
 import {
   fetchSeries,

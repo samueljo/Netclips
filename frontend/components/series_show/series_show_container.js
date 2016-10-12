@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { requestEpisodes } from '../../actions/episode_actions';
 import {
   createReview,
-  updateReview } from '../../actions/serie_actions';
+  updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = state => {
   return ({
