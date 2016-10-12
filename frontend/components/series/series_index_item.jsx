@@ -49,6 +49,10 @@ class SeriesIndexItem extends React.Component {
     }
   }
 
+  toggleShiftLeft() {
+    this.setState({ shiftLeft: !this.state.shiftLeft });
+  }
+
   renderMyListButton() {
     let myListButtonText;
     if (this.isSeriesListed()) {

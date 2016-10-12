@@ -1,6 +1,7 @@
 import SearchResults from './search_results';
 import { connect } from 'react-redux';
 import {
+  requestSeries,
   requestSerie,
   removeSerie } from '../../actions/serie_actions';
 
@@ -20,6 +21,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestSeries: () => dispatch(requestSeries()),
   requestSerie: (id, genreId) => dispatch(requestSerie(id, genreId)),
   removeSerie: () => dispatch(removeSerie()),
   addFavoriteSerie: (serie) => dispatch(addFavoriteSerie(serie)),

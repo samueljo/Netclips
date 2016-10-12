@@ -32,6 +32,7 @@ class FilteredSeriesIndex extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
+    this.props.requestSeries();
   }
 
   componentWillUnmount() {
@@ -56,6 +57,7 @@ class FilteredSeriesIndex extends React.Component {
       return (
         <FilteredSeriesRow
           key={idx}
+          seriesPerRow={this.state.seriesPerRow}
           myList={this.props.myList}
           rowIdx={idx}
           showDetail={idx === this.props.focusedGenreId}

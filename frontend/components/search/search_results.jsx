@@ -13,6 +13,7 @@ const SearchResults = (props) => {
           addFavoriteSerie={props.addFavoriteSerie}
           removeFavoriteSerie={props.removeFavoriteSerie}
           focusedGenreId={props.focusedGenreId}
+          requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie} />
       </div>

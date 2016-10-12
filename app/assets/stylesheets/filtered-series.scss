@@ -26,6 +26,9 @@ $moveRight: ($tileWidth / 2 );
   white-space: nowrap;
   height: $tileHeight;
   margin: 1vw 4vw 5vw;
+  &.leftShift {
+    transform: translateX(-3vw);
+  }
 }
 
 .filtered-row-inner:hover .tile {

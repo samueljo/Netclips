@@ -5,9 +5,12 @@ import SeriesShowContainer from '../series_show/series_show_container';
 class FilteredSeriesRow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { serieDisplayId: null };
+    this.state = {
+      shiftLeft: false,
+      serieDisplayId: null };
     this.openSeriesShow = this.openSeriesShow.bind(this);
     this.closeSeriesShow = this.closeSeriesShow.bind(this);
+    this.toggleShiftLeft = this.toggleShiftLeft.bind(this);
   }
 
   closeSeriesShow() {
@@ -38,12 +41,21 @@ class FilteredSeriesRow extends React.Component {
   }
 
   renderIndexRow() {
-   return this.props.seriesIndex.map((serie, idx) => {
+    const seriesIndex = this.props.seriesIndex;
+    const myList = this.props.myList.series;
+    return seriesIndex.map((serie, idx) => {
+      let hoverCb;
+      if (idx === this.props.seriesPerRow - 1) {
+        hoverCb = this.toggleShiftLeft;
+      } else {
+        hoverCb = () => {};
+      }
       return (
         <SeriesIndexItem
           serie={serie}
           key={idx}
-          myList={this.props.myList.series}
+          hoverCb={hoverCb}
+          myList={myList}
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
           openSeriesShow={this.openSeriesShow} />
@@ -51,13 +63,23 @@ class FilteredSeriesRow extends React.Component {
     });
   }
 
+  toggleShiftLeft() {
+    this.setState({ shiftLeft: !this.state.shiftLeft });
+  }
+
   render() {
     const serieDisplay = this.renderSeriesShow();
     const indexRow = this.renderIndexRow();
+    let innerRowClass;
+    if (this.state.shiftLeft) {
+      innerRowClass = 'filtered-row-inner leftShift';
+    } else {
+      innerRowClass = 'filtered-row-inner';
+    }
 
     return (
       <div className='filtered-row'>
-        <ul className='filtered-row-inner'>
+        <ul className={innerRowClass}>
           {indexRow}
         </ul>
         {serieDisplay}
