@@ -22,10 +22,10 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 - [ ] MyList
   - Create a 'My List' to keep track of series-to-watch
 
-- [ ] Wrap-around Scroll
+- [X] Wrap-around Scroll
   - Series are organized by genre with a 'wrap-around' scroll
 
-- [ ] Search
+- [X] Search
   - Search for a series by genre or title (cast as a bonus)
 
 - Bonus:
@@ -152,10 +152,10 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 
 - Search results will use presentation components of primary app (series & episodes) but will filter which series are sent
 
-- [ ] Search model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for Search (SearchController)
-- [ ] JBuilder views for Search
+- [X] Search model
+- [X] Seed database with a small amount of test data
+- [X] CRUD API for Search (SearchController)
+- [X] JBuilder views for Search
 
 ### Phase 6: My List (1 day)
 
