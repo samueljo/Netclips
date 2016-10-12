@@ -21,37 +21,21 @@ class SeriesIndexRow extends React.Component {
     this.toggleShiftLeft = this.toggleShiftLeft.bind(this);
   }
 
+  calculateSeriesPerPage() {
+    return ($(window).width() > 2000) ? 6 : 5;
+  }
+
   closeSeriesShow() {
     this.props.removeSerie();
     this.setState({ serieDisplayId: null });
   }
 
-  openSeriesShow(serieId) {
-    this.props.requestSerie(serieId, this.props.seriesIndex.genreId);
-    this.setState({ serieDisplayId: serieId });
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
   }
 
-  renderSeriesShow() {
-    if (this.props.showDetail) {
-      return (
-        <div className='series-show'>
-          <SeriesShowContainer />
-          <button
-            className='close-series-show'
-            onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
-        </div>
-      );
-    } else {
-      return <div></div>;
-    }
-  }
-
-  calculateSeriesPerPage() {
-    return ($(window).width() > 2000) ? 6 : 5;
-  }
-
-  toggleShiftLeft() {
-    this.setState({ shiftLeft: !this.state.shiftLeft });
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   createSeriesIndexItems() {
@@ -74,6 +58,30 @@ class SeriesIndexRow extends React.Component {
           openSeriesShow={this.openSeriesShow} />
       );
     });
+  }
+
+  handleResize(e) {
+    const seriesPerPage = this.calculateSeriesPerPage();
+
+    if (seriesPerPage !== this.state.seriesPerPage) {
+      this.setState({ seriesPerPage: seriesPerPage });
+    }
+  }
+
+  handleTitleClick(e) {
+    const query = { query: `${e.target.value}` };
+
+    this.props.requestSearchResults(query, () => {
+      this.props.router.push({
+        pathname: 'search',
+        query: query
+      });
+    });
+  }
+
+  openSeriesShow(serieId) {
+    this.props.requestSerie(serieId, this.props.seriesIndex.genreId);
+    this.setState({ serieDisplayId: serieId });
   }
 
   renderIndexRow() {
@@ -104,6 +112,21 @@ class SeriesIndexRow extends React.Component {
     return indexRow;
   }
 
+  renderSeriesShow() {
+    if (this.props.showDetail) {
+      return (
+        <div className='series-show'>
+          <SeriesShowContainer />
+          <button
+            className='close-series-show'
+            onClick={this.closeSeriesShow}>{String.fromCharCode(215)}</button>
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
+  }
+
   slideTo(dir, numPages) {
     console.log('sliding');
 
@@ -122,31 +145,8 @@ class SeriesIndexRow extends React.Component {
     });
   }
 
-  handleResize(e) {
-    const seriesPerPage = this.calculateSeriesPerPage();
-
-    if (seriesPerPage !== this.state.seriesPerPage) {
-      this.setState({ seriesPerPage: seriesPerPage });
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  handleTitleClick(e) {
-    const query = { query: `${e.target.value}` };
-
-    this.props.requestSearchResults(query, () => {
-      this.props.router.push({
-        pathname: 'search',
-        query: query
-      });
-    });
+  toggleShiftLeft() {
+    this.setState({ shiftLeft: !this.state.shiftLeft });
   }
 
   render() {

@@ -1,7 +1,4 @@
 import { LOGOUT } from '../actions/session_actions';
-import {
-  REMOVE_FAVORITE_SERIE,
-  ADD_FAVORITE_SERIE } from '../actions/favorite_actions';
 
 import merge from 'lodash/merge';
 
