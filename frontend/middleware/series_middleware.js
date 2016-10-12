@@ -27,8 +27,6 @@ import {
   createFavorite,
   destroyFavorite } from '../util/favorites_api_util';
 
-// import { UPDATE_FILTER } from '../actions/filter_actions';
-
 export default ({ getState, dispatch }) => next => action => {
   const seriesSuccess = data => dispatch(receiveSeries(data));
   const serieSuccess = data => dispatch(receiveSerie(data, action.genreId));

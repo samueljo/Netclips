@@ -14,7 +14,8 @@ class SeriesShow extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ previousSerie: this.props.serieDisplay.id });
+    this.previousSerie = this.props.serieDisplay.id;
+    this.props.requestEpisodes(this.props.serieDisplay.id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -24,10 +25,8 @@ class SeriesShow extends React.Component {
   }
 
   componentWillUpdate() {
-    if (this.state.previousSerie !== this.props.serieDisplay.id) {
-      this.setState({
-        previousSerie: this.props.serieDisplay.id
-      });
+    if (this.previousSerie !== this.props.serieDisplay.id) {
+      this.previousSerie = this.props.serieDisplay.id;
       this.props.requestEpisodes(this.props.serieDisplay.id);
     }
   }
