@@ -174,6 +174,7 @@ $moveRight: ($tileWidth / 2 );
 
 .tile-title {
   position: absolute;
+  left: 0;
   cursor: pointer;
   bottom: 0;
   padding: 1.3vw 0 1.3vw 0.6vw;
@@ -181,7 +182,9 @@ $moveRight: ($tileWidth / 2 );
   width: 80%;
   font-size: 0.7vw;
   white-space: normal;
+  font-weight: 400;
   line-height: 1.3;
+  text-shadow: 1px 1px 2px black; 
   &:hover {
     color: #fff;
   }
