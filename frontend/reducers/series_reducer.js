@@ -9,6 +9,8 @@ import {
   REMOVE_FAVORITE_SERIE,
   ADD_FAVORITE_SERIE } from '../actions/favorite_actions';
 
+import { deleteItem } from '../reducers/selectors';
+
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -32,9 +34,15 @@ const SeriesReducer = (state = _defaultState, action) => {
       return merge({}, state, {serieDisplay: null, focusedGenreId: null});
     case ADD_FAVORITE_SERIE:
       newState = merge({}, state);
-      const prevFavorites = state.seriesIndex['My List'].series.slice();
-      const allFavorites = [action.serie, ...prevFavorites];
-      newState.seriesIndex['My List'].series = allFavorites;
+      let prevFavorites = newState.seriesIndex['My List'].series;
+      let newFavorites = [action.serie, ...prevFavorites];
+      newState.seriesIndex['My List'].series = newFavorites;
+      return newState;
+    case REMOVE_FAVORITE_SERIE:
+      newState = merge({}, state);
+      prevFavorites = newState.seriesIndex['My List'].series;
+      newFavorites = deleteItem(action.serie, prevFavorites);
+      newState.seriesIndex['My List'].series = newFavorites;
       return newState;
     case LOGOUT:
       return _defaultState;
@@ -44,13 +52,3 @@ const SeriesReducer = (state = _defaultState, action) => {
 };
 
 export default SeriesReducer;
-//
-
-// case REMOVE_FAVORITE_SERIE:
-//   let newState = merge({}, state);
-//   delete newState[action.serie.id];
-//   return newState;
-// case LOGOUT:
-//   return {};
-// default:
-//   return state;
