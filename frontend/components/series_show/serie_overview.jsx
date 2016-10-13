@@ -76,15 +76,19 @@ class SerieOverview extends React.Component {
 
   renderListButton() {
     let buttonText;
+    let buttonClass;
     if (this.props.listed) {
-      buttonText = `${String.fromCharCode(10003)} MY LIST`;
+      buttonClass = 'show-list-icon check';
+      buttonText = `${String.fromCharCode(10003)}`;
     } else {
-      buttonText = `${String.fromCharCode(65291)} MY LIST`;
+      buttonClass = 'show-list-icon plus';
+      buttonText = `${String.fromCharCode(65291)}`;
     }
     return (
-      <button
-        className='show-list-button'
-        onClick={this.handleMyListClick}>{buttonText}</button>
+      <span className='show-list-button' onClick={this.handleMyListClick}>
+        <span className={buttonClass}>{buttonText}</span>
+        <span className='show-list-text'>MY LIST</span>
+      </span>
     );
   }
 
@@ -104,11 +108,9 @@ class SerieOverview extends React.Component {
               value={rating}
               onStarClick={this.onStarClick.bind(this)} />
           </div>
-          <span className='list-button-container'>
-            {this.renderListButton()}
-          </span>
           <div className='serie-year'>{serieDisplay.year}</div>
           <div className='serie-description'>{serieDisplay.description}</div>
+          {this.renderListButton()}
           <div className='serie-img-container'>
             <img className='serie-img' src={serieDisplay.image_url} />
             <button

@@ -90,24 +90,54 @@ $iconSize: 50px;
   }
 }
 
+.show-list-button {
+  margin-top: $tileHeight / 3;
+  display: block;
+  vertical-align: middle;
+  font-size: 1.3vw;
+  color: #fff;
+  cursor: pointer;
+}
+
+.show-list-icon {
+  background: rgba(0,0,0,.7);
+  border-radius: 100%;
+  border: .1vw solid #fff;
+  margin-right: .8vw;
+  &:hover {
+    color: #000;
+    background: #fff;
+    transform: scale(1.1);
+  }
+}
+
+.plus {
+  padding: 0 .3vw .1vw;
+}
+
+.check {
+  padding: 0 .4vw .1vw;
+}
+
+.show-list-text {
+  letter-spacing: 1px;
+}
+
 .serie-year {
   margin-top: $tileHeight / 2.3;
   display: inline-block;
   vertical-align: middle;
-  font-size: 1.1vw;
+  font-size: 1.2vw;
   font-weight: 400;
   margin-left: 10px;
   color: #666;
 }
 
 .serie-description {
-  position: absolute;
-  left: 0;
-  font-size: 1.125vw;
+  font-size: 1.4vw;
   color: #999;
   line-height: 1.3;
   margin-top: $tileHeight / 6;
-  margin-left: 3.8vw;
   z-index: 1;
   width: 30%;
   white-space: normal;
