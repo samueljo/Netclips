@@ -38,15 +38,3 @@ class Serie < ActiveRecord::Base
     )
   end
 end
-
-# class Series
-#
-#   def current_episode_id_for_user(user)
-#     current_episode = CurrentEpisode.find_by(
-#       series: self,
-#       user: user
-#     )
-#     current_episode.episode_id
-#   end
-#
-# end

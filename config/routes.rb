@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:update, :destroy, :create]
     resources :search, only: [:index]
     resources :favorites, only: [:index, :create, :destroy]
+    resources :current_watchings, only: [:update, :destroy, :create]
   end
 end
