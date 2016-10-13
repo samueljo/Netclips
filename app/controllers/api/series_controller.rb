@@ -24,9 +24,9 @@ class Api::SeriesController < ApplicationController
   def current_episode(current_watchings, episodes)
     current_watching = current_watchings.select { |current| current.user_id == current_user.id }
     if (current_watching[0])
-      return current_watching[0].episode_id
+      return episodes.select{ |episode| episode.id == current_watching[0].episode_id }[0]
     else
-      return episodes.select { |episode| episode.episode_number == 1 }[0].id
+      return episodes.select { |episode| episode.episode_number == 1 }[0]
     end
   end
 

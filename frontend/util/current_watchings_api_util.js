@@ -1,16 +1,7 @@
-export const createCurrentWatching = (currentWatching, success) => {
+export const createOrUpdateCurrentWatching = (currentWatching, success) => {
   $.ajax({
     method: 'POST',
     url: `api/current_watchings`,
-    data: currentWatching,
-    success
-  });
-};
-
-export const updateCurrentWatching = (currentWatching, success) => {
-  $.ajax ({
-    method: 'PATCH',
-    url: `api/current_watchings/${currentWatching.current_watching.serie_id}`,
     data: currentWatching,
     success
   });

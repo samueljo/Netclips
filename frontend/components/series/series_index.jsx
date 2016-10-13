@@ -26,7 +26,9 @@ class SeriesIndex extends React.Component {
             addFavoriteSerie={this.props.addFavoriteSerie}
             removeFavoriteSerie={this.props.removeFavoriteSerie}
             removeSerie={this.props.removeSerie}
-            requestSerie={this.props.requestSerie} />
+            requestSerie={this.props.requestSerie}
+            createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching}
+            destroyCurrentWatching={this.props.destroyCurrentWatching} />
         );
       }
     });

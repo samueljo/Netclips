@@ -5,12 +5,10 @@ import configureStore from './store/store';
 import Modal from 'react-modal';
 
 import {
-  createCurrentWatching,
-  updateCurrentWatching,
+  createOrUpdateCurrentWatching,
   destroyCurrentWatching } from './actions/current_watching_actions';
 
-window.createCurrentWatching = createCurrentWatching;
-window.updateCurrentWatching = updateCurrentWatching;
+window.createOrUpdateCurrentWatching = createOrUpdateCurrentWatching;
 window.destroyCurrentWatching = destroyCurrentWatching;
 
 document.addEventListener('DOMContentLoaded', () => {

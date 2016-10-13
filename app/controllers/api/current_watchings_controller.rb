@@ -1,17 +1,24 @@
 class Api::CurrentWatchingsController < ApplicationController
   def create
-    # find based on serie and user id (create or update)
-      # create/update episode id
     current_watching = CurrentWatching.find_by(
       'serie_id = ? AND user_id = ?',
-        params[:id],
+        params[:current_watching][:serie_id],
         current_user.id
     )
     if current_watching
-      current_watching.update(episode_id: params[:current_watching][:episode_id])
+      if current_watching.update(episode_id: params[:current_watching][:episode_id])
+        render json: {}
+      else
+        render json: current_watching.errors.full_messages, status: 422
+      end
     else
-      current_watching.episode_id = params[:current_watching][:episode_id]
-      current_watching.save
+      current_watching = CurrentWatching.new(current_watching_params)
+      current_watching.user_id = current_user.id
+      if current_watching.save
+        render json: {}
+      else
+        render json: current_watching.errors.full_messages, status: 422
+      end
     end
   end
 

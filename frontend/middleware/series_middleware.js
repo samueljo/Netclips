@@ -15,8 +15,7 @@ import {
   REMOVE_FAVORITE_SERIE } from '../actions/favorite_actions';
 
 import {
-  CREATE_CURRENT_WATCHING,
-  UPDATE_CURRENT_WATCHING,
+  CREATE_OR_UPDATE_CURRENT_WATCHING,
   DESTROY_CURRENT_WATCHING } from '../actions/current_watching_actions';
 
 import {
@@ -34,8 +33,7 @@ import {
   destroyFavorite } from '../util/favorites_api_util';
 
 import {
-  createCurrentWatching,
-  updateCurrentWatching,
+  createOrUpdateCurrentWatching,
   destroyCurrentWatching } from '../util/current_watchings_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
@@ -63,11 +61,8 @@ export default ({ getState, dispatch }) => next => action => {
     case REMOVE_FAVORITE_SERIE:
       destroyFavorite(action.serie, seriesSuccess);
       break;
-    case CREATE_CURRENT_WATCHING:
-      createCurrentWatching(action.currentWatching, seriesSuccess);
-      break;
-    case UPDATE_CURRENT_WATCHING:
-      updateCurrentWatching(action.currentWatching, seriesSuccess);
+    case CREATE_OR_UPDATE_CURRENT_WATCHING:
+      createOrUpdateCurrentWatching(action.currentWatching, seriesSuccess);
       break;
     case DESTROY_CURRENT_WATCHING:
       destroyCurrentWatching(action.serieId, seriesSuccess);
