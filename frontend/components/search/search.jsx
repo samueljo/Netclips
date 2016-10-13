@@ -30,14 +30,12 @@ class Search extends React.Component {
       this.props.router.push('/');
     } else {
       const tempState = { query: e.target.value };
-      window.setTimeout(() => {
-        this.props.requestSearchResults(tempState, () => {
-          this.props.router.push({
-            pathname: 'search',
-            query: tempState
-          });
+      this.props.requestSearchResults(tempState, () => {
+        this.props.router.push({
+          pathname: 'search',
+          query: tempState
         });
-      }, 500);
+      });
     }
   }
 

@@ -48,7 +48,6 @@ class FilteredSeriesIndex extends React.Component {
     while (seriesDup.length > 0) {
       indexRows.push(seriesDup.splice(0, seriesPerRow));
     }
-
     return indexRows;
   }
 
