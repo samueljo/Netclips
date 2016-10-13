@@ -15,9 +15,7 @@ const Main = (props) => {
           requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie}
-          requestSearchResults={props.requestSearchResults}
-          createOrUpdateCurrentWatching={props.createOrUpdateCurrentWatching}
-          destroyCurrentWatching={props.destroyCurrentWatching} />
+          requestSearchResults={props.requestSearchResults} />
       </div>
     );
   } else {

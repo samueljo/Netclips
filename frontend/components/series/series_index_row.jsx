@@ -55,9 +55,7 @@ class SeriesIndexRow extends React.Component {
           myList={this.props.myList.series}
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
-          openSeriesShow={this.openSeriesShow}
-          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching}
-          destroyCurrentWatching={this.props.destroyCurrentWatching} />
+          openSeriesShow={this.openSeriesShow} />
       );
     });
   }

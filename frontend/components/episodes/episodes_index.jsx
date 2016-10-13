@@ -36,7 +36,9 @@ class EpisodesIndex extends React.Component {
         <EpisodesIndexItem
           episode={episode}
           key={episode.id}
-          requestEpisode={this.props.requestEpisode} />
+          requestEpisode={this.props.requestEpisode}
+          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching}
+          destroyCurrentWatching={this.props.destroyCurrentWatching} />
       );
     });
 

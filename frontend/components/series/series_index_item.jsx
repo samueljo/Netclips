@@ -12,18 +12,15 @@ import { withRouter, hashHistory } from 'react-router';
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { hovered: false };
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleMyListClick = this.handleMyListClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
+    this.toggleTileImage = this.toggleTileImage.bind(this);
   }
 
   handlePlayClick(e) {
     const currentEpisode = this.props.serie.current_episode;
-
-    // Send request to createOrUpdateCurrentWatching
-    // if currentepisode is last episode, destroyCurrentWatching
-    // pass router push as callback
-
     this.props.router.push({
       pathname: '/watch',
       query: {
@@ -33,9 +30,18 @@ class SeriesIndexItem extends React.Component {
     });
   }
 
-  handleTileHover(e) {
-    // change image to episode image
-    //
+  toggleTileImage(e) {
+    this.setState({ hovered: !this.state.hovered });
+  }
+
+  tileImage() {
+    const currentEpisode = this.props.serie.current_episode;
+
+    if (this.state.hovered) {
+      return <img className='tile-img' src={currentEpisode.image_url} />;
+    } else {
+      return <span></span>;
+    }
   }
 
   expandSeries(e) {
@@ -82,13 +88,14 @@ class SeriesIndexItem extends React.Component {
   render() {
     const serie = this.props.serie;
     const myListButton = this.renderMyListButton();
+    const tileImage = this.tileImage();
     return (
       <div
         className='tile'
         onMouseLeave={this.props.hoverCb}
         onMouseEnter={this.props.hoverCb}>
         <div className='tile-media'>
-          <img className='tile-img' src={serie.image_url} />
+          <img className='tile-img' src={this.props.serie.image_url} />
         </div>
         <div className='tile-details'>
           <div
@@ -114,3 +121,7 @@ class SeriesIndexItem extends React.Component {
 }
 
 export default withRouter(SeriesIndexItem);
+
+// onMouseLeave={this.toggleTileImage}
+// onMouseEnter={this.toggleTileImage}>
+// {tileImage}
