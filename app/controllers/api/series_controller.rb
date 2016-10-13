@@ -1,6 +1,4 @@
 class Api::SeriesController < ApplicationController
-  helper_method :current_episode
-
   def index
     @favorite_series = ['My List', Favorite.get_my_list(current_user)]
     @genres = Genre.includes(series: [:episodes, :current_watchings])
@@ -18,15 +16,6 @@ class Api::SeriesController < ApplicationController
       render :index
     else
       render json: @serie.errors.full_messages, status: 422
-    end
-  end
-
-  def current_episode(current_watchings, episodes)
-    current_watching = current_watchings.select { |current| current.user_id == current_user.id }
-    if (current_watching[0])
-      return episodes.select{ |episode| episode.id == current_watching[0].episode_id }[0]
-    else
-      return episodes.select { |episode| episode.episode_number == 1 }[0]
     end
   end
 

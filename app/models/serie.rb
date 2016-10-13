@@ -31,7 +31,8 @@ class Serie < ActiveRecord::Base
   has_many :current_episodes, through: :current_watchings, source: :episode
 
   def self.search(params)
-    Serie.joins(:genres).where(
+
+    Serie.joins(:genres).includes(:episodes, :current_watchings).where(
       "lower(series.title) LIKE ? OR lower(genres.name) LIKE ?",
       "%#{params[:query].downcase}%",
       "%#{params[:query].downcase}%"

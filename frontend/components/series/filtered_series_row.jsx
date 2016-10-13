@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredSeriesItem from '../series/filtered_series_item';
+import SeriesIndexItem from './series_index_item';
 import SeriesShowContainer from '../series_show/series_show_container';
 
 class FilteredSeriesRow extends React.Component {
@@ -50,10 +50,11 @@ class FilteredSeriesRow extends React.Component {
       } else {
         hoverCb = () => {};
       }
+      
       return (
-        <FilteredSeriesItem
-          serie={serie}
+        <SeriesIndexItem
           key={idx}
+          serie={serie}
           hoverCb={hoverCb}
           myList={myList}
           addFavoriteSerie={this.props.addFavoriteSerie}

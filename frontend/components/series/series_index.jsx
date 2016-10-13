@@ -8,6 +8,7 @@ class SeriesIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.removeSerie();
     this.props.requestSeries();
   }
 

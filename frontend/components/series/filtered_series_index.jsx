@@ -30,7 +30,7 @@ class FilteredSeriesIndex extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     window.addEventListener('resize', this.handleResize);
     this.props.requestSeries();
   }

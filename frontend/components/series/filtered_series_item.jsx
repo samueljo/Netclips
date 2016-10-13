@@ -6,6 +6,7 @@ class FilteredIndexItem extends React.Component {
     super(props);
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
+    this.handleMyListClick = this.handleMyListClick.bind(this);
   }
 
   handlePlayClick(e) {
@@ -20,13 +21,37 @@ class FilteredIndexItem extends React.Component {
     // });
   }
 
+  isSeriesListed() {
+    for (let i = 0; i < this.props.myList.length; i++) {
+      if (this.props.myList[i].id === this.props.serie.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   expandSeries(e) {
     e.stopPropagation();
     this.props.openSeriesShow(this.props.serie.id);
   }
 
+  renderMyListButton() {
+    let myListButtonText;
+    if (this.isSeriesListed()) {
+      myListButtonText = String.fromCharCode(10003);
+    } else {
+      myListButtonText = String.fromCharCode(65291);
+    }
+    return (
+      <button
+        className='tile-add-list'
+        onClick={this.handleMyListClick}>{myListButtonText}</button>
+    );
+  }
+
   render() {
     const serie = this.props.serie;
+    const myListButton = this.renderMyListButton();
 
     return (
       <div
@@ -42,7 +67,7 @@ class FilteredIndexItem extends React.Component {
             onClick={this.expandSeries}>
             {serie.title}
           </div>
-          <div className='tile-add-list'>Add</div>
+          {myListButton}
           <button
             className='play-button'
             onClick={this.handlePlayClick}>

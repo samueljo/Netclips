@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :logged_in?
+  helper_method :current_episode
 
   def current_user
     return nil unless session[:session_token]
@@ -13,6 +14,15 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+
+  def current_episode(current_watchings, episodes)
+    current_watching = current_watchings.select { |current| current.user_id == current_user.id }
+    if (current_watching[0])
+      return episodes.select{ |episode| episode.id == current_watching[0].episode_id }[0]
+    else
+      return episodes.select { |episode| episode.episode_number == 1 }[0]
+    end
   end
 
   def login!(user)

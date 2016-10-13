@@ -2,10 +2,9 @@ $duration: 450ms;
 $tileWidth: 16vw;
 $tileHeight: 9vw;
 $iconSize: 50px;
-$growSize: 1.5;
+$growSize: 1.7;
 
-$moveLeft: -( $tileWidth / $growSize );
-$moveRight: ($tileWidth / 2 );
+$moveRight: ($tileWidth / 1.4 );
 
 .search-results-header {
   color: #999;
@@ -27,7 +26,7 @@ $moveRight: ($tileWidth / 2 );
   height: $tileHeight;
   margin: 1vw 4vw 5vw;
   &.leftShift {
-    transform: translateX(-3vw);
+    transform: -($tileWidth / 3);
   }
 }
 

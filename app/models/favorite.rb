@@ -17,6 +17,6 @@ class Favorite < ActiveRecord::Base
   belongs_to :serie
 
   def self.get_my_list(current_user)
-    return current_user.favorite_series.includes(:current_episodes).order(:created_at)
+    return current_user.favorite_series.includes(:episodes, :current_watchings).order(:created_at)
   end
 end

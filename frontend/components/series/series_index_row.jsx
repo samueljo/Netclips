@@ -47,6 +47,7 @@ class SeriesIndexRow extends React.Component {
       } else {
         hoverCb = () => {};
       }
+
       return (
         <SeriesIndexItem
           key={serie.id}
