@@ -23,7 +23,7 @@ $moveRight: ($tileWidth / 1.4 );
     display: block;
     transition: 200ms linear;
     &.leftShift {
-      left: -4.1vw;
+      left: -$tileWidth / 3;
     }
   }
   &.active ~ .series-page {

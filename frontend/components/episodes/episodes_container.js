@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 import { requestEpisode } from '../../actions/episode_actions';
 
 import {
-  createOrUpdateCurrentWatching,
-  destroyCurrentWatching } from '../../actions/current_watching_actions';
+  createOrUpdateCurrentWatching } from '../../actions/current_watching_actions';
 
 
 const mapStateToProps = state => {
   return ({
+    serieId: state.series.serieDisplay.id,
     displayEpisodes: state.episodes.displayEpisodes
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   requestEpisode: (id, callback) => dispatch(requestEpisode(id, callback)),
-  createOrUpdateCurrentWatching: (current) => dispatch(createOrUpdateCurrentWatching(current)),
-  destroyCurrentWatching: (serieId) => dispatch(destroyCurrentWatching(serieId))
+  createOrUpdateCurrentWatching: (current) => dispatch(createOrUpdateCurrentWatching(current))
 });
 
 export default connect(

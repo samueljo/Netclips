@@ -23,22 +23,16 @@ class EpisodesIndex extends React.Component {
 
   renderIndexRow() {
     const episodesPerPage = this.calculateEpisodesPerPage();
-    const displayEpisodes = this.props.displayEpisodes;
-    const episodes = displayEpisodes.sort(function(a, b) {
-      if (a.episode_number < b.number_number) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
+    const episodes = this.props.displayEpisodes;
+
     const episodesIndexItems = episodes.map((episode, idx) => {
       return (
         <EpisodesIndexItem
           episode={episode}
           key={episode.id}
+          serieId={this.props.serieId}
           requestEpisode={this.props.requestEpisode}
-          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching}
-          destroyCurrentWatching={this.props.destroyCurrentWatching} />
+          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });
 

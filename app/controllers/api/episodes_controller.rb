@@ -1,6 +1,6 @@
 class Api::EpisodesController < ApplicationController
   def index
-    @episodes = Episode.where("serie_id = ?", params[:series_id]).order(episode_number: :desc)
+    @episodes = Episode.where("serie_id = ?", params[:series_id]).order(episode_number: :asc)
   end
 
   def show

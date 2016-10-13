@@ -91,7 +91,8 @@ class SeriesShow extends React.Component {
         removeFavoriteSerie={this.props.removeFavoriteSerie}
         focusedGenreId={this.props.focusedGenreId}
         createReview={this.props.createReview}
-        updateReview={this.props.updateReview} />;
+        updateReview={this.props.updateReview}
+        createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />;
     } else if (this.state.showPanel === 'Episodes') {
       showPanel = <EpisodesContainer />;
     } else if (this.state.showPanel === 'Details') {

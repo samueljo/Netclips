@@ -12,13 +12,19 @@ class SerieOverview extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    // To do: Find current episode
-    const episode = this.props.serieDisplay.episodes[0];
+
+    const current_watching = {
+      serie_id: this.props.serieDisplay.id,
+      episode_id: this.props.serieDisplay.current_episode.id
+    };
+
+    this.props.createOrUpdateCurrentWatching({current_watching});
+
     this.props.router.push({
       pathname: '/watch',
       query: {
-        id: episode.id,
-        video: episode.video_url
+        id: this.props.serieDisplay.current_episode.id,
+        video: this.props.serieDisplay.current_episode.video_url
       }
     });
   }
@@ -109,10 +115,17 @@ class SerieOverview extends React.Component {
               onStarClick={this.onStarClick.bind(this)} />
           </div>
           <div className='serie-year'>{serieDisplay.year}</div>
-          <div className='serie-description'>{serieDisplay.description}</div>
+          <div className='serie-description-header'>
+            {serieDisplay.current_episode.title}
+          </div>
+          <div className='serie-description'>
+            {serieDisplay.current_episode.summary}
+          </div>
           {this.renderListButton()}
           <div className='serie-img-container'>
-            <img className='serie-img' src={serieDisplay.image_url} />
+            <img
+              className='serie-img'
+              src={serieDisplay.episode_image_url} />
             <button
               className='show-play-button'
               onClick={this.handleClick}>

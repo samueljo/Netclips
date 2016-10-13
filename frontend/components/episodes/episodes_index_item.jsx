@@ -9,6 +9,13 @@ class EpisodesIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
+
+    const current_watching = {
+      serie_id: this.props.serieId,
+      episode_id: this.props.episode.id
+    };
+
+    this.props.createOrUpdateCurrentWatching({current_watching});
     this.props.router.push({
       pathname: '/watch',
       query: {
