@@ -10,8 +10,8 @@ export const createCurrentWatching = (currentWatching, success) => {
 export const updateCurrentWatching = (currentWatching, success) => {
   $.ajax ({
     method: 'PATCH',
-    url: `api/current_watchings/${currentWatching.serie_id.id}`,
-    data: {currentWatching},
+    url: `api/current_watchings/${currentWatching.current_watching.serie_id}`,
+    data: currentWatching,
     success
   });
 };

@@ -5,27 +5,13 @@ import configureStore from './store/store';
 import Modal from 'react-modal';
 
 import {
-  requestSeries,
-  requestSerie } from './actions/serie_actions';
-import {
-  createReview } from './actions/review_actions';
+  createCurrentWatching,
+  updateCurrentWatching,
+  destroyCurrentWatching } from './actions/current_watching_actions';
 
-import {
-  fetchSeries,
-  fetchSerie } from './util/series_api_util';
-
-import {
-  requestEpisodes,
-  requestEpisode } from './actions/episode_actions';
-
-import { requestSearchResults } from './actions/search_actions';
-
-window.requestSeries = requestSeries;
-window.requestEpisodes = requestEpisodes;
-window.requestEpisode = requestEpisode;
-window.requestSerie = requestSerie;
-window.createReview = createReview;
-window.requestSearchResults = requestSearchResults;
+window.createCurrentWatching = createCurrentWatching;
+window.updateCurrentWatching = updateCurrentWatching;
+window.destroyCurrentWatching = destroyCurrentWatching;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

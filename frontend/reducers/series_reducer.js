@@ -9,6 +9,11 @@ import {
   REMOVE_FAVORITE_SERIE,
   ADD_FAVORITE_SERIE } from '../actions/favorite_actions';
 
+import {
+  CREATE_CURRENT_WATCHING,
+  UPDATE_CURRENT_WATCHING,
+  DESTROY_CURRENT_WATCHING } from '../actions/current_watching_actions';
+
 import { deleteItem } from '../reducers/selectors';
 
 import merge from 'lodash/merge';
