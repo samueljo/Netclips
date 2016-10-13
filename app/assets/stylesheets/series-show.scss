@@ -91,7 +91,7 @@ $iconSize: 50px;
 }
 
 .show-list-button {
-  margin-top: $tileHeight / 3;
+  margin-top: 10px;
   display: block;
   vertical-align: middle;
   font-size: 1.3vw;
@@ -148,6 +148,10 @@ $iconSize: 50px;
   height: 100%;
 }
 
+.show-play-button {
+  display: none;
+}
+
 .serie-img-container {
   position: absolute;
   right: 0;
@@ -160,9 +164,9 @@ $iconSize: 50px;
     rgba(0,0,0,0.9) 0%,
     rgba(0,0,0,0), 100%);
   transition: $duration opacity;
-
   &:hover {
     .show-play-button {
+      display: block;
       z-index: 5;
       height: 4vw;
       position: absolute;

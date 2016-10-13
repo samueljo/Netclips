@@ -1,8 +1,9 @@
 class Api::SeriesController < ApplicationController
+  helper_method :current_episode
+
   def index
     @favorite_series = ['My List', Favorite.get_my_list(current_user)]
-    @genres = Genre.all.includes(series: [:episodes, :current_episodes])
-    @current_user = current_user
+    @genres = Genre.includes(series: [:episodes, :current_watchings])
   end
 
   def show
@@ -20,7 +21,17 @@ class Api::SeriesController < ApplicationController
     end
   end
 
+  def current_episode(current_watchings, episodes)
+    current_watching = current_watchings.select { |current| current.user_id == current_user.id }
+    if (current_watching[0])
+      return current_watching[0].episode_id
+    else
+      return episodes.select { |episode| episode.episode_number == 1 }[0].id
+    end
+  end
+
   private
+
   def serie_params
     params.require(:serie).permit(
       :title,
@@ -31,14 +42,3 @@ class Api::SeriesController < ApplicationController
     )
   end
 end
-
-
-# class SeriesController
-#   def show
-#     @series = Series.find(params[:id])
-#     @current_episode_id = @series.current_episode_for_user(current_user)
-#   end
-#
-# end
-#
-# user: 38, serie: 278, episode: 103

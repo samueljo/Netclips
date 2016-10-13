@@ -37,10 +37,6 @@ class Serie < ActiveRecord::Base
       "%#{params[:query].downcase}%"
     )
   end
-
-  def current_episode_for_current_user(user_id)
-    current_episode = self.current_episodes.find_by(user_id: user_id)
-  end
 end
 
 # class Series
