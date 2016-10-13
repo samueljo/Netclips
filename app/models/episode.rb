@@ -23,4 +23,5 @@ class Episode < ActiveRecord::Base
   validates :video_url, uniqueness: true
 
   belongs_to :serie
+  has_many :current_episodes, dependent: :destroy
 end

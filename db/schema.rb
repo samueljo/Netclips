@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012130346) do
+ActiveRecord::Schema.define(version: 20161013005213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "current_episodes", force: :cascade do |t|
+    t.integer  "episode_id", null: false
+    t.integer  "user_id",    null: false
+    t.integer  "serie_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "current_episodes", ["serie_id"], name: "index_current_episodes_on_serie_id", using: :btree
+  add_index "current_episodes", ["user_id"], name: "index_current_episodes_on_user_id", using: :btree
 
   create_table "episodes", force: :cascade do |t|
     t.integer  "serie_id",           null: false

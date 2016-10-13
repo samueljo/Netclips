@@ -26,9 +26,10 @@ class Serie < ActiveRecord::Base
   has_many :episodes, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :current_episodes, dependent: :destroy
 
   def self.search(params)
-    Serie.all.joins(:genres).where(
+    Serie.joins(:genres).where(
       "lower(series.title) LIKE ? OR lower(genres.name) LIKE ?",
       "%#{params[:query].downcase}%",
       "%#{params[:query].downcase}%"

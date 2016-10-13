@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_series, through: :favorites, source: :serie
+  has_many :current_episodes, dependent: :destroy
 
   attr_reader :password
 
