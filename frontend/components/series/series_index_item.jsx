@@ -1,14 +1,6 @@
 import React from 'react';
 import { withRouter, hashHistory } from 'react-router';
 
-// Define on click for tile-title to fetchSerie
-  // expand series overview
-
-// Define on hover for tile-details to fetchCurrentEpisode
-    // Will display serie.current_episode.image_url instead of serie.image_url
-
-// Define on click for tile-details to play episode
-
 class SeriesIndexItem extends React.Component {
   constructor(props) {
     super(props);

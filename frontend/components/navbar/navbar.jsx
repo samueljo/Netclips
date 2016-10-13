@@ -2,14 +2,12 @@ import React from 'react';
 import SearchContainer from '../search/search_container';
 import { Link, withRouter } from 'react-router';
 
-const Navbar = ({ currentUser, logout, router }) => {
-
+const Navbar = ({ query, currentUser, logout, router }) => {
   const _redirectToMain = () => {
     router.push('/');
   };
 
   const currentUsername = (currentUser) ? currentUser.username : '';
-
   return (
     <div className='nav-header group'>
       <div className='nav'>
@@ -26,7 +24,7 @@ const Navbar = ({ currentUser, logout, router }) => {
           </ul>
         </div>
         <div className='search-bar-container'>
-          <SearchContainer />
+          <SearchContainer query={query} />
         </div>
       </div>
     </div>

@@ -70,7 +70,9 @@ class FilteredSeriesIndex extends React.Component {
 
     return (
       <div className='series-index'>
-        <h1 className='search-results-header'>Search results:</h1>
+        <h1 className='search-results-header'>
+          Results for: {this.props.query}
+        </h1>
         {indexRows}
       </div>
     );

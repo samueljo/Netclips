@@ -1,13 +1,20 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import ReactDOM from 'react-dom';
+import { withRouter } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    // this.props.location.query is UNDEFINED???
-    this.state = { query: '' };
+    const query = (this.props.query || '');
+    this.state = { query: `${query}` };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.query) {
+      ReactDOM.findDOMNode(this.refs.searchBar).focus();
+    }
   }
 
   handleSubmit(e) {
@@ -45,6 +52,7 @@ class Search extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className='mag'>🔍</div>
           <input
+            ref='searchBar'
             className='search-form'
             type='text'
             onChange={this.handleChange}
