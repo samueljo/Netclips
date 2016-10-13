@@ -58,7 +58,7 @@ all_series = [
   # Movie Trailers
   # 1
   Serie.create!({
-    title: 'IBM Watson Trailer: Morgan',
+    title: 'Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
     year: 2016,
     image: File.open('app/assets/images/series/morgan.jpg'),
@@ -367,7 +367,7 @@ all_episodes = [
   }),
   # 9 John Wick 2
   Episode.create!({
-    title: 'John Wick: Chapter 2',
+    title: 'Trailer: John Wick: Chapter 2',
     summary: 'The continuing adventures of former hitman, John Wick.',
     serie_id: all_series[2].id,
     image: File.open('app/assets/images/series/movies/john-wick-2.jpg'),
@@ -375,7 +375,7 @@ all_episodes = [
   }),
   # 10 The Great Wall
   Episode.create!({
-    title: 'The Great Wall',
+    title: 'Trailer: The Great Wall',
     summary: 'Starring global superstar Matt Damon and directed by one of the most breathtaking visual stylists of our time, Zhang Yimou (Hero, House of Flying Daggers), Legendary’s The Great Wall tells the story of an elite force making a valiant stand for humanity on the world’s most iconic structure. The first English-language production for Yimou is the largest film ever shot entirely in China.',
     serie_id: all_series[3].id,
     image: File.open('app/assets/images/series/movies/the-great-wall.jpg'),
@@ -383,7 +383,7 @@ all_episodes = [
   }),
   # 11 Power Rangers
   Episode.create!({
-    title: 'Power Rangers',
+    title: 'Trailer: Power Rangers',
     summary: 'A group of high-school kids, who are infused with unique superpowers, harness their abilities in order to save the world.',
     serie_id: all_series[4].id,
     image: File.open('app/assets/images/series/movies/power-rangers.jpg'),
@@ -399,7 +399,7 @@ all_episodes = [
   }),
   # 13 Underworld
   Episode.create!({
-    title: 'Underworld: Blood Wars',
+    title: 'Trailer: Underworld: Blood Wars',
     summary: 'Vampire death dealer, Selene (Kate Beckinsale) fights to end the eternal war between the Lycan clan and the Vampire faction that betrayed her.',
     serie_id: all_series[6].id,
     image: File.open('app/assets/images/series/movies/underworld.jpg'),
@@ -407,7 +407,7 @@ all_episodes = [
   }),
   # 14 Jackie
   Episode.create!({
-    title: 'Jackie',
+    title: 'Trailer: Jackie',
     summary: "Following the assassination of her husband, First Lady Jacqueline Kennedy fights through grief and trauma to regain her faith, console her children, and define her husband's historic legacy.",
     serie_id: all_series[7].id,
     image: File.open('app/assets/images/series/movies/jackie.jpg'),
@@ -415,7 +415,7 @@ all_episodes = [
   }),
   # 15 Patriots
   Episode.create!({
-    title: 'Patriots Day',
+    title: 'Trailer: Patriots Day',
     summary: "An account of Boston Police Commissioner Ed Davis's actions in the events leading up to the 2013 Boston Marathon bombing and the aftermath, which includes the city-wide manhunt to find the terrorists behind it.",
     serie_id: all_series[8].id,
     image: File.open('app/assets/images/series/movies/patriots-day.jpg'),
@@ -423,7 +423,7 @@ all_episodes = [
   }),
   # 16 Allied
   Episode.create!({
-    title: 'Allied',
+    title: 'Trailer: Allied',
     summary: 'ALLIED is the story of intelligence officer Max Vatan (Pitt), who in 1942 North Africa encounters French Resistance fighter Marianne Beausejour (Cotillard) on a deadly mission behind enemy lines. Reunited in London, their relationship is threatened by the extreme pressures of the war.',
     serie_id: all_series[9].id,
     image: File.open('app/assets/images/series/movies/allied.jpg'),
@@ -431,7 +431,7 @@ all_episodes = [
   }),
   # 17 Pirates
   Episode.create!({
-    title: 'Pirates of the Caribbean: Dead Men Tell No Tales',
+    title: 'Trailer: Pirates of the Caribbean: Dead Men Tell No Tales',
     summary: 'Captain Jack Sparrow searches for the trident of Poseidon.',
     serie_id: all_series[10].id,
     image: File.open('app/assets/images/series/movies/pirates.jpg'),
@@ -439,7 +439,7 @@ all_episodes = [
   }),
   # 18 Middle School
   Episode.create!({
-    title: 'Middle School: The Worst Years of My Life',
+    title: 'Trailer: Middle School: The Worst Years of My Life',
     summary: 'A quiet teenage artist Rafe Katchadorian has a wild imagination and is sick of middle school and the rules that have been put before him. Rafe and his best friend Leo have come up with a plan; break every rule in the school hand book and as you expect trouble follows.',
     serie_id: all_series[11].id,
     image: File.open('app/assets/images/series/movies/middle-school.jpg'),
@@ -447,7 +447,7 @@ all_episodes = [
   }),
   # 19 Fantastic Beasts
   Episode.create!({
-    title: 'Fantastic Beasts and Where to Find Them',
+    title: 'Trailer: Fantastic Beasts and Where to Find Them',
     summary: "The adventures of writer Newt Scamander in New York's secret community of witches and wizards seventy years before Harry Potter reads his book in school.",
     serie_id: all_series[12].id,
     image: File.open('app/assets/images/series/movies/fantastic-beasts.jpg'),
@@ -455,7 +455,7 @@ all_episodes = [
   }),
   # 20 Denial
   Episode.create!({
-    title: 'Denial',
+    title: 'Trailer: Denial',
     summary: 'Acclaimed writer and historian Deborah E. Lipstadt must battle for historical truth to prove the Holocaust actually occurred when David Irving, a renowned denier, sues her for libel.',
     serie_id: all_series[13].id,
     image: File.open('app/assets/images/series/movies/denial.jpg'),
@@ -463,7 +463,7 @@ all_episodes = [
   }),
   # 21 Nerve
   Episode.create!({
-    title: 'Nerve',
+    title: 'Trailer: Nerve',
     summary: "A high school senior finds herself immersed in an online game of truth or dare, where her every move starts to become manipulated by an anonymous community of 'watchers.'",
     serie_id: all_series[14].id,
     image: File.open('app/assets/images/series/movies/nerve.jpg'),
@@ -471,7 +471,7 @@ all_episodes = [
   }),
   # 22 Lego Batman
   Episode.create!({
-    title: 'The LEGO Batman Movie',
+    title: 'Trailer: The LEGO Batman Movie',
     summary: 'A spin-off of The Lego Movie (2014) centering on the character of Batman.',
     serie_id: all_series[15].id,
     image: File.open('app/assets/images/series/movies/lego-batman.jpg'),
@@ -479,7 +479,7 @@ all_episodes = [
   }),
   # 23 Justice League
   Episode.create!({
-    title: 'Justice League',
+    title: 'Trailer: Justice League',
     summary: "Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy.",
     serie_id: all_series[16].id,
     image: File.open('app/assets/images/series/movies/justice-league.jpg'),
@@ -487,7 +487,7 @@ all_episodes = [
   }),
   # 24 My Blind Brother
   Episode.create!({
-    title: 'My Blind Brother',
+    title: 'Trailer: My Blind Brother',
     summary: 'The rivalry between two brothers reaches a fever pitch during a charity swim competition.',
     serie_id: all_series[17].id,
     image: File.open('app/assets/images/series/movies/my-blind-brother.jpg'),

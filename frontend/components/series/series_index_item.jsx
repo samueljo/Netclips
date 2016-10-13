@@ -18,8 +18,12 @@ class SeriesIndexItem extends React.Component {
   }
 
   handlePlayClick(e) {
-    // To do: Need to request current episode or 1st episode
     const currentEpisode = this.props.serie.current_episode;
+
+    // Send request to createOrUpdateCurrentWatching
+    // if currentepisode is last episode, destroyCurrentWatching
+    // pass router push as callback
+
     this.props.router.push({
       pathname: '/watch',
       query: {
@@ -27,6 +31,11 @@ class SeriesIndexItem extends React.Component {
         video: currentEpisode.video_url
       }
     });
+  }
+
+  handleTileHover(e) {
+    // change image to episode image
+    //
   }
 
   expandSeries(e) {
@@ -86,7 +95,12 @@ class SeriesIndexItem extends React.Component {
             className='tile-title'
             onClick={this.expandSeries}>
             {serie.title}
+            <br />
+            <span className='tile-episode'>
+              {serie.current_episode.title}
+            </span>
           </div>
+
           {myListButton}
           <button
             className='play-button'
