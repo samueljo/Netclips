@@ -7,8 +7,8 @@
 Netclips and code! Netclips is a web application inspired by Netflix built using Ruby on Rails & React/Redux. The main features of this website will include:
 
 - [X] New account creation, login, and guest/demo login
-- [ ] A production README
 - [X] Hosting on Heroku
+- [ ] A production README
 - [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
 
 - [X] Videos
@@ -19,7 +19,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   - Write only one review per series
   - Rate a series
 
-- [ ] MyList
+- [X] MyList
   - Create a 'My List' to keep track of series-to-watch
 
 - [X] Wrap-around Scroll
@@ -163,10 +163,10 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
 
 - MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
 
-- [ ] MyList model
+- [X] MyList model
+- [X] CRUD API for MyList (MyListsController)
+- [X] JBuilder views for MyList
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for MyList (MyListsController)
-- [ ] JBuilder views for MyList
 
 ### Phase 7: Pagination / infinite scroll for Series Index (1 day)
 

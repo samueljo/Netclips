@@ -1,11 +1,11 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    // this.props.location.query is UNDEFINED???
     this.state = { query: '' };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

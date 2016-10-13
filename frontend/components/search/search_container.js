@@ -3,9 +3,13 @@ import Search from './search';
 import { requestSearchResults } from '../../actions/search_actions';
 import { removeSerie } from '../../actions/serie_actions';
 
-const mapStateToProps = ({ search }) => ({
-  series: search.series
-});
+const mapStateToProps = ({ search }) => {
+  const query = '';
+  return ({
+    series: search.series,
+    query
+  });
+};
 
 const mapDispatchToProps = (dispatch) => ({
   requestSearchResults: (query, cb) => dispatch(requestSearchResults(query, cb)),

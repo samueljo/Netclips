@@ -1,55 +1,43 @@
-```js
 {
-  currentUser: {
-    id: 1,
-    email: "app-academy@appacademy.com"
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createReview: {errors: ["body can't be blank"]},
-  },
-  series: {
-    1: {
-      id: 1,
-      name: "2016 NBA Finals",
-      description: "Cleveland Cavaliers vs Golden State Warriors 2016 NBA Finals",
-      cast: ["Cleveland Cavaliers", "Golden State Warriors"],
-      year: "2016",
-      rated: true,
-      rating: 4,
-      image_url: "...",
-      genres: {
-        1: {
+  session:
+    {
+      currentUser:
+        {
           id: 1,
-          name: "NBA"
+          username: "app-academy"
         }
-      },
-      my_listed: false,
-      reviewed: true,
     }
-  },
-  episodes: {
-    1: {
-      id: 1,
-      title: "Game 7",
-      description: "Cleveland Cavaliers at Golden State Warriors June 19th, 2016",
-      video_url: "...",
-      image_url: "...",
-      series_id: "1",
-      playing: true,
-      current_episode: true
+
+  errors: []
+
+  series:
+    {
+      focusedGenreId: genreId,
+      serieDisplay: serieObject with episodes & reviews,
+      seriesIndex:
+        {
+          My List:
+            {
+              genreId: 0,
+              series: [serie1, serie2, serie3]
+            },
+          Comedy:
+            {
+              genreId: 1,
+              series: [serie4, serie5, serie6]
+            },
+          ...
+        }
     }
-  },
-  reviews: {
-    1: {
-      id: 1,
-      series_id: 1,
-      user_id: 1,
+
+  search:
+    {
+      series: [serie1, serie2]
     }
-  },
-  my-list: [1] (array of series_ids),
-  search: [""],
-  genre: [""]
+
+
+  episodes:
+    {
+      displayEpisodes: [episode1, episode2]
+    }
 }
-```

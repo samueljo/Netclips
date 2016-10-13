@@ -48,7 +48,7 @@ id	            | integer	  | not null, primary key
 series_id       | integer   | not null, foreign key (references series), indexed
 genre_id        | integer   | not null, foreign key (references genres), indexed
 
-## favorites
+## favorites (X)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
