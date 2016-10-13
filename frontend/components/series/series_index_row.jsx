@@ -47,7 +47,6 @@ class SeriesIndexRow extends React.Component {
       } else {
         hoverCb = () => {};
       }
-
       return (
         <SeriesIndexItem
           key={serie.id}
@@ -56,7 +55,8 @@ class SeriesIndexRow extends React.Component {
           myList={this.props.myList.series}
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
-          openSeriesShow={this.openSeriesShow} />
+          openSeriesShow={this.openSeriesShow}
+          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });
   }
@@ -102,8 +102,9 @@ class SeriesIndexRow extends React.Component {
       } else {
         className = 'series-page';
       }
+
       indexRow.push(
-        <li key={indexRow.length + 1} className={className}>
+        <li key={i} className={className}>
           {seriesDup.splice(0, seriesPerPage)}
         </li>
       );

@@ -50,7 +50,7 @@ class FilteredSeriesRow extends React.Component {
       } else {
         hoverCb = () => {};
       }
-      
+
       return (
         <SeriesIndexItem
           key={idx}
@@ -59,7 +59,8 @@ class FilteredSeriesRow extends React.Component {
           myList={myList}
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
-          openSeriesShow={this.openSeriesShow} />
+          openSeriesShow={this.openSeriesShow}
+          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });
   }

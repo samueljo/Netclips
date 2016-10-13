@@ -17,7 +17,8 @@ const SearchResults = (props) => {
           focusedGenreId={props.focusedGenreId}
           requestSeries={props.requestSeries}
           requestSerie={props.requestSerie}
-          removeSerie={props.removeSerie} />
+          removeSerie={props.removeSerie}
+          createOrUpdateCurrentWatching={props.createOrUpdateCurrentWatching} />
       </div>
     );
   } else {

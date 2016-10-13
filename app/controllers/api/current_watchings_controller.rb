@@ -5,6 +5,7 @@ class Api::CurrentWatchingsController < ApplicationController
         params[:current_watching][:serie_id],
         current_user.id
     )
+    
     if current_watching
       if current_watching.update(episode_id: params[:current_watching][:episode_id])
         render json: {}
