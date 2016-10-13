@@ -20,24 +20,18 @@ class SeriesIndexItem extends React.Component {
   handlePlayClick(e) {
     // To do: Need to request current episode or 1st episode
     const currentEpisode = this.props.serie.current_episode;
-    // this.props.router.push({
-    //   pathname: '/watch',
-    //   query: {
-    //     id: episode.id,
-    //     video: episode.video_url
-    //   }
-    // });
+    this.props.router.push({
+      pathname: '/watch',
+      query: {
+        id: currentEpisode.id,
+        video: currentEpisode.video_url
+      }
+    });
   }
 
   expandSeries(e) {
     e.stopPropagation();
     this.props.openSeriesShow(this.props.serie.id);
-    // this.props.router.push({
-    //   pathname: '/browse',
-    //   query: {
-    //     id: this.props.serie.id,
-    //   }
-    // });
   }
 
   handleMyListClick() {
