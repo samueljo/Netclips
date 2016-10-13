@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_series, through: :favorites, source: :serie
-  has_many :current_episodes, dependent: :destroy
+  has_many :current_watchings, dependent: :destroy
+  has_many :current_episodes, through: :current_watchings, source: :episode
 
   attr_reader :password
 
@@ -57,24 +58,3 @@ class User < ActiveRecord::Base
     self.session_token ||= User.generate_session_token
   end
 end
-
-# class SeriesController
-#   def show
-#     @series = Series.find(params[:id])
-#     @current_episode_id = @series.current_episode_for_user(current_user)
-#   end
-#
-# end
-#
-#
-# class Series
-#
-#   def current_episode_id_for_user(user)
-#     current_episode = CurrentEpisode.find_by(
-#       series: self,
-#       user: user
-#     )
-#     current_episode.episode_id
-#   end
-#
-# end

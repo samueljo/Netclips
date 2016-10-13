@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: current_episodes
+# Table name: current_watchings
 #
 #  id         :integer          not null, primary key
 #  episode_id :integer          not null
@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 
-class CurrentEpisode < ActiveRecord::Base
+class CurrentWatching < ActiveRecord::Base
   validates :user_id, :serie_id, :episode_id, presence: true
   validates_uniqueness_of :user_id, scope: :serie_id
 

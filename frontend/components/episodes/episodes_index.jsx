@@ -25,7 +25,7 @@ class EpisodesIndex extends React.Component {
     const episodesPerPage = this.calculateEpisodesPerPage();
     const displayEpisodes = this.props.displayEpisodes;
     const episodes = displayEpisodes.sort(function(a, b) {
-      if (a.id < b.id) {
+      if (a.episode_number < b.number_number) {
         return -1;
       } else {
         return 1;

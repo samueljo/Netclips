@@ -300,7 +300,8 @@ all_episodes = [
     summary: 'NBA Finals Game 1 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_1.jpg'),
-    video_url: '3aiQEbjfv8Y'
+    video_url: '3aiQEbjfv8Y',
+    episode_number: 1
   }),
   # 2 NBA Finals
   Episode.create!({
@@ -308,7 +309,8 @@ all_episodes = [
     summary: 'NBA Finals Game 2 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_2.jpg'),
-    video_url: 'Ae72b10dYdU'
+    video_url: 'Ae72b10dYdU',
+    episode_number: 2
   }),
   # 3 NBA Finals
   Episode.create!({
@@ -316,7 +318,8 @@ all_episodes = [
     summary: 'NBA Finals Game 3 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_3.jpg'),
-    video_url: 'G-GI54oH_oo'
+    video_url: 'G-GI54oH_oo',
+    episode_number: 3
   }),
   # 4 NBA Finals
   Episode.create!({
@@ -324,7 +327,8 @@ all_episodes = [
     summary: 'NBA Finals Game 4 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_4.jpg'),
-    video_url: 'cs4FZWcQawQ'
+    video_url: 'cs4FZWcQawQ',
+    episode_number: 4
   }),
   # 5 NBA Finals
   Episode.create!({
@@ -332,7 +336,8 @@ all_episodes = [
     summary: 'NBA Finals Game 5 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_5.jpg'),
-    video_url: '494lFLd4OXI'
+    video_url: '494lFLd4OXI',
+    episode_number: 5
   }),
   # 6 NBA Finals
   Episode.create!({
@@ -340,7 +345,8 @@ all_episodes = [
     summary: 'NBA Finals Game 6 Golden State Warriors at Cleveland Cavaliers',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_6.jpg'),
-    video_url: 'bzY9xOxltSs'
+    video_url: 'bzY9xOxltSs',
+    episode_number: 6
   }),
   # 7 NBA Finals
   Episode.create!({
@@ -348,7 +354,8 @@ all_episodes = [
     summary: 'NBA Finals Game 7 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_7.jpg'),
-    video_url: '3hp7NfhmGfAb'
+    video_url: '3hp7NfhmGfAb',
+    episode_number: 7
   }),
   # 8 Morgan
   Episode.create!({
@@ -492,7 +499,8 @@ all_episodes = [
     summary: "CONAN Highlight: Conan is locked and loaded for combat with Wiz riding shotgun. Does the battlefield seem extra smoky to anyone else?",
     serie_id: all_series[18].id,
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
-    video_url: 'CgIgBHQIi_s'
+    video_url: 'CgIgBHQIi_s',
+    episode_number: 1
   }),
   # 26 Conan 2
   Episode.create!({
@@ -500,7 +508,8 @@ all_episodes = [
     summary: "CONAN Highlight: A CONAN staffer is learning the rules of the road, with a little help from Kevin Hart, Ice Cube, & Conan. Look out, fellow drivers!",
     serie_id: all_series[18].id,
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
-    video_url: '1Za8BtLgKv8'
+    video_url: '1Za8BtLgKv8',
+    episode_number: 2
   }),
   # 27 Conan 3
   Episode.create!({
@@ -508,7 +517,8 @@ all_episodes = [
     summary: "CONAN Highlight: Conan & Dave are on a mission to meet beautiful women, with the help of the dating app Tinder and a sweet set of wheels.",
     serie_id: all_series[18].id,
     image: File.open('app/assets/images/series/conan-obrien.jpg'),
-    video_url: 'YkiR1KjIw7k'
+    video_url: 'YkiR1KjIw7k',
+    episode_number: 3
   }),
   # 28 Jimmy Kimmel 1
   Episode.create!({
@@ -516,7 +526,8 @@ all_episodes = [
     summary: "This is our 7th edition of Mean Tweets featuring Julia Roberts, Don Cheadle, Ashton Kutcher, Courteney Cox, Andy Garcia, Mindy Kaling, David Blaine, Don Rickles, Ethan Hawke, Matthew McConaughey, June Squibb, Jeremy Piven, Kit Harrington, Emma Stone, Gary Oldman and Sofia Vergara.",
     serie_id: all_series[19].id,
     image: File.open('app/assets/images/series/talk/jimmy-kimmel.jpeg'),
-    video_url: 'imW392e6XR0'
+    video_url: 'imW392e6XR0',
+    episode_number: 1
   }),
   # 29 Jimmy Kimmel 2
   Episode.create!({
@@ -524,7 +535,8 @@ all_episodes = [
     summary: "Parents tell their children that they ate all of their halloween candy.",
     serie_id: all_series[19].id,
     image: File.open('app/assets/images/series/talk/jimmy-kimmel.jpeg'),
-    video_url: '_YQpbzQ6gzs'
+    video_url: '_YQpbzQ6gzs',
+    episode_number: 2
   }),
   # 30 Jimmy Kimmel 3
   Episode.create!({
@@ -532,7 +544,8 @@ all_episodes = [
     summary: "From time to time, we give celebrities a chance to read some of the mean things people tweet about them. We extended that same offer to our Commander in Chief, who happily agreed. This is an all President Obama edition of #MeanTweets.",
     serie_id: all_series[19].id,
     image: File.open('app/assets/images/series/talk/jimmy-kimmel.jpeg'),
-    video_url: 'RDocnbkHjhI'
+    video_url: 'RDocnbkHjhI',
+    episode_number: 3
   }),
   # 31 Jimmy Fallon 1
   Episode.create!({
@@ -540,7 +553,8 @@ all_episodes = [
     summary: "Jimmy and Will Smith take us through the history of hip-hop dances.",
     serie_id: all_series[20].id,
     image: File.open('app/assets/images/series/talk/jimmy-fallon.jpeg'),
-    video_url: 'ZTpn30Pms8I'
+    video_url: 'ZTpn30Pms8I',
+    episode_number: 1
   }),
   # 32 Jimmy Fallon 2
   Episode.create!({
@@ -548,7 +562,8 @@ all_episodes = [
     summary: "Jimmy and Emma Stone square off in a lip sync battle and Emma shows she's not afraid of lightning fast lyrics.",
     serie_id: all_series[20].id,
     image: File.open('app/assets/images/series/talk/jimmy-fallon.jpeg'),
-    video_url: 'bLBSoC_2IY8'
+    video_url: 'bLBSoC_2IY8',
+    episode_number: 2
   }),
   # 33 Jimmy Fallon 3
   Episode.create!({
@@ -556,7 +571,8 @@ all_episodes = [
     summary: "Jimmy challenges Ariana to a game of random musical impressions, such as Christina Aguilera singing 'The Wheels on the Bus.'",
     serie_id: all_series[20].id,
     image: File.open('app/assets/images/series/talk/jimmy-fallon.jpeg'),
-    video_url: 'ss9ygQqqL2Q'
+    video_url: 'ss9ygQqqL2Q',
+    episode_number: 3
   }),
   # 34 Stephen Colbert 1
   Episode.create!({
@@ -564,7 +580,8 @@ all_episodes = [
     summary: "Some stories, like the ouster of Fox News chairman Roger Ailes, are too big for one late night host to tackle alone.",
     serie_id: all_series[21].id,
     image: File.open('app/assets/images/series/talk/colbert.jpg'),
-    video_url: 'mNiqpBNE9ik'
+    video_url: 'mNiqpBNE9ik',
+    episode_number: 1
   }),
   # 35 John Oliver 1
   Episode.create!({
@@ -572,7 +589,8 @@ all_episodes = [
     summary: "John Oliver discusses the systems in place to investigate and hold police officers accountable for misconduct.",
     serie_id: all_series[22].id,
     image: File.open('app/assets/images/series/talk/john-oliver.jpg'),
-    video_url: 'zaD84DTGULo'
+    video_url: 'zaD84DTGULo',
+    episode_number: 1
   }),
   # 36 Trevor Noah 1
   Episode.create!({
@@ -580,7 +598,8 @@ all_episodes = [
     summary: "In the 2016 vice presidential debate, Mike Pence deflects questions about Donald Trump's scandals, and Tim Kaine fights back with pre-rehearsed zingers.",
     serie_id: all_series[23].id,
     image: File.open('app/assets/images/series/talk/trevor-noah.jpg'),
-    video_url: 'HPtcDrbUa1A'
+    video_url: 'HPtcDrbUa1A',
+    episode_number: 1
   }),
   # 37 NBA HOF 1
   Episode.create!({
@@ -588,7 +607,8 @@ all_episodes = [
     summary: "Allen Iverson delivers his speech upon being enshrined to the Naismith Memorial Basketball Hall of Fame as part of the class of 2016.",
     serie_id: all_series[24].id,
     image: File.open('app/assets/images/episodes/nba/iverson.jpg'),
-    video_url: 'x67RQKknl-g'
+    video_url: 'x67RQKknl-g',
+    episode_number: 1
   }),
   # 38 NBA HOF 2
   Episode.create!({
@@ -596,7 +616,8 @@ all_episodes = [
     summary: "Yao Ming delivers his speech upon being enshrined to the Naismith Memorial Basketball Hall of Fame as part of the class of 2016.",
     serie_id: all_series[24].id,
     image: File.open('app/assets/images/episodes/nba/yao.jpg'),
-    video_url: 'iHt5pCHgsdk'
+    video_url: 'iHt5pCHgsdk',
+    episode_number: 2
   }),
   # 39 NBA HOF 3
   Episode.create!({
@@ -604,7 +625,8 @@ all_episodes = [
     summary: "Shaquille O’Neal delivers his speech upon being enshrined to the Naismith Memorial Basketball Hall of Fame as part of the class of 2016.",
     serie_id: all_series[24].id,
     image: File.open('app/assets/images/episodes/nba/shaq.jpg'),
-    video_url: 'C-IiiFvfdVo'
+    video_url: 'C-IiiFvfdVo',
+    episode_number: 3
   }),
   # 40 NBA 2016 MVP
   Episode.create!({
@@ -622,7 +644,7 @@ all_episodes = [
     image: File.open('app/assets/images/series/nba/nba-16.jpg'),
     video_url: 'f05koa6s4Jw'
   }),
-  # 41 NBA 2016 Season
+  # 41 NBA 2016 Slam Dunk
   Episode.create!({
     title: 'NBA 2016 Slam Dunk Contest',
     summary: "Verizon Slam Dunk Contest Full Highlights - February 13, 2016",
@@ -630,7 +652,7 @@ all_episodes = [
     image: File.open('app/assets/images/series/nba/nba-16-slam-dunk.jpg'),
     video_url: 'lGzXOXXF0H8'
   }),
-  # 41 NBA 2016 Season
+  # 41 NBA 2016 All Star Game
   Episode.create!({
     title: 'NBA 2016 All Star Game',
     summary: "Best plays from the NBA 2016 All Star Game in Toronto, CA.",

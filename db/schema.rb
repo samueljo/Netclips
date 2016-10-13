@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013005213) do
+ActiveRecord::Schema.define(version: 20161013014217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "current_episodes", force: :cascade do |t|
+  create_table "current_watchings", force: :cascade do |t|
     t.integer  "episode_id", null: false
     t.integer  "user_id",    null: false
     t.integer  "serie_id",   null: false
@@ -24,20 +24,21 @@ ActiveRecord::Schema.define(version: 20161013005213) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "current_episodes", ["serie_id"], name: "index_current_episodes_on_serie_id", using: :btree
-  add_index "current_episodes", ["user_id"], name: "index_current_episodes_on_user_id", using: :btree
+  add_index "current_watchings", ["serie_id"], name: "index_current_watchings_on_serie_id", using: :btree
+  add_index "current_watchings", ["user_id"], name: "index_current_watchings_on_user_id", using: :btree
 
   create_table "episodes", force: :cascade do |t|
-    t.integer  "serie_id",           null: false
-    t.string   "title",              null: false
-    t.text     "summary",            null: false
-    t.string   "video_url",          null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "serie_id",                       null: false
+    t.string   "title",                          null: false
+    t.text     "summary",                        null: false
+    t.string   "video_url",                      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "episode_number",     default: 1
   end
 
   add_index "episodes", ["serie_id"], name: "index_episodes_on_serie_id", using: :btree

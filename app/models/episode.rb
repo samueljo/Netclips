@@ -13,6 +13,7 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  episode_number     :integer          default(0)
 #
 
 class Episode < ActiveRecord::Base
@@ -23,5 +24,5 @@ class Episode < ActiveRecord::Base
   validates :video_url, uniqueness: true
 
   belongs_to :serie
-  has_many :current_episodes, dependent: :destroy
+  has_many :current_watchings, dependent: :destroy
 end

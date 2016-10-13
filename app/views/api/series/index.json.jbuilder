@@ -3,6 +3,8 @@ json.set! @favorite_series[0] do
   json.series @favorite_series[1].each do |serie|
     json.partial! 'api/series/serie', serie: serie
     json.image_url asset_path(serie.image.url(:medium))
+    json.current_episodes serie.current_episodes
+    json.episodes serie.episodes
   end
 end
 
@@ -12,6 +14,8 @@ end
     json.series genre.series do |serie|
       json.partial! '/api/series/serie', serie: serie
       json.image_url asset_path(serie.image.url(:medium))
+      json.current_episodes serie.current_episodes
+      json.episodes serie.episodes
     end
   end
 end

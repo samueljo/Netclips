@@ -13,6 +13,7 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  episode_number     :integer          default(0)
 #
 
 require 'test_helper'

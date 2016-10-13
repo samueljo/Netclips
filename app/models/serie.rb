@@ -26,7 +26,9 @@ class Serie < ActiveRecord::Base
   has_many :episodes, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :current_episodes, dependent: :destroy
+  has_many :current_watchings, dependent: :destroy
+  has_many :current_watchers, through: :current_watchings, source: :user
+  has_many :current_episodes, through: :current_watchings, source: :episode
 
   def self.search(params)
     Serie.joins(:genres).where(
@@ -35,4 +37,20 @@ class Serie < ActiveRecord::Base
       "%#{params[:query].downcase}%"
     )
   end
+
+  def current_episode_for_current_user(user_id)
+    current_episode = self.current_episodes.find_by(user_id: user_id)
+  end
 end
+
+# class Series
+#
+#   def current_episode_id_for_user(user)
+#     current_episode = CurrentEpisode.find_by(
+#       series: self,
+#       user: user
+#     )
+#     current_episode.episode_id
+#   end
+#
+# end
