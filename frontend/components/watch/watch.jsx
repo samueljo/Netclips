@@ -8,8 +8,11 @@ class Watch extends React.Component {
     this.state = {
       playing: false
     };
-
     this.returnToIndex = this.returnToIndex.bind(this);
+  }
+
+  renderVideoOver() {
+
   }
 
   renderPlayer() {
@@ -72,12 +75,16 @@ class Watch extends React.Component {
     return (
       <div className='player-container'>
         <div
-          className='return'
-          onClick={this.returnToIndex}>
-          {String.fromCharCode(11013)}
-        </div>
-        <div className='player' id='player'>
+          className='player'
+          id='player'>
           {this.renderPlayer()}
+        </div>
+        <div className='return-container'>
+          <span
+            className='return'
+            onClick={this.returnToIndex}>
+            {String.fromCharCode(11013)}
+          </span>
         </div>
       </div>
     );

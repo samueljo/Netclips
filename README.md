@@ -29,7 +29,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   - Search for a series by genre or title (cast as a bonus)
 
 - Bonus:
-  - [ ] Track Current Episodes for Many Series
+  - [X] Track Current Episodes for Many Series
     - Keep track of which episode a user was on for a given series
 
   - [ ] Feature

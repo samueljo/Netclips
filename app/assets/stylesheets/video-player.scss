@@ -13,17 +13,29 @@
   width: 100%;
 }
 
-.return {
-  border-radius: 100%;
-  border: 0.25em solid #fff;
-  padding: 0 0.2em;
+.return-container {
   position: absolute;
-  top: 1em;
-  left: 1.2em;
-  color: rgb(218, 218, 218);
-  cursor: pointer;
-  font-size: 1.5em;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 10vw;
+  &.return {
+    display: none;
+  }
   &:hover {
-    color: #fff;
+    .return {
+      border-radius: 100%;
+      border: 0.25em solid #fff;
+      padding: 0 0.2em;
+      position: absolute;
+      top: 1em;
+      left: 1.2em;
+      color: rgb(218, 218, 218);
+      cursor: pointer;
+      font-size: 1.5em;
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 }
