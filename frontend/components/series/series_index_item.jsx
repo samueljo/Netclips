@@ -16,7 +16,7 @@ class SeriesIndexItem extends React.Component {
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleMyListClick = this.handleMyListClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
-    this.toggleTileImage = this.toggleTileImage.bind(this);
+    // this.toggleTileImage = this.toggleTileImage.bind(this);
   }
 
   handlePlayClick(e) {
@@ -30,19 +30,19 @@ class SeriesIndexItem extends React.Component {
     });
   }
 
-  toggleTileImage(e) {
-    this.setState({ hovered: !this.state.hovered });
-  }
-
-  tileImage() {
-    const currentEpisode = this.props.serie.current_episode;
-
-    if (this.state.hovered) {
-      return <img className='tile-img' src={currentEpisode.image_url} />;
-    } else {
-      return <span></span>;
-    }
-  }
+  // toggleTileImage(e) {
+  //   this.setState({ hovered: !this.state.hovered });
+  // }
+  //
+  // tileImage() {
+  //   const currentEpisode = this.props.serie.current_episode;
+  //
+  //   if (this.state.hovered) {
+  //     return this.props.episode_image_url;
+  //   } else {
+  //     return this.props.serie.image_url;
+  //   }
+  // }
 
   expandSeries(e) {
     e.stopPropagation();
@@ -88,14 +88,16 @@ class SeriesIndexItem extends React.Component {
   render() {
     const serie = this.props.serie;
     const myListButton = this.renderMyListButton();
-    const tileImage = this.tileImage();
+    // const tileImage = this.tileImage();
     return (
       <div
         className='tile'
         onMouseLeave={this.props.hoverCb}
         onMouseEnter={this.props.hoverCb}>
         <div className='tile-media'>
-          <img className='tile-img' src={this.props.serie.image_url} />
+          <img
+            className='tile-img'
+            src={this.props.serie.image_url} />
         </div>
         <div className='tile-details'>
           <div
@@ -121,7 +123,3 @@ class SeriesIndexItem extends React.Component {
 }
 
 export default withRouter(SeriesIndexItem);
-
-// onMouseLeave={this.toggleTileImage}
-// onMouseEnter={this.toggleTileImage}>
-// {tileImage}
