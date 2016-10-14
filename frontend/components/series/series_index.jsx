@@ -1,5 +1,5 @@
 import React from 'react';
-import SeriesIndexRow from './series_index_row';
+import SeriesIndexRowContainer from './series_index_row_container';
 
 class SeriesIndex extends React.Component {
   constructor(props) {
@@ -17,19 +17,12 @@ class SeriesIndex extends React.Component {
       if (seriesIndex[genre].series.length) {
         let seriesGenre = seriesIndex[genre];
         return (
-          <SeriesIndexRow
+          <SeriesIndexRowContainer
             key={seriesGenre.genreId}
             myList={seriesIndex['My List']}
             seriesIndex={seriesGenre}
-            requestEpisodes={this.props.requestEpisodes}
             genre={genre}
-            showDetail={seriesGenre.genreId === this.props.focusedGenreId}
-            requestSearchResults={this.props.requestSearchResults}
-            addFavoriteSerie={this.props.addFavoriteSerie}
-            removeFavoriteSerie={this.props.removeFavoriteSerie}
-            removeSerie={this.props.removeSerie}
-            requestSerie={this.props.requestSerie}
-            createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
+            showDetail={seriesGenre.genreId === this.props.focusedGenreId} />
         );
       }
     });

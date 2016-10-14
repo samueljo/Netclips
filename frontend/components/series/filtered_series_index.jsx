@@ -61,12 +61,8 @@ class FilteredSeriesIndex extends React.Component {
           rowIdx={idx}
           showDetail={idx === this.props.focusedGenreId}
           seriesIndex={row}
-          addFavoriteSerie={this.props.addFavoriteSerie}
-          removeFavoriteSerie={this.props.removeFavoriteSerie}
           removeSerie={this.props.removeSerie}
-          requestSerie={this.props.requestSerie}
-          requestEpisodes={this.props.requestEpisodes}
-          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
+          requestSerie={this.props.requestSerie} />
       );
     });
 
