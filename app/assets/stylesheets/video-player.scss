@@ -6,6 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .player {
@@ -19,10 +20,9 @@
   right: 0;
   top: 0;
   height: 10vw;
-  &.return {
-    display: none;
-  }
+  opacity: 0;
   &:hover {
+    opacity: 1;
     .return {
       border-radius: 100%;
       border: 0.25em solid #fff;

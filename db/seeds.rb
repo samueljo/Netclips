@@ -354,7 +354,7 @@ all_episodes = [
     summary: 'NBA Finals Game 7 Cleveland Cavaliers at Golden State Warriors',
     serie_id: all_series[0].id,
     image: File.open('app/assets/images/episodes/nba/nbafinals16_7.jpg'),
-    video_url: '3hp7NfhmGfAb',
+    video_url: '3hp7NfhmGfA',
     episode_number: 7
   }),
   # 8 Morgan

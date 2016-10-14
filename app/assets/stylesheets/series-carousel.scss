@@ -122,6 +122,7 @@ $moveRight: ($tileWidth / 1.4 );
 }
 
 .tile-img {
+  object-fit: cover;
   width: $tileWidth;
   height: $tileHeight;
   max-width: 330px;
