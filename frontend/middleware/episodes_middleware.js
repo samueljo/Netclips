@@ -8,8 +8,6 @@ import {
   fetchEpisodes,
   fetchEpisode } from '../util/episodes_api_util';
 
-// import { UPDATE_FILTER } from '../actions/filter_actions';
-
 export default ({ getState, dispatch }) => next => action => {
   const episodesSuccess = data => dispatch(receiveEpisodes(data));
 

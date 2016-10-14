@@ -1,9 +1,8 @@
 import { LOGOUT } from '../actions/session_actions';
+
 import {
   RECEIVE_EPISODES,
   RECEIVE_EPISODE } from '../actions/episode_actions';
-
-// REMOVE_SERIE
 
 import merge from 'lodash/merge';
 
@@ -17,10 +16,6 @@ const EpisodesReducer = (state = _defaultState, action) => {
       newState = merge({}, state);
       newState.displayEpisodes = action.episodes;
       return newState;
-    // case RECEIVE_EPISODE:
-    //   newState = merge({}, state);
-    //   newState.playingEpisode = action.episode;
-    //   return newState;
     case LOGOUT:
       return _defaultState;
     default:
