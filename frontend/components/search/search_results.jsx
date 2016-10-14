@@ -12,14 +12,8 @@ const SearchResults = (props) => {
           seriesIndex={props.seriesIndex}
           myList={props.myList}
           query={props.location.query.query}
-          addFavoriteSerie={props.addFavoriteSerie}
-          removeFavoriteSerie={props.removeFavoriteSerie}
           focusedGenreId={props.focusedGenreId}
-          requestSeries={props.requestSeries}
-          requestSerie={props.requestSerie}
-          removeSerie={props.removeSerie}
-          requestEpisodes={props.requestEpisodes}
-          createOrUpdateCurrentWatching={props.createOrUpdateCurrentWatching} />
+          requestSeries={props.requestSeries} />
       </div>
     );
   } else {

@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredSeriesRow from '../series/filtered_series_row';
+import FilteredSeriesRowContainer from '../series/filtered_series_row_container';
 
 class FilteredSeriesIndex extends React.Component {
   constructor(props) {
@@ -54,15 +54,13 @@ class FilteredSeriesIndex extends React.Component {
   render() {
     const indexRows = this.renderIndexRows().map((row, idx) => {
       return (
-        <FilteredSeriesRow
+        <FilteredSeriesRowContainer
           key={idx}
           seriesPerRow={this.state.seriesPerRow}
           myList={this.props.myList}
           rowIdx={idx}
           showDetail={idx === this.props.focusedGenreId}
-          seriesIndex={row}
-          removeSerie={this.props.removeSerie}
-          requestSerie={this.props.requestSerie} />
+          seriesIndex={row} />
       );
     });
 
