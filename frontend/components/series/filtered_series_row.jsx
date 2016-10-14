@@ -42,7 +42,7 @@ class FilteredSeriesRow extends React.Component {
 
   renderIndexRow() {
     const seriesIndex = this.props.seriesIndex;
-    const myList = this.props.myList.series;
+    const myList = (this.props.myList) ? this.props.myList.series : [];
     return seriesIndex.map((serie, idx) => {
       let hoverCb;
       if (idx === this.props.seriesPerRow - 1) {
