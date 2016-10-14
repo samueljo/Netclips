@@ -1,5 +1,6 @@
 import React from 'react';
-import SeriesIndexItem from './series_index_item';
+// import SeriesIndexItem from './series_index_item';
+import SeriesIndexItemContainer from './series_index_item_container';
 import SeriesShowContainer from '../series_show/series_show_container';
 
 class FilteredSeriesRow extends React.Component {
@@ -50,16 +51,12 @@ class FilteredSeriesRow extends React.Component {
         hoverCb = () => {};
       }
       return (
-        <SeriesIndexItem
+        <SeriesIndexItemContainer
           key={idx}
           serie={serie}
           hoverCb={hoverCb}
           myList={myList}
-          addFavoriteSerie={this.props.addFavoriteSerie}
-          removeFavoriteSerie={this.props.removeFavoriteSerie}
-          openSeriesShow={this.openSeriesShow}
-          requestEpisodes={this.props.requestEpisodes}
-          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
+          openSeriesShow={this.openSeriesShow} />
       );
     });
   }

@@ -28,7 +28,7 @@ class SeriesIndexItem extends React.Component {
           id: currentEpisode.id,
           video: currentEpisode.video_url
         }
-      });
+      }).bind(this);
     }, 1000);
 
     // Promise?
