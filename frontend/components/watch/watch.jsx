@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import VideoPlayer from './video_player';
-import { selectEpisodeIds } from '../../reducers/selectors';
+import { selectEpisodeIds, selectEpisode } from '../../reducers/selectors';
 
 class Watch extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Watch extends React.Component {
 
   componentDidMount() {
     this.props.requestEpisodes(this.state.serieId);
-  };
+  }
 
   renderPlayer() {
     const url = this.props.location.query.video;
@@ -67,6 +67,7 @@ class Watch extends React.Component {
 
   render() {
     if (this.props.episodes[0]) {
+      const currentEpisode = selectEpisode(this.props.episodes, this.state.currentEpisodeId);
       return (
         <div className='player-container'>
           <div
@@ -80,6 +81,9 @@ class Watch extends React.Component {
               onClick={this.returnToIndex}>
               {String.fromCharCode(11013)}
             </span>
+            <h1 className='video-header'>
+              {currentEpisode.title}
+            </h1>
           </div>
         </div>
       );

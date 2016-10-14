@@ -17,3 +17,11 @@ export const selectEpisodeIds = (episodes) => {
   });
   return episodeIds;
 };
+
+export const selectEpisode = (episodes, targetEpisodeId) => {
+  for (let i = 0; i < episodes.length; i++) {
+    if (episodes[i].id === parseInt(targetEpisodeId)) {
+      return episodes[i];
+    }
+  }
+};
