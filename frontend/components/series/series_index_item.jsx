@@ -19,9 +19,11 @@ class SeriesIndexItem extends React.Component {
     };
 
     this.props.createOrUpdateCurrentWatching({current_watching});
-    this.props.requestEpisodes(this.props.serie.id);
 
-    window.setTimeout(() => {
+    const p1 = this.props.requestEpisodes(this.props.serie.id);
+
+    p1.then(() => {
+      console.log('router push');
       this.props.router.push({
         pathname: '/watch',
         query: {
@@ -29,9 +31,7 @@ class SeriesIndexItem extends React.Component {
           video: currentEpisode.video_url
         }
       });
-    }, 1000);
-
-    // Promise?
+    });
   }
 
   expandSeries(e) {

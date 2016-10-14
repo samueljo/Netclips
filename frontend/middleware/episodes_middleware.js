@@ -20,8 +20,7 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case REQUEST_EPISODES:
-      fetchEpisodes(action.serieId, episodesSuccess);
-      break;
+      return fetchEpisodes(action.serieId, episodesSuccess);
     case REQUEST_EPISODE:
       fetchEpisode(action.id, episodeSuccess);
       break;
