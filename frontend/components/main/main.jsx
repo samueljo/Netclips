@@ -6,7 +6,6 @@ const Main = (props) => {
   if (props.currentUser) {
     return (
       <div className='main-page'>
-        <NavbarContainer />
         <SeriesIndex
           seriesIndex={props.seriesIndex}
           focusedGenreId={props.focusedGenreId}

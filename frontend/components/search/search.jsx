@@ -11,12 +11,6 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.query) {
-      ReactDOM.findDOMNode(this.refs.searchBar).focus();
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.removeSerie();

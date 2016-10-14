@@ -25,6 +25,7 @@ class SerieOverview extends React.Component {
       pathname: '/watch',
       query: {
         id: this.props.serieDisplay.current_episode.id,
+        serieId: this.props.serieDisplay.current_episode.serie_id,
         video: this.props.serieDisplay.current_episode.video_url
       }
     });
@@ -48,7 +49,7 @@ class SerieOverview extends React.Component {
       { rating: nextValue },
       { serie_id: serieId }
     );
-    
+
     if (this.props.serieDisplay.current_user_review[0]) {
       review.id = this.props.serieDisplay.current_user_review[0].id;
       this.props.updateReview(review, this.props.focusedGenreId);

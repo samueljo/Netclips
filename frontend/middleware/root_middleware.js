@@ -7,19 +7,20 @@ import SearchMiddleware from './search_middleware';
 
 let RootMiddleware;
 
+const middleWares = [
+  SessionMiddleware,
+  SeriesMiddleware,
+  EpisodesMiddleware,
+  SearchMiddleware
+];
+
 if (process.env.NODE_ENV === "production") {
   RootMiddleware = applyMiddleware(
-    SessionMiddleware,
-    SeriesMiddleware,
-    EpisodesMiddleware,
-    SearchMiddleware
+    ...middleWares
   );
 } else {
   RootMiddleware = applyMiddleware(
-    SessionMiddleware,
-    SeriesMiddleware,
-    EpisodesMiddleware,
-    SearchMiddleware,
+    ...middleWares,
     createLogger()
   );
 }

@@ -20,18 +20,28 @@ class SeriesIndexItem extends React.Component {
 
     this.props.createOrUpdateCurrentWatching({current_watching});
 
-    const p1 = this.props.requestEpisodes(this.props.serie.id);
-
-    p1.then(() => {
-      console.log('router push');
-      this.props.router.push({
-        pathname: '/watch',
-        query: {
-          id: currentEpisode.id,
-          video: currentEpisode.video_url
-        }
-      });
+    this.props.router.push({
+      pathname: '/watch',
+      query: {
+        id: currentEpisode.id,
+        serieId: currentEpisode.serie_id,
+        video: currentEpisode.video_url
+      }
     });
+
+    // const p1 = this.props.requestEpisodes(this.props.serie.id);
+
+    // p1.then(() => {
+    //   console.log('router push');
+    //   this.props.router.push({
+    //     pathname: '/watch',
+    //     query: {
+    //       id: currentEpisode.id,
+    //       serieId: currentEpisode.serie_id,
+    //       video: currentEpisode.video_url
+    //     }
+    //   });
+    // });
   }
 
   expandSeries(e) {

@@ -6,6 +6,7 @@ import { requestSearchResults } from '../actions/search_actions';
 import App from './app';
 import SessionFormContainer from './sessions/session_form_container';
 import WatchContainer from './watch/watch_container';
+import MainContainer from './main/main_container';
 import SearchResultsContainer from './search/search_results_container';
 
 const Root = ({ store }) => {
@@ -34,7 +35,12 @@ const Root = ({ store }) => {
   return(
     <Provider store = {store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App} />
+        <Route path="/" component={App}>
+          <IndexRoute component={MainContainer} />
+          <Route path="/search"
+            component={SearchResultsContainer}
+            onEnter={_redirectSearch} />
+        </Route>
         <Route path="/signin"
           component={SessionFormContainer}
           onEnter={_redirectIfLoggedIn} />
@@ -44,9 +50,6 @@ const Root = ({ store }) => {
         <Route path="/watch"
           component={WatchContainer}
           onEnter={_redirectUnlessLoggedIn} />
-        <Route path="/search"
-          component={SearchResultsContainer}
-          onEnter={_redirectSearch} />
       </Router>
     </Provider>
   );

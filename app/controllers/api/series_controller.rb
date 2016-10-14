@@ -2,7 +2,7 @@ class Api::SeriesController < ApplicationController
   def index
     @favorite_series = ['My List', Favorite.get_my_list(current_user)]
     @current_series = ['Continue Watching', CurrentWatching.get_current_series(current_user)]
-    @genres = Genre.includes(series: [:episodes, :current_watchings]).distinct
+    @genres = Genre.includes(series: [:episodes, :current_watchings])
   end
 
   def show

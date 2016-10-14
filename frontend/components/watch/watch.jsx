@@ -7,13 +7,17 @@ class Watch extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      currentEpisodeId: props.location.query.id
+      currentEpisodeId: props.location.query.id,
+      serieId: props.location.query.serieId
     });
-    this.serieId = props.episodes[0].serie_id;
     this.returnToIndex = this.returnToIndex.bind(this);
     this.getNextVideo = this.getNextVideo.bind(this);
     this.renderClosingScreen = this.renderClosingScreen.bind(this);
   }
+
+  componentDidMount() {
+    this.props.requestEpisodes(this.state.serieId);
+  };
 
   renderPlayer() {
     const url = this.props.location.query.video;
@@ -40,7 +44,7 @@ class Watch extends React.Component {
     if (nextVideo) {
       this.setState({ currentEpisodeId: nextVideo.id });
       const current_watching = {
-        serie_id: this.serieId,
+        serie_id: this.props.episodes[0].serie_id,
         episode_id: nextVideo.id
       };
       this.props.createOrUpdateCurrentWatching({current_watching});
@@ -52,7 +56,7 @@ class Watch extends React.Component {
         }
       });
     } else {
-      this.props.destroyCurrentWatching(this.serieId);
+      this.props.destroyCurrentWatching(this.props.episodes[0].serie_id);
       this.props.router.push('/');
     }
   }
@@ -62,22 +66,26 @@ class Watch extends React.Component {
   }
 
   render() {
-    return (
-      <div className='player-container'>
-        <div
-          className='player'
-          id='player'>
-          {this.renderPlayer()}
+    if (this.props.episodes[0]) {
+      return (
+        <div className='player-container'>
+          <div
+            className='player'
+            id='player'>
+            {this.renderPlayer()}
+          </div>
+          <div className='return-container'>
+            <span
+              className='return'
+              onClick={this.returnToIndex}>
+              {String.fromCharCode(11013)}
+            </span>
+          </div>
         </div>
-        <div className='return-container'>
-          <span
-            className='return'
-            onClick={this.returnToIndex}>
-            {String.fromCharCode(11013)}
-          </span>
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 

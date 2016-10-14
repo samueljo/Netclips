@@ -6,8 +6,6 @@ const SearchResults = (props) => {
   if (props.currentUser) {
     return (
       <div className='main-page'>
-        <NavbarContainer
-          query={props.location.query.query} />
         <FilteredSeriesIndex
           seriesIndex={props.seriesIndex}
           myList={props.myList}
