@@ -41,7 +41,7 @@ Netclips and code! Netclips is a web application inspired by Netflix built using
   - [ ] Feature: Infinite Scroll
     - More genres will load if you scroll to the bottom
 
-  - [ ] Feature: Auto-play
+  - [X] Feature: Auto-play
     - Clips will auto-play to the next clip in the series
 
   - [ ] Feature: Suggested Series

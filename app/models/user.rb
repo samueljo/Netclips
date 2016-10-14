@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   has_many :favorite_series, through: :favorites, source: :serie
   has_many :current_watchings, dependent: :destroy
   has_many :current_episodes, through: :current_watchings, source: :episode
+  has_many :current_series, through: :current_watchings, source: :serie
 
   attr_reader :password
 
