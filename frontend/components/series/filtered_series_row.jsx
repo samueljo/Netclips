@@ -1,5 +1,4 @@
 import React from 'react';
-// import SeriesIndexItem from './series_index_item';
 import SeriesIndexItemContainer from './series_index_item_container';
 import SeriesShowContainer from '../series_show/series_show_container';
 
