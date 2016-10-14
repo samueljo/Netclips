@@ -8,7 +8,6 @@ class SeriesIndexItem extends React.Component {
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleMyListClick = this.handleMyListClick.bind(this);
     this.expandSeries = this.expandSeries.bind(this);
-    // this.toggleTileImage = this.toggleTileImage.bind(this);
   }
 
   handlePlayClick(e) {
@@ -20,29 +19,20 @@ class SeriesIndexItem extends React.Component {
     };
 
     this.props.createOrUpdateCurrentWatching({current_watching});
+    this.props.requestEpisodes(this.props.serie.id);
 
-    this.props.router.push({
-      pathname: '/watch',
-      query: {
-        id: currentEpisode.id,
-        video: currentEpisode.video_url
-      }
-    });
+    window.setTimeout(() => {
+      this.props.router.push({
+        pathname: '/watch',
+        query: {
+          id: currentEpisode.id,
+          video: currentEpisode.video_url
+        }
+      });
+    }, 1000);
+
+    // Promise?
   }
-
-  // toggleTileImage(e) {
-  //   this.setState({ hovered: !this.state.hovered });
-  // }
-  //
-  // tileImage() {
-  //   const currentEpisode = this.props.serie.current_episode;
-  //
-  //   if (this.state.hovered) {
-  //     return this.props.episode_image_url;
-  //   } else {
-  //     return this.props.serie.image_url;
-  //   }
-  // }
 
   expandSeries(e) {
     e.stopPropagation();

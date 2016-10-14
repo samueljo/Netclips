@@ -86,6 +86,7 @@ class SeriesShow extends React.Component {
     if (this.state.showPanel === 'Overview') {
       showPanel = <SerieOverview
         listed={isSeriesListed}
+        requestEpisodes={this.props.requestEpisodes}
         serieDisplay={serieDisplay}
         addFavoriteSerie={this.props.addFavoriteSerie}
         removeFavoriteSerie={this.props.removeFavoriteSerie}

@@ -65,6 +65,7 @@ class FilteredSeriesIndex extends React.Component {
           removeFavoriteSerie={this.props.removeFavoriteSerie}
           removeSerie={this.props.removeSerie}
           requestSerie={this.props.requestSerie}
+          requestEpisodes={this.props.requestEpisodes}
           createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });

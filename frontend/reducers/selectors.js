@@ -9,3 +9,11 @@ export const deleteItem = (obj, collection) => {
   });
   return newCollection;
 };
+
+export const selectEpisodeIds = (episodes) => {
+  const episodeIds = [];
+  episodes.forEach((episode) => {
+    episodeIds.push(episode.id);
+  });
+  return episodeIds;
+};

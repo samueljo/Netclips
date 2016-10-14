@@ -19,6 +19,7 @@ class SerieOverview extends React.Component {
     };
 
     this.props.createOrUpdateCurrentWatching({current_watching});
+    this.props.requestEpisodes(this.props.serieDisplay.id);
 
     this.props.router.push({
       pathname: '/watch',

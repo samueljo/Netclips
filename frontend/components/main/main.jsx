@@ -16,6 +16,7 @@ const Main = (props) => {
           requestSerie={props.requestSerie}
           removeSerie={props.removeSerie}
           requestSearchResults={props.requestSearchResults}
+          requestEpisodes={props.requestEpisodes}
           createOrUpdateCurrentWatching={props.createOrUpdateCurrentWatching} />
       </div>
     );

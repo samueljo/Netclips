@@ -11,6 +11,8 @@ import {
   addFavoriteSerie,
   removeFavoriteSerie } from '../../actions/favorite_actions';
 
+import { requestEpisodes } from '../../actions/episode_actions';
+
 import {
   createOrUpdateCurrentWatching } from '../../actions/current_watching_actions';
 
@@ -29,7 +31,8 @@ const mapDispatchToProps = dispatch => ({
   requestSearchResults: (query, cb) => dispatch(requestSearchResults(query, cb)),
   addFavoriteSerie: (serie) => dispatch(addFavoriteSerie(serie)),
   removeFavoriteSerie: (serie) => dispatch(removeFavoriteSerie(serie)),
-  createOrUpdateCurrentWatching: (current) => dispatch(createOrUpdateCurrentWatching(current))
+  createOrUpdateCurrentWatching: (current) => dispatch(createOrUpdateCurrentWatching(current)),
+  requestEpisodes: (serieId) => dispatch(requestEpisodes(serieId))
 });
 
 export default connect(

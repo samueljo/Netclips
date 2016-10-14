@@ -14,13 +14,11 @@ class FilteredSeriesRow extends React.Component {
   }
 
   closeSeriesShow() {
-    console.log('toggle off');
     this.props.removeSerie();
     this.setState({ serieDisplayId: null });
   }
 
   openSeriesShow(serieId) {
-    console.log('toggle on');
     this.props.requestSerie(serieId, this.props.rowIdx);
     this.setState({ serieDisplayId: serieId });
   }
@@ -46,7 +44,6 @@ class FilteredSeriesRow extends React.Component {
 
     return seriesIndex.map((serie, idx) => {
       let hoverCb;
-      console.log(idx, this.props.seriesPerRow - 1);
       if (idx === this.props.seriesPerRow - 1) {
         hoverCb = this.toggleShiftLeft;
       } else {
@@ -61,6 +58,7 @@ class FilteredSeriesRow extends React.Component {
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
           openSeriesShow={this.openSeriesShow}
+          requestEpisodes={this.props.requestEpisodes}
           createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });

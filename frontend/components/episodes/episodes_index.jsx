@@ -67,8 +67,6 @@ class EpisodesIndex extends React.Component {
   }
 
   slideTo(dir, numPages) {
-    console.log('sliding');
-
     let newActivePage;
     if (this.state.activePage + dir === -1) {
       newActivePage = numPages - 1;

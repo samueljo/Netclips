@@ -1,66 +1,56 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import YouTube from 'react-youtube';
+import VideoPlayer from './video_player';
+import { selectEpisodeIds } from '../../reducers/selectors';
 
 class Watch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playing: false
-    };
+    this.currentEpisodeId = props.location.query.id;
+    this.serieId = props.episodes[0].serie_id;
     this.returnToIndex = this.returnToIndex.bind(this);
+    this.getNextVideo = this.getNextVideo.bind(this);
+    this.renderClosingScreen = this.renderClosingScreen.bind(this);
   }
 
   renderPlayer() {
     const url = this.props.location.query.video;
-    const opts = {
-      height: '100%',
-      width: '100%',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      playerVars: {
-        autohide: 1,
-        showinfo: 0,
-        autoplay: 1,
-        controls: 2,
-        modestBranding: 1
-      }
-    };
-
     return (
-      <YouTube
+      <VideoPlayer
         videoId={url}
-        opts={opts}
-        onReady={this._onReady}
-        onEnd={this._onEnd} />
+        renderClosingScreen={this.renderClosingScreen} />
     );
   }
 
-  _onReady(e) {
-    console.log('play video');
+  getNextVideo() {
+    const episodeIds = selectEpisodeIds(this.props.episodes);
+    const currentId = parseInt(this.currentEpisodeId);
+    if (currentId === episodeIds[episodeIds.length - 1]) {
+      return 0;
+    } else {
+      const currentEpisodeIdx = episodeIds.indexOf(currentId);
+      return this.props.episodes[currentEpisodeIdx + 1];
+    }
   }
 
-  _onEnd(e) {
-
-  }
-
-  _onStateChange(e) {
-    if (e.data === -1) {
-      // unstarted
-    } else if (e.data === 0) {
-      // ended
-      // Return to index page if last episode
-    } else if (e.data === 1) {
-      // playing
-      this.setState({ playing: true });
-    } else if (e.data === 2) {
-      // paused
-      this.setState({ playing: false });
-    } else if (e.data === 3) {
-      // buffering
-    } else if (e.data === 5) {
-      // video cued
+  renderClosingScreen() {
+    const nextVideo = this.getNextVideo();
+    if (nextVideo) {
+      const current_watching = {
+        serie_id: this.serieId,
+        episode_id: nextVideo.id
+      };
+      this.props.createOrUpdateCurrentWatching({current_watching});
+      this.props.router.push({
+        pathname: '/watch',
+        query: {
+          id: nextVideo.id,
+          video: nextVideo.video_url
+        }
+      });
+    } else {
+      this.props.destroyCurrentWatching(this.serieId);
+      this.props.router.push('/');
     }
   }
 

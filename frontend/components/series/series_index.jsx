@@ -21,6 +21,7 @@ class SeriesIndex extends React.Component {
             key={seriesGenre.genreId}
             myList={seriesIndex['My List']}
             seriesIndex={seriesGenre}
+            requestEpisodes={this.props.requestEpisodes}
             genre={genre}
             showDetail={seriesGenre.genreId === this.props.focusedGenreId}
             requestSearchResults={this.props.requestSearchResults}

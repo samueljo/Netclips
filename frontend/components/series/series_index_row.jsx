@@ -56,6 +56,7 @@ class SeriesIndexRow extends React.Component {
           addFavoriteSerie={this.props.addFavoriteSerie}
           removeFavoriteSerie={this.props.removeFavoriteSerie}
           openSeriesShow={this.openSeriesShow}
+          requestEpisodes={this.props.requestEpisodes}
           createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
       );
     });
@@ -130,8 +131,6 @@ class SeriesIndexRow extends React.Component {
   }
 
   slideTo(dir, numPages) {
-    console.log('sliding');
-
     let newActivePage;
     if (this.state.activePage + dir === -1) {
       newActivePage = numPages - 1;

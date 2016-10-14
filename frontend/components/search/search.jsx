@@ -33,7 +33,6 @@ class Search extends React.Component {
     this.setState({ query: e.target.value });
     this.props.removeSerie();
     if (this.state.query && e.target.value === '') {
-      console.log('props.router');
       this.props.router.push('/');
     } else {
       const tempState = { query: e.target.value };
