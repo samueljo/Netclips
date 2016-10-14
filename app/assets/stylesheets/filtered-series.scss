@@ -27,7 +27,7 @@ $moveRight: ($tileWidth / 1.4 );
   height: $tileHeight;
   margin: 1vw 4vw 5vw;
   &.leftShift {
-    transform: -($tileWidth / 3);
+    transform: translateX(-($tileWidth / 2));
   }
 }
 

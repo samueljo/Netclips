@@ -8,7 +8,6 @@ export const createReview = (review, success) => {
 };
 
 export const updateReview = (review, success) => {
-  debugger
   $.ajax ({
     method: 'PATCH',
     url: `api/reviews/${review.id}`,

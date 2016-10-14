@@ -11,10 +11,6 @@ class Watch extends React.Component {
     this.returnToIndex = this.returnToIndex.bind(this);
   }
 
-  renderVideoOver() {
-
-  }
-
   renderPlayer() {
     const url = this.props.location.query.video;
     const opts = {
@@ -36,12 +32,17 @@ class Watch extends React.Component {
       <YouTube
         videoId={url}
         opts={opts}
-        onReady={this._onReady} />
+        onReady={this._onReady}
+        onEnd={this._onEnd} />
     );
   }
 
   _onReady(e) {
     console.log('play video');
+  }
+
+  _onEnd(e) {
+
   }
 
   _onStateChange(e) {
@@ -65,10 +66,6 @@ class Watch extends React.Component {
 
   returnToIndex() {
     this.props.router.push('/');
-  }
-
-  stopVideo() {
-
   }
 
   render() {
