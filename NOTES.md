@@ -1,5 +1,5 @@
 - [X] Clear store on signout
-- [ ] Stay on details page after submitting review
+- [X] Stay on details page after submitting review
 - [X] Ratings
 - [X] Show user’s review at the top (with delete review button)
 - [X] Render new form or edit form depending on whether user has already reviewed
@@ -15,19 +15,13 @@
 - [ ] Display input specific errors.
 - [ ] Password confirmation
 
-**Series**
-- [ ] Add filters to api_util
-- [ ] filter series in controller
-  - [ ] create method in model to parse filters
-
-
 **Footer**
 
 **CSS Design**
-- [ ] Last tile in series index row should stay in screen
-- [ ] Down arrow for expanding series
 - [X] Dropdown menu for logout
 - [X] Resize and center play buttons
+- [X] Last tile in series index row should stay in screen
+- [ ] Down arrow for expanding series
 - [ ] Outline selected series white
 - [ ] Implement own stars component for on hover transition
 
@@ -42,10 +36,7 @@
 
 - [X] Make episode summaries have set height and cut off words with ellipsis after.
 
-- [ ] Reference bench favorites for mylist
-
 - [X] Styling series show page
-
 
 - [x] Fix carousel with 3 pages.
 
