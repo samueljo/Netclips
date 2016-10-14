@@ -49,7 +49,7 @@ class SerieOverview extends React.Component {
     );
 
     if (this.props.serieDisplay.current_user_review[0]) {
-      this.props.updateReview({review}, this.props.focusedGenreId);
+      this.props.updateReview(review, this.props.focusedGenreId);
     } else {
       this.props.createReview({review}, this.props.focusedGenreId);
     }
