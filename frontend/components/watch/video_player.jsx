@@ -35,22 +35,3 @@ const VideoPlayer = (props) => {
 };
 
 export default VideoPlayer;
-
-// _onStateChange(e) {
-//   if (e.data === -1) {
-//     // unstarted
-//   } else if (e.data === 0) {
-//     // ended
-//     // Return to index page if last episode
-//   } else if (e.data === 1) {
-//     // playing
-//     this.setState({ playing: true });
-//   } else if (e.data === 2) {
-//     // paused
-//     this.setState({ playing: false });
-//   } else if (e.data === 3) {
-//     // buffering
-//   } else if (e.data === 5) {
-//     // video cued
-//   }
-// }

@@ -6,7 +6,9 @@ import { selectEpisodeIds } from '../../reducers/selectors';
 class Watch extends React.Component {
   constructor(props) {
     super(props);
-    this.currentEpisodeId = props.location.query.id;
+    this.state = ({
+      currentEpisodeId: props.location.query.id
+    });
     this.serieId = props.episodes[0].serie_id;
     this.returnToIndex = this.returnToIndex.bind(this);
     this.getNextVideo = this.getNextVideo.bind(this);
@@ -24,7 +26,7 @@ class Watch extends React.Component {
 
   getNextVideo() {
     const episodeIds = selectEpisodeIds(this.props.episodes);
-    const currentId = parseInt(this.currentEpisodeId);
+    const currentId = parseInt(this.state.currentEpisodeId);
     if (currentId === episodeIds[episodeIds.length - 1]) {
       return 0;
     } else {
@@ -36,6 +38,7 @@ class Watch extends React.Component {
   renderClosingScreen() {
     const nextVideo = this.getNextVideo();
     if (nextVideo) {
+      this.setState({ currentEpisodeId: nextVideo.id });
       const current_watching = {
         serie_id: this.serieId,
         episode_id: nextVideo.id
