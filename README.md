@@ -10,7 +10,7 @@ Netclips is a full-stack web application that combines the instant gratification
 
 ### Authentication
 
-  <img src="./docs/screenshots/sign-in" />
+  <img src="./docs/screenshots/sign-in.png" />
 
   Back-end and front-end user authentication was built from scratch by encrypting user password and creating a unique session token for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
 
@@ -20,7 +20,7 @@ Netclips is a full-stack web application that combines the instant gratification
 
 #### Main Index
 
-  <img src="./docs/screenshots/main-index" />
+  <img src="./docs/screenshots/main-index.png" />
 
   On the database side, the there are a variety of associations to link together episodes and genres to series so the main index page displays each of the series in their respective genre rows. Additionally, because a series can belong to multiple genres and a genre can have multiple series, a `serie_genres` table was required to allow a many-to-many relationship.
   The series data was sent from the backend without any N+1 queries to the database by using ActiveRecord `includes` and `joins` and the necessary information was selected using JBuilder.
@@ -33,13 +33,13 @@ Netclips is a full-stack web application that combines the instant gratification
   - Search for a series via the search bar or by clicking on a genre
   - Add any given series to a user's 'list' and add it to the store.
 
-  <img src="./docs/screenshots/serie-display-overview" />
+  <img src="./docs/screenshots/serie-display-overview.png" />
 
   In order to implement the automatic opening and closing of a series display in the correct position, a `focusedGenreId` property was implemented such that if a user opens up a new series display in the same row, the display will stay in the same position and render different information. However, if a user opens up a new series display in a different row (i.e. different `genreId`), the existing display will close and the new series will display its information in the correct location.
 
 #### Watching Videos
 
-  <img src="./docs/screenshots/video-player" />
+  <img src="./docs/screenshots/video-player.png" />
 
   The video player was created using the react component `react-youtube` and other functions from the YouTube IFrame Player API. One interesting challenge was handling the video player once an video clip ended. In order to make the user experience of Netclips as seamless as possible, the video player will autoplay to the next episode in the series if it exists or render the main index page so the user can find another video to watch.
 
@@ -49,7 +49,7 @@ Netclips is a full-stack web application that combines the instant gratification
 
 ### Search & My List
 
-  <img src="./docs/screenshots/genre-search" />
+  <img src="./docs/screenshots/genre-search.png" />
 
   The search bar allows a user to search for video clips by either title or genre and renders live search results. Users may also click on a genre to view all series that are tagged with that genre.
 
@@ -59,10 +59,10 @@ Netclips is a full-stack web application that combines the instant gratification
 
   Users can rate reviews from the series' overview panel on the display page or while writing a review. In order to implement this, all of the validations for creating a review had to be done on the front end. When rating a series from the overview panel, no body is required. However, if a user were on the details panel and tried to create a review, the review will not be submitted unless a body is attached to the rating.
 
-  <img src="./docs/screenshots/review-form" />
+  <img src="./docs/screenshots/review-form.png" />
 
   Additionally, once a user does rate a series, his or her rating will appear with yellow stars vs. the average rating red stars if the current user has not rated the series. Once a rating is created, it will persist to the review form so that the user will only have to write a review to go along with his or her existing rating.
 
   The review list will show the first 3 reviews with the user's review at the top. If there are more reviews for that particular series, a button will appear to open a `react-modal` that will display all reviews.
 
-  <img src="./docs/screenshots/review-modal" />
+  <img src="./docs/screenshots/review-modal.png" />
