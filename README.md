@@ -8,8 +8,6 @@ Netclips is a full-stack web application that combines the instant gratification
 
 ## Features & Implementation
 
-  **NB:** The series model is referred to as `serie` to give a sense of plurality.
-
 ### Authentication
 
   Back-end and front-end user authentication was built from scratch by encrypting user password and creating a unique session token for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
@@ -43,8 +41,26 @@ Netclips is a full-stack web application that combines the instant gratification
 
   Additionally, once a user starts a video clip, it will automatically be added to his or her `currently watching` list. Then if the user finishes the final episode it that series, the series will be automatically removed from the user's `currently watching` list.
 
+  The currently watching aspect of the application was another difficult problem to solve as it involved juggling data from the user, series, and episodes. By utilizing this triple-join table, a user can have many series that he or she is watching and also keep keep track of which episodes he or she is currently on. From the index standpoint, a series can have many current watchers, but for any given session, the user will only be shown the series that he or she is watching.
+
+  [picture of view page]
+
 ### Search & My List
 
-### Reviews
+  The search bar allows a user to search for video clips by either title or genre and renders live search results. Users may also click on a genre to view all series that are tagged with that genre.
 
-### Autoplay
+  Updating a user's list can be done a couple of places, the index or the series' overview panel. While the user is searching through the index and hovers over a given series, it will scale up and an 'add' button will appear on the lower right corner along with the series title, episode, and play button. However, if the series is already on the user's list, a 'check' button will appear and the user can click to remove the series from his or her list. This was another case where a join table had to be created in order to accommodate for the many-to-many relationship between users and series.
+
+  picture of mylist genre page
+
+### Ratings & Reviews
+
+  Users can rate reviews from the series' overview panel on the display page or while writing a review. In order to implement this, all of the validations for creating a review had to be done on the front end. When rating a series from the overview panel, no body is required. However, if a user were on the details panel and tried to create a review, the review will not be submitted unless a body is attached to the rating.
+
+  [Picture of details panel]
+
+  Additionally, once a user does rate a series, his or her rating will appear with yellow stars vs. the average rating red stars if the current user has not rated the series. Once a rating is created, it will persist to the review form so that the user will only have to write a review to go along with his or her existing rating.
+
+  The review list will show the first 3 reviews with the user's review at the top. If there are more reviews for that particular series, a button will appear to open a `react-modal` that will display all reviews.
+
+  [Picture of review modal]
