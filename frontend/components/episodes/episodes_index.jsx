@@ -6,7 +6,6 @@ class EpisodesIndex extends React.Component {
     super(props);
     this.state = { activePage: 0, previousPage: null };
     this.slideTo = this.slideTo.bind(this);
-    // this.handleResize = this.handleResize.bind(this);
   }
 
   calculateEpisodesPerPage() {
@@ -32,7 +31,9 @@ class EpisodesIndex extends React.Component {
           key={episode.id}
           serieId={this.props.serieId}
           requestEpisode={this.props.requestEpisode}
-          createOrUpdateCurrentWatching={this.props.createOrUpdateCurrentWatching} />
+          createOrUpdateCurrentWatching={
+            this.props.createOrUpdateCurrentWatching
+          } />
       );
     });
 
@@ -81,14 +82,6 @@ class EpisodesIndex extends React.Component {
       previousPage: this.state.activePage
     });
   }
-
-  // handleResize(e) {
-  //   const episodesPerPage = this.calculateEpisodesPerPage();
-  //
-  //   if (episodesPerPage !== this.state.episodesPerPage) {
-  //     this.setState({episodesPerPage: episodesPerPage});
-  //   }
-  // }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);

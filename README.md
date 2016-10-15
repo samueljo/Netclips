@@ -1,178 +1,50 @@
 # Netclips
 
-[Heroku link][heroku] **Note:** Link to Netclips
+[Netclips live][heroku]
 
-## Minimum Viable Product
+[heroku]: http://netclips.herokuapp.com/
 
-Netclips and code! Netclips is a web application inspired by Netflix built using Ruby on Rails & React/Redux. The main features of this website will include:
+Netclips is a full-stack web application that combines the instant gratification of short video clips and highlights with the binge-watchability of Netflix. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
-- [ ] A production README
-- [X] New account creation, login, and guest/demo login
-- [X] Hosting on Heroku
-- [X] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
+## Features & Implementation
 
-- [X] Videos
-  - Access various series to pick & play video clips
+  **NB:** The series model is referred to as `serie` to give a sense of plurality.
 
-- [X] Reviews
-  - Read reviews (top reviews & all) for a series
-  - Write only one review per series
-  - Rate a series
+### Authentication
 
-- [X] MyList
-  - Create a 'My List' to keep track of series-to-watch
+  Back-end and front-end user authentication was built from scratch by encrypting user password and creating a unique session token for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
 
-- [X] Wrap-around Scroll
-  - Series are organized by genre with a 'wrap-around' scroll
+### Videos
 
-- [X] Search
-  - Search for a series by genre or title (cast as a bonus)
+  Videos are organized in such a way that allows users to have their own favorite lists and currently watching lists that consists or either 'series', which have multiple 'episodes' or 'movies'. The following overview of the database schema explains how the videos were implemented to allow for episodes nested within a series, the maintained to track favorites and currently watching lists, and the organized on the main index and search results index.
 
-- Bonus:
-  - [X] Track Current Episodes for Many Series
-    - Keep track of which episode a user was on for a given series
+#### Main Index
 
-  - [ ] Feature
-    - Browse page will have a 'feature' series to watch based on most recent addition
+  On the database side, the there are a variety of associations to link together episodes and genres to series so the main index page displays each of the series in their respective genre rows. Additionally, because a series can belong to multiple genres and a genre can have multiple series, a `serie_genres` table was required to allow a many-to-many relationship.
+  The series data was sent from the backend without any N+1 queries to the database by using ActiveRecord `includes` and `joins` and the necessary information was selected using JBuilder.
 
-  - [ ] OAuth
-    - Login using OAuth through Facebook
+  [Picture of main index page]
 
-  - [ ] Feature: Infinite Scroll
-    - More genres will load if you scroll to the bottom
+#### Carousel Rows & Series Display
 
-  - [X] Feature: Auto-play
-    - Clips will auto-play to the next clip in the series
+  Building the carousel rows for each genre was one of the more difficult aspects of building this application. Depending on the user, the index must have 4 different capabilities.
+  - Expand any given series to display more information right beneath the its respective row
+  - Play current episode for any given series (default is the first episode)
+  - Search for a series via the search bar or by clicking on a genre
+  - Add any given series to a user's 'list' and add it to the store.
 
-  - [ ] Feature: Suggested Series
-    - Series will be suggested based on user's history of watching a genre
+  In order to implement the automatic opening and closing of a series display in the correct position, a `focusedGenreId` property was implemented such that if a user opens up a new series display in the same row, the display will stay in the same position and render different information. However, if a user opens up a new series display in a different row (i.e. different `genreId`), the existing display will close and the new series will display its information in the correct location.
 
-  - [ ] Feature: Submitting New Series/Clips
-    - Submit a new clip - reserved only for admins
+  [Picture of main index page with a display show open]
 
-  - [ ] Feature: Notification
-    - Notifications for new clips added to database
+#### Watching Videos
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Redux Structure][redux-structure]
-* [Sample State][sample-state]
+  The video player was created using the react component `react-youtube` and other functions from the YouTube IFrame Player API. One interesting challenge was handling the video player once an video clip ended. In order to make the user experience of Netclips as seamless as possible, the video player will autoplay to the next episode in the series if it exists or render the main index page so the user can find another video to watch.
 
-[wireframes]: docs/wireframes
-[components]: docs/component-heirarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+  Additionally, once a user starts a video clip, it will automatically be added to his or her `currently watching` list. Then if the user finishes the final episode it that series, the series will be automatically removed from the user's `currently watching` list.
 
-## Implementation Timeline
+### Search & My List
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Reviews
 
-**Objective:** Functioning rails project with front-end Authentication
-
-- [X] New Rails project
-- [X] User model/migration
-- [X] Back end authentication (session/password)
-- [X] StaticPages controller and root view
-- [X] Webpack & react/redux modules
-- [X] APIUtil to interact with the API
-- [X] Redux cycle for frontend authentication
-- [X] User signup/signin components
-- [X] Blank landing component after signup/signin
-- [X] Style signup/signin components
-- [X] Seed users
-- [ ] Review phase 1
-
-### Phase 2: Series Model, API, and components (2 days)
-
-**Objective:** Series can be created, read, edited and destroyed through the API.
-
-- [X] Series model
-- [X] Seed database with a small amount of test data
-- [X] CRUD API for series (SeriesController)
-- [X] JBuilder views for series
-- Series components and respective Redux loops
-  - [X] SeriesIndex
-    - Will be primary portion of app
-      * Included in 'browse', 'mylist' and 'search'
-  - [X] SeriesIndexRow
-    - Each row in the index that implements 'wrap-around' scrolling
-  - [X] SeriesIndexItem
-    - Ratings
-    - Play current episode
-  - [X] SeriesDetailPane
-      - SeriesDetail
-      - SeriesOverview
-      - SeriesEpisodes
-  - [X] Seed series
-
-### Phase 3: Episode Model, API, and components (3 days)
-
-**Objective:** Episodes can be created, read, edited and destroyed through the API.
-
-- [X] Episode model
-- [X] Seed database with a small amount of test data
-- [X] CRUD API for episodes (EpisodesController)
-- [X] JBuilder views for episodes
-- Episodes components and respective Redux loops
-  - [X] EpisodeIndex
-    - Nested in SeriesIndexItem::SeriesEpisodes
-    - Implement 'wrap-around' scrolling
-  - [X] EpisodeIndexItem
-  - [X] EpisodeShow
-    - Be able to watch an episode through YouTube API
-  - [X] Seed episodes within series
-
-### Phase 4: Reviews (2 day)
-
-**Objective:** Reviews belong to series that can be created, read, edited and destroyed through the API.
-
-- [X] Review model
-- [X] Seed database with a small amount of test data
-- [X] CRUD API for reviews (ReviewsController)
-- [X] JBuilder views for reviews
-- [X] Adding reviews requires a series
-- Reviews components and respective Redux loops
-  - [X] ReviewsIndex
-    - Preview shown in SeriesIndexItem::SeriesDetail
-
-      - All reviews shown through Modal
-
-  - [X] ReviewForm
-    - User can write own review in SeriesIndexItem::SeriesDetail
-- [ ] Seed reviews
-
-### Phase 5: Searching (1 day)
-
-**Objective:** Be able to search for series by genre or title
-
-- Search results will use presentation components of primary app (series & episodes) but will filter which series are sent
-
-- [X] Search model
-- [X] Seed database with a small amount of test data
-- [X] CRUD API for Search (SearchController)
-- [X] JBuilder views for Search
-
-### Phase 6: My List (1 day)
-
-**Objective:** Be able to create a list of series-to-watch that can be updated (added to & removed from)
-
-- MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
-
-- [X] MyList model
-- [X] CRUD API for MyList (MyListsController)
-- [X] JBuilder views for MyList
-- [ ] Seed database with a small amount of test data
-
-### Phase 7: Pagination / infinite scroll for Series Index (1 day)
-
-**Objective:** Add infinite scroll to Series Index
-
-- [ ] Paginate Series Index API to send 4 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Style scroll components and transitions
-- [ ] Ensure seed data demonstrates infinite scroll
+### Autoplay

@@ -5,9 +5,6 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-// export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
-// export const UPDATE_ACCOUNT = 'UPDATE_ACCOUNT';
-
 export const signin = (user, callback) => ({
   type: SIGNIN,
   user,
@@ -27,14 +24,6 @@ export const signup = (user, callback) => ({
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
-
-// export const deleteAccount = (user) => ({
-//
-// });
-//
-// export const updateAccount = (user, callback) => ({
-//
-// });
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,

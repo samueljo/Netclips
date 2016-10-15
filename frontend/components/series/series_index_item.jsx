@@ -28,20 +28,6 @@ class SeriesIndexItem extends React.Component {
         video: currentEpisode.video_url
       }
     });
-
-    // const p1 = this.props.requestEpisodes(this.props.serie.id);
-
-    // p1.then(() => {
-    //   console.log('router push');
-    //   this.props.router.push({
-    //     pathname: '/watch',
-    //     query: {
-    //       id: currentEpisode.id,
-    //       serieId: currentEpisode.serie_id,
-    //       video: currentEpisode.video_url
-    //     }
-    //   });
-    // });
   }
 
   expandSeries(e) {
@@ -88,7 +74,6 @@ class SeriesIndexItem extends React.Component {
   render() {
     const serie = this.props.serie;
     const myListButton = this.renderMyListButton();
-    // const tileImage = this.tileImage();
     return (
       <div
         className='tile'

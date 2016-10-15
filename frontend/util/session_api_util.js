@@ -8,14 +8,6 @@ export const signup = (user, success, error) => {
   });
 };
 
-// export const deleteAccount = (complete) => {
-//
-//}
-
-// export const updateAccount = (user, success, error) => {
-//
-//}
-
 export const signin = (user, success, error) => {
   $.ajax({
     method: 'POST',
