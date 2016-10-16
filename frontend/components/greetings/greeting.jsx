@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-const Greeting = ({ currentUser, router }) => {
+const Greeting = ({ currentUser, router, processForm }) => {
 
   const _redirectToMain = () => {
     router.push('/');
+  };
+
+  const signinGuest = () => {
+    processForm(
+      { user: { email: 'guest@guest.com', password: 'password' } }, () => {
+        router.push('/');
+      }
+    );
   };
 
   if (!currentUser) {
@@ -23,6 +31,8 @@ const Greeting = ({ currentUser, router }) => {
           <div className='group'>
             <Link to="signup"
               className='jumbo-button sign-up'>Join Free</Link>
+            <button className='jumbo-button sign-up'
+              onClick={signinGuest}>Sign in with guest.</button>
           </div>
         </div>
       </div>

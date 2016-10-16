@@ -4,7 +4,7 @@
 
 [heroku]: http://netclips.herokuapp.com/
 
-Netclips is a full-stack web application that combines the instant gratification of short video clips and highlights with the binge-watchability of Netflix. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+Netclips is a full-stack web application that combines the instant gratification of short video clips and highlights with the binge-watchability of Netflix. The back end of the application was built with Ruby on Rails and a PostgreSQL database. All data fetching was done using AJAX and JBuilder for declaring JSON structures. The front end was created with React.js and JavaScript and utilizes the Redux architectural framework for an optimal single-page user-experience.
 
 ## Features & Implementation
 
@@ -66,3 +66,12 @@ Netclips is a full-stack web application that combines the instant gratification
   The review list will show the first 3 reviews with the user's review at the top. If there are more reviews for that particular series, a button will appear to open a `react-modal` that will display all reviews.
 
   <img src="./docs/screenshots/review-modal.png" />
+
+### Additional Work
+
+  There are still a couple of features that have yet to be implemented into this application and are listed below:
+
+  - [ ] Suggestions for current user based on previously watched
+  - [ ] Notifications for new additions to the database
+  - [ ] A feature section on the main index to highlight any new additions
+  - [ ] OAuth, Infinite scroll
