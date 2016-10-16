@@ -16,9 +16,6 @@ const Navbar = ({ query, currentUser, logout, router }) => {
           <div className='nav-user'>{currentUsername}
             <ul className='nav-dropdown'>
               <li className='nav-dropdown-item'>
-                <h1>My Account</h1>
-              </li>
-              <li className='nav-dropdown-item'>
                 <button className='sign-out'
                   onClick={logout}>Sign out of NetClips</button>
               </li>

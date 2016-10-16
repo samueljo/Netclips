@@ -1,0 +1,23 @@
+.footer {
+  padding: 6% 4%;
+  background: #000;
+  color: grey;
+  font-weight: 200;
+  .contact {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  .links {
+    display: flex;
+    width: 50%;
+  }
+
+  .link-item {
+    text-decoration: underline;
+    margin-right: 15vw;
+    &:hover {
+      color: #fff;
+    }
+  }
+}

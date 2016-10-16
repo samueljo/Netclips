@@ -17,10 +17,6 @@ const VideoPlayer = (props) => {
     }
   };
 
-  const _onReady = (e) => {
-
-  };
-
   const _onEnd = (e) => {
     props.renderClosingScreen();
   };
@@ -29,7 +25,6 @@ const VideoPlayer = (props) => {
     <YouTube
       videoId={props.videoId}
       opts={opts}
-      onReady={_onReady}
       onEnd={_onEnd} />
   );
 };
