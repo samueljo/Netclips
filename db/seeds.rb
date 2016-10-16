@@ -15,7 +15,7 @@ User.create!({
   password: 'password'
 })
 
-users = [];
+all_users = [];
 
 20.times do
   email = Faker::Internet.free_email
@@ -27,7 +27,7 @@ users = [];
     password: 'password'
   })
 
-  users.push(user)
+  all_users.push(user)
 end
 
 Genre.destroy_all
@@ -955,8 +955,8 @@ all_episodes = [
 reviews = [];
 
 200.times do
-  serie_id = all_series[rand(42)]
-  user_id = all_users[rand(20)]
+  serie_id = all_series[rand(42)].id
+  user_id = all_users[rand(20)].id
   rating = rand(1..5)
   body = Faker::Hipster.paragraph(2, true)
 
