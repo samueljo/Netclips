@@ -61,8 +61,10 @@ class SerieOverview extends React.Component {
   calculateAvgRating() {
     const currentUserReview = this.props.serieDisplay.current_user_review[0];
     let rating;
+    let color;
     if (currentUserReview) {
       rating = currentUserReview.rating;
+      color = 'Gold';
     } else {
       let sum = 0;
       const otherUserReviews = this.props.serieDisplay.other_user_reviews;
@@ -70,8 +72,9 @@ class SerieOverview extends React.Component {
         sum += otherUserReviews[i].rating;
       }
       rating = Math.round(sum / otherUserReviews.length);
+      color = 'Red';
     }
-    return rating;
+    return [rating, color];
   }
 
   handleMyListClick() {
@@ -105,7 +108,8 @@ class SerieOverview extends React.Component {
     const serieDisplay = this.props.serieDisplay;
 
     if (serieDisplay) {
-      const rating = this.calculateAvgRating();
+      const rating = this.calculateAvgRating()[0];
+      const color = this.calculateAvgRating()[1];
 
       return (
         <div className='serie-overview'>
@@ -113,6 +117,7 @@ class SerieOverview extends React.Component {
             <StarRatingComponent
               name='rating'
               className='star'
+              starColor={color}
               starCount={5}
               value={rating}
               onStarClick={this.onStarClick.bind(this)} />

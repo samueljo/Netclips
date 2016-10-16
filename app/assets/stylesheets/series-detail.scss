@@ -30,6 +30,9 @@
 
 .rating {
   font-size: 1.3vw;
+  &.other-user {
+    color: red;
+  }
   &.modal {
     font-size: 2vw;
   }

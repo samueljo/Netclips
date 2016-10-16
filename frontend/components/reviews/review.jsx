@@ -34,6 +34,7 @@ class Review extends React.Component {
             <StarRatingComponent
               name='rating'
               className={classNames[0]}
+              starColor={'Red'}
               starCount={5}
               editing={false}
               value={review.rating} />
@@ -53,6 +54,7 @@ class Review extends React.Component {
           <StarRatingComponent
             name='rating'
             className={classNames[0]}
+            starColor={'Gold'}
             starCount={5}
             editing={false}
             value={currentUserReview.rating} />
