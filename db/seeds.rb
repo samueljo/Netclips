@@ -12,7 +12,23 @@ User.destroy_all
 User.create!({
   email: 'guest@guest.com',
   username: 'guest',
-  password: 'password' })
+  password: 'password'
+})
+
+users = [];
+
+20.times do
+  email = Faker::Internet.free_email
+  username = Faker::Internet.user_name
+  email = Faker::Internet.free_email while (User.find_by(email: email))
+  user = User.create!({
+    email: email,
+    username: username,
+    password: 'password'
+  })
+
+  users.push(user)
+end
 
 Genre.destroy_all
 # Genres
@@ -58,7 +74,7 @@ all_series = [
   }),
 
   # Movie Trailers
-  # 1
+  # 1 Morgan
   Serie.create!({
     title: 'Morgan',
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
@@ -66,7 +82,7 @@ all_series = [
     image: File.open('app/assets/images/series/morgan.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  # 2
+  # 2 John Wick 2
   Serie.create!({
     title: 'John Wick: Chapter 2',
     description: 'The continuing adventures of former hitman, John Wick.',
@@ -74,7 +90,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/john-wick-2.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  # 3
+  # 3 The Great Wall
   Serie.create!({
     title: 'The Great Wall',
     description: 'Starring global superstar Matt Damon and directed by one of the most breathtaking visual stylists of our time, Zhang Yimou (Hero, House of Flying Daggers), Legendary’s The Great Wall tells the story of an elite force making a valiant stand for humanity on the world’s most iconic structure. The first English-language production for Yimou is the largest film ever shot entirely in China.',
@@ -82,7 +98,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/the-great-wall.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  # 4
+  # 4 Power Rangers
   Serie.create!({
     title: 'Power Rangers',
     description: 'A group of high-school kids, who are infused with unique superpowers, harness their abilities in order to save the world.',
@@ -90,7 +106,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/power-rangers.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  # 5
+  # 5 Resident Evil
   Serie.create!({
     title: 'Resident Evil: The Final Chapter',
     description: "Picking up immediately after the events in Resident Evil: Retribution, humanity is on its last legs in Washington D.C. As the only survivor of what was meant to be humanity's final stand against the undead hordes, Alice must return to where the nightmare began - Raccoon City, where the Umbrella Corporation is gathering its forces for a final strike against the only remaining survivors of the apocalypse.",
@@ -98,7 +114,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/resident-evil.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  # 6
+  # 6 Underworld
   Serie.create!({
     title: 'Underworld: Blood Wars',
     description: 'Vampire death dealer, Selene (Kate Beckinsale) fights to end the eternal war between the Lycan clan and the Vampire faction that betrayed her.',
@@ -106,7 +122,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/underworld.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #7
+  #7 Jackie
   Serie.create!({
     title: 'Jackie',
     description: "Following the assassination of her husband, First Lady Jacqueline Kennedy fights through grief and trauma to regain her faith, console her children, and define her husband's historic legacy.",
@@ -114,7 +130,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/jackie.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #8
+  #8 Patriots Day
   Serie.create!({
     title: 'Patriots Day',
     description: "An account of Boston Police Commissioner Ed Davis's actions in the events leading up to the 2013 Boston Marathon bombing and the aftermath, which includes the city-wide manhunt to find the terrorists behind it.",
@@ -122,7 +138,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/patriots-day.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #9
+  #9 Allied
   Serie.create!({
     title: 'Allied',
     description: 'ALLIED is the story of intelligence officer Max Vatan (Pitt), who in 1942 North Africa encounters French Resistance fighter Marianne Beausejour (Cotillard) on a deadly mission behind enemy lines. Reunited in London, their relationship is threatened by the extreme pressures of the war.',
@@ -130,7 +146,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/allied.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #10
+  #10 Pirates of the Caribbean
   Serie.create!({
     title: 'Pirates of the Caribbean: Dead Men Tell No Tales',
     description: 'Captain Jack Sparrow searches for the trident of Poseidon.',
@@ -138,7 +154,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/pirates.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #11
+  #11 Middle School
   Serie.create!({
     title: 'Middle School: The Worst Years of My Life',
     description: 'A quiet teenage artist Rafe Katchadorian has a wild imagination and is sick of middle school and the rules that have been put before him. Rafe and his best friend Leo have come up with a plan; break every rule in the school hand book and as you expect trouble follows.',
@@ -146,7 +162,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/middle-school.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #12
+  #12 Fantastic Beasts
   Serie.create!({
     title: 'Fantastic Beasts and Where to Find Them',
     description: "The adventures of writer Newt Scamander in New York's secret community of witches and wizards seventy years before Harry Potter reads his book in school.",
@@ -154,7 +170,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/fantastic-beasts.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #13
+  #13 Denial
   Serie.create!({
     title: 'Denial',
     description: 'Acclaimed writer and historian Deborah E. Lipstadt must battle for historical truth to prove the Holocaust actually occurred when David Irving, a renowned denier, sues her for libel.',
@@ -162,7 +178,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/denial.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #14
+  #14 Nerve
   Serie.create!({
     title: 'Nerve',
     description: "A high school senior finds herself immersed in an online game of truth or dare, where her every move starts to become manipulated by an anonymous community of 'watchers.'",
@@ -170,7 +186,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/nerve.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #15
+  #15 Lego Batman Movie
   Serie.create!({
     title: 'The LEGO Batman Movie',
     description: 'A spin-off of The Lego Movie (2014) centering on the character of Batman.',
@@ -178,7 +194,7 @@ all_series = [
     image: File.open('app/assets/images/series/movies/lego-batman.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #16
+  #16 Justice League
   Serie.create!({
     title: 'Justice League',
     description: "Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy.",
@@ -186,13 +202,13 @@ all_series = [
     image: File.open('app/assets/images/series/movies/justice-league.jpg'),
     genre_ids: [all_genres[0].id]
   }),
-  #17
+  #17 My Blind Brother
   Serie.create!({
     title: 'My Blind Brother',
     description: 'The rivalry between two brothers reaches a fever pitch during a charity swim competition.',
     year: 2016,
     image: File.open('app/assets/images/series/movies/my-blind-brother.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[10].id]
   }),
 
   # Talk Shows
@@ -404,57 +420,6 @@ all_series = [
     genre_ids: [all_genres[11].id]
   })
 ]
-
-Episode.create!({
-  title: 'Music Video: Kanye - Famous',
-  summary: "Music video for Kanye West's Famous",
-  serie_id: all_series[36].id,
-  image: File.open('app/assets/images/series/music/kanyewest1.jpg'),
-  video_url: 'p7FCgw_GlWc'
-}),
-Episode.create!({
-  title: 'Music Video: Glass Animals - Pools',
-  summary: "Music video for  Glass Animals' Pools",
-  serie_id: all_series[37].id,
-  image: File.open('app/assets/images/series/music/glassanimals1.jpg'),
-  video_url: 'HQYC2EfzZZw'
-}),
-Episode.create!({
-  title: 'Music Video: James Blake - Limit To Your Love',
-  summary: "Music video for James Blake's Limit To Your Love",
-  serie_id: all_series[38].id,
-  image: File.open('app/assets/images/series/music/jamesblake1.jpg'),
-  video_url: 'oOT2-OTebx0'
-}),
-Episode.create!({
-  title: 'Music Video: J. Cole - Love Yourz',
-  summary: "Music video for J. Cole's Love Yourz",
-  serie_id: all_series[39].id,
-  image: File.open('app/assets/images/series/music/jcole1.jpg'),
-  video_url: 'ZPCAvzIFY-s'
-}),
-Episode.create!({
-  title: 'Music Video: Frank Ocean - Forrest Gump',
-  summary: "Frank Ocean performs 'Forrest Gump' off his critically acclaimed album Channel ORANGE at the Grammys.",
-  serie_id: all_series[40].id,
-  image: File.open('app/assets/images/series/music/frankocean1.jpg'),
-  video_url: 'iHyo82Zqx6U'
-}),
-Episode.create!({
-  title: 'Music Video: Beyoncé - Hold Up',
-  summary: "Music video for Beyoncé's Hold Up",
-  serie_id: all_series[41].id,
-  image: File.open('app/assets/images/series/music/beyonce1.jpg'),
-  video_url: 'PeonBmeFR8o'
-}),
-Episode.create!({
-  title: 'Music Video: Mac DeMarco - Passing Out Pieces',
-  summary: "Music video for Mac DeMarco's Passing Out Pieces",
-  serie_id: all_series[42].id,
-  image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
-  video_url: 'vF7P3oq8Enc'
-})
-
 
 Episode.destroy_all
 # Episodes
@@ -825,14 +790,6 @@ all_episodes = [
     image: File.open('app/assets/images/series/nba/nba-16-allstar.jpg'),
     video_url: 'MGHRpjq_m2E'
   }),
-  # 42 NBA 2016 All Star Game
-  Episode.create!({
-    title: 'NBA 2016 All Star Game',
-    summary: "Best plays from the NBA 2016 All Star Game in Toronto, CA.",
-    serie_id: all_series[28].id,
-    image: File.open('app/assets/images/series/nba/nba-16-allstar.jpg'),
-    video_url: 'MGHRpjq_m2E'
-  }),
   Episode.create!({
     title: '2016 Season: Part One',
     summary: "'We'll fight y'all on Tiger Mountain!' More fun with NFL mouth shapes.",
@@ -929,7 +886,7 @@ all_episodes = [
     title: 'Celebrity Jeopardy - SNL 40th Anniversary Special',
     summary: 'Alex Trebek (Will Ferrell) tries his best to keep contestants Sean Connery (Darrell Hammond), Justin Bieber (Kate McKinnon), Tony Bennett (Alec Baldwin), Burt Reynolds (Norm Macdonald), Christoph Waltz (Taran Killam), Matthew McConaughey (Jim Carrey) and Bill Cosby (Kenan Thompson) in line.',
     serie_id: all_series[35].id,
-    image: File.open('app/assets/images/episodes/snl/jeopardyjpg'),
+    image: File.open('app/assets/images/episodes/snl/jeopardy.jpg'),
     video_url: 'ImaYMoTi2g8',
     episode_number: 3
   }),
@@ -941,4 +898,74 @@ all_episodes = [
     video_url: 'j7uBph38kXo',
     episode_number: 4
   }),
+
+  Episode.create!({
+    title: 'Music Video: Kanye - Famous',
+    summary: "Music video for Kanye West's Famous",
+    serie_id: all_series[36].id,
+    image: File.open('app/assets/images/series/music/kanyewest1.jpg'),
+    video_url: 'p7FCgw_GlWc'
+  }),
+  Episode.create!({
+    title: 'Music Video: Glass Animals - Pools',
+    summary: "Music video for  Glass Animals' Pools",
+    serie_id: all_series[37].id,
+    image: File.open('app/assets/images/series/music/glassanimals1.jpg'),
+    video_url: 'HQYC2EfzZZw'
+  }),
+  Episode.create!({
+    title: 'Music Video: James Blake - Limit To Your Love',
+    summary: "Music video for James Blake's Limit To Your Love",
+    serie_id: all_series[38].id,
+    image: File.open('app/assets/images/series/music/jamesblake1.jpg'),
+    video_url: 'oOT2-OTebx0'
+  }),
+  Episode.create!({
+    title: 'Music Video: J. Cole - Love Yourz',
+    summary: "Music video for J. Cole's Love Yourz",
+    serie_id: all_series[39].id,
+    image: File.open('app/assets/images/series/music/jcole1.jpg'),
+    video_url: 'ZPCAvzIFY-s'
+  }),
+  Episode.create!({
+    title: 'Music Video: Frank Ocean - Forrest Gump',
+    summary: "Frank Ocean performs 'Forrest Gump' off his critically acclaimed album Channel ORANGE at the Grammys.",
+    serie_id: all_series[40].id,
+    image: File.open('app/assets/images/series/music/frankocean1.jpg'),
+    video_url: 'iHyo82Zqx6U'
+  }),
+  Episode.create!({
+    title: 'Music Video: Beyoncé - Hold Up',
+    summary: "Music video for Beyoncé's Hold Up",
+    serie_id: all_series[41].id,
+    image: File.open('app/assets/images/series/music/beyonce1.jpg'),
+    video_url: 'PeonBmeFR8o'
+  }),
+  Episode.create!({
+    title: 'Music Video: Mac DeMarco - Passing Out Pieces',
+    summary: "Music video for Mac DeMarco's Passing Out Pieces",
+    serie_id: all_series[42].id,
+    image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
+    video_url: 'vF7P3oq8Enc'
+  })
 ]
+
+#users
+
+reviews = [];
+
+200.times do
+  serie_id = all_series[rand(42)]
+  user_id = all_users[rand(20)]
+  rating = rand(1..5)
+  body = Faker::Hipster.paragraph(2, true)
+
+  review = Review.new({
+    serie_id: serie_id,
+    user_id: user_id,
+    rating: rating,
+    body: body
+  })
+
+  reviews.push(review) if review.save
+end
