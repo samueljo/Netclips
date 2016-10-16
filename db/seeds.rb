@@ -40,7 +40,9 @@ all_genres = [
   # 10
   Genre.create!({ name: 'Comedy' }),
   # 11
-  Genre.create!({ name: 'Music' })
+  Genre.create!({ name: 'Music' }),
+  # 12
+  Genre.create!({ name: 'Sports' })
 ]
 
 Serie.destroy_all
@@ -52,7 +54,7 @@ all_series = [
     description: 'NBA Finals 2016: Cleveland Cavaliers vs. Golden State Warriors',
     year: 2016,
     image: File.open('app/assets/images/series/nba-finals-2016.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
   # Movie Trailers
@@ -250,7 +252,7 @@ all_series = [
     description: "NBA Hall of Fame 2016 Induction featuring Allen Iverson, Yao Ming, & Shaquille O’Neal.",
     year: 2016,
     image: File.open('app/assets/images/series/nba/nba-16-hof.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
   # 25 NBA MVP 2016 Highlights
@@ -259,7 +261,7 @@ all_series = [
     description: "Highlights from Stephen Curry's 2016 MVP campaign.",
     year: 2016,
     image: File.open('app/assets/images/series/nba/curry-mvp.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
   # 26 NBA 2016 Season Highlights
@@ -268,7 +270,7 @@ all_series = [
     description: "Highlights from the NBA 2016 Season.",
     year: 2016,
     image: File.open('app/assets/images/series/nba/nba-16.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
   # 27 NBA 2016 Slam Dunk Contest
@@ -277,7 +279,7 @@ all_series = [
     description: "Highlights from the NBA 2016 Slam Dunk Contest.",
     year: 2016,
     image: File.open('app/assets/images/series/nba/nba-16-slam-dunk.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
   # 28 NBA 2016 All Star Game
@@ -286,13 +288,176 @@ all_series = [
     description: "Highlights from the NBA 2016 All Star Game in Toroto, CA.",
     year: 2016,
     image: File.open('app/assets/images/series/nba/nba-16-allstar.jpg'),
-    genre_ids: [all_genres[2].id]
+    genre_ids: [all_genres[2].id, all_genres[12].id]
   }),
 
+  # 29 NFL Bad Lip Reading
+  Serie.create!({
+    title: 'NFL Bad Lip Reading',
+    description: "Bad Lip Reading NFL Edition",
+    year: 2016,
+    image: File.open('app/assets/images/series/nfl/nfl-badlipreading.jpg'),
+    genre_ids: [all_genres[3].id, all_genres[10].id, all_genres[12].id]
+  }),
+  # 30 NFL 2015 Superbowl
+  Serie.create!({
+    title: 'NFL 2015 Superbowl',
+    description: "Super Bowl XLIX",
+    year: 2015,
+    image: File.open('app/assets/images/series/nfl/superbowl2015.jpg'),
+    genre_ids: [all_genres[3].id, all_genres[12].id]
+  }),
+  # 31 NFL 2014 Superbowl
+  Serie.create!({
+    title: 'NFL 2014 Superbowl',
+    description: "Super Bowl XLVIII",
+    year: 2014,
+    image: File.open('app/assets/images/series/nfl/superbowl2014.jpg'),
+    genre_ids: [all_genres[3].id, all_genres[12].id]
+  }),
+  # 32 NFL 2013 Superbowl
+  Serie.create!({
+    title: 'NFL 2013 Superbowl',
+    description: "Super Bowl XLVII",
+    year: 2013,
+    image: File.open('app/assets/images/series/nfl/superbowl2013.jpg'),
+    genre_ids: [all_genres[3].id, all_genres[12].id]
+  }),
+  # 33 NFL 2012 Superbowl
+  Serie.create!({
+    title: 'NFL 2012 Superbowl',
+    description: "Super Bowl XLVI",
+    year: 2012,
+    image: File.open('app/assets/images/series/nfl/superbowl2012.jpg'),
+    genre_ids: [all_genres[3].id, all_genres[12].id]
+  }),
+  # 34 2016 Olympics
+  Serie.create!({
+    title: '2016 Olympics',
+    description: "2016 Rio Olympics",
+    year: 2016,
+    image: File.open('app/assets/images/series/2016olympics.jpg'),
+    genre_ids: [all_genres[12].id]
+  }),
+  # 35 SNL
+  Serie.create!({
+    title: 'SNL',
+    description: "NBC: Saturday Night Live!",
+    year: 2016,
+    image: File.open('app/assets/images/series/SNL.jpg'),
+    genre_ids: [all_genres[10].id]
+  }),
+  #36 Kanye - Famous
+  Serie.create!({
+    title: 'Kanye West - Famous',
+    description: "Music video for Kanye West's Famous",
+    year: 2016,
+    image: File.open('app/assets/images/series/music/kanyewest1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #37 Glass Animals - Pools
+  Serie.create!({
+    title: 'Glass Animals - Pools',
+    description: "Music video for  Glass Animals' Pools",
+    year: 2014,
+    image: File.open('app/assets/images/series/music/glassanimals1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #38 James Blake - Limit To Your Love
+  Serie.create!({
+    title: 'James Blake - Limit To Your Love',
+    description: "Music video for James Blake's Limit To Your Love",
+    year: 2010,
+    image: File.open('app/assets/images/series/music/jamesblake1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #39 J. Cole - Love Yourz
+  Serie.create!({
+    title: 'J. Cole - Love Yourz',
+    description: "Music video for J. Cole's Love Yourz",
+    year: 2014,
+    image: File.open('app/assets/images/series/music/jcole1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #40 Frank Ocean - Forrest Gump - Grammys
+  Serie.create!({
+    title: 'Frank Ocean - Forrest Gump - Grammys',
+    description: "Frank Ocean performs 'Forrest Gump' off his critically acclaimed album Channel ORANGE at the Grammys.",
+    year: 2014,
+    image: File.open('app/assets/images/series/music/frankocean1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #41 Beyoncé - Hold Up
+  Serie.create!({
+    title: 'Beyoncé - Hold Up',
+    description: "Music video for Beyoncé's Hold Up",
+    year: 2016,
+    image: File.open('app/assets/images/series/music/beyonce1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
+  #42 Mac DeMarco - Passing Out Pieces
+  Serie.create!({
+    title: 'Mac DeMarco - Passing Out Pieces',
+    description: "Music video for Mac DeMarco's Passing Out Pieces",
+    year: 2014,
+    image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
+    genre_ids: [all_genres[11].id]
+  })
 ]
 
+Episode.create!({
+  title: 'Music Video: Kanye - Famous',
+  summary: "Music video for Kanye West's Famous",
+  serie_id: all_series[36].id,
+  image: File.open('app/assets/images/series/music/kanyewest1.jpg'),
+  video_url: 'p7FCgw_GlWc'
+}),
+Episode.create!({
+  title: 'Music Video: Glass Animals - Pools',
+  summary: "Music video for  Glass Animals' Pools",
+  serie_id: all_series[37].id,
+  image: File.open('app/assets/images/series/music/glassanimals1.jpg'),
+  video_url: 'HQYC2EfzZZw'
+}),
+Episode.create!({
+  title: 'Music Video: James Blake - Limit To Your Love',
+  summary: "Music video for James Blake's Limit To Your Love",
+  serie_id: all_series[38].id,
+  image: File.open('app/assets/images/series/music/jamesblake1.jpg'),
+  video_url: 'oOT2-OTebx0'
+}),
+Episode.create!({
+  title: 'Music Video: J. Cole - Love Yourz',
+  summary: "Music video for J. Cole's Love Yourz",
+  serie_id: all_series[39].id,
+  image: File.open('app/assets/images/series/music/jcole1.jpg'),
+  video_url: 'ZPCAvzIFY-s'
+}),
+Episode.create!({
+  title: 'Music Video: Frank Ocean - Forrest Gump',
+  summary: "Frank Ocean performs 'Forrest Gump' off his critically acclaimed album Channel ORANGE at the Grammys.",
+  serie_id: all_series[40].id,
+  image: File.open('app/assets/images/series/music/frankocean1.jpg'),
+  video_url: 'iHyo82Zqx6U'
+}),
+Episode.create!({
+  title: 'Music Video: Beyoncé - Hold Up',
+  summary: "Music video for Beyoncé's Hold Up",
+  serie_id: all_series[41].id,
+  image: File.open('app/assets/images/series/music/beyonce1.jpg'),
+  video_url: 'PeonBmeFR8o'
+}),
+Episode.create!({
+  title: 'Music Video: Mac DeMarco - Passing Out Pieces',
+  summary: "Music video for Mac DeMarco's Passing Out Pieces",
+  serie_id: all_series[42].id,
+  image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
+  video_url: 'vF7P3oq8Enc'
+})
+
+
 Episode.destroy_all
-# Series
+# Episodes
 all_episodes = [
   # 1 NBA Finals
   Episode.create!({
@@ -659,5 +824,121 @@ all_episodes = [
     serie_id: all_series[28].id,
     image: File.open('app/assets/images/series/nba/nba-16-allstar.jpg'),
     video_url: 'MGHRpjq_m2E'
-  })
+  }),
+  # 42 NBA 2016 All Star Game
+  Episode.create!({
+    title: 'NBA 2016 All Star Game',
+    summary: "Best plays from the NBA 2016 All Star Game in Toronto, CA.",
+    serie_id: all_series[28].id,
+    image: File.open('app/assets/images/series/nba/nba-16-allstar.jpg'),
+    video_url: 'MGHRpjq_m2E'
+  }),
+  Episode.create!({
+    title: '2016 Season: Part One',
+    summary: "'We'll fight y'all on Tiger Mountain!' More fun with NFL mouth shapes.",
+    serie_id: all_series[29].id,
+    image: File.open('app/assets/images/episodes/nfl/2016-badlipreading-pt1.jpg'),
+    video_url: 'W-kGosnzvjU',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: '2015 Season',
+    summary: "'NFL 2015' — A Bad Lip Reading of The NFL",
+    serie_id: all_series[29].id,
+    image: File.open('app/assets/images/episodes/nfl/2015-badlipreading.jpg'),
+    video_url: 'OTRmyXX6ipU',
+    episode_number: 2
+  }),
+  Episode.create!({
+    title: 'Highlights: Super Bowl XLIX',
+    summary: "Super Bowl XLIX: Patriots vs. Seahawks highlights",
+    serie_id: all_series[30].id,
+    image: File.open('app/assets/images/series/nfl/superbowl2015.jpg'),
+    video_url: 'Cz8ENFKYXe0'
+  }),
+  Episode.create!({
+    title: 'Highlights: Super Bowl XLVIII',
+    summary: "Super Bowl XLVIII: Seahawks vs. Broncos highlights",
+    serie_id: all_series[31].id,
+    image: File.open('app/assets/images/series/nfl/superbowl2014.jpg'),
+    video_url: 'N-byJvHAXQA'
+  }),
+  Episode.create!({
+    title: 'Highlights: Super Bowl XLVII',
+    summary: "Super Bowl XLVII: Ravens vs. 49ers highlights",
+    serie_id: all_series[32].id,
+    image: File.open('app/assets/images/series/nfl/superbowl2013.jpg'),
+    video_url: 'BKNj4XHGDv0'
+  }),
+  Episode.create!({
+    title: 'Highlights: Super Bowl XLVI',
+    summary: "Super Bowl XLVI: Giants vs. Patriots highlights",
+    serie_id: all_series[33].id,
+    image: File.open('app/assets/images/series/nfl/superbowl2012.jpg'),
+    video_url: 'VQ5wDbaVJ3A'
+  }),
+  Episode.create!({
+    title: "Men's 100m Final",
+    summary: "Men's 100m Final | Rio 2016 Replay",
+    serie_id: all_series[34].id,
+    image: File.open('app/assets/images/episodes/olympics/mens100m.jpg'),
+    video_url: '4gUW1JikaxQ',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: "Men's 4x100m Medley Final",
+    summary: "Rio Replay: Men's 4x100m Medley Relay Final",
+    serie_id: all_series[34].id,
+    image: File.open('app/assets/images/episodes/olympics/mens4x100m.jpg'),
+    video_url: 'UmIYanq5gH8',
+    episode_number: 2
+  }),
+  Episode.create!({
+    title: "Women's 800m Freestyle Final",
+    summary: "Rio Replay: Women's 800m Freestyle Final",
+    serie_id: all_series[34].id,
+    image: File.open('app/assets/images/episodes/olympics/womens800m.jpg'),
+    video_url: 'GAGXNs0MXzI',
+    episode_number: 3
+  }),
+  Episode.create!({
+    title: "Women's Gymnastics All-Around Individual Final",
+    summary: "Rio Replay: Women's Individual All-Around Final",
+    serie_id: all_series[34].id,
+    image: File.open('app/assets/images/episodes/olympics/womensgym.jpg'),
+    video_url: '1OmSm1S1z60',
+    episode_number: 4
+  }),
+  Episode.create!({
+    title: 'Donald Trump vs. Hillary Clinton Town Hall Debate',
+    summary: 'Donald Trump (Alec Baldwin) and Hillary Clinton (Kate McKinnon) take questions from undecided voters (Leslie Jones, Beck Bennett, Michael Che, Bobby Moynihan, Kyle Mooney) in the second presidential debate.',
+    serie_id: all_series[35].id,
+    image: File.open('app/assets/images/episodes/snl/trumphillary.jpg'),
+    video_url: 'qVMW_1aZXRk',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: 'Star Wars Undercover Boss: Starkiller Base',
+    summary: 'Kylo Ren (Adam Driver) goes undercover as Matt, a radar technician, at Starkiller Base.',
+    serie_id: all_series[35].id,
+    image: File.open('app/assets/images/episodes/snl/starwars.jpg'),
+    video_url: 'FaOSCASqLsE',
+    episode_number: 2
+  }),
+  Episode.create!({
+    title: 'Celebrity Jeopardy - SNL 40th Anniversary Special',
+    summary: 'Alex Trebek (Will Ferrell) tries his best to keep contestants Sean Connery (Darrell Hammond), Justin Bieber (Kate McKinnon), Tony Bennett (Alec Baldwin), Burt Reynolds (Norm Macdonald), Christoph Waltz (Taran Killam), Matthew McConaughey (Jim Carrey) and Bill Cosby (Kenan Thompson) in line.',
+    serie_id: all_series[35].id,
+    image: File.open('app/assets/images/episodes/snl/jeopardyjpg'),
+    video_url: 'ImaYMoTi2g8',
+    episode_number: 3
+  }),
+  Episode.create!({
+    title: 'Tidal',
+    summary: 'When Tidal experiences technical difficulty, Chloe the intern (Ariana Grande) steps in and performs hit songs from Britney Spears, Shakira, Rihanna and more.',
+    serie_id: all_series[35].id,
+    image: File.open('app/assets/images/episodes/snl/tidal.jpg'),
+    video_url: 'j7uBph38kXo',
+    episode_number: 4
+  }),
 ]
