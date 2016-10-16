@@ -66,8 +66,11 @@ class Watch extends React.Component {
   }
 
   render() {
-    if (this.props.episodes[0]) {
-      const currentEpisode = selectEpisode(this.props.episodes, this.state.currentEpisodeId);
+    const propEpisode = this.props.episodes[0];
+    if (propEpisode && propEpisode.serie_id === parseInt(this.state.serieId)) {
+      const currentEpisode = selectEpisode(
+        this.props.episodes, this.state.currentEpisodeId
+      );
       return (
         <div className='player-container'>
           <div
