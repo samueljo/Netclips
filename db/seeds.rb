@@ -411,14 +411,22 @@ all_series = [
     image: File.open('app/assets/images/series/music/beyonce1.jpg'),
     genre_ids: [all_genres[11].id]
   }),
-  #42 Mac DeMarco - Passing Out Pieces
+  #42 Rhye - The Fall
   Serie.create!({
-    title: 'Mac DeMarco - Passing Out Pieces',
-    description: "Music video for Mac DeMarco's Passing Out Pieces",
-    year: 2014,
-    image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
+    title: 'Rhye - The Fall',
+    description: "Music video for Rhye's The Fall",
+    year: 2012,
+    image: File.open('app/assets/images/series/music/rhye1.jpg'),
     genre_ids: [all_genres[11].id]
-  })
+  }),
+  #43 Dr Dog - That Old Black Hole
+  Serie.create!({
+    title: 'Dr. Dog - That Old Black Hole',
+    description: "Music video for Dr. Dog's That Old Black Hole",
+    year: 2012,
+    image: File.open('app/assets/images/series/music/drdog1.jpg'),
+    genre_ids: [all_genres[11].id]
+  }),
 ]
 
 Episode.destroy_all
@@ -942,12 +950,19 @@ all_episodes = [
     video_url: 'PeonBmeFR8o'
   }),
   Episode.create!({
-    title: 'Music Video: Mac DeMarco - Passing Out Pieces',
-    summary: "Music video for Mac DeMarco's Passing Out Pieces",
+    title: 'Music Video: Rhye - The Fall',
+    summary: "Music video for Rhye's The Fall",
     serie_id: all_series[42].id,
-    image: File.open('app/assets/images/series/music/macdemarco1.jpg'),
-    video_url: 'vF7P3oq8Enc'
-  })
+    image: File.open('app/assets/images/series/music/rhye1.jpg'),
+    video_url: 'F6yfFWvoygY'
+  }),
+  Episode.create!({
+    title: 'Music Video: Dr. Dog - That Old Black Hole',
+    summary: "Music video for Dr. Dog's That Old Black Hole",
+    serie_id: all_series[43].id,
+    image: File.open('app/assets/images/series/music/drdog1.jpg'),
+    video_url: 'Ojf0waAxpL0'
+  }),
 ]
 
 #users
@@ -955,7 +970,7 @@ all_episodes = [
 reviews = [];
 
 200.times do
-  serie_id = all_series[rand(42)].id
+  serie_id = all_series[rand(44)].id
   user_id = all_users[rand(20)].id
   rating = rand(1..5)
   body = Faker::Hipster.paragraph(2, true)
