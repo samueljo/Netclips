@@ -20,6 +20,7 @@ class EpisodesIndexItem extends React.Component {
       pathname: '/watch',
       query: {
         id: this.props.episode.id,
+        serieId: this.props.serieId,
         video: this.props.episode.video_url
       }
     });
