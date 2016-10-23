@@ -10,7 +10,7 @@ $moveRight: ($tileWidth / 1.4 );
   position: absolute;
   left: -100%;
   display: none;
-  transition: left 200ms linear;
+  transition: left 500ms linear;
   z-index: 1;
   &.previous {
     z-index: 2;
@@ -21,7 +21,7 @@ $moveRight: ($tileWidth / 1.4 );
     left: 4%;
     z-index: 3;
     display: block;
-    transition: 200ms linear;
+    transition: 500ms linear;
     &.leftShift {
       left: -$tileWidth / 3;
     }

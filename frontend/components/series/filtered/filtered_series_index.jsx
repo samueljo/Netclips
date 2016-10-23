@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredSeriesRowContainer from '../series/filtered_series_row_container';
+import FilteredSeriesRowContainer from './filtered_series_row_container';
 
 class FilteredSeriesIndex extends React.Component {
   constructor(props) {

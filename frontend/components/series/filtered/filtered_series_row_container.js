@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import {
   requestSerie,
-  removeSerie } from '../../actions/serie_actions';
+  removeSerie } from '../../../actions/serie_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   seriesPerRow: ownProps.seriesPerRow,

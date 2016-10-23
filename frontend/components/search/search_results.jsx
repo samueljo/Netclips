@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredSeriesIndex from '../series/filtered_series_index';
+import FilteredSeriesIndex from '../series/filtered/filtered_series_index';
 import NavbarContainer from '../navbar/navbar_container';
 
 const SearchResults = (props) => {

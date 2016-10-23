@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import {
   requestSerie,
-  removeSerie } from '../../actions/serie_actions';
+  removeSerie } from '../../../actions/serie_actions';
 
-import { requestSearchResults } from '../../actions/search_actions';
+import { requestSearchResults } from '../../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   myList: ownProps.myList,

@@ -1,6 +1,6 @@
 import React from 'react';
-import SeriesIndexItemContainer from './series_index_item_container';
-import SeriesShowContainer from '../series_show/series_show_container';
+import SeriesIndexItemContainer from '../series_index_item_container';
+import SeriesShowContainer from '../../series_show/series_show_container';
 
 class FilteredSeriesRow extends React.Component {
   constructor(props) {
