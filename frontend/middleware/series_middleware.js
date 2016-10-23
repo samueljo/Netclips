@@ -39,6 +39,7 @@ import {
 export default ({ getState, dispatch }) => next => action => {
   const seriesSuccess = data => dispatch(receiveSeries(data));
   const serieSuccess = data => dispatch(receiveSerie(data, action.genreId));
+
   switch(action.type) {
     case REQUEST_SERIES:
       fetchSeries(seriesSuccess);
@@ -56,10 +57,10 @@ export default ({ getState, dispatch }) => next => action => {
       destroyReview(action.review, serieSuccess);
       break;
     case ADD_FAVORITE_SERIE:
-      createFavorite(action.serie, seriesSuccess);
+      createFavorite(action.serie);
       break;
     case REMOVE_FAVORITE_SERIE:
-      destroyFavorite(action.serie, seriesSuccess);
+      destroyFavorite(action.serie);
       break;
     case CREATE_OR_UPDATE_CURRENT_WATCHING:
       createOrUpdateCurrentWatching(action.currentWatching, seriesSuccess);

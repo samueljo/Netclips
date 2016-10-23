@@ -1,4 +1,4 @@
-export const createFavorite = (serie, success) => {
+export const createFavorite = (serie, genre, success) => {
   $.ajax({
     method: 'POST',
     url: `api/favorites`,

@@ -1,9 +1,10 @@
 export const REMOVE_FAVORITE_SERIE = "REMOVE_FAVORITE_SERIE";
 export const ADD_FAVORITE_SERIE = "ADD_FAVORITE_SERIE";
 
-export const addFavoriteSerie = (serie) => ({
+export const addFavoriteSerie = (serie, genre) => ({
   type: ADD_FAVORITE_SERIE,
-  serie
+  serie,
+  genre
 });
 
 export const removeFavoriteSerie = (serie) => ({

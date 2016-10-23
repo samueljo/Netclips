@@ -3,6 +3,7 @@ import { LOGOUT } from '../actions/session_actions';
 import {
   RECEIVE_SERIES,
   RECEIVE_SERIE,
+  RECEIVE_LIST_ITEM,
   REMOVE_SERIE } from '../actions/serie_actions';
 
 import {
