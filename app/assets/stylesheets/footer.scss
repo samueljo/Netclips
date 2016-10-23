@@ -1,17 +1,8 @@
 .footer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  padding: 50px;
-  background: rgba(0, 0, 0, 0);
-  color: #999;
+  padding: 6% 4%;
+  background: #000;
+  color: grey;
   font-weight: 200;
-  .contact {
-    display: block;
-    margin-bottom: 7%;
-  }
-
   .links {
     display: flex;
     width: 50%;
@@ -22,10 +13,10 @@
     padding: 5px 20px;
     border-radius: 3px;
     letter-spacing: 1.5px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(20, 20, 20, 0.4);
     &:hover {
       text-decoration: underline;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(20, 20, 20, 0.6);
     }
   }
 }
