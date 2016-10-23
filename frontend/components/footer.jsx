@@ -3,14 +3,14 @@ import React from 'react';
 const Footer = () => {
   return (
     <div className='footer'>
-      <span className='contact'>
-        Questions? Email samjo891@gmail.com
-      </span>
       <ul className='links'>
-        <li className='link-item'>
+        <li className='link-item jumbo-button'>
           <a href="https://github.com/samueljo/Netclips">Github</a>
         </li>
-        <li className='link-item'>
+        <li className='link-item jumbo-button'>
+          <a href="http://www.samueljo.com">Portfolio</a>
+        </li>
+        <li className='link-item jumbo-button'>
           <a href="https://www.linkedin.com/in/samueljo1">LinkedIn</a>
         </li>
       </ul>
