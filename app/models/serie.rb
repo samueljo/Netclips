@@ -38,11 +38,7 @@ class Serie < ActiveRecord::Base
     )
   end
 
-  # def self.get_suggestions_for_current_user(user)
-  #   debugger
-  #   user.favorite_series.joins()
-  #
-  #   has_many :favorite_series, through: :favorites, source: :serie
-  #   has_many :current_series, through: :current_watchings, source: :serie
-  # end
+  def self.get_suggestions_for_current_user(user)
+    Serie.includes(:genres).joins(:current_watchings, :favorites).on("favorites.user_id = ? OR current_watchings.user_id =?", user.id)
+  end
 end

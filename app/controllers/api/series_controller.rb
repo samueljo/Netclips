@@ -4,6 +4,7 @@ class Api::SeriesController < ApplicationController
     @current_series = ['Continue Watching', CurrentWatching.get_current_series(current_user)]
     @genres = Genre.includes(series: [:episodes, :current_watchings])
     # @suggestions = ['Suggestions', Serie.get_suggestions_for_current_user(current_user)]
+    # debugger
   end
 
   def show
