@@ -1,4 +1,5 @@
-# == Schema Information
+# == Schema Informationcurrent_watchings
+# == Schema Informationcurrent_watchings
 #
 # Table name: genres
 #
@@ -13,4 +14,6 @@ class Genre < ActiveRecord::Base
 
   has_many :serie_genres
   has_many :series, through: :serie_genres, source: :serie
+  has_many :current_watchings, through: :series, source: :current_watchings
+  has_many :favorites, through: :series, source: :favorites
 end

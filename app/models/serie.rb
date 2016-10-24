@@ -39,6 +39,6 @@ class Serie < ActiveRecord::Base
   end
 
   def self.get_suggestions_for_current_user(user)
-    Serie.includes(:genres).joins(:current_watchings, :favorites).on("favorites.user_id = ? OR current_watchings.user_id =?", user.id)
+    Serie.joins(:genres).joins(:current_watchings).includes(:episodes, :current_watchings).where("current_watchings.user_id = ?", user.id)
   end
 end

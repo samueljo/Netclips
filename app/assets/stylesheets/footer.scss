@@ -5,11 +5,12 @@
   font-weight: 200;
   .links {
     display: flex;
-    width: 50%;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .link-item {
-    margin: 0 10vw;
+    font-size: 1.2vw;
     padding: 5px 20px;
     border-radius: 3px;
     letter-spacing: 1.5px;

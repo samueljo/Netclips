@@ -17,6 +17,7 @@ class CurrentWatching < ActiveRecord::Base
   belongs_to :user
   belongs_to :serie
   belongs_to :episode
+  
 
   def self.get_current_series(current_user)
     return current_user.current_series.includes(:episodes, :current_watchings).distinct
