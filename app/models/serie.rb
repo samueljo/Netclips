@@ -39,6 +39,32 @@ class Serie < ActiveRecord::Base
   end
 
   def self.get_suggestions_for_current_user(user)
-    currents = Serie.joins(:genres).joins(:current_watchings).includes(:episodes, :current_watchings).where("current_watchings.user_id = ?", user.id)
+    suggestions = Serie.joins(:genres, :current_watchings).includes(:episodes).where(
+      "current_watchings.user_id = ?", user.id
+    )
+
+    suggested = [];
+    while suggested.length < 15
+      random_genre = suggestions.sample.genres.sample
+      random_serie = random_genre.series.sample
+      if suggested.include?(random_serie)
+        random_genre = suggestions.sample.genres.sample
+        random_serie = random_genre.series.sample
+      else
+        suggested.push(random_serie)
+      end
+    end
+
+    return suggested
+
+    # execute(<<-SQL)
+    #   SELECT
+    #     DISTINCT series.*
+    #   FROM
+    #     series
+    #   JOIN
+    #     genres ON genres IN series.genres
+    #   JOIN
+    #
   end
 end

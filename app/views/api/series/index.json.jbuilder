@@ -1,17 +1,6 @@
 json.set! @suggestions[0] do
   json.genreId -1
-  suggested = [];
-  while suggested.length < 15
-    random_genre = @suggestions[1].sample.genres.sample
-    random_serie = random_genre.series.sample
-    if suggested.include?(random_serie)
-      random_genre = @suggestions[1].sample.genres.sample
-      random_serie = random_genre.series.sample
-    else
-      suggested.push(random_serie)
-    end
-  end
-  json.series suggested.each do |random_serie|
+  json.series @suggestions[1].each do |random_serie|
     json.partial! 'api/series/serie', serie: random_serie
     json.image_url asset_path(
     random_serie.image.url(:medium))
