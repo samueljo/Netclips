@@ -39,105 +39,16 @@ class Serie < ActiveRecord::Base
   end
 
   def self.get_suggestions_for_current_user(user)
-    # suggestions = Serie.joins(:genres, :current_watchings).includes(:episodes).where(
-    #   "current_watchings.user_id = ?", user.id
-    # )
+    current_watchings = Genre.select(:id).joins(:current_watchings).where("current_watchings.user_id = ?", user.id)
+    favorites = Genre.select(:id).joins(:favorites).where("favorites.user_id = ?", user.id)
+    suggestions = Serie.joins(:genres).joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id").includes(:episodes, :current_watchings).where("current_watchings.serie_id IS NULL").where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
 
-    suggestions = Serie.find_by_sql [
-      "SELECT
-        DISTINCT series.*
-      FROM
-        genres
-      JOIN
-        serie_genres ON serie_genres.genre_id = genres.id
-      JOIN
-        series ON series.id = serie_genres.serie_id
-      JOIN
-        episodes ON episodes.serie_id = series.id
-      LEFT JOIN
-        current_watchings ON current_watchings.serie_id = series.id
-      WHERE
-        current_watchings.serie_id IS NULL AND genres.id IN (
-        SELECT
-          DISTINCT genres.id
-        FROM
-          genres
-        JOIN
-          serie_genres ON serie_genres.genre_id = genres.id
-        JOIN
-          series ON series.id = serie_genres.serie_id
-        JOIN
-          current_watchings ON current_watchings.serie_id = series.id
-        WHERE
-          current_watchings.user_id = ?
-      )", user.id
-    ]
-
-    Genre.joins(:series)
-
-    debugger
-
-# THIS WORKS!!!!
-current_watchings = Genre.select(:id).joins(:current_watchings).where("current_watchings.user_id = ?", user.id)
-favorites = Genre.select(:id).joins(:favorites).where("favorites.user_id = ?", user.id)
-Serie.joins(:genres).joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id").includes(:episodes).where("current_watchings.serie_id IS NULL").where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
-
-    # suggestions = Genre.select(
-    #   [
-    #     Series.arel_table[Arel.star], Genre.arel_table[:id], Episode.arel_table[Arel.star], CurrentWatching.arel_table[Arel.star]
-    #   ]
-    # ).where(
-    #   CurrentWatching.arel_table[:serie_id].eq(nil).and(
-    #     Genre.arel_table[:id].in(
-    #       Genre.select(Genre.arel_table[:id].as('genreID')).where(CurrentWatching.arel_table[:user_id].eq(180)).joins(
-    #         Genre.arel_table.join(SerieGenre.arel_table).on(
-    #           SerieGenre.arel_table[:genre_id].eq(Genre.arel_table[:id])
-    #         ).join_sources
-    #       ).joins(
-    #         Genre.arel_table.join(Series.arel_table).on(
-    #           Series.arel_table[:id].eq(SerieGenre.arel_table[:serie_id])
-    #         ).join_sources
-    #       ).joins(
-    #         Genre.arel_table.join(CurrentWatching.arel_table).on(
-    #           CurrentWatching.arel_table[:serie_id].eq(Series.arel_table[:id])
-    #         ).join_sources
-    #       ).uniq.ast
-    #     )
-    #   )
-    # ).joins(
-    #   Genre.arel_table.join(SerieGenre.arel_table).on(
-    #     SerieGenre.arel_table[:genre_id].eq(Genre.arel_table[:id])
-    #   ).join_sources
-    # ).joins(
-    #   Genre.arel_table.join(Series.arel_table).on(
-    #     Series.arel_table[:id].eq(SerieGenre.arel_table[:serie_id])
-    #   ).join_sources
-    # ).joins(
-    #   Genre.arel_table.join(Episode.arel_table).on(
-    #     Episode.arel_table[:serie_id].eq(Series.arel_table[:id])
-    #   ).join_sources
-    # ).joins(
-    #   Genre.arel_table.join(CurrentWatching.arel_table).on(
-    #     CurrentWatching.arel_table[:serie_id].eq(Series.arel_table[:id])
-    #   ).join_sources
-    # ).uniq
     suggested = [];
     unless suggestions.empty?
-      # while suggested.length < 15
-        # suggested.push(suggestions.sample)
-        # random_genre = suggestions.sample.genres.sample
-        # random_serie = random_genre.series.sample
-        # if suggested.include?(random_serie)
-        #   random_genre = suggestions.sample.genres.sample
-        #   random_serie = random_genre.series.sample
-        # else
-        #   suggested.push(random_serie)
-        # end
-      # end
+      suggested = suggestions.shuffle.take(15)
     end
-
+    debugger
     return suggested
-
   end
 end
 

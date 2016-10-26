@@ -1,13 +1,9 @@
-# json.set! @suggestions[0] do
-#   json.genreId -1
-#   json.series @suggestions[1].each do |random_serie|
-#     json.partial! 'api/series/serie', serie: random_serie
-#     json.image_url asset_path(random_serie.image.url(:medium))
-#     current_episode = current_episode(random_serie.current_watchings, random_serie.episodes)
-#     json.current_episode current_episode
-#     json.episode_image_url asset_path(current_episode.image.url(:medium))
-#   end
-# end
+json.set! @suggestions[0] do
+  json.genreId -1
+  json.series @suggestions[1].each do |random_serie|
+    json.partial! 'api/series/index_item', serie: random_serie
+  end
+end
 
 json.set! @favorite_series[0] do
   json.genreId 0
