@@ -39,38 +39,48 @@ class Serie < ActiveRecord::Base
   end
 
   def self.get_suggestions_for_current_user(user)
-    suggestions = Serie.joins(:genres, :current_watchings).includes(:episodes).where(
-      "current_watchings.user_id = ?", user.id
-    )
-    # suggestions = Serie.find_by_sql [
-      # "SELECT
-      #   DISTINCT series.*, genres.id, episodes.*, current_watchings.*
-      # FROM
-      #   genres
-      # JOIN
-      #   serie_genres ON serie_genres.genre_id = genres.id
-      # JOIN
-      #   series ON series.id = serie_genres.serie_id
-      # JOIN
-      #   episodes ON episodes.serie_id = series.id
-      # LEFT JOIN
-      #   current_watchings ON current_watchings.serie_id = series.id
-      # WHERE
-      #   current_watchings.serie_id IS NULL AND genres.id IN (
-      #   SELECT
-      #     DISTINCT genres.id AS genreID
-      #   FROM
-      #     genres
-      #   JOIN
-      #     serie_genres ON serie_genres.genre_id = genres.id
-      #   JOIN
-      #     series ON series.id = serie_genres.serie_id
-      #   JOIN
-      #     current_watchings ON current_watchings.serie_id = series.id
-      #   WHERE
-      #     current_watchings.user_id = ?
-      # )", user.id
-    # ]
+    # suggestions = Serie.joins(:genres, :current_watchings).includes(:episodes).where(
+    #   "current_watchings.user_id = ?", user.id
+    # )
+
+    suggestions = Serie.find_by_sql [
+      "SELECT
+        DISTINCT series.*
+      FROM
+        genres
+      JOIN
+        serie_genres ON serie_genres.genre_id = genres.id
+      JOIN
+        series ON series.id = serie_genres.serie_id
+      JOIN
+        episodes ON episodes.serie_id = series.id
+      LEFT JOIN
+        current_watchings ON current_watchings.serie_id = series.id
+      WHERE
+        current_watchings.serie_id IS NULL AND genres.id IN (
+        SELECT
+          DISTINCT genres.id
+        FROM
+          genres
+        JOIN
+          serie_genres ON serie_genres.genre_id = genres.id
+        JOIN
+          series ON series.id = serie_genres.serie_id
+        JOIN
+          current_watchings ON current_watchings.serie_id = series.id
+        WHERE
+          current_watchings.user_id = ?
+      )", user.id
+    ]
+
+    Genre.joins(:series)
+
+    debugger
+
+# THIS WORKS!!!!
+current_watchings = Genre.select(:id).joins(:current_watchings).where("current_watchings.user_id = ?", user.id)
+favorites = Genre.select(:id).joins(:favorites).where("favorites.user_id = ?", user.id)
+Serie.joins(:genres).joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id").includes(:episodes).where("current_watchings.serie_id IS NULL").where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
 
     # suggestions = Genre.select(
     #   [
