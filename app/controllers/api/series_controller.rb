@@ -3,7 +3,7 @@ class Api::SeriesController < ApplicationController
     @favorite_series = ['My List', Favorite.get_my_list(current_user)]
     @current_series = ['Continue Watching', CurrentWatching.get_current_series(current_user)]
     @genres = Genre.includes(series: [:episodes, :current_watchings])
-    @suggestions ||= ['Suggestions', Serie.get_suggestions_for_current_user(current_user)]
+    # @suggestions = ['Suggestions', Serie.get_suggestions_for_current_user(current_user)]
   end
 
   def show
