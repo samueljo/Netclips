@@ -47,7 +47,6 @@ class Serie < ActiveRecord::Base
     unless suggestions.empty?
       suggested = suggestions.shuffle.take(15)
     end
-    debugger
     return suggested
   end
 end
