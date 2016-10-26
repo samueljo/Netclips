@@ -47,6 +47,17 @@ Netclips is a full-stack web application that combines the instant gratification
 
   The currently watching aspect of the application was another difficult problem to solve as it involved juggling data from the user, series, and episodes. By utilizing this triple-join table, a user can have many series that he or she is watching and also keep keep track of which episodes he or she is currently on. From the index standpoint, a series can have many current watchers, but for any given session, the user will only be shown the series that he or she is watching.
 
+### Suggestions
+
+  Using Rails' native ORM framework, ActiveRecord, users will be shown 15 suggestions based on their currently watching or favorited videos & series. These suggestions are loaded in when the main index page renders and will update as users add/remove favorites and start/finish videos. The following block is the ActiveRecord query used to get all of the suggested series which also prefetches episodes to avoid sending N+1 SQL queries.
+
+```Ruby
+current_watchings = Genre.select(:id).joins(:current_watchings).where("current_watchings.user_id = ?", user.id)
+favorites = Genre.select(:id).joins(:favorites).where("favorites.user_id = ?", user.id)
+
+suggestions = Serie.joins(:genres).joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id").includes(:episodes, :current_watchings).where("current_watchings.serie_id IS NULL").where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
+```
+
 ### Search & My List
 
   <img src="./docs/screenshots/genre-search.png" />

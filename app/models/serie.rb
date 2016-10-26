@@ -50,7 +50,3 @@ class Serie < ActiveRecord::Base
     return suggested
   end
 end
-
-
-# SELECT DISTINCT series.id AS serieID, genres.id AS g FROM genres JOIN serie_genres ON serie_genres.genre_id = genres.id JOIN series ON series.id = serie_genres.serie_id WHERE g IN (SELECT DISTINCT genres.id AS genreID FROM genres JOIN serie_genres ON serie_genres.genre_id = genres.id JOIN series ON series.id = serie_genres.serie_id JOIN current_watchings ON current_watchings.serie_id = series.id WHERE current_watchings.user_id = 180);
-# SELECT DISTINCT genres.id AS genreID FROM genres JOIN serie_genres ON serie_genres.genre_id = genres.id JOIN series ON series.id = serie_genres.serie_id JOIN current_watchings ON current_watchings.serie_id = series.id WHERE current_watchings.user_id = 180;
