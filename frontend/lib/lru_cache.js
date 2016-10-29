@@ -1,6 +1,6 @@
 import List from './list';
 
-class Cache {
+class LRUCache {
   constructor(max) {
     this.map = {};
     this.store = new List();
@@ -8,15 +8,19 @@ class Cache {
     this.count = 0;
   }
 
+  includes(key) {
+    return !!this.map[key];
+  }
+
+  get(key) {
+    const link = this.map[key];
+    this._updateLink(link);
+    return link.val;
+  }
+
   insert(key, val) {
-    if (this.map[key]) {
-      const link = this.map[key];
-      this._updateLink(link);
-      return link.val;
-    } else {
-      this.count++;
-      return this._calc(key, val);
-    }
+    this.count++;
+    return this._calc(key, val);
   }
 
   _calc(key, val) {
@@ -35,9 +39,11 @@ class Cache {
     link.prev.next = link.next;
     link.next.prev = link.prev;
 
-    link.prev = this.store.last();
-    link.next = this.store.last().next;
-    this.store.last().next = link;
+    link.prev = this.store.last() || this.store.head;
+    link.prev.next = link;
+
+    link.next = this.store.tail;
+    this.store.tail.prev = link;
   }
 
   _eject() {
@@ -47,4 +53,4 @@ class Cache {
   }
 }
 
-export default Cache;
+export default LRUCache;

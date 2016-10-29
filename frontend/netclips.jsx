@@ -4,6 +4,10 @@ import Root from './components/root';
 import configureStore from './store/store';
 import Modal from 'react-modal';
 
+import LRUCache from './lib/lru_cache';
+
+window.LRUCache = LRUCache;
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
