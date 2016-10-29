@@ -55,7 +55,6 @@ export default ({ getState, dispatch }) => next => action => {
       fetchSeries(seriesSuccess);
       break;
     case REQUEST_SERIE:
-    debugger
       if (seriesCache.includes(action.id)) {
         const serie = seriesCache.get(action.id);
         return dispatch(cachedSeries(serie, action.genreId));
