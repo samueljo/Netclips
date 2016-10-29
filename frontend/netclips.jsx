@@ -4,16 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import Modal from 'react-modal';
 
-import {
-  createOrUpdateCurrentWatching,
-  destroyCurrentWatching } from './actions/current_watching_actions';
-
-window.createOrUpdateCurrentWatching = createOrUpdateCurrentWatching;
-window.destroyCurrentWatching = destroyCurrentWatching;
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.store = store;
   if (window.currentUser) {
     const initialState = {
       session: {
@@ -21,10 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     store = configureStore(initialState);
-    window.store = store;
   } else {
     store = configureStore();
-    window.store = store;
   }
 
   const root = document.getElementById('root');
