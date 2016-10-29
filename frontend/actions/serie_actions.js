@@ -4,6 +4,8 @@ export const RECEIVE_SERIE = "RECEIVE_SERIE";
 export const RECEIVE_LIST_ITEM = "RECEIVE_LIST_ITEM";
 export const REQUEST_SERIE = "REQUEST_SERIE";
 export const REMOVE_SERIE = "REMOVE_SERIE";
+export const CACHED_SERIES = "CACHED_SERIES";
+export const CACHED_SERIE = "CACHED_SERIE";
 
 export const requestSeries = () => ({
   type: REQUEST_SERIES
@@ -29,3 +31,16 @@ export const receiveSerie = (serie, genreId) => ({
 export const removeSerie = () => ({
   type: REMOVE_SERIE
 });
+
+
+// export const receiveEpisodes = (serieId, episodes, cache) => ({
+//   type: RECEIVE_EPISODES,
+//   serieId,
+//   episodes,
+//   cache
+// });
+//
+// export const cachedEpisodes = (episodes) => ({
+//   type: CACHED_EPISODES,
+//   episodes
+// });

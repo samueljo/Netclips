@@ -1,4 +1,5 @@
 import {
+  cachedEpisodes,
   receiveEpisodes,
   receiveEpisode,
   grabEpisodes,
@@ -16,7 +17,9 @@ const episodesCache = new LRUCache(8);
 // Cache will hold episodes for 8 unique series
 
 export default ({ getState, dispatch }) => next => action => {
-  const episodesSuccess = data => dispatch(receiveEpisodes(data));
+  const episodesSuccess = data => {
+    return dispatch(receiveEpisodes(action.serieId, data, episodesCache));
+  };
 
   const episodeSuccess = data => {
     action.callback();
@@ -26,7 +29,7 @@ export default ({ getState, dispatch }) => next => action => {
   switch(action.type) {
     case REQUEST_EPISODES:
       if (episodesCache.includes(action.serieId)) {
-        return dispatch(receiveEpisodes(episodesCache.get[action.serieId]));
+        return dispatch(cachedEpisodes(episodesCache.get(action.serieId)));
       } else {
         return dispatch(grabEpisodes(action.serieId));
       }

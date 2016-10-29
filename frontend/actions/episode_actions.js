@@ -3,6 +3,7 @@ export const REQUEST_EPISODES = "REQUEST_EPISODES";
 export const GRAB_EPISODES = "GRAB_EPISODES";
 export const RECEIVE_EPISODE = "RECEIVE_EPISODE";
 export const REQUEST_EPISODE = "REQUEST_EPISODE";
+export const CACHED_EPISODES = "CACHED_EPISODES";
 
 export const requestEpisodes = (serieId) => ({
   type: REQUEST_EPISODES,
@@ -14,8 +15,15 @@ export const grabEpisodes = (serieId) => ({
   serieId
 });
 
-export const receiveEpisodes = (episodes) => ({
+export const receiveEpisodes = (serieId, episodes, cache) => ({
   type: RECEIVE_EPISODES,
+  serieId,
+  episodes,
+  cache
+});
+
+export const cachedEpisodes = (episodes) => ({
+  type: CACHED_EPISODES,
   episodes
 });
 
