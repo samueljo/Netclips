@@ -55,7 +55,7 @@ class List {
   shift() {
     const link = this.first();
     if (link) {
-      this.updateList(link);
+      return this._updateList(link);
     } else {
       return undefined;
     }
@@ -73,6 +73,7 @@ class List {
   _updateList(link) {
     link.prev.next = link.next;
     link.next.prev = link.prev;
+    return link;
   }
 }
 

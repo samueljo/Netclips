@@ -4,10 +4,6 @@ import Root from './components/root';
 import configureStore from './store/store';
 import Modal from 'react-modal';
 
-import Cache from './lib/cache';
-
-window.Cache = Cache;
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {

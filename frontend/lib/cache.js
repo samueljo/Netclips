@@ -14,6 +14,7 @@ class Cache {
       this._updateLink(link);
       return link.val;
     } else {
+      this.count++;
       return this._calc(key, val);
     }
   }
@@ -23,6 +24,7 @@ class Cache {
     this.map[key] = newLink;
 
     if (this.count > this.max) {
+      this.count = this.max;
       this._eject();
     }
 
