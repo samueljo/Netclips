@@ -1,9 +1,12 @@
 import {
+  grabSerie,
+  cachedSeries,
   requestSerie,
   receiveSeries,
   receiveSerie,
   REQUEST_SERIES,
-  REQUEST_SERIE } from '../actions/serie_actions';
+  REQUEST_SERIE,
+  GRAB_SERIE } from '../actions/serie_actions';
 
 import {
   CREATE_REVIEW,
@@ -36,17 +39,31 @@ import {
   createOrUpdateCurrentWatching,
   destroyCurrentWatching } from '../util/current_watchings_api_util';
 
+import LRUCache from '../lib/lru_cache';
+
+const seriesCache = new LRUCache(8);
+// Cache will hold 8 unique series
+
 export default ({ getState, dispatch }) => next => action => {
   const seriesSuccess = data => dispatch(receiveSeries(data));
-  const serieSuccess = data => dispatch(receiveSerie(data, action.genreId));
+  const serieSuccess = data => {
+    return dispatch(receiveSerie(data, action.genreId, seriesCache));
+  };
 
   switch(action.type) {
     case REQUEST_SERIES:
       fetchSeries(seriesSuccess);
       break;
     case REQUEST_SERIE:
-      fetchSerie(action.id, serieSuccess);
-      break;
+    debugger
+      if (seriesCache.includes(action.id)) {
+        const serie = seriesCache.get(action.id);
+        return dispatch(cachedSeries(serie, action.genreId));
+      } else {
+        return dispatch(grabSerie(action.id, action.genreId));
+      }
+    case GRAB_SERIE:
+      return fetchSerie(action.id, serieSuccess);
     case CREATE_REVIEW:
       createReview(action.review, serieSuccess);
       break;

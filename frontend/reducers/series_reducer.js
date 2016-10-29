@@ -1,6 +1,7 @@
 import { LOGOUT } from '../actions/session_actions';
 
 import {
+  CACHED_SERIES,
   RECEIVE_SERIES,
   RECEIVE_SERIE,
   RECEIVE_LIST_ITEM,
@@ -30,10 +31,15 @@ const SeriesReducer = (state = _defaultState, action) => {
   let newState;
   let temp;
   switch(action.type) {
+    case CACHED_SERIES:
+      newState = merge({}, state, {focusedGenreId: action.genreId});
+      newState.serieDisplay = action.serie;
+      return newState;
     case RECEIVE_SERIES:
       return merge({}, state, {seriesIndex: action.series});
     case RECEIVE_SERIE:
       newState = merge({}, state, {focusedGenreId: action.genreId});
+      action.cache.insert(action.serie.id, action.serie);
       newState.serieDisplay = action.serie;
       return newState;
     case REMOVE_SERIE:
