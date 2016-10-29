@@ -41,7 +41,13 @@ class Serie < ActiveRecord::Base
   def self.get_suggestions_for_current_user(user)
     current_watchings = Genre.select(:id).joins(:current_watchings).where("current_watchings.user_id = ?", user.id)
     favorites = Genre.select(:id).joins(:favorites).where("favorites.user_id = ?", user.id)
-    suggestions = Serie.joins(:genres).joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id").includes(:episodes, :current_watchings).where("current_watchings.serie_id IS NULL").where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
+    suggestions = Serie
+      .joins(:genres)
+      .joins("LEFT JOIN current_watchings ON current_watchings.serie_id = series.id")
+      .includes(:episodes, :current_watchings)
+      .where("current_watchings.serie_id IS NULL")
+      .where("genre_id IN (?) OR genre_id IN (?)", current_watchings, favorites)
+      .distinct
 
     suggested = [];
     unless suggestions.empty?

@@ -1,4 +1,4 @@
-import Link from 'link';
+import Link from './link';
 
 class List {
   constructor() {
@@ -52,6 +52,15 @@ class List {
     }
   }
 
+  shift() {
+    const link = this.first();
+    if (link) {
+      this.updateList(link);
+    } else {
+      return undefined;
+    }
+  }
+
   _createLink(key, val, prevLink, nextLink) {
     const link = new Link(key, val);
     link.prev = prevLink;
@@ -59,6 +68,11 @@ class List {
     prevLink.next = link;
     nextLink.prev = link;
     return link;
+  }
+
+  _updateList(link) {
+    link.prev.next = link.next;
+    link.next.prev = link.prev;
   }
 }
 
