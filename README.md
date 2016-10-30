@@ -16,7 +16,7 @@ Netclips is a full-stack web application that combines the instant gratification
 
 ### LRU Cache
 
-  One major feature of the application that cannot be seen on the front-end is the LRU cache that I created using a double-linked list and POJO. The motivation for implementing an LRU cache is that because a user is likely to flip between his or her favorite videos, sending a query to the database for the same information over and over again would be wasteful.
+  One major feature of the application that cannot be seen on the front-end is the LRU cache that I created using a doubly-linked list and POJO. The motivation for implementing an LRU cache is that because a user is likely to flip between his or her favorite videos, sending a query to the database for the same information over and over again would be wasteful.
   To build the LRU cache, I first created a `List` class that holds a link for every cached object (either an array of episodes or a series). A linked list is optimal for this application because it is extremely easy and fast to add, delete, and update links (all O(1) time). The POJO is used as a hash map so indexing through the linked list can be O(1) time as well.
 
   There are two LRU caches, one in the `episodes_middleware` and the other in the `series_middleware`. They are then used to determine which action the middleware should dispatch and updated to keep track of the most recently used episodes or series.
