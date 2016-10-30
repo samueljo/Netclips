@@ -14,6 +14,26 @@ Netclips is a full-stack web application that combines the instant gratification
 
   Back-end and front-end user authentication was built from scratch by encrypting user password and creating a unique session token for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
 
+### LRU Cache
+
+  One major feature of the application that cannot be seen on the front-end is the LRU cache that I created using a double-linked list and POJO. The motivation for implementing an LRU cache is that because a user is likely to flip between his or her favorite videos, sending a query to the database for the same information over and over again would be wasteful.
+  To build the LRU cache, I first created a `List` class that holds a link for every cached object (either an array of episodes or a series). A linked list is optimal for this application because it is extremely easy and fast to add, delete, and update links (all O(1) time). The POJO is used as a hash map so indexing through the linked list can be O(1) time as well.
+
+  There are two LRU caches, one in the `episodes_middleware` and the other in the `series_middleware`. They are then used to determine which action the middleware should dispatch and updated to keep track of the most recently used episodes or series.
+
+  `episodes_middleware.js`
+
+  ```javascript
+  const episodesCache = new LRUCache(8);
+
+  case REQUEST_EPISODES:
+    if (episodesCache.includes(action.serieId)) {
+      return dispatch(cachedEpisodes(episodesCache.get(action.serieId)));
+    } else {
+      return dispatch(grabEpisodes(action.serieId));
+    }
+  ```
+
 ### Videos
 
   Videos are organized in such a way that allows users to have their own favorite lists and currently watching lists that consists or either 'series', which have multiple 'episodes' or 'movies'. The following overview of the database schema explains how the videos were implemented to allow for episodes nested within a series, the maintained to track favorites and currently watching lists, and the organized on the main index and search results index.
