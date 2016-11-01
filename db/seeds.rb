@@ -437,7 +437,7 @@ all_series = [
     title: 'Vice: Autobiographies',
     description: "Autobiographies in VICE's online den of nefarious activities, investigative journalism, and enlightening documentaries.",
     year: 2016,
-    image: File.open('app/assets/images/series/doc/viceauto.jpeg'),
+    image: File.open('app/assets/images/series/doc/viceauto.jpg'),
     genre_ids: [all_genres[14].id]
   }),
   #45
