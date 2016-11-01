@@ -54,11 +54,15 @@ all_genres = [
   # 9
   Genre.create!({ name: 'Soccer' }),
   # 10
-  Genre.create!({ name: 'Comedy' }),
+  Genre.create!({ name: 'Funny' }),
   # 11
   Genre.create!({ name: 'Music' }),
   # 12
-  Genre.create!({ name: 'Sports' })
+  Genre.create!({ name: 'Sports' }),
+  # 13
+  Genre.create!({ name: 'Action'}),
+  # 14
+  Genre.create!({ name: 'Documentary'})
 ]
 
 Serie.destroy_all
@@ -80,7 +84,7 @@ all_series = [
     description: 'A corporate troubleshooter (Kate Mara) is sent to a remote, top-secret location, where she is to investigate and evaluate a terrifying accident. She learns the event was triggered by a seemingly innocent “human,” who presents a mystery of both infinite promise and incalculable danger.',
     year: 2016,
     image: File.open('app/assets/images/series/morgan.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   # 2 John Wick 2
   Serie.create!({
@@ -88,7 +92,7 @@ all_series = [
     description: 'The continuing adventures of former hitman, John Wick.',
     year: 2017,
     image: File.open('app/assets/images/series/movies/john-wick-2.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   # 3 The Great Wall
   Serie.create!({
@@ -96,7 +100,7 @@ all_series = [
     description: 'Starring global superstar Matt Damon and directed by one of the most breathtaking visual stylists of our time, Zhang Yimou (Hero, House of Flying Daggers), Legendary’s The Great Wall tells the story of an elite force making a valiant stand for humanity on the world’s most iconic structure. The first English-language production for Yimou is the largest film ever shot entirely in China.',
     year: 2017,
     image: File.open('app/assets/images/series/movies/the-great-wall.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   # 4 Power Rangers
   Serie.create!({
@@ -104,7 +108,7 @@ all_series = [
     description: 'A group of high-school kids, who are infused with unique superpowers, harness their abilities in order to save the world.',
     year: 2016,
     image: File.open('app/assets/images/series/movies/power-rangers.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   # 5 Resident Evil
   Serie.create!({
@@ -112,7 +116,7 @@ all_series = [
     description: "Picking up immediately after the events in Resident Evil: Retribution, humanity is on its last legs in Washington D.C. As the only survivor of what was meant to be humanity's final stand against the undead hordes, Alice must return to where the nightmare began - Raccoon City, where the Umbrella Corporation is gathering its forces for a final strike against the only remaining survivors of the apocalypse.",
     year: 2017,
     image: File.open('app/assets/images/series/movies/resident-evil.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   # 6 Underworld
   Serie.create!({
@@ -120,7 +124,7 @@ all_series = [
     description: 'Vampire death dealer, Selene (Kate Beckinsale) fights to end the eternal war between the Lycan clan and the Vampire faction that betrayed her.',
     year: 2017,
     image: File.open('app/assets/images/series/movies/underworld.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   #7 Jackie
   Serie.create!({
@@ -152,7 +156,7 @@ all_series = [
     description: 'Captain Jack Sparrow searches for the trident of Poseidon.',
     year: 2017,
     image: File.open('app/assets/images/series/movies/pirates.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   #11 Middle School
   Serie.create!({
@@ -160,7 +164,7 @@ all_series = [
     description: 'A quiet teenage artist Rafe Katchadorian has a wild imagination and is sick of middle school and the rules that have been put before him. Rafe and his best friend Leo have come up with a plan; break every rule in the school hand book and as you expect trouble follows.',
     year: 2016,
     image: File.open('app/assets/images/series/movies/middle-school.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[10].id]
   }),
   #12 Fantastic Beasts
   Serie.create!({
@@ -192,7 +196,7 @@ all_series = [
     description: 'A spin-off of The Lego Movie (2014) centering on the character of Batman.',
     year: 2017,
     image: File.open('app/assets/images/series/movies/lego-batman.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[10].id]
   }),
   #16 Justice League
   Serie.create!({
@@ -200,7 +204,7 @@ all_series = [
     description: "Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy.",
     year: 2017,
     image: File.open('app/assets/images/series/movies/justice-league.jpg'),
-    genre_ids: [all_genres[0].id]
+    genre_ids: [all_genres[0].id, all_genres[13].id]
   }),
   #17 My Blind Brother
   Serie.create!({
@@ -427,6 +431,47 @@ all_series = [
     image: File.open('app/assets/images/series/music/drdog1.jpg'),
     genre_ids: [all_genres[11].id]
   }),
+
+  #44
+  Serie.create!({
+    title: 'Vice: Autobiographies',
+    description: "Autobiographies in VICE's online den of nefarious activities, investigative journalism, and enlightening documentaries.",
+    year: 2016,
+    image: File.open('app/assets/images/series/doc/viceauto.jpeg'),
+    genre_ids: [all_genres[14].id]
+  }),
+  #45
+  Serie.create!({
+    title: "The VICE Guide to Comics",
+    description: "In this extra spooky episode of 'The VICE Guide to Comics,' our art editor Nick Gazin shares the best terror comics, just in time for Halloween. And, as always, his list is completely objective, so no arguments in the comment section please.",
+    year: 2016,
+    image: File.open('app/assets/images/series/doc/comics.jpg'),
+    genre_ids: [all_genres[14].id]
+  }),
+  #46
+  Serie.create!({
+    title: 'Vice: High Society',
+    description: "High Society is a new VICE documentary series about drugs in the UK.",
+    year: 2016,
+    image: File.open('app/assets/images/series/doc/highsociety.jpg'),
+    genre_ids: [all_genres[14].id]
+  }),
+  #47
+  Serie.create!({
+    title: 'Vice: Hunting for Hallucinogenic Honey in 360°',
+    description: "Nepal’s Gurung people live mostly in small villages in the vast Annapurna mountain ranges. In this remote region, they practice an ancient tradition of honey hunting where they descend towering cliffs on handmade ladders, to harvest honey nestled under jagged overhangs.",
+    year: 2016,
+    image: File.open('app/assets/images/series/doc/hallucinate.jpg'),
+    genre_ids: [all_genres[14].id]
+  }),
+  #48
+  Serie.create!({
+    title: 'Vice: The Exorcist',
+    description: "Altar Swartz beheaded 15-year-old Lee Adams in the back of an abandoned Primary School in Cape Town in 2013. In a strange turn of events, Aljar’s defense in court claimed he was possessed by the devil. After pleading guilty the murder, Aljar’s lawyer requested an exorcism be performed on his client. That's when Reverend Cecil Begbie was called in to the job.",
+    year: 2016,
+    image: File.open('app/assets/images/series/doc/exorcist.jpg'),
+    genre_ids: [all_genres[14].id]
+  })
 ]
 
 Episode.destroy_all
@@ -963,6 +1008,71 @@ all_episodes = [
     image: File.open('app/assets/images/series/music/drdog1.jpg'),
     video_url: 'Ojf0waAxpL0'
   }),
+
+  Episode.create!({
+    title: 'Vice Autobiographies: Venus X',
+    summary: "Venus X Wants to Party the Pain Away",
+    serie_id: all_series[44].id,
+    image: File.open('app/assets/images/series/doc/venusx.jpeg'),
+    video_url: 'yIlYZRse-Ik',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: 'Vice Autobiographies: D.R.A.M.',
+    description: "D.R.A.M. Reflects on Life Before and After 'Cha Cha'",
+    serie_id: all_series[44].id,
+    image: File.open('app/assets/images/series/doc/dram.jpg'),
+    video_url: 'o8wHc8cYnic',
+    episode_number: 2
+  }),
+  Episode.create!({
+    title: 'Vice Autobiographies: Tiga',
+    description: "How Tiga Ignited Montreal's Dance Music Movement",
+    serie_id: all_series[44].id,
+    image: File.open('app/assets/images/series/doc/tiga.jpg'),
+    video_url: 'IjTBNMlJamE',
+    episode_number: 3
+  }),
+  Episode.create!({
+    title: 'Vice Autobiographies: RJ Mitte',
+    description: "RJ Mitte of 'Breaking Bad' on Living with Cerebral Palsy",
+    serie_id: all_series[44].id,
+    image: File.open('app/assets/images/series/doc/rjmitte.jpg'),
+    video_url: 'Cc-cbcJVw00',
+    episode_number: 4
+  }),
+  Episode.create!({
+    title: 'A Conclusive List of the Top Five Scariest Horror Comics',
+    description: "Art editor Nick Gazin shares the best terror comics.",
+    serie_id: all_series[45].id,
+    image: File.open('app/assets/images/series/doc/comics.jpg'),
+    video_url: 'n5KFdwuQbm8',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: 'High Society: UK Weed Laws',
+    description: "How Weed Laws Are Failing the UK: High Society",
+    serie_id: all_series[46].id,
+    image: File.open('app/assets/images/series/doc/highsociety.jpg'),
+    video_url: 'bdkrZF8pQu4',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: 'Hunting for Hallucinogenic Honey in 360°',
+    description: "The Nepalese Honey That Makes People Hallucinate",
+    serie_id: all_series[47].id,
+    image: File.open('app/assets/images/series/doc/hallucinate.jpg'),
+    video_url: 'AqmxzAazddw',
+    episode_number: 1
+  }),
+  Episode.create!({
+    title: 'Exorcist in South Africa',
+    description: "The Exorcist Trying to Heal South Africa’s Satanic Murderer",
+    serie_id: all_series[48].id,
+    image: File.open('app/assets/images/series/doc/exorcist.jpg'),
+    video_url: 'nTHKCo-Oj1k',
+    episode_number: 1
+  })
 ]
 
 #users
@@ -970,7 +1080,7 @@ all_episodes = [
 reviews = [];
 
 200.times do
-  serie_id = all_series[rand(44)].id
+  serie_id = all_series[rand(48)].id
   user_id = all_users[rand(20)].id
   rating = rand(1..5)
   body = Faker::Hipster.paragraph(2, true)
