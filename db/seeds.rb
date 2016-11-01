@@ -1019,7 +1019,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'Vice Autobiographies: D.R.A.M.',
-    description: "D.R.A.M. Reflects on Life Before and After 'Cha Cha'",
+    summary: "D.R.A.M. Reflects on Life Before and After 'Cha Cha'",
     serie_id: all_series[44].id,
     image: File.open('app/assets/images/series/doc/dram.jpg'),
     video_url: 'o8wHc8cYnic',
@@ -1027,7 +1027,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'Vice Autobiographies: Tiga',
-    description: "How Tiga Ignited Montreal's Dance Music Movement",
+    summary: "How Tiga Ignited Montreal's Dance Music Movement",
     serie_id: all_series[44].id,
     image: File.open('app/assets/images/series/doc/tiga.jpg'),
     video_url: 'IjTBNMlJamE',
@@ -1035,7 +1035,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'Vice Autobiographies: RJ Mitte',
-    description: "RJ Mitte of 'Breaking Bad' on Living with Cerebral Palsy",
+    summary: "RJ Mitte of 'Breaking Bad' on Living with Cerebral Palsy",
     serie_id: all_series[44].id,
     image: File.open('app/assets/images/series/doc/rjmitte.jpg'),
     video_url: 'Cc-cbcJVw00',
@@ -1043,7 +1043,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'A Conclusive List of the Top Five Scariest Horror Comics',
-    description: "Art editor Nick Gazin shares the best terror comics.",
+    summary: "Art editor Nick Gazin shares the best terror comics.",
     serie_id: all_series[45].id,
     image: File.open('app/assets/images/series/doc/comics.jpg'),
     video_url: 'n5KFdwuQbm8',
@@ -1051,7 +1051,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'High Society: UK Weed Laws',
-    description: "How Weed Laws Are Failing the UK: High Society",
+    summary: "How Weed Laws Are Failing the UK: High Society",
     serie_id: all_series[46].id,
     image: File.open('app/assets/images/series/doc/highsociety.jpg'),
     video_url: 'bdkrZF8pQu4',
@@ -1059,7 +1059,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'Hunting for Hallucinogenic Honey in 360°',
-    description: "The Nepalese Honey That Makes People Hallucinate",
+    summary: "The Nepalese Honey That Makes People Hallucinate",
     serie_id: all_series[47].id,
     image: File.open('app/assets/images/series/doc/hallucinate.jpg'),
     video_url: 'AqmxzAazddw',
@@ -1067,7 +1067,7 @@ all_episodes = [
   }),
   Episode.create!({
     title: 'Exorcist in South Africa',
-    description: "The Exorcist Trying to Heal South Africa’s Satanic Murderer",
+    summary: "The Exorcist Trying to Heal South Africa’s Satanic Murderer",
     serie_id: all_series[48].id,
     image: File.open('app/assets/images/series/doc/exorcist.jpg'),
     video_url: 'nTHKCo-Oj1k',
